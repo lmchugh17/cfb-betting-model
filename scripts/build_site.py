@@ -14,7 +14,7 @@ from src.db import get_connection, init_db
 
 OUTPUT_PATH = Path(__file__).resolve().parent.parent / "docs" / "index.html"
 
-STARTING_BANKROLL = 100.0
+STARTING_BANKROLL = 500.0
 # Matches scripts/predict_games.py's own assumption (no per-book spread juice data available).
 ASSUMED_SPREAD_ODDS_AMERICAN = -110
 
@@ -273,7 +273,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
     here. Confidence tiers are based on |edge| in points and are not statistically calibrated yet --
     treat them as a rough first pass, not a validated signal.</p>
     <p>Recommended wager is a paper amount only, sized with 25% fractional Kelly against a running
-    $100 starting bankroll that compounds through settled picks. Cover probability treats the margin
+    $500 starting bankroll that compounds through settled picks. Cover probability treats the margin
     model's prediction error as normally distributed around its point estimate, using its own measured
     RMSE on the 2025 holdout. Assumes standard -110 pricing on both sides since per-book spread juice
     isn't tracked -- a simplification, not a measured value. Nothing here is real money or a
