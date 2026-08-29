@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CFB Betting Model</title>
+<style>
+  :root {
+    --bg: #0f1115; --card: #171a21; --border: #262b36; --text: #e8eaed;
+    --text-dim: #9aa1ac; --accent: #4f8cff; --green: #3ddc84; --red: #ff6161; --amber: #ffb84f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0 1rem 4rem; background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  header { padding: 2.5rem 0 1rem; }
+  h1 { font-size: 1.6rem; margin: 0 0 0.25rem; }
+  .tagline { color: var(--text-dim); font-size: 0.9rem; margin: 0; }
+  .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin: 1.5rem 0 2.5rem; }
+  .stat-tile { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; text-align: center; }
+  .stat-value { font-size: 1.4rem; font-weight: 600; }
+  .stat-label { font-size: 0.75rem; color: var(--text-dim); margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  h2 { font-size: 1.1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin: 2.5rem 0 1rem; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+  .matchup { font-size: 1.05rem; font-weight: 600; }
+  .kickoff { color: var(--text-dim); font-size: 0.8rem; margin-bottom: 0.6rem; }
+  .prediction-line { font-size: 0.9rem; margin-bottom: 0.4rem; }
+  .pick-line { font-size: 0.9rem; margin-bottom: 0.6rem; }
+  .tier { font-size: 0.7rem; text-transform: uppercase; padding: 0.1rem 0.5rem; border-radius: 999px; margin-left: 0.4rem; }
+  .tier-high { background: rgba(61,220,132,0.15); color: var(--green); }
+  .tier-medium { background: rgba(255,184,79,0.15); color: var(--amber); }
+  .tier-low { background: rgba(154,161,172,0.15); color: var(--text-dim); }
+  .tldr { font-style: italic; color: var(--text-dim); font-size: 0.88rem; margin-bottom: 0.6rem; }
+  .bullets { margin: 0; padding-left: 1.1rem; font-size: 0.85rem; color: var(--text-dim); }
+  .bullets li { margin-bottom: 0.25rem; }
+  .result-line { margin-top: 0.7rem; padding-top: 0.6rem; border-top: 1px solid var(--border); font-size: 0.85rem; }
+  .empty { color: var(--text-dim); font-size: 0.9rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.78rem; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>CFB Betting Model</h1>
+    <p class="tagline">Opponent-adjusted college football predictions vs. the market. Personal research project, not financial advice.</p>
+  </header>
+
+  <div class="stats-row"><div class="stat-tile"><div class="stat-value">1</div><div class="stat-label">Picks Tracked</div></div><div class="stat-tile"><div class="stat-value">0/1</div><div class="stat-label">Straight-Up</div></div><div class="stat-tile"><div class="stat-value">0-1-0</div><div class="stat-label">Against the Spread</div></div><div class="stat-tile"><div class="stat-value">20.6 pts</div><div class="stat-label">Avg. Margin Error</div></div></div>
+
+  <h2>This Week's Picks</h2>
+  
+    <div class="card">
+      <div class="matchup">Hawai'i @ Stanford</div>
+      <div class="kickoff">Sat Aug 29, 11:00 PM UTC</div>
+      <div class="prediction-line">Model: Stanford by -4.2 (40% win prob) &middot; Market: Stanford by 4.8</div>
+      <div class="pick-line">Pick: <strong>Hawai'i</strong> <span class="tier tier-high">high</span></div>
+      <div class="tldr">The model favors Hawai'i to cover as a road underdog, with Stanford entering as the weaker team by both rating and recent form despite being favored by the market.</div>
+      <ul class="bullets"><li>Hawai'i rates 140 ELO points stronger than Stanford, giving Stanford only a 39% win probability before home field is applied.</li><li>Over their last four games, Hawai'i has outscored opponents by 7 points per game on average while Stanford has been outscored by 7 -- a 14-point swing in recent form.</li><li>Hawai'i has also been more efficient per play recently (5.7 yards/play vs. Stanford's 4.6).</li><li>Hawai'i has covered the spread in 60% of its recent games, a modest supporting signal.</li><li>The model's projected margin (Stanford -4.2) sits well inside the market's Stanford -4.75 line, putting Hawai'i on the value side of the number.</li></ul>
+      
+    </div>
+    <div class="card">
+      <div class="matchup">New Mexico State @ Florida State</div>
+      <div class="kickoff">Sat Aug 29, 11:00 PM UTC</div>
+      <div class="prediction-line">Model: Florida State by +25.5 (86% win prob) &middot; Market: Florida State by 30.8</div>
+      <div class="pick-line">Pick: <strong>New Mexico State</strong> <span class="tier tier-medium">medium</span></div>
+      <div class="tldr">The model likes Florida State to win comfortably, but the market's 30.75-point spread looks too large relative to what recent data supports -- take the points with New Mexico State.</div>
+      <ul class="bullets"><li>Once schedule strength is factored in, Florida State rates 16.1 points better than New Mexico State, and ELO gives FSU a 77% win probability.</li><li>Florida State has faced tougher recent competition than New Mexico State on average -- already reflected in its rating, but not enough on its own to justify a 30-point line.</li><li>Both teams' recent scoring margins have actually been negative (FSU -5.8, NMSU -10.0 per game), suggesting neither side has been blowing teams out lately.</li><li>New Mexico State has covered the spread in 60% of its recent games.</li><li>The model projects Florida State by 25.5, about 5 points shy of the market's number -- New Mexico State is the value side.</li></ul>
+      
+    </div>
+
+  <h2>Recent Results</h2>
+  
+    <div class="card">
+      <div class="matchup">North Carolina @ TCU</div>
+      <div class="kickoff">Sat Aug 29, 4:00 PM UTC</div>
+      <div class="prediction-line">Model: TCU by +15.6 (84% win prob) &middot; Market: TCU by 7.5</div>
+      <div class="pick-line">Pick: <strong>TCU</strong> <span class="tier tier-high">high</span></div>
+      
+      <ul class="bullets"><li>Pre-game ELO gives TCU a 78% win probability.</li><li>TCU has the edge in recent scoring margin (-0.8 vs -10.2, last 4 games).</li><li>North Carolina has covered the spread in 40% of their last games.</li><li>TCU carries a 225-point ELO advantage over North Carolina (1672 vs 1447).</li><li>TCU has been the better team once schedule strength is accounted for, outrating North Carolina by 8.6 points of opponent-adjusted margin (+5.1 vs -3.5).</li></ul>
+      <div class="result-line">Final: TCU 10 - 15 North Carolina &mdash; pick was incorrect straight-up, did not cover the spread</div>
+    </div>
+
+  <footer>
+    <p><strong>Methodology:</strong> 5-model stacked ensemble (logistic regression, random forest,
+    XGBoost, LightGBM, extra trees) for win probability, plus a separate XGBoost regressor for
+    predicted margin. Features: ELO ratings, opponent-adjusted SRS ratings (iterative strength-of-schedule
+    solve), rolling 4-game team form, rolling ATS record, rest/bye-week, head-to-head history.
+    Trained on 2021-2024 FBS seasons, held out all of 2025 for evaluation (75.5% straight-up accuracy,
+    appropriately trailing the market's own 76.8% -- landing behind the market, not matching or beating it,
+    is the healthy sign of a real model rather than a leakage bug).</p>
+    <p>Market spread is deliberately excluded from model training and used only to compute the edge shown
+    here. Confidence tiers are based on |edge| in points and are not statistically calibrated yet --
+    treat them as a rough first pass, not a validated signal.</p>
+    <p>Generated 2026-08-29 20:53 UTC.</p>
+  </footer>
+</div>
+</body>
+</html>
