@@ -18,8 +18,13 @@ DEFAULT_END_YEAR = 2025
 
 def upsert_teams(conn, teams: list, year: int):
     for t in teams:
+        # Plain INSERT OR REPLACE would delete+reinsert the row, wiping espn_id
+        # (populated separately by scripts/map_espn_ids.py) back to NULL on every
+        # re-run. ON CONFLICT DO UPDATE only touches the columns this script owns.
         conn.execute(
-            "INSERT OR REPLACE INTO teams (id, school, mascot, abbreviation) VALUES (?, ?, ?, ?)",
+            """INSERT INTO teams (id, school, mascot, abbreviation) VALUES (?, ?, ?, ?)
+               ON CONFLICT(id) DO UPDATE SET school=excluded.school, mascot=excluded.mascot,
+                   abbreviation=excluded.abbreviation""",
             (t["id"], t["school"], t.get("mascot"), t.get("abbreviation")),
         )
         loc = t.get("location") or {}

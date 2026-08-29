@@ -178,12 +178,24 @@ def main():
         for h in highlights:
             print(f"  - {h}")
 
+        # Plain INSERT OR REPLACE would delete+reinsert the row, wiping tldr/bullets_json
+        # (written separately, once, by whoever explains the pick) back to NULL every time
+        # this game gets re-predicted later in the week with fresher odds. ON CONFLICT DO
+        # UPDATE only touches the columns this script owns.
         conn.execute(
-            """INSERT OR REPLACE INTO predictions
+            """INSERT INTO predictions
                (game_id, predicted_at, year, week, season_type, start_date, home_team, away_team,
                 predicted_margin, win_prob_home, market_spread, pick_team, edge, confidence_tier,
                 highlights_json)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+               ON CONFLICT(game_id) DO UPDATE SET
+                   predicted_at=excluded.predicted_at, year=excluded.year, week=excluded.week,
+                   season_type=excluded.season_type, start_date=excluded.start_date,
+                   home_team=excluded.home_team, away_team=excluded.away_team,
+                   predicted_margin=excluded.predicted_margin, win_prob_home=excluded.win_prob_home,
+                   market_spread=excluded.market_spread, pick_team=excluded.pick_team,
+                   edge=excluded.edge, confidence_tier=excluded.confidence_tier,
+                   highlights_json=excluded.highlights_json""",
             (
                 int(row["game_id"]), predicted_at, g["year"], g["week"], g["season_type"], g["start_date"],
                 row["home_team"], row["away_team"], float(margins[i]), float(win_probs[i]),
