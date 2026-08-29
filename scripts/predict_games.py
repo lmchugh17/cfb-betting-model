@@ -7,6 +7,7 @@ the pick to the predictions table so the site can show a real track record.
 Usage: .venv/bin/python scripts/predict_games.py <game_id> [<game_id> ...]
 """
 import json
+import math
 import sys
 from datetime import date, datetime, timezone
 from pathlib import Path
@@ -42,6 +43,40 @@ def confidence_tier(edge: float | None) -> str | None:
     if abs_edge >= 3:
         return "medium"
     return "low"
+
+
+KELLY_FRACTION_CAP = 0.25  # 25% fractional Kelly, matches the NBA reference model's own cap
+# We don't have per-book spread juice data (CFBD's /lines gives the spread number, not its
+# price), so this assumes the standard -110 both sides rather than a measured value -- a real
+# simplification, not a fact. Worth wiring in live_odds' actual per-book spread pricing later.
+ASSUMED_SPREAD_ODDS_AMERICAN = -110
+
+
+def _american_odds_to_net_decimal(odds: int) -> float:
+    return 100 / abs(odds) if odds < 0 else odds / 100
+
+
+def _normal_cdf(x: float) -> float:
+    return 0.5 * (1 + math.erf(x / math.sqrt(2)))
+
+
+def cover_probability_and_kelly(edge: float | None, is_home_pick: bool,
+                                 regressor_rmse: float) -> tuple[float | None, float | None]:
+    """cover_probability is for the PICKED side specifically, not always the home side --
+    edge is defined as home's edge over the market, so picking the away side needs 1 minus
+    the home cover probability. Treats the regressor's residuals as approximately
+    Normal(0, rmse) around its point estimate -- rmse is the model's own measured error on
+    the 2025 holdout (see scripts/train_model.py), not an assumed number. kelly_fraction is
+    the recommended fraction of bankroll to wager, already capped at KELLY_FRACTION_CAP; the
+    site converts this to a dollar amount against the running paper bankroll at display time."""
+    if edge is None:
+        return None, None
+    p_home_covers = _normal_cdf(edge / regressor_rmse)
+    p_cover = p_home_covers if is_home_pick else (1 - p_home_covers)
+    b = _american_odds_to_net_decimal(ASSUMED_SPREAD_ODDS_AMERICAN)
+    kelly_full = p_cover - (1 - p_cover) / b
+    kelly = max(0.0, kelly_full) * KELLY_FRACTION_CAP
+    return p_cover, kelly
 
 
 def load_all_games(conn) -> list[dict]:
@@ -151,8 +186,10 @@ def main():
         X[col] = X[col].astype(float)
     X = X.fillna(bundle["feature_medians"]).astype(float)
 
-    win_probs = bundle["ensemble"].predict_proba(X)
+    detailed = bundle["ensemble"].predict_proba_detailed(X)
+    win_probs = detailed["final"]
     margins = bundle["regressor"].predict(X)
+    regressor_rmse = bundle["regressor_metrics"]["rmse"]
     predicted_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     for i, row in df.iterrows():
@@ -161,14 +198,20 @@ def main():
         print(f"{row['away_team']} @ {row['home_team']}")
         print(f"{'=' * 70}")
         print(f"Predicted: {row['home_team']} by {margins[i]:+.1f} (home win prob {win_probs[i]:.0%})")
+        print("Per-model win probability (home team):")
+        for name, probs in detailed["base"].items():
+            print(f"  {name}: {probs[i]:.0%}")
 
         edge, pick_team = None, None
+        cover_prob, kelly = None, None
         if pd.notna(row["market_spread"]):
             fav = row["home_team"] if row["market_spread"] < 0 else row["away_team"]
             print(f"Market: {fav} favored by {abs(row['market_spread']):.1f}")
             edge = float(margins[i] - (-row["market_spread"]))
             pick_team = row["home_team"] if edge > 0 else row["away_team"]
             print(f"Edge: model favors {row['home_team']} by {edge:+.1f} vs. the market line -> pick {pick_team}")
+            cover_prob, kelly = cover_probability_and_kelly(edge, pick_team == row["home_team"], regressor_rmse)
+            print(f"Cover probability: {cover_prob:.0%} -> {kelly:.1%} of bankroll recommended (25% Kelly, assumes -110)")
         else:
             print("Market: no line available")
 
@@ -182,12 +225,14 @@ def main():
         # (written separately, once, by whoever explains the pick) back to NULL every time
         # this game gets re-predicted later in the week with fresher odds. ON CONFLICT DO
         # UPDATE only touches the columns this script owns.
+        model_breakdown = {name: float(probs[i]) for name, probs in detailed["base"].items()}
+
         conn.execute(
             """INSERT INTO predictions
                (game_id, predicted_at, year, week, season_type, start_date, home_team, away_team,
                 predicted_margin, win_prob_home, market_spread, pick_team, edge, confidence_tier,
-                highlights_json)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                highlights_json, model_breakdown_json, cover_probability, kelly_fraction)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                ON CONFLICT(game_id) DO UPDATE SET
                    predicted_at=excluded.predicted_at, year=excluded.year, week=excluded.week,
                    season_type=excluded.season_type, start_date=excluded.start_date,
@@ -195,12 +240,14 @@ def main():
                    predicted_margin=excluded.predicted_margin, win_prob_home=excluded.win_prob_home,
                    market_spread=excluded.market_spread, pick_team=excluded.pick_team,
                    edge=excluded.edge, confidence_tier=excluded.confidence_tier,
-                   highlights_json=excluded.highlights_json""",
+                   highlights_json=excluded.highlights_json, model_breakdown_json=excluded.model_breakdown_json,
+                   cover_probability=excluded.cover_probability, kelly_fraction=excluded.kelly_fraction""",
             (
                 int(row["game_id"]), predicted_at, g["year"], g["week"], g["season_type"], g["start_date"],
                 row["home_team"], row["away_team"], float(margins[i]), float(win_probs[i]),
                 float(row["market_spread"]) if pd.notna(row["market_spread"]) else None,
                 pick_team, edge, confidence_tier(edge), json.dumps(highlights),
+                json.dumps(model_breakdown), cover_prob, kelly,
             ),
         )
     conn.commit()

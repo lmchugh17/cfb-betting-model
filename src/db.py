@@ -218,7 +218,10 @@ CREATE TABLE IF NOT EXISTS predictions (
     confidence_tier TEXT,
     highlights_json TEXT,
     tldr TEXT,
-    bullets_json TEXT
+    bullets_json TEXT,
+    model_breakdown_json TEXT,
+    cover_probability REAL,
+    kelly_fraction REAL
 );
 
 -- Always-live join of predictions against actual results, for both the site's
@@ -260,9 +263,14 @@ def init_db() -> None:
     conn = get_connection()
     try:
         conn.executescript(SCHEMA)
-        existing_cols = {row[1] for row in conn.execute("PRAGMA table_info(teams)")}
-        if "espn_id" not in existing_cols:
+        existing_team_cols = {row[1] for row in conn.execute("PRAGMA table_info(teams)")}
+        if "espn_id" not in existing_team_cols:
             conn.execute("ALTER TABLE teams ADD COLUMN espn_id TEXT")
+        existing_pred_cols = {row[1] for row in conn.execute("PRAGMA table_info(predictions)")}
+        for col in ("model_breakdown_json", "cover_probability", "kelly_fraction"):
+            if col not in existing_pred_cols:
+                conn.execute(f"ALTER TABLE predictions ADD COLUMN {col} "
+                             f"{'TEXT' if col.endswith('_json') else 'REAL'}")
         conn.commit()
     finally:
         conn.close()

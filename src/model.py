@@ -108,6 +108,15 @@ class StackingEnsemble:
         base_preds = np.column_stack([m.predict_proba(X)[:, 1] for m in self.base_models.values()])
         return self.meta_model.predict_proba(base_preds)[:, 1]
 
+    def predict_proba_detailed(self, X: pd.DataFrame) -> dict:
+        """Same as predict_proba, but also returns each base model's own win probability
+        before blending -- for showing users what each of the 5 models individually predicted,
+        not just the final ensemble output."""
+        base_probs = {name: m.predict_proba(X)[:, 1] for name, m in self.base_models.items()}
+        base_matrix = np.column_stack(list(base_probs.values()))
+        final = self.meta_model.predict_proba(base_matrix)[:, 1]
+        return {"base": base_probs, "final": final}
+
 
 def train_margin_regressor(X: pd.DataFrame, y: pd.Series) -> XGBRegressor:
     model = XGBRegressor(random_state=42, n_estimators=300, max_depth=4, learning_rate=0.05,
