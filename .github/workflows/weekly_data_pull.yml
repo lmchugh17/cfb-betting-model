@@ -1,0 +1,58 @@
+name: Weekly data pull
+
+on:
+  schedule:
+    # 13:00 UTC = 7am America/Denver during MDT (Mar-Nov). Shifts to 6am local
+    # during MST (Nov-Mar) since GitHub cron is fixed UTC and doesn't track DST.
+    - cron: "0 13 * * 2,5,6"  # Tue/Fri/Sat
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  pull-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Pull latest season data (games, teams, coaches, lines)
+        env:
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+        run: python scripts/backfill.py 2026 2026
+
+      - name: Pull latest player stats and rosters
+        env:
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+        run: python scripts/backfill_players.py 2026 2026
+
+      - name: Pull latest team box score stats
+        env:
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+        run: python scripts/backfill_team_game_stats.py 2026 2026
+
+      - name: Pull live odds
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python scripts/pull_odds.py
+
+      - name: Scrape current injuries (best-effort, no key needed)
+        run: python scripts/scrape_injuries.py
+
+      - name: Commit and push refreshed data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/cfb.db
+          git diff --cached --quiet && echo "No data changes" && exit 0
+          git commit -m "Weekly data pull: $(date -u +%Y-%m-%d)"
+          git push
