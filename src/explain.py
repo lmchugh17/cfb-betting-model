@@ -30,7 +30,7 @@ def get_shap_contributions(regressor, X_row: pd.DataFrame, feature_columns: list
 
 def _describe_feature(feature: str, row: dict, home_team: str, away_team: str) -> str | None:
     """Renders one feature into a grounded, factual sentence using this game's real values."""
-    g = lambda k: row.get(k)
+    g = lambda k, default=None: row.get(k, default)
 
     if feature == "elo_diff":
         diff = g("elo_diff")
