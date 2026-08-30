@@ -23,6 +23,8 @@ from src.box_score_features import (add_derived_rate_stats, assemble_game_featur
 from src.db import get_connection, init_db
 from src.elo import CFBElo
 from src.opponent_adjustment import compute_weekly_srs
+from src.weather_features import (compute_adverse_wx_ats_pct, load_weather_by_game,
+                                   was_game_adverse)
 
 
 def load_games(conn) -> list[dict]:
@@ -81,6 +83,10 @@ def main():
         print("Computing head-to-head...")
         h2h = compute_h2h_features(games)
 
+        print("Computing adverse-weather ATS splits...")
+        weather_by_game = load_weather_by_game(conn)
+        adverse_wx_ats = compute_adverse_wx_ats_pct(ats_rows, weather_by_game)
+
         print("Assembling final table...")
         records = []
         for g in games:
@@ -109,6 +115,18 @@ def main():
             }
             if record["srs_home"] is not None and record["srs_away"] is not None:
                 record["srs_diff"] = record["srs_home"] - record["srs_away"]
+
+            record["is_adverse_weather"] = int(was_game_adverse(gid, weather_by_game))
+            home_wx_pct = adverse_wx_ats.get((gid, g["home_team"]))
+            away_wx_pct = adverse_wx_ats.get((gid, g["away_team"]))
+            # Zero (not missing) when the game itself isn't in adverse weather, or when
+            # either team lacks enough adverse-weather history to trust yet -- this is a
+            # genuinely-zero signal in those cases, not an unknown value to median-fill.
+            record["adverse_wx_ats_edge"] = (
+                (home_wx_pct - away_wx_pct)
+                if record["is_adverse_weather"] and home_wx_pct is not None and away_wx_pct is not None
+                else 0.0
+            )
             records.append(record)
 
         final_df = pd.DataFrame(records).merge(box_score_features, on="game_id", how="left")

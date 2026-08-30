@@ -48,6 +48,7 @@ FEATURE_COLUMNS = [
     "home_avg_point_diff", "away_avg_point_diff", "diff_avg_point_diff",
     "home_avg_win", "away_avg_win", "diff_avg_win",
     "home_avg_opponent_srs", "away_avg_opponent_srs", "diff_avg_opponent_srs",
+    "is_adverse_weather", "adverse_wx_ats_edge",
 ]
 
 N_SPLITS = 3  # TimeSeriesSplit folds for OOF stacking -- kept small since each CFB season is short
@@ -55,7 +56,7 @@ N_SPLITS = 3  # TimeSeriesSplit folds for OOF stacking -- kept small since each 
 
 def prepare_matrix(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
     X = df[FEATURE_COLUMNS].copy()
-    for col in ("home_bye_week", "away_bye_week"):
+    for col in ("home_bye_week", "away_bye_week", "is_adverse_weather"):
         X[col] = X[col].astype(float)
     medians = X.median()
     X = X.fillna(medians)

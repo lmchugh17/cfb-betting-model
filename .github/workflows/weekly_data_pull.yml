@@ -46,6 +46,9 @@ jobs:
       - name: Scrape current injuries (best-effort, no key needed)
         run: python scripts/scrape_injuries.py
 
+      - name: Pull forecast weather for upcoming games (no key needed)
+        run: python scripts/pull_weather_forecast.py
+
       - name: Archive and prune stale odds/injury snapshots
         run: python scripts/prune_live_data.py
 

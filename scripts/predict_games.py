@@ -27,6 +27,8 @@ from src.live_state import (compute_current_ats_pct, compute_current_elo,
                              compute_current_opponent_srs, compute_current_rest_days,
                              compute_current_rolling_form, compute_current_srs)
 from src.model import FEATURE_COLUMNS
+from src.weather_features import (compute_current_adverse_wx_ats_pct, load_weather_by_game,
+                                   was_game_adverse)
 
 MODEL_PATH = Path(__file__).resolve().parent.parent / "models" / "cfb_model.pkl"
 
@@ -135,6 +137,10 @@ def main():
     print("Computing head-to-head...")
     h2h = compute_h2h_features(all_games)
 
+    print("Computing adverse-weather ATS splits...")
+    weather_by_game = load_weather_by_game(conn)
+    current_adverse_wx_ats = compute_current_adverse_wx_ats_pct(ats_rows, weather_by_game)
+
     elo_model = CFBElo()  # only used for its expected_score() static method
 
     records = []
@@ -178,11 +184,28 @@ def main():
             record["diff_avg_opponent_srs"] = record["home_avg_opponent_srs"] - record["away_avg_opponent_srs"]
         else:
             record["diff_avg_opponent_srs"] = None
+
+        wx = weather_by_game.get(g["id"], {})
+        record["is_adverse_weather"] = int(was_game_adverse(g["id"], weather_by_game))
+        record["weather_temperature_f"] = wx.get("temperature_f")
+        record["weather_wind_speed_mph"] = wx.get("wind_speed_mph")
+        record["weather_precipitation_in"] = wx.get("precipitation_in")
+        home_wx_pct = current_adverse_wx_ats.get(home)
+        away_wx_pct = current_adverse_wx_ats.get(away)
+        record["home_adverse_wx_ats_pct"] = home_wx_pct
+        record["away_adverse_wx_ats_pct"] = away_wx_pct
+        # Zero (not missing) when this game isn't itself in adverse weather, or either
+        # team lacks enough adverse-weather history yet -- matches build_features.py.
+        record["adverse_wx_ats_edge"] = (
+            (home_wx_pct - away_wx_pct)
+            if record["is_adverse_weather"] and home_wx_pct is not None and away_wx_pct is not None
+            else 0.0
+        )
         records.append(record)
 
     df = pd.DataFrame(records)
     X = df[FEATURE_COLUMNS].copy()
-    for col in ("home_bye_week", "away_bye_week"):
+    for col in ("home_bye_week", "away_bye_week", "is_adverse_weather"):
         X[col] = X[col].astype(float)
     X = X.fillna(bundle["feature_medians"]).astype(float)
 

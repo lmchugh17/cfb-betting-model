@@ -35,7 +35,7 @@ def main():
 
     X_train, medians = prepare_matrix(train_df)
     X_test = test_df[FEATURE_COLUMNS].copy()
-    for col in ("home_bye_week", "away_bye_week"):
+    for col in ("home_bye_week", "away_bye_week", "is_adverse_weather"):
         X_test[col] = X_test[col].astype(float)
     X_test = X_test.fillna(medians)
 

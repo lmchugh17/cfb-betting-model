@@ -17,6 +17,8 @@ highlights get used.
 import pandas as pd
 import xgboost as xgb
 
+from src.weather_features import ADVERSE_PRECIP_IN, ADVERSE_TEMP_F, ADVERSE_WIND_MPH
+
 TOP_N_FACTORS = 5
 
 
@@ -26,6 +28,22 @@ def get_shap_contributions(regressor, X_row: pd.DataFrame, feature_columns: list
     dmat = xgb.DMatrix(X_row[feature_columns])
     contribs = regressor.get_booster().predict(dmat, pred_contribs=True)[0]
     return dict(zip(feature_columns, contribs[:-1]))  # last column is the bias term
+
+
+def _describe_weather_condition(row: dict) -> str:
+    """Names whichever adverse-weather threshold(s) this game's forecast actually
+    crossed -- thresholds match src.weather_features so the description never drifts
+    from what the feature itself was gated on."""
+    temp, wind = row.get("weather_temperature_f"), row.get("weather_wind_speed_mph")
+    precip = row.get("weather_precipitation_in")
+    parts = []
+    if temp is not None and temp <= ADVERSE_TEMP_F:
+        parts.append(f"{temp:.0f}°F temperatures")
+    if wind is not None and wind >= ADVERSE_WIND_MPH:
+        parts.append(f"{wind:.0f} mph wind")
+    if precip is not None and precip >= ADVERSE_PRECIP_IN:
+        parts.append(f"{precip:.2f}in of precipitation")
+    return " and ".join(parts) if parts else "adverse weather"
 
 
 def _describe_feature(feature: str, row: dict, home_team: str, away_team: str) -> str | None:
@@ -58,6 +76,20 @@ def _describe_feature(feature: str, row: dict, home_team: str, away_team: str) -
         favored, other = (home_team, away_team) if margin > 0 else (away_team, home_team)
         return (f"Over their last {int(g('h2h_meetings'))} meetings, {favored} has outscored {other} "
                 f"by an average of {abs(margin):.1f} points.")
+    if feature == "is_adverse_weather":
+        if not g("is_adverse_weather"):
+            return None
+        return f"This game is forecast for {_describe_weather_condition(row)}."
+    if feature == "adverse_wx_ats_edge":
+        edge = g("adverse_wx_ats_edge")
+        if not g("is_adverse_weather") or not edge:
+            return None  # not itself an adverse-weather game, or a genuine tie/missing-history zero
+        home_pct, away_pct = g("home_adverse_wx_ats_pct"), g("away_adverse_wx_ats_pct")
+        leader, trailer = (home_team, away_team) if edge > 0 else (away_team, home_team)
+        leader_pct, trailer_pct = (home_pct, away_pct) if edge > 0 else (away_pct, home_pct)
+        return (f"In games with {_describe_weather_condition(row)}, {leader} has covered the spread "
+                f"{leader_pct:.0%} of the time over its recent games in similar conditions, "
+                f"versus {trailer}'s {trailer_pct:.0%}.")
     if feature.startswith("diff_avg_"):
         stat = feature.replace("diff_avg_", "")
         home_val, away_val, diff = g(f"home_avg_{stat}"), g(f"away_avg_{stat}"), g(feature)
