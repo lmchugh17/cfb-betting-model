@@ -46,11 +46,14 @@ jobs:
       - name: Scrape current injuries (best-effort, no key needed)
         run: python scripts/scrape_injuries.py
 
+      - name: Archive and prune stale odds/injury snapshots
+        run: python scripts/prune_live_data.py
+
       - name: Commit and push refreshed data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/cfb.db
+          git add data/cfb.db data/live_odds_archive.csv data/injuries_archive.csv
           git diff --cached --quiet && echo "No data changes" && exit 0
           git commit -m "Weekly data pull: $(date -u +%Y-%m-%d)"
           git push

@@ -5,4 +5,12 @@ __pycache__/
 data/*.parquet
 data/raw/
 data/*.csv
+# Exceptions: these are append-only archives of pruned live_odds/injuries rows
+# (see scripts/prune_live_data.py) -- committed deliberately, since GitHub Actions
+# runners have no persistent disk between runs and an ignored file here would be
+# silently lost after every workflow run, defeating the point of archiving at all.
+# Text appends also compress far better in git history than the binary DB rewrites
+# they're relieving.
+!data/live_odds_archive.csv
+!data/injuries_archive.csv
 .DS_Store
