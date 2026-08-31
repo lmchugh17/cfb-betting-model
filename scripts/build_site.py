@@ -25,6 +25,9 @@ FULL_SEASON_WINDOW = 5
 # Fallback only -- used when a pick has no measured spread_price (src.spread_pricing had
 # no per-book data for that game). Matches scripts/predict_games.py's own fallback.
 ASSUMED_SPREAD_ODDS_AMERICAN = -110
+# Matches scripts/predict_games.py's LOW_SAMPLE_GAME_THRESHOLD -- see that file's comment for
+# how this was measured against the real distribution of tracked games per team.
+LOW_SAMPLE_GAME_THRESHOLD = 20
 
 MODEL_LABELS = {
     "logistic_regression": "Logistic Regression",
@@ -47,7 +50,7 @@ def fetch_upcoming(conn) -> list[dict]:
                p.model_breakdown_json, p.cover_probability, p.kelly_fraction,
                p.moneyline_pick, p.moneyline_win_prob, p.moneyline_confidence_tier,
                p.spread_price, p.spread_price_source, p.spread_price_book_count,
-               p.min_current_season_games
+               p.min_current_season_games, p.low_sample_team, p.low_sample_team_games
         FROM predictions p
         JOIN games g ON p.game_id = g.id
         WHERE g.home_points IS NULL
@@ -59,7 +62,7 @@ def fetch_upcoming(conn) -> list[dict]:
             "model_breakdown_json", "cover_probability", "kelly_fraction",
             "moneyline_pick", "moneyline_win_prob", "moneyline_confidence_tier",
             "spread_price", "spread_price_source", "spread_price_book_count",
-            "min_current_season_games"]
+            "min_current_season_games", "low_sample_team", "low_sample_team_games"]
     return [dict(zip(cols, r)) for r in rows]
 
 
@@ -70,7 +73,8 @@ def fetch_results(conn) -> list[dict]:
                edge, confidence_tier, highlights_json, tldr, bullets_json,
                ats_pick_won_straight_up, pick_covered, model_breakdown_json, cover_probability, kelly_fraction,
                moneyline_pick, moneyline_win_prob, moneyline_confidence_tier, moneyline_pick_won,
-               spread_price, spread_price_source, spread_price_book_count, min_current_season_games
+               spread_price, spread_price_source, spread_price_book_count, min_current_season_games,
+               low_sample_team, low_sample_team_games
         FROM prediction_results ORDER BY start_date DESC
     """).fetchall()
     cols = ["game_id", "year", "week", "start_date", "home_team", "away_team", "predicted_margin",
@@ -78,7 +82,8 @@ def fetch_results(conn) -> list[dict]:
             "edge", "confidence_tier", "highlights_json", "tldr", "bullets_json",
             "ats_pick_won_straight_up", "pick_covered", "model_breakdown_json", "cover_probability", "kelly_fraction",
             "moneyline_pick", "moneyline_win_prob", "moneyline_confidence_tier", "moneyline_pick_won",
-            "spread_price", "spread_price_source", "spread_price_book_count", "min_current_season_games"]
+            "spread_price", "spread_price_source", "spread_price_book_count", "min_current_season_games",
+            "low_sample_team", "low_sample_team_games"]
     return [dict(zip(cols, r)) for r in rows]
 
 
@@ -225,6 +230,21 @@ def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None
     wager_html = render_wager_line(p, bankroll)
     model_breakdown_html = render_model_breakdown(p.get("model_breakdown_json"))
 
+    # Dedicated, always-current callout -- deliberately NOT folded into the bullets/tldr text,
+    # since those are only regenerated when a game is re-predicted and can go stale (bullets_json
+    # takes precedence over highlights_json below once written). This ties directly to the edge,
+    # same reasoning as scripts/predict_games.py's version of this sentence.
+    low_sample_html = ""
+    if (p.get("low_sample_team") and p.get("low_sample_team_games") is not None
+            and p["low_sample_team_games"] < LOW_SAMPLE_GAME_THRESHOLD and p.get("edge") is not None):
+        low_sample_html = (
+            f'<div class="callout">{p["low_sample_team"]} has only {p["low_sample_team_games"]:.0f} '
+            f'tracked games in our database (a recent FBS entrant, or a rarely-tracked crossover '
+            f'opponent -- our data only covers games involving an FBS team) -- its recent-form stats '
+            f'are a small, possibly unrepresentative sample, likely contributing to the '
+            f'{abs(p["edge"]):.1f}-point gap between the model\'s margin and the market\'s line.</div>'
+        )
+
     body_bullets = bullets or highlights
     bullets_html = "".join(f"<li>{b}</li>" for b in body_bullets)
 
@@ -245,6 +265,7 @@ def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None
       <div class="prediction-line">Model: {p["home_team"]} by {p["predicted_margin"]:+.1f} ({p["win_prob_home"]:.0%} win prob) &middot; Market: {market_line}</div>
       {ml_html}
       {pick_html}
+      {low_sample_html}
       {wager_html}
       {f'<div class="tldr">{tldr}</div>' if tldr else ""}
       <ul class="bullets">{bullets_html}</ul>
@@ -356,6 +377,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .tier-medium {{ background: rgba(255,184,79,0.15); color: var(--amber); }}
   .tier-low {{ background: rgba(154,161,172,0.15); color: var(--text-dim); }}
   .wager-line {{ font-size: 0.85rem; color: var(--text-dim); margin-bottom: 0.6rem; }}
+  .callout {{ font-size: 0.85rem; color: var(--amber); background: rgba(255,184,79,0.1); border: 1px solid rgba(255,184,79,0.25); border-radius: 8px; padding: 0.6rem 0.8rem; margin-bottom: 0.6rem; }}
   .tldr {{ font-style: italic; color: var(--text-dim); font-size: 0.88rem; margin-bottom: 0.6rem; }}
   .bullets {{ margin: 0; padding-left: 1.1rem; font-size: 0.85rem; color: var(--text-dim); }}
   .bullets li {{ margin-bottom: 0.25rem; }}

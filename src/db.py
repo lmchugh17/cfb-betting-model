@@ -228,7 +228,9 @@ CREATE TABLE IF NOT EXISTS predictions (
     spread_price INTEGER,
     spread_price_source TEXT,
     spread_price_book_count INTEGER,
-    min_current_season_games INTEGER
+    min_current_season_games INTEGER,
+    low_sample_team TEXT,
+    low_sample_team_games INTEGER
 );
 """
 
@@ -294,6 +296,7 @@ def init_db() -> None:
             "moneyline_pick": "TEXT", "moneyline_win_prob": "REAL", "moneyline_confidence_tier": "TEXT",
             "spread_price": "INTEGER", "spread_price_source": "TEXT", "spread_price_book_count": "INTEGER",
             "min_current_season_games": "INTEGER",
+            "low_sample_team": "TEXT", "low_sample_team_games": "INTEGER",
         }
         for col, sqltype in new_pred_cols.items():
             if col not in existing_pred_cols:

@@ -124,6 +124,28 @@ def count_current_season_games(completed: list[dict], year: int) -> dict:
     return counts
 
 
+# Measured directly against the real distribution before picking this (2026-08-31): real FBS
+# programs cluster tightly around 72-78 total tracked games over the 5-season backfill; no
+# non-FBS team ever reaches 20. Below 20 is either a genuine crossover opponent -- backfill.py
+# only pulls games involving at least one FBS team, so an FCS/small-conference team like
+# Bethune-Cookman only ever shows up in its rare "buy games" against FBS programs (confirmed:
+# 10 games tracked in 6 years, all losses by lopsided margins by design) -- or a team that only
+# recently reclassified into FBS (North Dakota State: 14 games; Sacramento State: 18). Either
+# way, "recent form" stats built from that team's tracked games are a small, likely
+# unrepresentative sample, not a normal trailing window.
+LOW_SAMPLE_GAME_THRESHOLD = 20
+
+
+def count_all_time_games(completed: list[dict]) -> dict:
+    """Returns {team: total completed games ever tracked in our database}, any year --
+    deliberately not season-scoped, this measures database coverage, not recent form."""
+    counts: dict[str, int] = {}
+    for g in completed:
+        counts[g["home_team"]] = counts.get(g["home_team"], 0) + 1
+        counts[g["away_team"]] = counts.get(g["away_team"], 0) + 1
+    return counts
+
+
 def load_all_games(conn) -> list[dict]:
     rows = conn.execute("""
         SELECT id, year, week, season_type, start_date, neutral_site,
@@ -157,6 +179,7 @@ def main():
 
     current_year = max(g["year"] for g in targets)
     games_played_this_season = count_current_season_games(completed, current_year)
+    all_time_games_played = count_all_time_games(completed)
 
     print("Computing current ELO...")
     current_elo = compute_current_elo(completed)
@@ -205,10 +228,18 @@ def main():
 
         h2h_f = h2h.get(g["id"], {})
 
+        home_all_time_games = all_time_games_played.get(home, 0)
+        away_all_time_games = all_time_games_played.get(away, 0)
+        low_sample_team, low_sample_team_games = (
+            (home, home_all_time_games) if home_all_time_games <= away_all_time_games
+            else (away, away_all_time_games)
+        )
+
         record = {
             "game_id": g["id"], "home_id": g["home_id"], "away_id": g["away_id"],
             "min_current_season_games": min(games_played_this_season.get(home, 0),
                                              games_played_this_season.get(away, 0)),
+            "low_sample_team": low_sample_team, "low_sample_team_games": low_sample_team_games,
             "home_team": home, "away_team": away,
             "elo_home": elo_home, "elo_away": elo_away, "elo_diff": elo_home - elo_away,
             "elo_expected_home": elo_expected_home,
@@ -311,6 +342,19 @@ def main():
 
         contribs = get_shap_contributions(bundle["regressor"], X.iloc[[i]], FEATURE_COLUMNS)
         highlights = build_feature_highlights(row.to_dict(), contribs, row["home_team"], row["away_team"])
+
+        # Not a SHAP-ranked feature -- a database-coverage fact appended unconditionally when it
+        # applies, tied directly to the edge since that's the actual question it answers ("why is
+        # the model so far from the market here").
+        if edge is not None and row["low_sample_team_games"] < LOW_SAMPLE_GAME_THRESHOLD:
+            highlights.append(
+                f"{row['low_sample_team']} has only {int(row['low_sample_team_games'])} tracked "
+                f"games in our database (a recent FBS entrant, or a rarely-tracked crossover "
+                f"opponent -- our data only covers games involving an FBS team) -- its recent-form "
+                f"stats are a small, possibly unrepresentative sample, likely contributing to the "
+                f"{abs(edge):.1f}-point gap between the model's margin and the market's line."
+            )
+
         print("\nTop factors:")
         for h in highlights:
             print(f"  - {h}")
@@ -327,8 +371,9 @@ def main():
                 predicted_margin, win_prob_home, market_spread, pick_team, edge, confidence_tier,
                 highlights_json, model_breakdown_json, cover_probability, kelly_fraction,
                 moneyline_pick, moneyline_win_prob, moneyline_confidence_tier,
-                spread_price, spread_price_source, spread_price_book_count, min_current_season_games)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                spread_price, spread_price_source, spread_price_book_count, min_current_season_games,
+                low_sample_team, low_sample_team_games)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                ON CONFLICT(game_id) DO UPDATE SET
                    predicted_at=excluded.predicted_at, year=excluded.year, week=excluded.week,
                    season_type=excluded.season_type, start_date=excluded.start_date,
@@ -342,7 +387,9 @@ def main():
                    moneyline_confidence_tier=excluded.moneyline_confidence_tier,
                    spread_price=excluded.spread_price, spread_price_source=excluded.spread_price_source,
                    spread_price_book_count=excluded.spread_price_book_count,
-                   min_current_season_games=excluded.min_current_season_games""",
+                   min_current_season_games=excluded.min_current_season_games,
+                   low_sample_team=excluded.low_sample_team,
+                   low_sample_team_games=excluded.low_sample_team_games""",
             (
                 int(row["game_id"]), predicted_at, g["year"], g["week"], g["season_type"], g["start_date"],
                 row["home_team"], row["away_team"], float(margins[i]), float(win_probs[i]),
@@ -352,6 +399,7 @@ def main():
                 moneyline_pick, moneyline_win_prob, ml_tier,
                 spread_price, spread_price_source, spread_price_book_count,
                 int(row["min_current_season_games"]),
+                row["low_sample_team"], int(row["low_sample_team_games"]),
             ),
         )
     conn.commit()
