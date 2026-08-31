@@ -7,10 +7,13 @@ import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.db import get_connection, init_db
+
+EASTERN = ZoneInfo("America/New_York")  # handles EDT/EST correctly across the DST transition
 
 OUTPUT_PATH = Path(__file__).resolve().parent.parent / "docs" / "index.html"
 
@@ -135,8 +138,8 @@ def fetch_summary(conn) -> dict:
 
 
 def fmt_kickoff(iso_str: str) -> str:
-    dt = datetime.fromisoformat(iso_str.replace("Z", "+00:00"))
-    return dt.strftime("%a %b %-d, %-I:%M %p UTC")
+    dt = datetime.fromisoformat(iso_str.replace("Z", "+00:00")).astimezone(EASTERN)
+    return dt.strftime(f"%a %b %-d, %-I:%M %p {dt.tzname()}")
 
 
 def tier_badge(tier: str | None) -> str:
@@ -362,6 +365,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .weekly-table th {{ color: var(--text-dim); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; border-bottom: 1px solid var(--border); }}
   .weekly-table tbody tr:not(:last-child) td {{ border-bottom: 1px solid var(--border); }}
   footer {{ margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.78rem; line-height: 1.5; }}
+  footer .footnote {{ font-size: 0.72rem; opacity: 0.8; }}
 </style>
 </head>
 <body>
@@ -403,10 +407,11 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
     $500 starting bankroll that compounds through settled picks. Cover probability treats the margin
     model's prediction error as normally distributed around its point estimate, using its own measured
     RMSE on the 2025 holdout. The spread pick's price is the real median price across sportsbooks when
-    a recent odds pull has one for that side; a price marked with an asterisk (*) is the standard -110
-    assumption instead, used when no per-book pricing was available for that game (too far out for the
-    ~2-week odds board, or a name-matching miss) -- a stated simplification, not a measured value in
-    that case. Nothing here is real money or a recommendation to place a real bet.</p>
+    a recent odds pull has one for that side.* Nothing here is real money or a recommendation to place
+    a real bet.</p>
+    <p class="footnote">* No per-book pricing was available for this game (too far out for the ~2-week
+    odds board, or a name-matching miss) -- falls back to the standard -110-both-sides assumption
+    instead of a measured value.</p>
     <p>Generated {generated_at}.</p>
   </footer>
 </div>
