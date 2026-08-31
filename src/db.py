@@ -221,20 +221,38 @@ CREATE TABLE IF NOT EXISTS predictions (
     bullets_json TEXT,
     model_breakdown_json TEXT,
     cover_probability REAL,
-    kelly_fraction REAL
+    kelly_fraction REAL,
+    moneyline_pick TEXT,
+    moneyline_win_prob REAL,
+    moneyline_confidence_tier TEXT
 );
+"""
 
+# Separate from SCHEMA and always dropped + recreated in init_db() (not IF NOT EXISTS) --
+# a view's definition needs to track predictions' current columns, and a bare
+# "CREATE VIEW IF NOT EXISTS" would silently keep an old view's stale column list forever
+# once it exists once, exactly the bug hit adding moneyline_pick_won.
+VIEW_SCHEMA = """
 -- Always-live join of predictions against actual results, for both the site's
 -- results section and deciding when enough new completed games have
 -- accumulated to be worth a retrain (task: periodic model refresh).
-CREATE VIEW IF NOT EXISTS prediction_results AS
+CREATE VIEW prediction_results AS
 SELECT
     p.*,
     g.home_points, g.away_points,
     (g.home_points - g.away_points) AS actual_margin,
     CASE WHEN g.home_points > g.away_points THEN p.home_team ELSE p.away_team END AS actual_winner,
+    -- Whether the SPREAD pick also happened to win outright -- NOT the moneyline record.
+    -- An ATS pick is routinely the underdog taking points, so it's expected to lose this
+    -- often even when working exactly as intended. Kept for diagnostics; the site's
+    -- "Straight-Up" stat uses moneyline_pick_won below instead.
     CASE WHEN p.pick_team = (CASE WHEN g.home_points > g.away_points THEN p.home_team ELSE p.away_team END)
-         THEN 1 ELSE 0 END AS pick_won_straight_up,
+         THEN 1 ELSE 0 END AS ats_pick_won_straight_up,
+    -- The actual moneyline record: did the dedicated moneyline_pick (whichever side the
+    -- model gives >50% win probability) win outright?
+    CASE WHEN p.moneyline_pick IS NULL THEN NULL
+         WHEN p.moneyline_pick = (CASE WHEN g.home_points > g.away_points THEN p.home_team ELSE p.away_team END)
+         THEN 1 ELSE 0 END AS moneyline_pick_won,
     CASE
         WHEN p.pick_team IS NULL OR p.market_spread IS NULL THEN NULL
         WHEN (g.home_points - g.away_points) + p.market_spread = 0 THEN NULL  -- push
@@ -267,10 +285,17 @@ def init_db() -> None:
         if "espn_id" not in existing_team_cols:
             conn.execute("ALTER TABLE teams ADD COLUMN espn_id TEXT")
         existing_pred_cols = {row[1] for row in conn.execute("PRAGMA table_info(predictions)")}
-        for col in ("model_breakdown_json", "cover_probability", "kelly_fraction"):
+        new_pred_cols = {
+            "model_breakdown_json": "TEXT", "cover_probability": "REAL", "kelly_fraction": "REAL",
+            "moneyline_pick": "TEXT", "moneyline_win_prob": "REAL", "moneyline_confidence_tier": "TEXT",
+        }
+        for col, sqltype in new_pred_cols.items():
             if col not in existing_pred_cols:
-                conn.execute(f"ALTER TABLE predictions ADD COLUMN {col} "
-                             f"{'TEXT' if col.endswith('_json') else 'REAL'}")
+                conn.execute(f"ALTER TABLE predictions ADD COLUMN {col} {sqltype}")
+        # Must run after the ALTER TABLE migrations above -- the view references columns
+        # (e.g. moneyline_pick) that may have just been added to an existing DB.
+        conn.execute("DROP VIEW IF EXISTS prediction_results")
+        conn.executescript(VIEW_SCHEMA)
         conn.commit()
     finally:
         conn.close()

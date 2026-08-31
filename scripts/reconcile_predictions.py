@@ -23,8 +23,8 @@ def main():
 
     rows = conn.execute("""
         SELECT year, week, home_team, away_team, predicted_margin, actual_margin,
-               win_prob_home, actual_winner, pick_team, pick_won_straight_up, pick_covered,
-               margin_error, confidence_tier
+               win_prob_home, actual_winner, pick_team, pick_covered,
+               moneyline_pick, moneyline_pick_won, margin_error, confidence_tier
         FROM prediction_results ORDER BY year, week, start_date
     """).fetchall()
 
@@ -32,20 +32,23 @@ def main():
         print("No completed games among current predictions yet.")
         return
 
-    print(f"{'Matchup':<38} {'Predicted':>10} {'Actual':>8} {'Pick':<16} {'SU':^4} {'ATS':^5}")
+    # Moneyline (who wins outright) and spread (who covers) are tracked as two separate
+    # picks -- often different teams, since a spread pick can be a big underdog expected
+    # to lose straight-up while still covering.
+    print(f"{'Matchup':<38} {'Predicted':>10} {'Actual':>8} {'Spread Pick':<16} {'ML':^4} {'ATS':^5}")
     print("-" * 90)
-    straight_up_wins = straight_up_total = 0
+    ml_wins = ml_total = 0
     ats_wins = ats_losses = ats_pushes = 0
     errors = []
     for r in rows:
         (year, week, home, away, pred_margin, actual_margin, win_prob, actual_winner,
-         pick, won_su, covered, margin_error, tier) = r
+         pick, covered, ml_pick, ml_won, margin_error, tier) = r
         matchup = f"{away} @ {home}"
-        su_mark = "-"
-        if won_su is not None:
-            straight_up_total += 1
-            straight_up_wins += won_su
-            su_mark = "W" if won_su else "L"
+        ml_mark = "-"
+        if ml_won is not None:
+            ml_total += 1
+            ml_wins += ml_won
+            ml_mark = "W" if ml_won else "L"
         ats_mark = "-"
         if covered is not None:
             ats_mark = "W" if covered else "L"
@@ -56,11 +59,11 @@ def main():
             ats_pushes += 1
         errors.append(margin_error)
         print(f"{matchup:<38} {pred_margin:>+9.1f} {actual_margin:>+7.0f}  "
-              f"{(pick or '-'):<16} {su_mark:^4} {ats_mark:^5}")
+              f"{(pick or '-'):<16} {ml_mark:^4} {ats_mark:^5}")
 
     print("-" * 90)
-    print(f"Straight-up: {straight_up_wins}-{straight_up_total - straight_up_wins} "
-          f"({straight_up_wins/straight_up_total:.0%})" if straight_up_total else "Straight-up: n/a")
+    print(f"Moneyline (straight-up): {ml_wins}-{ml_total - ml_wins} "
+          f"({ml_wins/ml_total:.0%})" if ml_total else "Moneyline (straight-up): n/a")
     print(f"Against the spread: {ats_wins}-{ats_losses}-{ats_pushes}"
           + (f" ({ats_wins/(ats_wins+ats_losses):.0%})" if (ats_wins + ats_losses) else ""))
     print(f"Avg margin error: {sum(errors)/len(errors):.1f} points ({len(errors)} games)")

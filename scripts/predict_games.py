@@ -47,6 +47,21 @@ def confidence_tier(edge: float | None) -> str | None:
     return "low"
 
 
+# Same "not statistically calibrated, first-pass" caveat as confidence_tier above, but on
+# a separate scale: win probability and point-edge aren't on the same footing (a small
+# favorite can carry a big point edge on the spread while still being close to a coin
+# flip to win outright), so the moneyline pick needs its own tiering, not confidence_tier's
+# edge-based thresholds reused.
+def moneyline_confidence_tier(win_prob_picked_side: float | None) -> str | None:
+    if win_prob_picked_side is None:
+        return None
+    if win_prob_picked_side >= 0.75:
+        return "high"
+    if win_prob_picked_side >= 0.60:
+        return "medium"
+    return "low"
+
+
 KELLY_FRACTION_CAP = 0.25  # 25% fractional Kelly, matches the NBA reference model's own cap
 # We don't have per-book spread juice data (CFBD's /lines gives the spread number, not its
 # price), so this assumes the standard -110 both sides rather than a measured value -- a real
@@ -225,6 +240,11 @@ def main():
         for name, probs in detailed["base"].items():
             print(f"  {name}: {probs[i]:.0%}")
 
+        moneyline_pick = row["home_team"] if win_probs[i] > 0.5 else row["away_team"]
+        moneyline_win_prob = float(win_probs[i] if moneyline_pick == row["home_team"] else 1 - win_probs[i])
+        ml_tier = moneyline_confidence_tier(moneyline_win_prob)
+        print(f"Moneyline pick: {moneyline_pick} ({moneyline_win_prob:.0%} win prob, {ml_tier} confidence)")
+
         edge, pick_team = None, None
         cover_prob, kelly = None, None
         if pd.notna(row["market_spread"]):
@@ -254,8 +274,9 @@ def main():
             """INSERT INTO predictions
                (game_id, predicted_at, year, week, season_type, start_date, home_team, away_team,
                 predicted_margin, win_prob_home, market_spread, pick_team, edge, confidence_tier,
-                highlights_json, model_breakdown_json, cover_probability, kelly_fraction)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                highlights_json, model_breakdown_json, cover_probability, kelly_fraction,
+                moneyline_pick, moneyline_win_prob, moneyline_confidence_tier)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                ON CONFLICT(game_id) DO UPDATE SET
                    predicted_at=excluded.predicted_at, year=excluded.year, week=excluded.week,
                    season_type=excluded.season_type, start_date=excluded.start_date,
@@ -264,13 +285,16 @@ def main():
                    market_spread=excluded.market_spread, pick_team=excluded.pick_team,
                    edge=excluded.edge, confidence_tier=excluded.confidence_tier,
                    highlights_json=excluded.highlights_json, model_breakdown_json=excluded.model_breakdown_json,
-                   cover_probability=excluded.cover_probability, kelly_fraction=excluded.kelly_fraction""",
+                   cover_probability=excluded.cover_probability, kelly_fraction=excluded.kelly_fraction,
+                   moneyline_pick=excluded.moneyline_pick, moneyline_win_prob=excluded.moneyline_win_prob,
+                   moneyline_confidence_tier=excluded.moneyline_confidence_tier""",
             (
                 int(row["game_id"]), predicted_at, g["year"], g["week"], g["season_type"], g["start_date"],
                 row["home_team"], row["away_team"], float(margins[i]), float(win_probs[i]),
                 float(row["market_spread"]) if pd.notna(row["market_spread"]) else None,
                 pick_team, edge, confidence_tier(edge), json.dumps(highlights),
                 json.dumps(model_breakdown), cover_prob, kelly,
+                moneyline_pick, moneyline_win_prob, ml_tier,
             ),
         )
     conn.commit()

@@ -36,7 +36,8 @@ def fetch_upcoming(conn) -> list[dict]:
         SELECT p.game_id, p.year, p.week, p.start_date, p.home_team, p.away_team,
                p.predicted_margin, p.win_prob_home, p.market_spread, p.pick_team,
                p.edge, p.confidence_tier, p.highlights_json, p.tldr, p.bullets_json,
-               p.model_breakdown_json, p.cover_probability, p.kelly_fraction
+               p.model_breakdown_json, p.cover_probability, p.kelly_fraction,
+               p.moneyline_pick, p.moneyline_win_prob, p.moneyline_confidence_tier
         FROM predictions p
         JOIN games g ON p.game_id = g.id
         WHERE g.home_points IS NULL
@@ -45,7 +46,8 @@ def fetch_upcoming(conn) -> list[dict]:
     cols = ["game_id", "year", "week", "start_date", "home_team", "away_team",
             "predicted_margin", "win_prob_home", "market_spread", "pick_team",
             "edge", "confidence_tier", "highlights_json", "tldr", "bullets_json",
-            "model_breakdown_json", "cover_probability", "kelly_fraction"]
+            "model_breakdown_json", "cover_probability", "kelly_fraction",
+            "moneyline_pick", "moneyline_win_prob", "moneyline_confidence_tier"]
     return [dict(zip(cols, r)) for r in rows]
 
 
@@ -54,13 +56,35 @@ def fetch_results(conn) -> list[dict]:
         SELECT game_id, year, week, start_date, home_team, away_team, predicted_margin,
                win_prob_home, market_spread, actual_margin, home_points, away_points, pick_team,
                edge, confidence_tier, highlights_json, tldr, bullets_json,
-               pick_won_straight_up, pick_covered, model_breakdown_json, cover_probability, kelly_fraction
+               ats_pick_won_straight_up, pick_covered, model_breakdown_json, cover_probability, kelly_fraction,
+               moneyline_pick, moneyline_win_prob, moneyline_confidence_tier, moneyline_pick_won
         FROM prediction_results ORDER BY start_date DESC
     """).fetchall()
     cols = ["game_id", "year", "week", "start_date", "home_team", "away_team", "predicted_margin",
             "win_prob_home", "market_spread", "actual_margin", "home_points", "away_points", "pick_team",
             "edge", "confidence_tier", "highlights_json", "tldr", "bullets_json",
-            "pick_won_straight_up", "pick_covered", "model_breakdown_json", "cover_probability", "kelly_fraction"]
+            "ats_pick_won_straight_up", "pick_covered", "model_breakdown_json", "cover_probability", "kelly_fraction",
+            "moneyline_pick", "moneyline_win_prob", "moneyline_confidence_tier", "moneyline_pick_won"]
+    return [dict(zip(cols, r)) for r in rows]
+
+
+def fetch_weekly_performance(conn) -> list[dict]:
+    """One row per (year, week) with that week's moneyline and ATS record --
+    lets the season-long summary tiles be checked against week-by-week form
+    instead of only a single cumulative number."""
+    rows = conn.execute("""
+        SELECT year, week, COUNT(*),
+               SUM(CASE WHEN moneyline_pick_won = 1 THEN 1 ELSE 0 END),
+               SUM(CASE WHEN moneyline_pick IS NOT NULL THEN 1 ELSE 0 END),
+               SUM(CASE WHEN pick_covered = 1 THEN 1 ELSE 0 END),
+               SUM(CASE WHEN pick_covered = 0 THEN 1 ELSE 0 END),
+               SUM(CASE WHEN pick_covered IS NULL AND pick_team IS NOT NULL THEN 1 ELSE 0 END),
+               AVG(ABS(predicted_margin - actual_margin))
+        FROM prediction_results
+        GROUP BY year, week
+        ORDER BY year DESC, week DESC
+    """).fetchall()
+    cols = ["year", "week", "n", "ml_wins", "ml_decided", "ats_wins", "ats_losses", "ats_pushes", "avg_err"]
     return [dict(zip(cols, r)) for r in rows]
 
 
@@ -85,16 +109,18 @@ def compute_current_bankroll(conn) -> float:
 def fetch_summary(conn) -> dict:
     row = conn.execute("""
         SELECT COUNT(*),
-               SUM(pick_won_straight_up),
+               SUM(CASE WHEN moneyline_pick_won = 1 THEN 1 ELSE 0 END),
+               SUM(CASE WHEN moneyline_pick IS NOT NULL THEN 1 ELSE 0 END),
                SUM(CASE WHEN pick_covered = 1 THEN 1 ELSE 0 END),
                SUM(CASE WHEN pick_covered = 0 THEN 1 ELSE 0 END),
                SUM(CASE WHEN pick_covered IS NULL AND pick_team IS NOT NULL THEN 1 ELSE 0 END),
                AVG(ABS(predicted_margin - actual_margin))
         FROM prediction_results
     """).fetchone()
-    n, su_wins, ats_wins, ats_losses, ats_pushes, avg_err = row
+    n, ml_wins, ml_decided, ats_wins, ats_losses, ats_pushes, avg_err = row
+    ml_decided = ml_decided or 0
     return {
-        "n": n or 0, "su_wins": su_wins or 0, "su_losses": (n or 0) - (su_wins or 0),
+        "n": n or 0, "ml_wins": ml_wins or 0, "ml_losses": ml_decided - (ml_wins or 0), "ml_decided": ml_decided,
         "ats_wins": ats_wins or 0, "ats_losses": ats_losses or 0, "ats_pushes": ats_pushes or 0,
         "avg_err": avg_err,
     }
@@ -147,7 +173,13 @@ def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None
         fav = p["home_team"] if p["market_spread"] < 0 else p["away_team"]
         market_line = f"{fav} by {abs(p['market_spread']):.1f}"
 
-    pick_html = f'<div class="pick-line">Pick: <strong>{p["pick_team"]}</strong> {tier_badge(p["confidence_tier"])}</div>' if p.get("pick_team") else ""
+    ml_html = ""
+    if p.get("moneyline_pick"):
+        ml_html = (
+            f'<div class="pick-line">Moneyline pick: <strong>{p["moneyline_pick"]}</strong> '
+            f'({p["moneyline_win_prob"]:.0%} win prob) {tier_badge(p["moneyline_confidence_tier"])}</div>'
+        )
+    pick_html = f'<div class="pick-line">Spread pick: <strong>{p["pick_team"]}</strong> {tier_badge(p["confidence_tier"])}</div>' if p.get("pick_team") else ""
     wager_html = render_wager_line(p, bankroll)
     model_breakdown_html = render_model_breakdown(p.get("model_breakdown_json"))
 
@@ -156,11 +188,12 @@ def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None
 
     result_html = ""
     if result:
-        su = "correct" if result["pick_won_straight_up"] else "incorrect"
+        ml_result = {1: "correct", 0: "incorrect"}.get(result["moneyline_pick_won"], "n/a")
         cover = {1: "covered", 0: "did not cover", None: "push"}[result["pick_covered"]]
         result_html = (
             f'<div class="result-line">Final: {result["home_team"]} {result["home_points"]:.0f} - '
-            f'{result["away_points"]:.0f} {result["away_team"]} &mdash; pick was {su} straight-up, {cover} the spread</div>'
+            f'{result["away_points"]:.0f} {result["away_team"]} &mdash; moneyline pick was {ml_result}, '
+            f'spread pick {cover} the spread</div>'
         )
 
     return f"""
@@ -168,6 +201,7 @@ def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None
       <div class="matchup">{p["away_team"]} @ {p["home_team"]}</div>
       <div class="kickoff">{fmt_kickoff(p["start_date"])}</div>
       <div class="prediction-line">Model: {p["home_team"]} by {p["predicted_margin"]:+.1f} ({p["win_prob_home"]:.0%} win prob) &middot; Market: {market_line}</div>
+      {ml_html}
       {pick_html}
       {wager_html}
       {f'<div class="tldr">{tldr}</div>' if tldr else ""}
@@ -181,17 +215,37 @@ def render_stat_tile(label: str, value: str) -> str:
     return f'<div class="stat-tile"><div class="stat-value">{value}</div><div class="stat-label">{label}</div></div>'
 
 
-def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankroll: float) -> str:
+def render_weekly_table(weekly: list[dict]) -> str:
+    if not weekly:
+        return '<p class="empty">No completed weeks tracked yet.</p>'
+    rows_html = ""
+    for w in weekly:
+        ml_pct = f"{w['ml_wins']}-{w['ml_decided'] - w['ml_wins']} ({w['ml_wins']/w['ml_decided']:.0%})" if w["ml_decided"] else "n/a"
+        ats_pct = f"{w['ats_wins']}-{w['ats_losses']}-{w['ats_pushes']}"
+        avg_err = f"{w['avg_err']:.1f}" if w["avg_err"] is not None else "n/a"
+        season_type_label = "Postseason" if w.get("week") is None else f"Week {w['week']}"
+        rows_html += (
+            f"<tr><td>{w['year']} {season_type_label}</td><td>{w['n']}</td>"
+            f"<td>{ml_pct}</td><td>{ats_pct}</td><td>{avg_err} pts</td></tr>"
+        )
+    return f"""<div class="table-wrap"><table class="weekly-table">
+      <thead><tr><th>Week</th><th>Games</th><th>Moneyline</th><th>ATS</th><th>Avg. Error</th></tr></thead>
+      <tbody>{rows_html}</tbody>
+    </table></div>"""
+
+
+def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankroll: float,
+                weekly: list[dict]) -> str:
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
-    su_pct = f"{summary['su_wins']}/{summary['n']}" if summary["n"] else "0/0"
+    ml_pct = f"{summary['ml_wins']}/{summary['ml_decided']}" if summary["ml_decided"] else "0/0"
     ats_pct = (f"{summary['ats_wins']}-{summary['ats_losses']}-{summary['ats_pushes']}"
                if summary["n"] else "0-0-0")
     avg_err = f"{summary['avg_err']:.1f} pts" if summary["avg_err"] is not None else "n/a"
 
     stat_tiles = "".join([
         render_stat_tile("Picks Tracked", str(summary["n"])),
-        render_stat_tile("Straight-Up", su_pct),
+        render_stat_tile("Moneyline (Straight-Up)", ml_pct),
         render_stat_tile("Against the Spread", ats_pct),
         render_stat_tile("Avg. Margin Error", avg_err),
         render_stat_tile("Paper Bankroll", f"${bankroll:.2f}"),
@@ -199,6 +253,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
 
     upcoming_html = "".join(render_pick_card(p, bankroll=bankroll) for p in upcoming) or '<p class="empty">No upcoming games with picks right now.</p>'
     results_html = "".join(render_pick_card(r, result=r) for r in results) or '<p class="empty">No completed games yet.</p>'
+    weekly_html = render_weekly_table(weekly)
 
     return f"""<!doctype html>
 <html lang="en">
@@ -230,7 +285,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .kickoff {{ color: var(--text-dim); font-size: 0.8rem; margin-bottom: 0.6rem; }}
   .prediction-line {{ font-size: 0.9rem; margin-bottom: 0.4rem; }}
   .pick-line {{ font-size: 0.9rem; margin-bottom: 0.6rem; }}
-  .tier {{ font-size: 0.7rem; padding: 0.1rem 0.5rem; border-radius: 999px; margin-left: 0.4rem; }}
+  .tier {{ font-size: 0.7rem; padding: 0.1rem 0.5rem; border-radius: 999px; margin-left: 0.4rem; white-space: nowrap; display: inline-block; }}
   .tier-high {{ background: rgba(61,220,132,0.15); color: var(--green); }}
   .tier-medium {{ background: rgba(255,184,79,0.15); color: var(--amber); }}
   .tier-low {{ background: rgba(154,161,172,0.15); color: var(--text-dim); }}
@@ -243,6 +298,11 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .model-row {{ display: flex; justify-content: space-between; padding: 0.2rem 0 0.2rem 1rem; }}
   .result-line {{ margin-top: 0.7rem; padding-top: 0.6rem; border-top: 1px solid var(--border); font-size: 0.85rem; }}
   .empty {{ color: var(--text-dim); font-size: 0.9rem; }}
+  .table-wrap {{ overflow-x: auto; margin-bottom: 1rem; }}
+  .weekly-table {{ width: 100%; border-collapse: collapse; font-size: 0.85rem; background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }}
+  .weekly-table th, .weekly-table td {{ padding: 0.6rem 0.9rem; text-align: left; white-space: nowrap; }}
+  .weekly-table th {{ color: var(--text-dim); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; border-bottom: 1px solid var(--border); }}
+  .weekly-table tbody tr:not(:last-child) td {{ border-bottom: 1px solid var(--border); }}
   footer {{ margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.78rem; line-height: 1.5; }}
 </style>
 </head>
@@ -258,6 +318,9 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   <h2>This Week's Picks</h2>
   {upcoming_html}
 
+  <h2>Weekly Performance</h2>
+  {weekly_html}
+
   <h2>Recent Results</h2>
   {results_html}
 
@@ -269,9 +332,14 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
     Trained on 2021-2024 FBS seasons, held out all of 2025 for evaluation (75.5% straight-up accuracy,
     appropriately trailing the market's own 76.8% -- landing behind the market, not matching or beating it,
     is the healthy sign of a real model rather than a leakage bug).</p>
-    <p>Market spread is deliberately excluded from model training and used only to compute the edge shown
-    here. Confidence tiers are based on |edge| in points and are not statistically calibrated yet --
-    treat them as a rough first pass, not a validated signal.</p>
+    <p>Two separate picks are shown per game: a <strong>moneyline pick</strong> (whichever team the model
+    gives &gt;50% win probability -- who wins outright, no spread) and a <strong>spread pick</strong> (which
+    side has value against the market line). These are often different teams, deliberately -- a big
+    underdog can be the correct spread pick (expected to lose, just by less than the market thinks) while
+    still being the wrong moneyline pick. Market spread is deliberately excluded from model training and
+    used only to compute the spread pick's edge. Both confidence tiers are first-pass, not statistically
+    calibrated: spread tiers are based on |edge| in points, moneyline tiers on the picked side's win
+    probability (&ge;75% high, &ge;60% medium, below that low).</p>
     <p>Recommended wager is a paper amount only, sized with 25% fractional Kelly against a running
     $500 starting bankroll that compounds through settled picks. Cover probability treats the margin
     model's prediction error as normally distributed around its point estimate, using its own measured
@@ -292,10 +360,12 @@ def main():
     results = fetch_results(conn)
     summary = fetch_summary(conn)
     bankroll = compute_current_bankroll(conn)
+    weekly = fetch_weekly_performance(conn)
 
     OUTPUT_PATH.parent.mkdir(exist_ok=True)
-    OUTPUT_PATH.write_text(build_html(upcoming, results, summary, bankroll))
-    print(f"Wrote {OUTPUT_PATH} ({len(upcoming)} upcoming, {len(results)} completed, bankroll ${bankroll:.2f})")
+    OUTPUT_PATH.write_text(build_html(upcoming, results, summary, bankroll, weekly))
+    print(f"Wrote {OUTPUT_PATH} ({len(upcoming)} upcoming, {len(results)} completed, "
+          f"{len(weekly)} week(s) tracked, bankroll ${bankroll:.2f})")
 
 
 if __name__ == "__main__":
