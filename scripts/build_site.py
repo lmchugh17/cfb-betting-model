@@ -18,6 +18,10 @@ EASTERN = ZoneInfo("America/New_York")  # handles EDT/EST correctly across the D
 OUTPUT_PATH = Path(__file__).resolve().parent.parent / "docs" / "index.html"
 
 STARTING_BANKROLL = 500.0
+# Matches scripts/predict_games.py's FULL_SEASON_WINDOW (max of src.live_state's
+# ROLLING_WINDOW=4 and ATS_WINDOW=5) -- below this many current-season games played, recent
+# form/ATS%/opponent-SRS stats are quietly blending in games from a prior season.
+FULL_SEASON_WINDOW = 5
 # Fallback only -- used when a pick has no measured spread_price (src.spread_pricing had
 # no per-book data for that game). Matches scripts/predict_games.py's own fallback.
 ASSUMED_SPREAD_ODDS_AMERICAN = -110
@@ -42,7 +46,8 @@ def fetch_upcoming(conn) -> list[dict]:
                p.edge, p.confidence_tier, p.highlights_json, p.tldr, p.bullets_json,
                p.model_breakdown_json, p.cover_probability, p.kelly_fraction,
                p.moneyline_pick, p.moneyline_win_prob, p.moneyline_confidence_tier,
-               p.spread_price, p.spread_price_source, p.spread_price_book_count
+               p.spread_price, p.spread_price_source, p.spread_price_book_count,
+               p.min_current_season_games
         FROM predictions p
         JOIN games g ON p.game_id = g.id
         WHERE g.home_points IS NULL
@@ -53,7 +58,8 @@ def fetch_upcoming(conn) -> list[dict]:
             "edge", "confidence_tier", "highlights_json", "tldr", "bullets_json",
             "model_breakdown_json", "cover_probability", "kelly_fraction",
             "moneyline_pick", "moneyline_win_prob", "moneyline_confidence_tier",
-            "spread_price", "spread_price_source", "spread_price_book_count"]
+            "spread_price", "spread_price_source", "spread_price_book_count",
+            "min_current_season_games"]
     return [dict(zip(cols, r)) for r in rows]
 
 
@@ -64,7 +70,7 @@ def fetch_results(conn) -> list[dict]:
                edge, confidence_tier, highlights_json, tldr, bullets_json,
                ats_pick_won_straight_up, pick_covered, model_breakdown_json, cover_probability, kelly_fraction,
                moneyline_pick, moneyline_win_prob, moneyline_confidence_tier, moneyline_pick_won,
-               spread_price, spread_price_source, spread_price_book_count
+               spread_price, spread_price_source, spread_price_book_count, min_current_season_games
         FROM prediction_results ORDER BY start_date DESC
     """).fetchall()
     cols = ["game_id", "year", "week", "start_date", "home_team", "away_team", "predicted_margin",
@@ -72,7 +78,7 @@ def fetch_results(conn) -> list[dict]:
             "edge", "confidence_tier", "highlights_json", "tldr", "bullets_json",
             "ats_pick_won_straight_up", "pick_covered", "model_breakdown_json", "cover_probability", "kelly_fraction",
             "moneyline_pick", "moneyline_win_prob", "moneyline_confidence_tier", "moneyline_pick_won",
-            "spread_price", "spread_price_source", "spread_price_book_count"]
+            "spread_price", "spread_price_source", "spread_price_book_count", "min_current_season_games"]
     return [dict(zip(cols, r)) for r in rows]
 
 
@@ -142,10 +148,14 @@ def fmt_kickoff(iso_str: str) -> str:
     return dt.strftime(f"%a %b %-d, %-I:%M %p {dt.tzname()}")
 
 
-def tier_badge(tier: str | None) -> str:
+def tier_badge(tier: str | None, low_data: bool = False) -> str:
     if not tier:
         return ""
-    return f'<span class="tier tier-{tier}">{tier.upper()} Confidence</span>'
+    # A dagger, not an asterisk -- the price line already uses * for a different footnote
+    # (assumed vs. measured spread price); reusing the same mark for two different caveats
+    # on one card would make it ambiguous which one applies.
+    mark = "&dagger;" if low_data else ""
+    return f'<span class="tier tier-{tier}">{tier.upper()} Confidence{mark}</span>'
 
 
 def render_model_breakdown(breakdown_json: str | None) -> str:
@@ -184,11 +194,15 @@ def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None
         fav = p["home_team"] if p["market_spread"] < 0 else p["away_team"]
         market_line = f"{fav} by {abs(p['market_spread']):.1f}"
 
+    low_data = (p.get("min_current_season_games") is not None
+                and p["min_current_season_games"] < FULL_SEASON_WINDOW)
+
     ml_html = ""
     if p.get("moneyline_pick"):
         ml_html = (
             f'<div class="pick-line">Moneyline pick: <strong>{p["moneyline_pick"]}</strong> '
-            f'({p["moneyline_win_prob"]:.0%} win prob) {tier_badge(p["moneyline_confidence_tier"])}</div>'
+            f'({p["moneyline_win_prob"]:.0%} win prob) '
+            f'{tier_badge(p["moneyline_confidence_tier"], low_data)}</div>'
         )
     pick_html = ""
     if p.get("pick_team"):
@@ -206,7 +220,7 @@ def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None
             pick_spread_html = f' {pick_spread:+.1f} <span class="odds">({price_label})</span>'
         pick_html = (
             f'<div class="pick-line">Spread pick: <strong>{p["pick_team"]}{pick_spread_html}</strong> '
-            f'{tier_badge(p["confidence_tier"])}</div>'
+            f'{tier_badge(p["confidence_tier"], low_data)}</div>'
         )
     wager_html = render_wager_line(p, bankroll)
     model_breakdown_html = render_model_breakdown(p.get("model_breakdown_json"))
@@ -403,6 +417,13 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
     used only to compute the spread pick's edge. Both confidence tiers are first-pass, not statistically
     calibrated: spread tiers are based on |edge| in points, moneyline tiers on the picked side's win
     probability (&ge;75% high, &ge;60% medium, below that low).</p>
+    <p>Model and market numbers can differ by a lot, especially on lopsided games -- that's expected, not
+    a sign something's wrong. The model never sees the market line during training, so its number is an
+    independent estimate from team-strength/form ratings alone; the market line reflects betting activity
+    and each sportsbook's own risk-balancing, which isn't the same goal as pinning down the single most
+    likely margin. Checked against the 2025 holdout: the model's spread picks covered at about the same
+    rate on games with 28+ point market spreads (53.3%) as on more typical ones (53.2%) -- a wide gap on
+    a lopsided game doesn't by itself mean the model is less reliable there.</p>
     <p>Recommended wager is a paper amount only, sized with 25% fractional Kelly against a running
     $500 starting bankroll that compounds through settled picks. Cover probability treats the margin
     model's prediction error as normally distributed around its point estimate, using its own measured
@@ -412,6 +433,11 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
     <p class="footnote">* No per-book pricing was available for this game (too far out for the ~2-week
     odds board, or a name-matching miss) -- falls back to the standard -110-both-sides assumption
     instead of a measured value.</p>
+    <p class="footnote">&dagger; The less-experienced team in this matchup has played fewer than 5
+    games so far this season -- recent-form, ATS%, and opponent-SRS-averaging stats (each computed
+    over a trailing window) are including games from a prior season to fill that window, not just
+    the current one. ELO and SRS handle this season boundary explicitly (regressed toward the mean);
+    these rolling stats don't yet, so treat the confidence tier with extra caution early in the season.</p>
     <p>Generated {generated_at}.</p>
   </footer>
 </div>

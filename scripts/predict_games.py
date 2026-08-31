@@ -23,9 +23,10 @@ from src.box_score_features import add_derived_rate_stats, build_long_format
 from src.db import get_connection, init_db
 from src.elo import HOME_ADVANTAGE_ELO, CFBElo
 from src.explain import build_feature_highlights, get_shap_contributions
-from src.live_state import (compute_current_ats_pct, compute_current_elo,
-                             compute_current_opponent_srs, compute_current_rest_days,
-                             compute_current_rolling_form, compute_current_srs)
+from src.live_state import (ATS_WINDOW, ROLLING_WINDOW, compute_current_ats_pct,
+                             compute_current_elo, compute_current_opponent_srs,
+                             compute_current_rest_days, compute_current_rolling_form,
+                             compute_current_srs)
 from src.model import FEATURE_COLUMNS
 from src.spread_pricing import get_spread_price, load_latest_spread_prices
 from src.weather_features import (compute_current_adverse_wx_ats_pct, load_weather_by_game,
@@ -102,6 +103,27 @@ def cover_probability_and_kelly(edge: float | None, is_home_pick: bool, regresso
     return p_cover, kelly
 
 
+# The larger of the two rolling windows compute_current_rolling_form/compute_current_ats_pct
+# actually use (src.live_state) -- a team needs at least this many CURRENT-season games for
+# neither window to be quietly blending in games from a prior season. ELO and SRS already
+# handle the season boundary explicitly (regress toward the mean, see src.elo/opponent_adjustment);
+# rolling form, ATS%, and opponent-SRS averaging don't -- they just take the trailing N completed
+# games regardless of year, which is exactly last season's form at the start of a new one.
+FULL_SEASON_WINDOW = max(ROLLING_WINDOW, ATS_WINDOW)
+
+
+def count_current_season_games(completed: list[dict], year: int) -> dict:
+    """Returns {team: games played in `year` so far}, from the same `completed` list used
+    for every other current-state computation."""
+    counts: dict[str, int] = {}
+    for g in completed:
+        if g["year"] != year:
+            continue
+        counts[g["home_team"]] = counts.get(g["home_team"], 0) + 1
+        counts[g["away_team"]] = counts.get(g["away_team"], 0) + 1
+    return counts
+
+
 def load_all_games(conn) -> list[dict]:
     rows = conn.execute("""
         SELECT id, year, week, season_type, start_date, neutral_site,
@@ -134,6 +156,7 @@ def main():
     completed = [g for g in all_games if g["home_points"] is not None and g["id"] not in target_ids]
 
     current_year = max(g["year"] for g in targets)
+    games_played_this_season = count_current_season_games(completed, current_year)
 
     print("Computing current ELO...")
     current_elo = compute_current_elo(completed)
@@ -184,6 +207,8 @@ def main():
 
         record = {
             "game_id": g["id"], "home_id": g["home_id"], "away_id": g["away_id"],
+            "min_current_season_games": min(games_played_this_season.get(home, 0),
+                                             games_played_this_season.get(away, 0)),
             "home_team": home, "away_team": away,
             "elo_home": elo_home, "elo_away": elo_away, "elo_diff": elo_home - elo_away,
             "elo_expected_home": elo_expected_home,
@@ -246,6 +271,10 @@ def main():
         print(f"{row['away_team']} @ {row['home_team']}")
         print(f"{'=' * 70}")
         print(f"Predicted: {row['home_team']} by {margins[i]:+.1f} (home win prob {win_probs[i]:.0%})")
+        if row["min_current_season_games"] < FULL_SEASON_WINDOW:
+            print(f"NOTE: recent-form/ATS%/opponent-SRS stats include prior-season games -- "
+                  f"the less-experienced team has only played {row['min_current_season_games']} "
+                  f"game(s) so far this season (need {FULL_SEASON_WINDOW} for a fully current window).")
         print("Per-model win probability (home team):")
         for name, probs in detailed["base"].items():
             print(f"  {name}: {probs[i]:.0%}")
@@ -298,8 +327,8 @@ def main():
                 predicted_margin, win_prob_home, market_spread, pick_team, edge, confidence_tier,
                 highlights_json, model_breakdown_json, cover_probability, kelly_fraction,
                 moneyline_pick, moneyline_win_prob, moneyline_confidence_tier,
-                spread_price, spread_price_source, spread_price_book_count)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                spread_price, spread_price_source, spread_price_book_count, min_current_season_games)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                ON CONFLICT(game_id) DO UPDATE SET
                    predicted_at=excluded.predicted_at, year=excluded.year, week=excluded.week,
                    season_type=excluded.season_type, start_date=excluded.start_date,
@@ -312,7 +341,8 @@ def main():
                    moneyline_pick=excluded.moneyline_pick, moneyline_win_prob=excluded.moneyline_win_prob,
                    moneyline_confidence_tier=excluded.moneyline_confidence_tier,
                    spread_price=excluded.spread_price, spread_price_source=excluded.spread_price_source,
-                   spread_price_book_count=excluded.spread_price_book_count""",
+                   spread_price_book_count=excluded.spread_price_book_count,
+                   min_current_season_games=excluded.min_current_season_games""",
             (
                 int(row["game_id"]), predicted_at, g["year"], g["week"], g["season_type"], g["start_date"],
                 row["home_team"], row["away_team"], float(margins[i]), float(win_probs[i]),
@@ -321,6 +351,7 @@ def main():
                 json.dumps(model_breakdown), cover_prob, kelly,
                 moneyline_pick, moneyline_win_prob, ml_tier,
                 spread_price, spread_price_source, spread_price_book_count,
+                int(row["min_current_season_games"]),
             ),
         )
     conn.commit()
