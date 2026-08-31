@@ -171,7 +171,7 @@ def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None
     market_line = "no line"
     if p["market_spread"] is not None:
         fav = p["home_team"] if p["market_spread"] < 0 else p["away_team"]
-        market_line = f"{fav} by {abs(p['market_spread']):.1f}"
+        market_line = f"{fav} by +{abs(p['market_spread']):.1f}"
 
     ml_html = ""
     if p.get("moneyline_pick"):
@@ -179,7 +179,20 @@ def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None
             f'<div class="pick-line">Moneyline pick: <strong>{p["moneyline_pick"]}</strong> '
             f'({p["moneyline_win_prob"]:.0%} win prob) {tier_badge(p["moneyline_confidence_tier"])}</div>'
         )
-    pick_html = f'<div class="pick-line">Spread pick: <strong>{p["pick_team"]}</strong> {tier_badge(p["confidence_tier"])}</div>' if p.get("pick_team") else ""
+    pick_html = ""
+    if p.get("pick_team"):
+        # The pick's own spread, signed from ITS perspective (not always the home-signed
+        # market_spread) -- e.g. the underdog pick shows a positive number (points received),
+        # the favorite pick shows negative (points given). Odds shown are the standing
+        # -110-both-sides assumption (see ASSUMED_SPREAD_ODDS_AMERICAN), not a measured price.
+        pick_spread_html = ""
+        if p["market_spread"] is not None:
+            pick_spread = p["market_spread"] if p["pick_team"] == p["home_team"] else -p["market_spread"]
+            pick_spread_html = f' {pick_spread:+.1f} <span class="odds">({ASSUMED_SPREAD_ODDS_AMERICAN})</span>'
+        pick_html = (
+            f'<div class="pick-line">Spread pick: <strong>{p["pick_team"]}{pick_spread_html}</strong> '
+            f'{tier_badge(p["confidence_tier"])}</div>'
+        )
     wager_html = render_wager_line(p, bankroll)
     model_breakdown_html = render_model_breakdown(p.get("model_breakdown_json"))
 
@@ -234,6 +247,28 @@ def render_weekly_table(weekly: list[dict]) -> str:
     </table></div>"""
 
 
+def render_weekly_win_pct_chart(weekly: list[dict]) -> str:
+    """Moneyline win% per week as a simple CSS bar chart -- oldest week first (left to
+    right) so it reads as a trend, opposite of the table's newest-first order. Bar height
+    is win% of vertical space; a dashed line at the 50% mark gives a coin-flip reference."""
+    decided = [w for w in weekly if w["ml_decided"]]
+    if not decided:
+        return '<p class="empty">No completed weeks tracked yet.</p>'
+    bars_html = ""
+    for w in reversed(decided):  # weekly is newest-first; chart wants oldest-first
+        pct = w["ml_wins"] / w["ml_decided"]
+        label = "Postseason" if w.get("week") is None else f"Wk {w['week']}"
+        css_class = "above" if pct >= 0.5 else "below"
+        bars_html += (
+            '<div class="bar-col">'
+            f'<div class="bar-value">{pct:.0%}</div>'
+            f'<div class="bar-track"><div class="bar-fill {css_class}" style="height: {pct * 100:.1f}%"></div></div>'
+            f'<div class="bar-label">{w["year"]} {label}</div>'
+            "</div>"
+        )
+    return f'<div class="bar-chart"><div class="bar-ref-line"></div>{bars_html}</div>'
+
+
 def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankroll: float,
                 weekly: list[dict]) -> str:
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
@@ -254,6 +289,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
     upcoming_html = "".join(render_pick_card(p, bankroll=bankroll) for p in upcoming) or '<p class="empty">No upcoming games with picks right now.</p>'
     results_html = "".join(render_pick_card(r, result=r) for r in results) or '<p class="empty">No completed games yet.</p>'
     weekly_html = render_weekly_table(weekly)
+    weekly_bar_html = render_weekly_win_pct_chart(weekly)
 
     return f"""<!doctype html>
 <html lang="en">
@@ -285,6 +321,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .kickoff {{ color: var(--text-dim); font-size: 0.8rem; margin-bottom: 0.6rem; }}
   .prediction-line {{ font-size: 0.9rem; margin-bottom: 0.4rem; }}
   .pick-line {{ font-size: 0.9rem; margin-bottom: 0.6rem; }}
+  .odds {{ font-weight: 400; color: var(--text-dim); }}
   .tier {{ font-size: 0.7rem; padding: 0.1rem 0.5rem; border-radius: 999px; margin-left: 0.4rem; white-space: nowrap; display: inline-block; }}
   .tier-high {{ background: rgba(61,220,132,0.15); color: var(--green); }}
   .tier-medium {{ background: rgba(255,184,79,0.15); color: var(--amber); }}
@@ -298,6 +335,15 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .model-row {{ display: flex; justify-content: space-between; padding: 0.2rem 0 0.2rem 1rem; }}
   .result-line {{ margin-top: 0.7rem; padding-top: 0.6rem; border-top: 1px solid var(--border); font-size: 0.85rem; }}
   .empty {{ color: var(--text-dim); font-size: 0.9rem; }}
+  .bar-chart {{ position: relative; display: flex; align-items: flex-end; gap: 0.75rem; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1rem 1rem; margin-bottom: 1rem; overflow-x: auto; }}
+  .bar-ref-line {{ position: absolute; left: 1rem; right: 1rem; bottom: calc(1rem + 60px); border-top: 1px dashed var(--border); }}
+  .bar-col {{ display: flex; flex-direction: column; align-items: center; flex: 0 0 auto; width: 52px; }}
+  .bar-value {{ font-size: 0.72rem; color: var(--text-dim); margin-bottom: 0.3rem; }}
+  .bar-track {{ width: 32px; height: 120px; background: rgba(255,255,255,0.05); border-radius: 4px; display: flex; align-items: flex-end; overflow: hidden; }}
+  .bar-fill {{ width: 100%; border-radius: 3px 3px 0 0; }}
+  .bar-fill.above {{ background: var(--green); }}
+  .bar-fill.below {{ background: var(--red); }}
+  .bar-label {{ font-size: 0.68rem; color: var(--text-dim); margin-top: 0.4rem; text-align: center; white-space: nowrap; }}
   .table-wrap {{ overflow-x: auto; margin-bottom: 1rem; }}
   .weekly-table {{ width: 100%; border-collapse: collapse; font-size: 0.85rem; background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }}
   .weekly-table th, .weekly-table td {{ padding: 0.6rem 0.9rem; text-align: left; white-space: nowrap; }}
@@ -319,6 +365,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   {upcoming_html}
 
   <h2>Weekly Performance</h2>
+  {weekly_bar_html}
   {weekly_html}
 
   <h2>Recent Results</h2>
