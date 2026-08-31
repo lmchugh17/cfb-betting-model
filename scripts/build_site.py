@@ -171,7 +171,7 @@ def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None
     market_line = "no line"
     if p["market_spread"] is not None:
         fav = p["home_team"] if p["market_spread"] < 0 else p["away_team"]
-        market_line = f"{fav} by +{abs(p['market_spread']):.1f}"
+        market_line = f"{fav} by {abs(p['market_spread']):.1f}"
 
     ml_html = ""
     if p.get("moneyline_pick"):
