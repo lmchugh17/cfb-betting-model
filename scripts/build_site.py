@@ -15,7 +15,8 @@ from src.db import get_connection, init_db
 OUTPUT_PATH = Path(__file__).resolve().parent.parent / "docs" / "index.html"
 
 STARTING_BANKROLL = 500.0
-# Matches scripts/predict_games.py's own assumption (no per-book spread juice data available).
+# Fallback only -- used when a pick has no measured spread_price (src.spread_pricing had
+# no per-book data for that game). Matches scripts/predict_games.py's own fallback.
 ASSUMED_SPREAD_ODDS_AMERICAN = -110
 
 MODEL_LABELS = {
@@ -37,7 +38,8 @@ def fetch_upcoming(conn) -> list[dict]:
                p.predicted_margin, p.win_prob_home, p.market_spread, p.pick_team,
                p.edge, p.confidence_tier, p.highlights_json, p.tldr, p.bullets_json,
                p.model_breakdown_json, p.cover_probability, p.kelly_fraction,
-               p.moneyline_pick, p.moneyline_win_prob, p.moneyline_confidence_tier
+               p.moneyline_pick, p.moneyline_win_prob, p.moneyline_confidence_tier,
+               p.spread_price, p.spread_price_source, p.spread_price_book_count
         FROM predictions p
         JOIN games g ON p.game_id = g.id
         WHERE g.home_points IS NULL
@@ -47,7 +49,8 @@ def fetch_upcoming(conn) -> list[dict]:
             "predicted_margin", "win_prob_home", "market_spread", "pick_team",
             "edge", "confidence_tier", "highlights_json", "tldr", "bullets_json",
             "model_breakdown_json", "cover_probability", "kelly_fraction",
-            "moneyline_pick", "moneyline_win_prob", "moneyline_confidence_tier"]
+            "moneyline_pick", "moneyline_win_prob", "moneyline_confidence_tier",
+            "spread_price", "spread_price_source", "spread_price_book_count"]
     return [dict(zip(cols, r)) for r in rows]
 
 
@@ -57,14 +60,16 @@ def fetch_results(conn) -> list[dict]:
                win_prob_home, market_spread, actual_margin, home_points, away_points, pick_team,
                edge, confidence_tier, highlights_json, tldr, bullets_json,
                ats_pick_won_straight_up, pick_covered, model_breakdown_json, cover_probability, kelly_fraction,
-               moneyline_pick, moneyline_win_prob, moneyline_confidence_tier, moneyline_pick_won
+               moneyline_pick, moneyline_win_prob, moneyline_confidence_tier, moneyline_pick_won,
+               spread_price, spread_price_source, spread_price_book_count
         FROM prediction_results ORDER BY start_date DESC
     """).fetchall()
     cols = ["game_id", "year", "week", "start_date", "home_team", "away_team", "predicted_margin",
             "win_prob_home", "market_spread", "actual_margin", "home_points", "away_points", "pick_team",
             "edge", "confidence_tier", "highlights_json", "tldr", "bullets_json",
             "ats_pick_won_straight_up", "pick_covered", "model_breakdown_json", "cover_probability", "kelly_fraction",
-            "moneyline_pick", "moneyline_win_prob", "moneyline_confidence_tier", "moneyline_pick_won"]
+            "moneyline_pick", "moneyline_win_prob", "moneyline_confidence_tier", "moneyline_pick_won",
+            "spread_price", "spread_price_source", "spread_price_book_count"]
     return [dict(zip(cols, r)) for r in rows]
 
 
@@ -91,16 +96,19 @@ def fetch_weekly_performance(conn) -> list[dict]:
 def compute_current_bankroll(conn) -> float:
     """Chronological paper-bankroll replay: starts at STARTING_BANKROLL and compounds
     through every settled (non-push) pick in date order using its own kelly_fraction and
-    the -110 payout assumption. Upcoming picks size their recommended wager off this
+    its own spread_price (real per-book price when that pick had one, else the standing
+    -110 assumption) -- each pick's payout uses the SAME price its Kelly fraction was
+    actually sized against, not a blanket -110 for every historical bet regardless of what
+    was really available at the time. Upcoming picks size their recommended wager off this
     running total rather than the fixed starting amount, same as the NBA reference site."""
     rows = conn.execute("""
-        SELECT kelly_fraction, pick_covered FROM prediction_results
+        SELECT kelly_fraction, pick_covered, spread_price FROM prediction_results
         WHERE kelly_fraction IS NOT NULL AND pick_covered IS NOT NULL
         ORDER BY start_date ASC
     """).fetchall()
     bankroll = STARTING_BANKROLL
-    b = _net_decimal_odds(ASSUMED_SPREAD_ODDS_AMERICAN)
-    for kelly_fraction, covered in rows:
+    for kelly_fraction, covered, spread_price in rows:
+        b = _net_decimal_odds(spread_price if spread_price is not None else ASSUMED_SPREAD_ODDS_AMERICAN)
         wager = bankroll * kelly_fraction
         bankroll += wager * b if covered else -wager
     return bankroll
@@ -183,12 +191,16 @@ def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None
     if p.get("pick_team"):
         # The pick's own spread, signed from ITS perspective (not always the home-signed
         # market_spread) -- e.g. the underdog pick shows a positive number (points received),
-        # the favorite pick shows negative (points given). Odds shown are the standing
-        # -110-both-sides assumption (see ASSUMED_SPREAD_ODDS_AMERICAN), not a measured price.
+        # the favorite pick shows negative (points given). Odds shown are the real per-book
+        # median price when a recent live_odds pull has one; otherwise the standing -110
+        # assumption, marked with a footnote asterisk so it's clear which one it is.
         pick_spread_html = ""
         if p["market_spread"] is not None:
             pick_spread = p["market_spread"] if p["pick_team"] == p["home_team"] else -p["market_spread"]
-            pick_spread_html = f' {pick_spread:+.1f} <span class="odds">({ASSUMED_SPREAD_ODDS_AMERICAN})</span>'
+            price = p.get("spread_price") if p.get("spread_price") is not None else ASSUMED_SPREAD_ODDS_AMERICAN
+            is_measured = p.get("spread_price_source") == "measured"
+            price_label = f"{price}" + ("" if is_measured else "*")
+            pick_spread_html = f' {pick_spread:+.1f} <span class="odds">({price_label})</span>'
         pick_html = (
             f'<div class="pick-line">Spread pick: <strong>{p["pick_team"]}{pick_spread_html}</strong> '
             f'{tier_badge(p["confidence_tier"])}</div>'
@@ -390,9 +402,11 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
     <p>Recommended wager is a paper amount only, sized with 25% fractional Kelly against a running
     $500 starting bankroll that compounds through settled picks. Cover probability treats the margin
     model's prediction error as normally distributed around its point estimate, using its own measured
-    RMSE on the 2025 holdout. Assumes standard -110 pricing on both sides since per-book spread juice
-    isn't tracked -- a simplification, not a measured value. Nothing here is real money or a
-    recommendation to place a real bet.</p>
+    RMSE on the 2025 holdout. The spread pick's price is the real median price across sportsbooks when
+    a recent odds pull has one for that side; a price marked with an asterisk (*) is the standard -110
+    assumption instead, used when no per-book pricing was available for that game (too far out for the
+    ~2-week odds board, or a name-matching miss) -- a stated simplification, not a measured value in
+    that case. Nothing here is real money or a recommendation to place a real bet.</p>
     <p>Generated {generated_at}.</p>
   </footer>
 </div>

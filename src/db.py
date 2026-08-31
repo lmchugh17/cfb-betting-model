@@ -224,7 +224,10 @@ CREATE TABLE IF NOT EXISTS predictions (
     kelly_fraction REAL,
     moneyline_pick TEXT,
     moneyline_win_prob REAL,
-    moneyline_confidence_tier TEXT
+    moneyline_confidence_tier TEXT,
+    spread_price INTEGER,
+    spread_price_source TEXT,
+    spread_price_book_count INTEGER
 );
 """
 
@@ -288,6 +291,7 @@ def init_db() -> None:
         new_pred_cols = {
             "model_breakdown_json": "TEXT", "cover_probability": "REAL", "kelly_fraction": "REAL",
             "moneyline_pick": "TEXT", "moneyline_win_prob": "REAL", "moneyline_confidence_tier": "TEXT",
+            "spread_price": "INTEGER", "spread_price_source": "TEXT", "spread_price_book_count": "INTEGER",
         }
         for col, sqltype in new_pred_cols.items():
             if col not in existing_pred_cols:

@@ -27,6 +27,7 @@ from src.live_state import (compute_current_ats_pct, compute_current_elo,
                              compute_current_opponent_srs, compute_current_rest_days,
                              compute_current_rolling_form, compute_current_srs)
 from src.model import FEATURE_COLUMNS
+from src.spread_pricing import get_spread_price, load_latest_spread_prices
 from src.weather_features import (compute_current_adverse_wx_ats_pct, load_weather_by_game,
                                    was_game_adverse)
 
@@ -63,9 +64,10 @@ def moneyline_confidence_tier(win_prob_picked_side: float | None) -> str | None:
 
 
 KELLY_FRACTION_CAP = 0.25  # 25% fractional Kelly, matches the NBA reference model's own cap
-# We don't have per-book spread juice data (CFBD's /lines gives the spread number, not its
-# price), so this assumes the standard -110 both sides rather than a measured value -- a real
-# simplification, not a fact. Worth wiring in live_odds' actual per-book spread pricing later.
+# CFBD's /lines (the source of market_spread) gives the spread number but not its price --
+# src.spread_pricing looks up the real per-book median price from live_odds when a recent
+# pull has it. This is the fallback for when it doesn't (game too far out for the ~2-week
+# odds board, or a team-name match miss) -- a stated assumption, not a measured value.
 ASSUMED_SPREAD_ODDS_AMERICAN = -110
 
 
@@ -77,20 +79,24 @@ def _normal_cdf(x: float) -> float:
     return 0.5 * (1 + math.erf(x / math.sqrt(2)))
 
 
-def cover_probability_and_kelly(edge: float | None, is_home_pick: bool,
-                                 regressor_rmse: float) -> tuple[float | None, float | None]:
+def cover_probability_and_kelly(edge: float | None, is_home_pick: bool, regressor_rmse: float,
+                                 spread_odds_american: int = ASSUMED_SPREAD_ODDS_AMERICAN
+                                 ) -> tuple[float | None, float | None]:
     """cover_probability is for the PICKED side specifically, not always the home side --
     edge is defined as home's edge over the market, so picking the away side needs 1 minus
     the home cover probability. Treats the regressor's residuals as approximately
     Normal(0, rmse) around its point estimate -- rmse is the model's own measured error on
     the 2025 holdout (see scripts/train_model.py), not an assumed number. kelly_fraction is
     the recommended fraction of bankroll to wager, already capped at KELLY_FRACTION_CAP; the
-    site converts this to a dollar amount against the running paper bankroll at display time."""
+    site converts this to a dollar amount against the running paper bankroll at display time.
+    spread_odds_american defaults to the standing assumption but should be the real measured
+    per-book price (src.spread_pricing) when the caller has one -- makes the Kelly math
+    reflect the actual price being bet, not just the number of points."""
     if edge is None:
         return None, None
     p_home_covers = _normal_cdf(edge / regressor_rmse)
     p_cover = p_home_covers if is_home_pick else (1 - p_home_covers)
-    b = _american_odds_to_net_decimal(ASSUMED_SPREAD_ODDS_AMERICAN)
+    b = _american_odds_to_net_decimal(spread_odds_american)
     kelly_full = p_cover - (1 - p_cover) / b
     kelly = max(0.0, kelly_full) * KELLY_FRACTION_CAP
     return p_cover, kelly
@@ -99,11 +105,11 @@ def cover_probability_and_kelly(edge: float | None, is_home_pick: bool,
 def load_all_games(conn) -> list[dict]:
     rows = conn.execute("""
         SELECT id, year, week, season_type, start_date, neutral_site,
-               home_team, away_team, home_points, away_points
+               home_id, home_team, away_id, away_team, home_points, away_points
         FROM games
     """).fetchall()
     cols = ["id", "year", "week", "season_type", "start_date", "neutral_site",
-            "home_team", "away_team", "home_points", "away_points"]
+            "home_id", "home_team", "away_id", "away_team", "home_points", "away_points"]
     return [dict(zip(cols, r)) for r in rows]
 
 
@@ -156,6 +162,9 @@ def main():
     weather_by_game = load_weather_by_game(conn)
     current_adverse_wx_ats = compute_current_adverse_wx_ats_pct(ats_rows, weather_by_game)
 
+    print("Loading latest per-book spread pricing...")
+    spread_prices = load_latest_spread_prices(conn)
+
     elo_model = CFBElo()  # only used for its expected_score() static method
 
     records = []
@@ -174,7 +183,8 @@ def main():
         h2h_f = h2h.get(g["id"], {})
 
         record = {
-            "game_id": g["id"], "home_team": home, "away_team": away,
+            "game_id": g["id"], "home_id": g["home_id"], "away_id": g["away_id"],
+            "home_team": home, "away_team": away,
             "elo_home": elo_home, "elo_away": elo_away, "elo_diff": elo_home - elo_away,
             "elo_expected_home": elo_expected_home,
             "srs_home": srs_home, "srs_away": srs_away, "srs_diff": srs_home - srs_away,
@@ -247,14 +257,26 @@ def main():
 
         edge, pick_team = None, None
         cover_prob, kelly = None, None
+        spread_price, spread_price_source, spread_price_book_count = None, None, 0
         if pd.notna(row["market_spread"]):
             fav = row["home_team"] if row["market_spread"] < 0 else row["away_team"]
             print(f"Market: {fav} favored by {abs(row['market_spread']):.1f}")
             edge = float(margins[i] - (-row["market_spread"]))
             pick_team = row["home_team"] if edge > 0 else row["away_team"]
             print(f"Edge: model favors {row['home_team']} by {edge:+.1f} vs. the market line -> pick {pick_team}")
-            cover_prob, kelly = cover_probability_and_kelly(edge, pick_team == row["home_team"], regressor_rmse)
-            print(f"Cover probability: {cover_prob:.0%} -> {kelly:.1%} of bankroll recommended (25% Kelly, assumes -110)")
+
+            pick_team_id = row["home_id"] if pick_team == row["home_team"] else row["away_id"]
+            measured_price, spread_price_book_count = get_spread_price(spread_prices, pick_team_id)
+            if measured_price is not None:
+                spread_price, spread_price_source = measured_price, "measured"
+                print(f"Spread price: {spread_price} (median across {spread_price_book_count} book(s))")
+            else:
+                spread_price, spread_price_source = ASSUMED_SPREAD_ODDS_AMERICAN, "assumed"
+                print(f"Spread price: {spread_price} (assumed -- no per-book pricing available for this game)")
+
+            cover_prob, kelly = cover_probability_and_kelly(
+                edge, pick_team == row["home_team"], regressor_rmse, spread_price)
+            print(f"Cover probability: {cover_prob:.0%} -> {kelly:.1%} of bankroll recommended (25% Kelly)")
         else:
             print("Market: no line available")
 
@@ -275,8 +297,9 @@ def main():
                (game_id, predicted_at, year, week, season_type, start_date, home_team, away_team,
                 predicted_margin, win_prob_home, market_spread, pick_team, edge, confidence_tier,
                 highlights_json, model_breakdown_json, cover_probability, kelly_fraction,
-                moneyline_pick, moneyline_win_prob, moneyline_confidence_tier)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                moneyline_pick, moneyline_win_prob, moneyline_confidence_tier,
+                spread_price, spread_price_source, spread_price_book_count)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                ON CONFLICT(game_id) DO UPDATE SET
                    predicted_at=excluded.predicted_at, year=excluded.year, week=excluded.week,
                    season_type=excluded.season_type, start_date=excluded.start_date,
@@ -287,7 +310,9 @@ def main():
                    highlights_json=excluded.highlights_json, model_breakdown_json=excluded.model_breakdown_json,
                    cover_probability=excluded.cover_probability, kelly_fraction=excluded.kelly_fraction,
                    moneyline_pick=excluded.moneyline_pick, moneyline_win_prob=excluded.moneyline_win_prob,
-                   moneyline_confidence_tier=excluded.moneyline_confidence_tier""",
+                   moneyline_confidence_tier=excluded.moneyline_confidence_tier,
+                   spread_price=excluded.spread_price, spread_price_source=excluded.spread_price_source,
+                   spread_price_book_count=excluded.spread_price_book_count""",
             (
                 int(row["game_id"]), predicted_at, g["year"], g["week"], g["season_type"], g["start_date"],
                 row["home_team"], row["away_team"], float(margins[i]), float(win_probs[i]),
@@ -295,6 +320,7 @@ def main():
                 pick_team, edge, confidence_tier(edge), json.dumps(highlights),
                 json.dumps(model_breakdown), cover_prob, kelly,
                 moneyline_pick, moneyline_win_prob, ml_tier,
+                spread_price, spread_price_source, spread_price_book_count,
             ),
         )
     conn.commit()

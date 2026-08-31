@@ -7,7 +7,6 @@ well under the free tier's 500/month, leaving room to share the same account
 with an NFL model later.
 """
 import sys
-import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -15,32 +14,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.db import get_connection, init_db
 from src.odds_client import OddsAPIClient
-
-# CFBD and The Odds API occasionally use different short names for the same school.
-SCHOOL_ALIASES = {
-    "Southern Miss": "Southern Mississippi",
-    "Sam Houston": "Sam Houston State",
-    "Massachusetts": "UMass",
-    "App State": "Appalachian State",
-}
-
-
-def normalize(name: str) -> str:
-    """Strips diacritics (Hawai'i/San José -> Hawaii/San Jose) and apostrophes for matching."""
-    stripped = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode()
-    return stripped.replace("'", "").replace("’", "")
-
-
-def build_team_lookup(conn) -> dict:
-    """Maps normalized 'School Mascot' (as the Odds API names teams) -> our team id."""
-    rows = conn.execute("SELECT id, school, mascot FROM teams").fetchall()
-    lookup = {}
-    for team_id, school, mascot in rows:
-        lookup[normalize(f"{school} {mascot}")] = team_id
-        alias = SCHOOL_ALIASES.get(school)
-        if alias:
-            lookup[normalize(f"{alias} {mascot}")] = team_id
-    return lookup
+from src.team_names import build_team_lookup, normalize
 
 
 def main():
