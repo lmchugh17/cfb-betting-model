@@ -47,12 +47,13 @@
   .empty { color: var(--text-dim); font-size: 0.9rem; }
   .bar-chart { position: relative; display: flex; align-items: flex-end; gap: 0.75rem; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1rem 1rem; margin-bottom: 1rem; overflow-x: auto; }
   .ref-line-marker { position: absolute; left: -3px; right: -3px; height: 0; border-top: 1px dashed var(--text-dim); }
+  .ref-line-corner-label { position: absolute; top: 0.5rem; left: 1rem; font-size: 0.65rem; color: var(--text-dim); }
   .bar-col { display: flex; flex-direction: column; align-items: center; flex: 0 0 auto; width: 52px; }
-  .bar-value { font-size: 0.72rem; color: var(--text-dim); margin-bottom: 0.3rem; }
-  .bar-track { position: relative; width: 32px; height: 120px; background: rgba(255,255,255,0.05); border-radius: 4px; display: flex; align-items: flex-end; }
-  .bar-fill { width: 100%; border-radius: 3px 3px 0 0; }
+  .bar-track { position: relative; width: 32px; height: 120px; background: rgba(255,255,255,0.05); border-radius: 4px; display: flex; align-items: flex-end; margin-top: 1.4rem; }
+  .bar-fill { position: relative; width: 100%; border-radius: 3px 3px 0 0; }
   .bar-fill.above { background: var(--green); }
   .bar-fill.below { background: var(--red); }
+  .bar-value { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); margin-bottom: 0.25rem; font-size: 0.72rem; color: var(--text); white-space: nowrap; background: var(--card); padding: 0 3px; border-radius: 3px; z-index: 1; }
   .baseline-marker { position: absolute; left: -3px; right: -3px; height: 2px; background: var(--amber); }
   .bar-label { font-size: 0.68rem; color: var(--text-dim); margin-top: 0.4rem; text-align: center; white-space: nowrap; }
   .bar-legend { display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; color: var(--text-dim); margin: 0.6rem 0 1rem; flex-wrap: wrap; }
@@ -60,6 +61,7 @@
   .legend-swatch:first-child { margin-left: 0; }
   .legend-model { background: var(--green); }
   .legend-baseline { background: var(--amber); height: 2px; width: 12px; border-radius: 0; align-self: center; }
+  .legend-ref { background: none; border-top: 1px dashed var(--text-dim); height: 0; width: 12px; border-radius: 0; align-self: center; }
   .legend-market-sw { background: var(--accent); }
   .pair-col { display: flex; flex-direction: column; align-items: center; flex: 0 0 auto; width: 76px; }
   .pair-values { font-size: 0.68rem; color: var(--text-dim); margin-bottom: 0.3rem; white-space: nowrap; }
@@ -89,9 +91,9 @@
 
   <h2>Weekly Trends</h2>
   <h3>Moneyline Win %</h3>
-  <div class="bar-chart"><div class="bar-col"><div class="bar-value">62%</div><div class="bar-track"><div class="bar-fill above" style="height: 62.5%"></div><div class="ref-line-marker" style="bottom: 50%"></div><div class="baseline-marker" style="bottom: 75.0%" title="Favorite baseline: 75%"></div></div><div class="bar-label">2026 Week 0</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>Model moneyline win%<span class="legend-swatch legend-baseline"></span>Favorite baseline (same week)</div>
+  <div class="bar-chart"><div class="bar-col"><div class="bar-track"><div class="bar-fill above" style="height: 62.5%"><div class="bar-value">62%</div></div><div class="baseline-marker" style="bottom: 75.0%" title="Favorite baseline: 75%"></div></div><div class="bar-label">2026 Week 0</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>Model moneyline win%<span class="legend-swatch legend-baseline"></span>Favorite baseline (same week)</div>
   <h3>Against the Spread Win %</h3>
-  <div class="bar-chart"><div class="bar-col"><div class="bar-value">38%</div><div class="bar-track"><div class="bar-fill below" style="height: 37.5%"></div><div class="ref-line-marker" style="bottom: 52.4%"></div></div><div class="bar-label">2026 Week 0</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>ATS win% <span class="legend-swatch legend-baseline"></span>Breakeven at -110 (52.4%)</div>
+  <div class="bar-chart"><div class="ref-line-corner-label">Breakeven 52.4%</div><div class="bar-col"><div class="bar-track"><div class="bar-fill below" style="height: 37.5%"><div class="bar-value">38%</div></div><div class="ref-line-marker" style="bottom: 52.4%"></div></div><div class="bar-label">2026 Week 0</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>ATS win% <span class="legend-swatch legend-ref"></span>Breakeven at -110 (52.4%)</div>
   <h3>Margin Accuracy: Model vs. Market</h3>
   <div class="bar-chart"><div class="pair-col"><div class="pair-values"><span class="pair-model-text">14.3</span> vs <span class="pair-market-text">13.3</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 100.0%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 92.9%"></div></div></div><div class="bar-label">2026 Week 0</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>Model avg error (pts)<span class="legend-swatch legend-market-sw"></span>Market avg error (pts) &middot; lower is better</div>
 
@@ -1437,7 +1439,7 @@
     over a trailing window) are including games from a prior season to fill that window, not just
     the current one. ELO and SRS handle this season boundary explicitly (regressed toward the mean);
     these rolling stats don't yet, so treat the confidence tier with extra caution early in the season.</p>
-    <p>Generated 2026-09-02 01:56 UTC.</p>
+    <p>Generated 2026-09-02 02:21 UTC.</p>
   </footer>
 </div>
 </body>

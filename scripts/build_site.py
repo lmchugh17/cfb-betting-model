@@ -377,10 +377,12 @@ def render_weekly_table(weekly: list[dict]) -> str:
 def render_weekly_win_pct_chart(weekly: list[dict]) -> str:
     """Moneyline win% per week as a simple CSS bar chart -- oldest week first (left to
     right) so it reads as a trend, opposite of the table's newest-first order. Bar height
-    is win% of vertical space; a dashed line at the 50% mark gives a coin-flip reference.
-    A second marker on each bar shows that same week's "always take the market favorite"
-    straight-up record -- a trivial baseline that needs no model at all, so a bar that
-    doesn't clear its own baseline marker is a real red flag, not just a bad week."""
+    is win% of vertical space. No plain 50% coin-flip line here on purpose -- it's not the
+    meaningful threshold for straight-up picks (even blindly picking the favorite clears
+    50% easily, our own favorite-baseline data shows 75%), so a bare 50% line next to the
+    baseline marker was redundant and confusing. The favorite-baseline marker on each bar
+    is the real comparison: a bar that doesn't clear its OWN week's baseline is a genuine
+    red flag, not just a bad week."""
     decided = [w for w in weekly if w["ml_decided"]]
     if not decided:
         return '<p class="empty">No completed weeks tracked yet.</p>'
@@ -395,14 +397,12 @@ def render_weekly_win_pct_chart(weekly: list[dict]) -> str:
                               f'title="Favorite baseline: {fav_pct:.0%}"></div>')
         bars_html += (
             '<div class="bar-col">'
-            f'<div class="bar-value">{pct:.0%}</div>'
-            f'<div class="bar-track"><div class="bar-fill {css_class}" style="height: {pct * 100:.1f}%"></div>'
-            # bottom:50% here, not a chart-level line with a guessed pixel offset -- that
-            # approach measured from the whole card's bottom edge (label text and all),
-            # not the track's own height, and was quietly wrong the entire time (rendering
-            # at ~35% up instead of 50%). Percentage-inside-the-track is what actually
-            # works, same technique the favorite-baseline marker above already used correctly.
-            '<div class="ref-line-marker" style="bottom: 50%"></div>'
+            # bar-value now lives INSIDE bar-fill (bottom:100% of the fill's own box), so it
+            # floats just above wherever that bar's actual height ends -- previously it sat
+            # in a fixed spot at the top of the whole column regardless of the bar's height,
+            # which read as "the label is for the column" rather than "the label is for the bar."
+            f'<div class="bar-track"><div class="bar-fill {css_class}" style="height: {pct * 100:.1f}%">'
+            f'<div class="bar-value">{pct:.0%}</div></div>'
             f'{baseline_html}</div>'
             f'<div class="bar-label">{w["year"]} {_week_label(w)}</div>'
             "</div>"
@@ -414,9 +414,12 @@ def render_weekly_win_pct_chart(weekly: list[dict]) -> str:
 
 def render_ats_win_pct_chart(weekly: list[dict]) -> str:
     """Against-the-spread win% per week -- same bar-chart shape as the moneyline chart,
-    but the reference line sits at ATS_BREAKEVEN (52.4%), not 50%: a spread is set so both
-    sides are designed to be close to a coin flip, so 50% ATS is a LOSING record once
-    standard -110 vig is paid, not a neutral one like it is for the moneyline chart."""
+    but keeps a reference line at ATS_BREAKEVEN (52.4%), unlike the moneyline chart's
+    dropped 50% line: this one is a real wagering threshold (the actual break-even rate
+    against standard -110 vig), not a redundant coin-flip marker, so it earns its place.
+    Styled as a dashed neutral line (not the solid amber "baseline strategy" color) to keep
+    the visual language consistent: dashed = a threshold to clear, solid amber = a real
+    competing strategy's own results (used on the moneyline chart)."""
     decided = [w for w in weekly if (w["ats_wins"] + w["ats_losses"])]
     if not decided:
         return '<p class="empty">No completed weeks tracked yet.</p>'
@@ -427,15 +430,19 @@ def render_ats_win_pct_chart(weekly: list[dict]) -> str:
         css_class = "above" if pct >= ATS_BREAKEVEN else "below"
         bars_html += (
             '<div class="bar-col">'
-            f'<div class="bar-value">{pct:.0%}</div>'
-            f'<div class="bar-track"><div class="bar-fill {css_class}" style="height: {pct * 100:.1f}%"></div>'
+            f'<div class="bar-track"><div class="bar-fill {css_class}" style="height: {pct * 100:.1f}%">'
+            f'<div class="bar-value">{pct:.0%}</div></div>'
             f'<div class="ref-line-marker" style="bottom: {ATS_BREAKEVEN * 100:.1f}%"></div></div>'
             f'<div class="bar-label">{w["year"]} {_week_label(w)}</div>'
             "</div>"
         )
-    return (f'<div class="bar-chart">{bars_html}</div>'
+    # The threshold's own text label is a fixed corner annotation, deliberately NOT tied to
+    # any bar's height -- a per-bar label at the line's exact position collided with that
+    # bar's own value label whenever a week's result happened to land close to the
+    # threshold (a common, not edge-case, scenario -- results cluster near breakeven).
+    return (f'<div class="bar-chart"><div class="ref-line-corner-label">Breakeven {ATS_BREAKEVEN:.1%}</div>{bars_html}</div>'
             f'<div class="bar-legend"><span class="legend-swatch legend-model"></span>ATS win% '
-            f'<span class="legend-swatch legend-baseline"></span>Breakeven at -110 ({ATS_BREAKEVEN:.1%})</div>')
+            f'<span class="legend-swatch legend-ref"></span>Breakeven at -110 ({ATS_BREAKEVEN:.1%})</div>')
 
 
 def render_margin_accuracy_chart(weekly: list[dict]) -> str:
@@ -547,12 +554,13 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .empty {{ color: var(--text-dim); font-size: 0.9rem; }}
   .bar-chart {{ position: relative; display: flex; align-items: flex-end; gap: 0.75rem; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1rem 1rem; margin-bottom: 1rem; overflow-x: auto; }}
   .ref-line-marker {{ position: absolute; left: -3px; right: -3px; height: 0; border-top: 1px dashed var(--text-dim); }}
+  .ref-line-corner-label {{ position: absolute; top: 0.5rem; left: 1rem; font-size: 0.65rem; color: var(--text-dim); }}
   .bar-col {{ display: flex; flex-direction: column; align-items: center; flex: 0 0 auto; width: 52px; }}
-  .bar-value {{ font-size: 0.72rem; color: var(--text-dim); margin-bottom: 0.3rem; }}
-  .bar-track {{ position: relative; width: 32px; height: 120px; background: rgba(255,255,255,0.05); border-radius: 4px; display: flex; align-items: flex-end; }}
-  .bar-fill {{ width: 100%; border-radius: 3px 3px 0 0; }}
+  .bar-track {{ position: relative; width: 32px; height: 120px; background: rgba(255,255,255,0.05); border-radius: 4px; display: flex; align-items: flex-end; margin-top: 1.4rem; }}
+  .bar-fill {{ position: relative; width: 100%; border-radius: 3px 3px 0 0; }}
   .bar-fill.above {{ background: var(--green); }}
   .bar-fill.below {{ background: var(--red); }}
+  .bar-value {{ position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); margin-bottom: 0.25rem; font-size: 0.72rem; color: var(--text); white-space: nowrap; background: var(--card); padding: 0 3px; border-radius: 3px; z-index: 1; }}
   .baseline-marker {{ position: absolute; left: -3px; right: -3px; height: 2px; background: var(--amber); }}
   .bar-label {{ font-size: 0.68rem; color: var(--text-dim); margin-top: 0.4rem; text-align: center; white-space: nowrap; }}
   .bar-legend {{ display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; color: var(--text-dim); margin: 0.6rem 0 1rem; flex-wrap: wrap; }}
@@ -560,6 +568,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .legend-swatch:first-child {{ margin-left: 0; }}
   .legend-model {{ background: var(--green); }}
   .legend-baseline {{ background: var(--amber); height: 2px; width: 12px; border-radius: 0; align-self: center; }}
+  .legend-ref {{ background: none; border-top: 1px dashed var(--text-dim); height: 0; width: 12px; border-radius: 0; align-self: center; }}
   .legend-market-sw {{ background: var(--accent); }}
   .pair-col {{ display: flex; flex-direction: column; align-items: center; flex: 0 0 auto; width: 76px; }}
   .pair-values {{ font-size: 0.68rem; color: var(--text-dim); margin-bottom: 0.3rem; white-space: nowrap; }}
