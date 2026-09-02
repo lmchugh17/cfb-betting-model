@@ -53,8 +53,11 @@
   .bar-fill { position: relative; width: 100%; border-radius: 3px 3px 0 0; }
   .bar-fill.above { background: var(--green); }
   .bar-fill.below { background: var(--red); }
-  .bar-value { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); margin-bottom: 0.25rem; font-size: 0.72rem; color: var(--text); white-space: nowrap; background: var(--card); padding: 0 3px; border-radius: 3px; z-index: 1; }
+  .bar-value { position: absolute; left: 50%; font-size: 0.72rem; white-space: nowrap; z-index: 1; }
+  .bar-value-inside { transform: translate(-50%, 0.35rem); color: #fff; font-weight: 700; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+  .bar-value-above { transform: translate(-50%, -100%); margin-bottom: 0.25rem; color: var(--text); background: var(--card); padding: 0 3px; border-radius: 3px; }
   .baseline-marker { position: absolute; left: -3px; right: -3px; height: 2px; background: var(--amber); }
+  .baseline-label { position: absolute; right: 2px; top: -0.75em; font-size: 0.6rem; color: var(--amber); white-space: nowrap; background: var(--card); padding: 0 2px; border-radius: 2px; }
   .bar-label { font-size: 0.68rem; color: var(--text-dim); margin-top: 0.4rem; text-align: center; white-space: nowrap; }
   .bar-legend { display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; color: var(--text-dim); margin: 0.6rem 0 1rem; flex-wrap: wrap; }
   .legend-swatch { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-left: 0.6rem; }
@@ -91,9 +94,9 @@
 
   <h2>Weekly Trends</h2>
   <h3>Moneyline Win %</h3>
-  <div class="bar-chart"><div class="bar-col"><div class="bar-track"><div class="bar-fill above" style="height: 62.5%"><div class="bar-value">62%</div></div><div class="baseline-marker" style="bottom: 75.0%" title="Favorite baseline: 75%"></div></div><div class="bar-label">2026 Week 0</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>Model moneyline win%<span class="legend-swatch legend-baseline"></span>Favorite baseline (same week)</div>
+  <div class="bar-chart"><div class="bar-col"><div class="bar-track"><div class="bar-value bar-value-inside" style="bottom: 62.5%">62%</div><div class="bar-fill above" style="height: 62.5%"></div><div class="baseline-marker" style="bottom: 75.0%" title="Favorite baseline: 75%"><span class="baseline-label">75%</span></div></div><div class="bar-label">2026 Week 0</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>Model moneyline win%<span class="legend-swatch legend-baseline"></span>Favorite baseline (same week)</div>
   <h3>Against the Spread Win %</h3>
-  <div class="bar-chart"><div class="ref-line-corner-label">Breakeven 52.4%</div><div class="bar-col"><div class="bar-track"><div class="bar-fill below" style="height: 37.5%"><div class="bar-value">38%</div></div><div class="ref-line-marker" style="bottom: 52.4%"></div></div><div class="bar-label">2026 Week 0</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>ATS win% <span class="legend-swatch legend-ref"></span>Breakeven at -110 (52.4%)</div>
+  <div class="bar-chart"><div class="ref-line-corner-label">Breakeven 52.4%</div><div class="bar-col"><div class="bar-track"><div class="bar-value bar-value-inside" style="bottom: 37.5%">38%</div><div class="bar-fill below" style="height: 37.5%"></div><div class="ref-line-marker" style="bottom: 52.4%"></div></div><div class="bar-label">2026 Week 0</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>ATS win% <span class="legend-swatch legend-ref"></span>Breakeven at -110 (52.4%)</div>
   <h3>Margin Accuracy: Model vs. Market</h3>
   <div class="bar-chart"><div class="pair-col"><div class="pair-values"><span class="pair-model-text">14.3</span> vs <span class="pair-market-text">13.3</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 100.0%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 92.9%"></div></div></div><div class="bar-label">2026 Week 0</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>Model avg error (pts)<span class="legend-swatch legend-market-sw"></span>Market avg error (pts) &middot; lower is better</div>
 
@@ -1404,6 +1407,15 @@
     Trained on 2021-2024 FBS seasons, held out all of 2025 for evaluation (75.5% straight-up accuracy,
     appropriately trailing the market's own 76.8% -- landing behind the market, not matching or beating it,
     is the healthy sign of a real model rather than a leakage bug).</p>
+    <p><strong>ELO</strong>, referenced throughout the picks below, is a rating system (originally from chess)
+    where every team starts at 1500 and gains or loses points after each game based on the result and how
+    surprising it was -- beating a stronger team gains more than beating a weaker one, and the size of the
+    swing scales with a K-factor (40 here, larger than a typical NBA ELO setup since a ~13-game CFB season
+    gives each result more information to react to). A team's ELO rating converts directly into a win
+    probability against any opponent -- that conversion, not the raw rating number, is what actually drives
+    the model. Home teams get a flat +65 rating bonus before that calculation, an unvalidated placeholder
+    (see <code>src/elo.py</code>) rather than a measured home-field value, same caveat as the confidence
+    tiers above.</p>
     <p>Two separate picks are shown per game: a <strong>moneyline pick</strong> (whichever team the model
     gives &gt;50% win probability -- who wins outright, no spread) and a <strong>spread pick</strong> (which
     side has value against the market line). These are often different teams, deliberately -- a big
@@ -1419,12 +1431,17 @@
     likely margin. Checked against the 2025 holdout: the model's spread picks covered at about the same
     rate on games with 28+ point market spreads (53.3%) as on more typical ones (53.2%) -- a wide gap on
     a lopsided game doesn't by itself mean the model is less reliable there.</p>
-    <p>The Weekly Trends charts track three things separately: moneyline win% against a true 50% coin-flip
-    reference, ATS win% against the real breakeven at standard -110 vig (52.4%, not 50% -- a spread market
-    is deliberately set so both sides are close to a coin flip, so 50% ATS is actually a losing record once
-    the vig is paid), and the model's average margin error against the market's own average margin error
-    on the same games -- i.e. is the model's predicted margin, on average, closer to or further from the
-    actual final score than the market spread's own implied margin was.</p>
+    <p>The Weekly Trends charts track three things separately: moneyline win% against that same week's
+    "always take the market favorite" baseline (a plain 50% coin-flip line isn't the meaningful reference
+    for straight-up picks -- even blindly picking favorites clears 50% easily), ATS win% against the real
+    breakeven at standard -110 vig (52.4%, not 50% -- a spread market is deliberately set so both sides are
+    close to a coin flip, so 50% ATS is actually a losing record once the vig is paid), and <strong>margin
+    error</strong> -- the model's average margin error against the market's own average margin error on the
+    same games. Margin error for one game is simply |predicted margin &minus; actual final margin|, in points
+    (e.g. picking a team to win by 10 when they win by 14 is a 4-point error); averaging that across every
+    graded game gives the "Avg. Margin Error" stat above and each week's bar in the chart below. Lower is
+    better for both the model's own number and the market's -- the chart's real question is whether the
+    model is closing the gap on the market's own accuracy over time, not just whether picks are winning.</p>
     <p>Recommended wager is a paper amount only, sized with 25% fractional Kelly against a running
     $500 starting bankroll that compounds through settled picks. Cover probability treats the margin
     model's prediction error as normally distributed around its point estimate, using its own measured
@@ -1439,7 +1456,7 @@
     over a trailing window) are including games from a prior season to fill that window, not just
     the current one. ELO and SRS handle this season boundary explicitly (regressed toward the mean);
     these rolling stats don't yet, so treat the confidence tier with extra caution early in the season.</p>
-    <p>Generated 2026-09-02 02:21 UTC.</p>
+    <p>Generated 2026-09-02 02:27 UTC.</p>
   </footer>
 </div>
 </body>

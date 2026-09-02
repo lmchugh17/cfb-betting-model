@@ -374,6 +374,20 @@ def render_weekly_table(weekly: list[dict]) -> str:
     </table></div>"""
 
 
+def render_bar_value(pct: float, min_pct_for_inside: float = 0.15) -> str:
+    """The bar's own %-value label, shared by every weekly bar chart. Sits just inside the
+    top of the bar (dark text directly on the bar's own green/red fill) when there's enough
+    height for it to read cleanly -- floats just above a very short bar instead, where
+    "inside" would look cramped. Anchored the same way as any other track-relative marker
+    (bottom:{pct}%), never a fixed spot at the top of the whole column regardless of height.
+    Placing it inside the bar (rather than floating above it) is what actually fixes bar
+    values colliding with a reference/baseline line drawn near the same height -- floating
+    labels compete for the same space above the bar; a label inside the bar's own colored
+    area never can, regardless of where any line on the chart happens to sit."""
+    variant = "bar-value-inside" if pct >= min_pct_for_inside else "bar-value-above"
+    return f'<div class="bar-value {variant}" style="bottom: {pct * 100:.1f}%">{pct:.0%}</div>'
+
+
 def render_weekly_win_pct_chart(weekly: list[dict]) -> str:
     """Moneyline win% per week as a simple CSS bar chart -- oldest week first (left to
     right) so it reads as a trend, opposite of the table's newest-first order. Bar height
@@ -393,16 +407,14 @@ def render_weekly_win_pct_chart(weekly: list[dict]) -> str:
         baseline_html = ""
         if w["fav_decided"]:
             fav_pct = w["fav_wins"] / w["fav_decided"]
-            baseline_html = (f'<div class="baseline-marker" style="bottom: {fav_pct * 100:.1f}%" '
-                              f'title="Favorite baseline: {fav_pct:.0%}"></div>')
+            baseline_html = (
+                f'<div class="baseline-marker" style="bottom: {fav_pct * 100:.1f}%" '
+                f'title="Favorite baseline: {fav_pct:.0%}">'
+                f'<span class="baseline-label">{fav_pct:.0%}</span></div>'
+            )
         bars_html += (
             '<div class="bar-col">'
-            # bar-value now lives INSIDE bar-fill (bottom:100% of the fill's own box), so it
-            # floats just above wherever that bar's actual height ends -- previously it sat
-            # in a fixed spot at the top of the whole column regardless of the bar's height,
-            # which read as "the label is for the column" rather than "the label is for the bar."
-            f'<div class="bar-track"><div class="bar-fill {css_class}" style="height: {pct * 100:.1f}%">'
-            f'<div class="bar-value">{pct:.0%}</div></div>'
+            f'<div class="bar-track">{render_bar_value(pct)}<div class="bar-fill {css_class}" style="height: {pct * 100:.1f}%"></div>'
             f'{baseline_html}</div>'
             f'<div class="bar-label">{w["year"]} {_week_label(w)}</div>'
             "</div>"
@@ -430,8 +442,7 @@ def render_ats_win_pct_chart(weekly: list[dict]) -> str:
         css_class = "above" if pct >= ATS_BREAKEVEN else "below"
         bars_html += (
             '<div class="bar-col">'
-            f'<div class="bar-track"><div class="bar-fill {css_class}" style="height: {pct * 100:.1f}%">'
-            f'<div class="bar-value">{pct:.0%}</div></div>'
+            f'<div class="bar-track">{render_bar_value(pct)}<div class="bar-fill {css_class}" style="height: {pct * 100:.1f}%"></div>'
             f'<div class="ref-line-marker" style="bottom: {ATS_BREAKEVEN * 100:.1f}%"></div></div>'
             f'<div class="bar-label">{w["year"]} {_week_label(w)}</div>'
             "</div>"
@@ -560,8 +571,11 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .bar-fill {{ position: relative; width: 100%; border-radius: 3px 3px 0 0; }}
   .bar-fill.above {{ background: var(--green); }}
   .bar-fill.below {{ background: var(--red); }}
-  .bar-value {{ position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); margin-bottom: 0.25rem; font-size: 0.72rem; color: var(--text); white-space: nowrap; background: var(--card); padding: 0 3px; border-radius: 3px; z-index: 1; }}
+  .bar-value {{ position: absolute; left: 50%; font-size: 0.72rem; white-space: nowrap; z-index: 1; }}
+  .bar-value-inside {{ transform: translate(-50%, 0.35rem); color: #fff; font-weight: 700; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }}
+  .bar-value-above {{ transform: translate(-50%, -100%); margin-bottom: 0.25rem; color: var(--text); background: var(--card); padding: 0 3px; border-radius: 3px; }}
   .baseline-marker {{ position: absolute; left: -3px; right: -3px; height: 2px; background: var(--amber); }}
+  .baseline-label {{ position: absolute; right: 2px; top: -0.75em; font-size: 0.6rem; color: var(--amber); white-space: nowrap; background: var(--card); padding: 0 2px; border-radius: 2px; }}
   .bar-label {{ font-size: 0.68rem; color: var(--text-dim); margin-top: 0.4rem; text-align: center; white-space: nowrap; }}
   .bar-legend {{ display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; color: var(--text-dim); margin: 0.6rem 0 1rem; flex-wrap: wrap; }}
   .legend-swatch {{ display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-left: 0.6rem; }}
@@ -621,6 +635,15 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
     Trained on 2021-2024 FBS seasons, held out all of 2025 for evaluation (75.5% straight-up accuracy,
     appropriately trailing the market's own 76.8% -- landing behind the market, not matching or beating it,
     is the healthy sign of a real model rather than a leakage bug).</p>
+    <p><strong>ELO</strong>, referenced throughout the picks below, is a rating system (originally from chess)
+    where every team starts at 1500 and gains or loses points after each game based on the result and how
+    surprising it was -- beating a stronger team gains more than beating a weaker one, and the size of the
+    swing scales with a K-factor (40 here, larger than a typical NBA ELO setup since a ~13-game CFB season
+    gives each result more information to react to). A team's ELO rating converts directly into a win
+    probability against any opponent -- that conversion, not the raw rating number, is what actually drives
+    the model. Home teams get a flat +65 rating bonus before that calculation, an unvalidated placeholder
+    (see <code>src/elo.py</code>) rather than a measured home-field value, same caveat as the confidence
+    tiers above.</p>
     <p>Two separate picks are shown per game: a <strong>moneyline pick</strong> (whichever team the model
     gives &gt;50% win probability -- who wins outright, no spread) and a <strong>spread pick</strong> (which
     side has value against the market line). These are often different teams, deliberately -- a big
@@ -636,12 +659,17 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
     likely margin. Checked against the 2025 holdout: the model's spread picks covered at about the same
     rate on games with 28+ point market spreads (53.3%) as on more typical ones (53.2%) -- a wide gap on
     a lopsided game doesn't by itself mean the model is less reliable there.</p>
-    <p>The Weekly Trends charts track three things separately: moneyline win% against a true 50% coin-flip
-    reference, ATS win% against the real breakeven at standard -110 vig (52.4%, not 50% -- a spread market
-    is deliberately set so both sides are close to a coin flip, so 50% ATS is actually a losing record once
-    the vig is paid), and the model's average margin error against the market's own average margin error
-    on the same games -- i.e. is the model's predicted margin, on average, closer to or further from the
-    actual final score than the market spread's own implied margin was.</p>
+    <p>The Weekly Trends charts track three things separately: moneyline win% against that same week's
+    "always take the market favorite" baseline (a plain 50% coin-flip line isn't the meaningful reference
+    for straight-up picks -- even blindly picking favorites clears 50% easily), ATS win% against the real
+    breakeven at standard -110 vig (52.4%, not 50% -- a spread market is deliberately set so both sides are
+    close to a coin flip, so 50% ATS is actually a losing record once the vig is paid), and <strong>margin
+    error</strong> -- the model's average margin error against the market's own average margin error on the
+    same games. Margin error for one game is simply |predicted margin &minus; actual final margin|, in points
+    (e.g. picking a team to win by 10 when they win by 14 is a 4-point error); averaging that across every
+    graded game gives the "Avg. Margin Error" stat above and each week's bar in the chart below. Lower is
+    better for both the model's own number and the market's -- the chart's real question is whether the
+    model is closing the gap on the market's own accuracy over time, not just whether picks are winning.</p>
     <p>Recommended wager is a paper amount only, sized with 25% fractional Kelly against a running
     $500 starting bankroll that compounds through settled picks. Cover probability treats the margin
     model's prediction error as normally distributed around its point estimate, using its own measured
