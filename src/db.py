@@ -83,6 +83,19 @@ CREATE TABLE IF NOT EXISTS game_weather (
     source TEXT
 );
 
+-- Pre-game Polymarket win probability, one row per game (upsert-by-game_id, same
+-- convention as game_weather -- always "latest known value," not a time series,
+-- since a pull closer to kickoff is more accurate than an earlier one). Used only
+-- for a post-game accuracy check against the model's own pre-game win_prob_home
+-- (see src/polymarket_client.py) -- not a live pick or edge signal.
+CREATE TABLE IF NOT EXISTS polymarket_odds (
+    game_id INTEGER PRIMARY KEY,
+    scraped_at TEXT NOT NULL,
+    polymarket_event_id TEXT,
+    home_prob REAL,
+    away_prob REAL
+);
+
 CREATE TABLE IF NOT EXISTS injuries (
     espn_athlete_id TEXT NOT NULL,
     scraped_at TEXT NOT NULL,

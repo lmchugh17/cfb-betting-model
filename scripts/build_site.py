@@ -119,10 +119,12 @@ def fetch_weekly_performance(conn) -> list[dict]:
     only a single cumulative number. display_week splits CFBD's week=1 into a true week 0
     (see _week_zero_cutoff) when that week actually bundles two slates."""
     rows = conn.execute("""
-        SELECT year, week, DATE(start_date), home_team, away_team, market_spread,
-               actual_winner, moneyline_pick_won, pick_covered, pick_team, actual_margin,
-               ABS(predicted_margin - actual_margin) AS margin_error
-        FROM prediction_results
+        SELECT pr.year, pr.week, DATE(pr.start_date), pr.home_team, pr.away_team, pr.market_spread,
+               pr.actual_winner, pr.moneyline_pick_won, pr.pick_covered, pr.pick_team, pr.actual_margin,
+               ABS(pr.predicted_margin - pr.actual_margin) AS margin_error,
+               pr.win_prob_home, pr.home_points, pr.away_points, po.home_prob
+        FROM prediction_results pr
+        LEFT JOIN polymarket_odds po ON po.game_id = pr.game_id
     """).fetchall()
 
     # The week-0/week-1 gap only shows up once you look at the WHOLE week-1 span, not just
@@ -136,8 +138,10 @@ def fetch_weekly_performance(conn) -> list[dict]:
 
     buckets = defaultdict(lambda: {"n": 0, "ml_wins": 0, "ml_decided": 0, "ats_wins": 0,
                                     "ats_losses": 0, "ats_pushes": 0, "fav_wins": 0, "fav_decided": 0,
-                                    "margin_errors": [], "market_margin_errors": []})
-    for year, week, d, home, away, spread, winner, ml_won, covered, pick_team, actual_margin, margin_err in rows:
+                                    "margin_errors": [], "market_margin_errors": [],
+                                    "model_briers": [], "poly_briers": []})
+    for (year, week, d, home, away, spread, winner, ml_won, covered, pick_team, actual_margin,
+         margin_err, win_prob_home, home_points, away_points, poly_home_prob) in rows:
         display_week = week
         if week == 1 and cutoffs.get(year) and d < cutoffs[year]:
             display_week = 0
@@ -165,16 +169,33 @@ def fetch_weekly_performance(conn) -> list[dict]:
         # market's own accuracy over time, week by week (see render_margin_accuracy_chart).
         if spread is not None and actual_margin is not None:
             b["market_margin_errors"].append(abs(-spread - actual_margin))
+        # Brier score: squared error between a pre-game win probability and the actual
+        # binary outcome (1=home won, 0=away won) -- the standard proper scoring rule for
+        # comparing two probabilistic predictions, same "lower is better" spirit as margin
+        # error but for win probability instead of point margin. Post-hoc only: both
+        # probabilities were fixed before the game, this just grades them against it.
+        # Only counted when Polymarket ALSO had a number for this game, so both averages
+        # are computed over the exact same games -- otherwise a week where Polymarket
+        # covered only the marquee matchups would compare an apples-to-oranges game set.
+        if (home_points is not None and away_points is not None
+                and win_prob_home is not None and poly_home_prob is not None):
+            actual_home_win = 1.0 if home_points > away_points else 0.0
+            b["model_briers"].append((win_prob_home - actual_home_win) ** 2)
+            b["poly_briers"].append((poly_home_prob - actual_home_win) ** 2)
 
     result = []
     for (year, week), b in buckets.items():
         avg_err = sum(b["margin_errors"]) / len(b["margin_errors"]) if b["margin_errors"] else None
         market_avg_err = (sum(b["market_margin_errors"]) / len(b["market_margin_errors"])
                            if b["market_margin_errors"] else None)
+        model_brier = sum(b["model_briers"]) / len(b["model_briers"]) if b["model_briers"] else None
+        poly_brier = sum(b["poly_briers"]) / len(b["poly_briers"]) if b["poly_briers"] else None
         result.append({"year": year, "week": week, "n": b["n"], "ml_wins": b["ml_wins"],
                         "ml_decided": b["ml_decided"], "ats_wins": b["ats_wins"], "ats_losses": b["ats_losses"],
                         "ats_pushes": b["ats_pushes"], "fav_wins": b["fav_wins"], "fav_decided": b["fav_decided"],
-                        "avg_err": avg_err, "market_avg_err": market_avg_err})
+                        "avg_err": avg_err, "market_avg_err": market_avg_err,
+                        "model_brier": model_brier, "poly_brier": poly_brier,
+                        "poly_n": len(b["poly_briers"])})
     result.sort(key=lambda r: (r["year"], r["week"]), reverse=True)
     return result
 
@@ -494,6 +515,44 @@ def render_margin_accuracy_chart(weekly: list[dict]) -> str:
             '<span class="legend-swatch legend-market-sw"></span>Market avg error (pts) &middot; lower is better</div>')
 
 
+def render_polymarket_accuracy_chart(weekly: list[dict]) -> str:
+    """Model's avg Brier score vs. Polymarket's avg Brier score on the SAME games, per
+    week -- a post-game accuracy check only, not a live pick (see src/polymarket_client.py's
+    docstring for that scope decision; this project's own spread/moneyline picks already
+    cover the "generate an actionable pick" role). Brier score is the squared error between
+    a pre-game win probability and the actual 0/1 outcome -- the standard proper scoring
+    rule for comparing probabilistic predictions, same paired-bar shape as the margin
+    accuracy chart above, just for win probability instead of point margin. Scale is fixed
+    0-0.25 (a Brier score can't exceed 0.25 when both predictions sit on the same side of
+    50%, which is true for essentially every graded game here), not relative to the week's
+    own max like the margin chart -- keeps week-to-week bars comparable at a glance."""
+    decided = [w for w in weekly if w.get("poly_n")]
+    if not decided:
+        return '<p class="empty">No Polymarket-matched completed games yet.</p>'
+    max_brier = 0.25
+    bars_html = ""
+    for w in reversed(decided):
+        model_b, poly_b = w["model_brier"], w["poly_brier"]
+        model_pct = min(model_b / max_brier * 100, 100) if model_b is not None else 0
+        poly_pct = min(poly_b / max_brier * 100, 100) if poly_b is not None else 0
+        model_label = f"{model_b:.3f}" if model_b is not None else "n/a"
+        poly_label = f"{poly_b:.3f}" if poly_b is not None else "n/a"
+        bars_html += (
+            '<div class="pair-col">'
+            f'<div class="pair-values"><span class="pair-model-text">{model_label}</span> vs '
+            f'<span class="pair-market-text">{poly_label}</span></div>'
+            '<div class="pair-tracks">'
+            f'<div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: {model_pct:.1f}%"></div></div>'
+            f'<div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: {poly_pct:.1f}%"></div></div>'
+            "</div>"
+            f'<div class="bar-label">{w["year"]} {_week_label(w)} ({w["poly_n"]})</div>'
+            "</div>"
+        )
+    return (f'<div class="bar-chart">{bars_html}</div>'
+            '<div class="bar-legend"><span class="legend-swatch legend-model"></span>Model Brier score'
+            '<span class="legend-swatch legend-market-sw"></span>Polymarket Brier score &middot; lower is better</div>')
+
+
 def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankroll: float,
                 weekly: list[dict]) -> str:
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
@@ -517,6 +576,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
     ml_chart_html = render_weekly_win_pct_chart(weekly)
     ats_chart_html = render_ats_win_pct_chart(weekly)
     margin_chart_html = render_margin_accuracy_chart(weekly)
+    poly_chart_html = render_polymarket_accuracy_chart(weekly)
 
     return f"""<!doctype html>
 <html lang="en">
@@ -629,6 +689,15 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   Lower is better for both the model's own number and the market's -- the real question this chart tracks
   is whether the model is closing the gap on the market's own accuracy over time, not just whether picks
   are winning.</p>
+  <h3>Win Probability Accuracy: Model vs. Polymarket&para;</h3>
+  {poly_chart_html}
+  <p class="footnote">&para; A post-game accuracy check only -- Polymarket's pre-game win probability
+  for each game is pulled and stored before kickoff, then graded afterward the same way the model's own
+  is, using Brier score (squared error between the probability and the actual 0/1 outcome -- e.g.
+  predicting 70% and winning scores (0.7&minus;1)&sup2;=0.09, losing scores (0.7&minus;0)&sup2;=0.49;
+  lower is better). Nothing here feeds into the moneyline or spread picks above -- those are generated
+  independently from the model's own features, same as always. The number in parentheses next to each
+  week is how many of that week's games actually had a matching Polymarket market to grade against.</p>
 
   <h2>This Week's Picks</h2>
   {upcoming_html}

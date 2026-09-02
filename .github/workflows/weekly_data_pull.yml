@@ -53,6 +53,9 @@ jobs:
       - name: Pull forecast weather for upcoming games (no key needed)
         run: python scripts/pull_weather_forecast.py
 
+      - name: Pull Polymarket win probabilities (no key needed, accuracy-check only)
+        run: python scripts/pull_polymarket.py
+
       - name: Archive and prune stale odds/injury snapshots
         run: python scripts/prune_live_data.py
 

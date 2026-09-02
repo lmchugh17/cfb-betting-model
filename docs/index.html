@@ -112,6 +112,15 @@
   Lower is better for both the model's own number and the market's -- the real question this chart tracks
   is whether the model is closing the gap on the market's own accuracy over time, not just whether picks
   are winning.</p>
+  <h3>Win Probability Accuracy: Model vs. Polymarket&para;</h3>
+  <p class="empty">No Polymarket-matched completed games yet.</p>
+  <p class="footnote">&para; A post-game accuracy check only -- Polymarket's pre-game win probability
+  for each game is pulled and stored before kickoff, then graded afterward the same way the model's own
+  is, using Brier score (squared error between the probability and the actual 0/1 outcome -- e.g.
+  predicting 70% and winning scores (0.7&minus;1)&sup2;=0.09, losing scores (0.7&minus;0)&sup2;=0.49;
+  lower is better). Nothing here feeds into the moneyline or spread picks above -- those are generated
+  independently from the model's own features, same as always. The number in parentheses next to each
+  week is how many of that week's games actually had a matching Polymarket market to grade against.</p>
 
   <h2>This Week's Picks</h2>
   
@@ -1458,7 +1467,7 @@
     win probability against any opponent -- that conversion, not the raw rating number, is what actually
     drives the model. Home teams get a flat +65 rating bonus before that calculation, an unvalidated
     placeholder rather than a measured home-field value, same caveat as the confidence tiers above.</p>
-    <p>Generated 2026-09-02 02:42 UTC.</p>
+    <p>Generated 2026-09-02 02:58 UTC.</p>
   </footer>
 </div>
 </body>
