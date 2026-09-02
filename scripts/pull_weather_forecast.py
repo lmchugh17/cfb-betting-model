@@ -32,6 +32,13 @@ from src.weather_client import fetch_forecast, nearest_hour, polite_sleep
 
 FORECAST_HORIZON_DAYS = 16  # matches src.weather_client.fetch_forecast's forecast_days cap
 
+# Circuit breaker: if Open-Meteo (or the network path to it, e.g. GitHub Actions' shared
+# runner IPs getting throttled -- confirmed 2026-09-02, a full week's ~130 venues hung for
+# 13+ minutes there with zero completed requests) is having a bad day, fail fast and let
+# next run's forecast pull catch up rather than grinding through every remaining venue at
+# the (now shortened, but still nonzero) per-request timeout.
+MAX_CONSECUTIVE_FAILURES = 10
+
 
 def main():
     init_db()
@@ -68,14 +75,24 @@ def main():
         for game_id, venue_id, start_date, lat, lon in rows:
             groups[(venue_id, lat, lon)].append((game_id, start_date))
 
-        print(f"Fetching forecast weather for {len(groups)} venue(s) covering {len(rows)} upcoming game(s)...")
-        fetched, skipped = 0, 0
-        for (venue_id, lat, lon), games in groups.items():
+        print(f"Fetching forecast weather for {len(groups)} venue(s) covering {len(rows)} upcoming game(s)...",
+              flush=True)
+        fetched, skipped, consecutive_failures = 0, 0, 0
+        for i, ((venue_id, lat, lon), games) in enumerate(groups.items(), 1):
             try:
                 hourly = fetch_forecast(lat, lon)
+                consecutive_failures = 0
             except Exception as e:
-                print(f"  WARN: venue {venue_id} forecast fetch failed: {e}")
+                consecutive_failures += 1
+                print(f"  [{i}/{len(groups)}] WARN: venue {venue_id} forecast fetch failed: {e}", flush=True)
+                if consecutive_failures >= MAX_CONSECUTIVE_FAILURES:
+                    print(f"  {consecutive_failures} venues in a row failed -- stopping early "
+                          f"({len(groups) - i} venue(s) skipped this run, will retry next pull). "
+                          "Likely Open-Meteo or the network path to it, not this script.", flush=True)
+                    break
                 continue
+            if i % 20 == 0 or i == len(groups):
+                print(f"  [{i}/{len(groups)}] venues fetched so far...", flush=True)
             for game_id, kickoff in games:
                 weather = nearest_hour(hourly, kickoff)
                 if weather is None:

@@ -32,11 +32,21 @@ def _hourly_by_timestamp(payload: dict) -> dict:
     return result
 
 
+# Short on purpose: backfill_weather.py and pull_weather_forecast.py both make one
+# call per venue in a loop (up to ~130+ in a full week), sequentially. A slow/stuck
+# request needs to fail fast, not eat 30s each -- confirmed 2026-09-02 that GitHub
+# Actions' shared runner IPs can see Open-Meteo hang far longer than requests from a
+# normal residential/office network (~0.6s there vs. a run that never finished a
+# single venue in 13+ minutes on Actions), most likely rate-limiting or throttling
+# aimed at datacenter/CI traffic on this free, unauthenticated API.
+REQUEST_TIMEOUT_S = 10
+
+
 def fetch_historical(lat: float, lon: float, start_date: str, end_date: str) -> dict:
     """Returns {ISO hour string ('YYYY-MM-DDTHH:00'): {weather fields}}."""
     params = {"latitude": lat, "longitude": lon, "start_date": start_date, "end_date": end_date,
               "hourly": HOURLY_FIELDS, **UNIT_PARAMS}
-    resp = requests.get(ARCHIVE_URL, params=params, timeout=30)
+    resp = requests.get(ARCHIVE_URL, params=params, timeout=REQUEST_TIMEOUT_S)
     resp.raise_for_status()
     return _hourly_by_timestamp(resp.json())
 
@@ -45,7 +55,7 @@ def fetch_forecast(lat: float, lon: float) -> dict:
     """Forecast API covers ~16 days ahead; used for the upcoming weekend's games."""
     params = {"latitude": lat, "longitude": lon, "hourly": HOURLY_FIELDS,
               "forecast_days": 16, **UNIT_PARAMS}
-    resp = requests.get(FORECAST_URL, params=params, timeout=30)
+    resp = requests.get(FORECAST_URL, params=params, timeout=REQUEST_TIMEOUT_S)
     resp.raise_for_status()
     return _hourly_by_timestamp(resp.json())
 
