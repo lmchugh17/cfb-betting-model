@@ -93,6 +93,12 @@
 
   <div class="stats-row"><div class="stat-tile"><div class="stat-value">8</div><div class="stat-label">Picks Tracked</div></div><div class="stat-tile"><div class="stat-value">5/8</div><div class="stat-label">Moneyline (Straight-Up)</div></div><div class="stat-tile"><div class="stat-value">3-5-0</div><div class="stat-label">Against the Spread</div></div><div class="stat-tile"><div class="stat-value">14.3 pts<sup class="stat-marker">&sect;</sup></div><div class="stat-label">Avg. Margin Error</div></div><div class="stat-tile"><div class="stat-value">$481.99</div><div class="stat-label">Paper Bankroll</div></div></div>
 
+  <h2>Weekly Performance</h2>
+  <div class="table-wrap"><table class="weekly-table">
+      <thead><tr><th>Week</th><th>Moneyline</th><th>Spread</th></tr></thead>
+      <tbody><tr><td>2026 Week 0</td><td>5-3 (62%)</td><td>3-5-0</td></tr></tbody>
+    </table></div>
+
   <h2>Weekly Trends</h2>
   <h3>Moneyline Win %</h3>
   <div class="bar-chart"><div class="bar-col"><div class="bar-track"><div class="bar-value bar-value-inside" style="bottom: 62.5%">62%</div><div class="bar-fill above" style="height: 62.5%"></div><div class="baseline-marker" style="bottom: 75.0%" title="Favorite baseline: 75%"><span class="baseline-label">75%</span></div></div><div class="bar-label">2026 Week 0</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>Model moneyline win%<span class="legend-swatch legend-baseline"></span>Favorite baseline (same week)</div>
@@ -1400,12 +1406,6 @@
       <div class="result-line">Final: TCU 10 - 15 North Carolina &mdash; moneyline pick was incorrect, spread pick did not cover the spread</div>
     </div>
 
-  <h2>Weekly Performance</h2>
-  <div class="table-wrap"><table class="weekly-table">
-      <thead><tr><th>Week</th><th>Games</th><th>Moneyline</th><th>Favorite Baseline</th><th>ATS</th><th>Avg. Error</th></tr></thead>
-      <tbody><tr><td>2026 Week 0</td><td>8</td><td>5-3 (62%)</td><td>6-2 (75%)</td><td>3-5-0</td><td>14.3 pts</td></tr></tbody>
-    </table></div>
-
   <footer>
     <p><strong>Methodology:</strong> 5-model stacked ensemble (logistic regression, random forest,
     XGBoost, LightGBM, extra trees) for win probability, plus a separate XGBoost regressor for
@@ -1458,7 +1458,7 @@
     win probability against any opponent -- that conversion, not the raw rating number, is what actually
     drives the model. Home teams get a flat +65 rating bonus before that calculation, an unvalidated
     placeholder rather than a measured home-field value, same caveat as the confidence tiers above.</p>
-    <p>Generated 2026-09-02 02:37 UTC.</p>
+    <p>Generated 2026-09-02 02:42 UTC.</p>
   </footer>
 </div>
 </body>

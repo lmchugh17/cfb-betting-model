@@ -356,21 +356,22 @@ def _week_label(w: dict) -> str:
 
 
 def render_weekly_table(weekly: list[dict]) -> str:
+    """Week-by-week moneyline and spread records, side by side -- kept to just these two
+    columns for now (games/favorite-baseline/avg-error dropped from the table itself,
+    though favorite-baseline and avg-error are still tracked in their own Weekly Trends
+    charts below) so the table reads as a quick per-week scoreboard, not a data dump."""
     if not weekly:
         return '<p class="empty">No completed weeks tracked yet.</p>'
     rows_html = ""
     for w in weekly:
         ml_pct = f"{w['ml_wins']}-{w['ml_decided'] - w['ml_wins']} ({w['ml_wins']/w['ml_decided']:.0%})" if w["ml_decided"] else "n/a"
         ats_pct = f"{w['ats_wins']}-{w['ats_losses']}-{w['ats_pushes']}"
-        fav_pct = (f"{w['fav_wins']}-{w['fav_decided'] - w['fav_wins']} ({w['fav_wins']/w['fav_decided']:.0%})"
-                   if w["fav_decided"] else "n/a")
-        avg_err = f"{w['avg_err']:.1f}" if w["avg_err"] is not None else "n/a"
         rows_html += (
-            f"<tr><td>{w['year']} {_week_label(w)}</td><td>{w['n']}</td>"
-            f"<td>{ml_pct}</td><td>{fav_pct}</td><td>{ats_pct}</td><td>{avg_err} pts</td></tr>"
+            f"<tr><td>{w['year']} {_week_label(w)}</td>"
+            f"<td>{ml_pct}</td><td>{ats_pct}</td></tr>"
         )
     return f"""<div class="table-wrap"><table class="weekly-table">
-      <thead><tr><th>Week</th><th>Games</th><th>Moneyline</th><th>Favorite Baseline</th><th>ATS</th><th>Avg. Error</th></tr></thead>
+      <thead><tr><th>Week</th><th>Moneyline</th><th>Spread</th></tr></thead>
       <tbody>{rows_html}</tbody>
     </table></div>"""
 
@@ -612,6 +613,9 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
 
   <div class="stats-row">{stat_tiles}</div>
 
+  <h2>Weekly Performance</h2>
+  {weekly_html}
+
   <h2>Weekly Trends</h2>
   <h3>Moneyline Win %</h3>
   {ml_chart_html}
@@ -631,9 +635,6 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
 
   <h2>Recent Results</h2>
   {results_html}
-
-  <h2>Weekly Performance</h2>
-  {weekly_html}
 
   <footer>
     <p><strong>Methodology:</strong> 5-model stacked ensemble (logistic regression, random forest,
