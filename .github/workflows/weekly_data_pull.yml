@@ -56,7 +56,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/cfb.db data/live_odds_archive.csv data/injuries_archive.csv
+          git add data/cfb.db
+          # These only get created the first time prune_live_data.py actually finds
+          # stale rows to archive -- `git add` on a literal missing filename is a
+          # fatal error (unlike a glob), so guard each one instead of adding blindly.
+          if [ -f data/live_odds_archive.csv ]; then git add data/live_odds_archive.csv; fi
+          if [ -f data/injuries_archive.csv ]; then git add data/injuries_archive.csv; fi
           git diff --cached --quiet && echo "No data changes" && exit 0
           git commit -m "Weekly data pull: $(date -u +%Y-%m-%d)"
           git push
