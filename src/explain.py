@@ -65,7 +65,9 @@ def _describe_feature(feature: str, row: dict, home_team: str, away_team: str) -
     if feature in ("home_ats_pct", "away_ats_pct"):
         team = home_team if feature == "home_ats_pct" else away_team
         pct = g(feature)
-        return f"{team} has covered the spread in {pct:.0%} of their last games." if pct is not None else None
+        # pct is nan (not None) for a team with zero decided ATS games -- pd.isna catches
+        # NaN, unlike the "is not None" check this replaced, which let "nan%" print verbatim.
+        return f"{team} has covered the spread in {pct:.0%} of their last games." if pd.notna(pct) else None
     if feature in ("home_rest_days", "away_rest_days"):
         team = home_team if feature == "home_rest_days" else away_team
         days = g(feature)
