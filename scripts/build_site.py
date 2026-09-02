@@ -26,6 +26,11 @@ FULL_SEASON_WINDOW = 5
 # Fallback only -- used when a pick has no measured spread_price (src.spread_pricing had
 # no per-book data for that game). Matches scripts/predict_games.py's own fallback.
 ASSUMED_SPREAD_ODDS_AMERICAN = -110
+# True ATS breakeven at standard -110 vig (need to win 110/210 = 52.4% of decided bets just
+# to break even) -- the meaningful reference line for the ATS chart, not 50%. A spread market
+# is deliberately set so both sides are close to a coin flip by design, so 50% ATS is actually
+# a losing record once the vig is paid; unlike the moneyline chart's true-50% coin-flip line.
+ATS_BREAKEVEN = 110 / 210
 # Matches scripts/predict_games.py's LOW_SAMPLE_GAME_THRESHOLD -- see that file's comment for
 # how this was measured against the real distribution of tracked games per team.
 LOW_SAMPLE_GAME_THRESHOLD = 20
@@ -115,7 +120,7 @@ def fetch_weekly_performance(conn) -> list[dict]:
     (see _week_zero_cutoff) when that week actually bundles two slates."""
     rows = conn.execute("""
         SELECT year, week, DATE(start_date), home_team, away_team, market_spread,
-               actual_winner, moneyline_pick_won, pick_covered, pick_team,
+               actual_winner, moneyline_pick_won, pick_covered, pick_team, actual_margin,
                ABS(predicted_margin - actual_margin) AS margin_error
         FROM prediction_results
     """).fetchall()
@@ -131,8 +136,8 @@ def fetch_weekly_performance(conn) -> list[dict]:
 
     buckets = defaultdict(lambda: {"n": 0, "ml_wins": 0, "ml_decided": 0, "ats_wins": 0,
                                     "ats_losses": 0, "ats_pushes": 0, "fav_wins": 0, "fav_decided": 0,
-                                    "margin_errors": []})
-    for year, week, d, home, away, spread, winner, ml_won, covered, pick_team, margin_err in rows:
+                                    "margin_errors": [], "market_margin_errors": []})
+    for year, week, d, home, away, spread, winner, ml_won, covered, pick_team, actual_margin, margin_err in rows:
         display_week = week
         if week == 1 and cutoffs.get(year) and d < cutoffs[year]:
             display_week = 0
@@ -153,14 +158,23 @@ def fetch_weekly_performance(conn) -> list[dict]:
             b["fav_wins"] += int(winner == favorite)
         if margin_err is not None:
             b["margin_errors"].append(margin_err)
+        # Market's own implied margin is -market_spread (home-signed, same convention as
+        # predicted_margin) -- its error against the actual result is the same "how far off
+        # was this number" measure as the model's own margin_error, just for Vegas's number
+        # instead of ours. Lets the site show whether the model is closing the gap on the
+        # market's own accuracy over time, week by week (see render_margin_accuracy_chart).
+        if spread is not None and actual_margin is not None:
+            b["market_margin_errors"].append(abs(-spread - actual_margin))
 
     result = []
     for (year, week), b in buckets.items():
         avg_err = sum(b["margin_errors"]) / len(b["margin_errors"]) if b["margin_errors"] else None
+        market_avg_err = (sum(b["market_margin_errors"]) / len(b["market_margin_errors"])
+                           if b["market_margin_errors"] else None)
         result.append({"year": year, "week": week, "n": b["n"], "ml_wins": b["ml_wins"],
                         "ml_decided": b["ml_decided"], "ats_wins": b["ats_wins"], "ats_losses": b["ats_losses"],
                         "ats_pushes": b["ats_pushes"], "fav_wins": b["fav_wins"], "fav_decided": b["fav_decided"],
-                        "avg_err": avg_err})
+                        "avg_err": avg_err, "market_avg_err": market_avg_err})
     result.sort(key=lambda r: (r["year"], r["week"]), reverse=True)
     return result
 
@@ -392,6 +406,67 @@ def render_weekly_win_pct_chart(weekly: list[dict]) -> str:
             '<span class="legend-swatch legend-baseline"></span>Favorite baseline (same week)</div>')
 
 
+def render_ats_win_pct_chart(weekly: list[dict]) -> str:
+    """Against-the-spread win% per week -- same bar-chart shape as the moneyline chart,
+    but the reference line sits at ATS_BREAKEVEN (52.4%), not 50%: a spread is set so both
+    sides are designed to be close to a coin flip, so 50% ATS is a LOSING record once
+    standard -110 vig is paid, not a neutral one like it is for the moneyline chart."""
+    decided = [w for w in weekly if (w["ats_wins"] + w["ats_losses"])]
+    if not decided:
+        return '<p class="empty">No completed weeks tracked yet.</p>'
+    bars_html = ""
+    for w in reversed(decided):
+        n = w["ats_wins"] + w["ats_losses"]
+        pct = w["ats_wins"] / n
+        css_class = "above" if pct >= ATS_BREAKEVEN else "below"
+        bars_html += (
+            '<div class="bar-col">'
+            f'<div class="bar-value">{pct:.0%}</div>'
+            f'<div class="bar-track"><div class="bar-fill {css_class}" style="height: {pct * 100:.1f}%"></div></div>'
+            f'<div class="bar-label">{w["year"]} {_week_label(w)}</div>'
+            "</div>"
+        )
+    return (f'<div class="bar-chart"><div class="bar-ref-line" style="bottom: calc(1rem + {ATS_BREAKEVEN * 120:.0f}px)"></div>{bars_html}</div>'
+            f'<div class="bar-legend"><span class="legend-swatch legend-model"></span>ATS win% '
+            f'<span class="legend-swatch legend-baseline"></span>Breakeven at -110 ({ATS_BREAKEVEN:.1%})</div>')
+
+
+def render_margin_accuracy_chart(weekly: list[dict]) -> str:
+    """Model's avg margin error vs. the market's own avg margin error, per week -- paired
+    bars on a shared points scale (lower is better for both). Unlike the win% charts there's
+    no natural 0-100% cap, so each bar's height is relative to the largest error seen across
+    all weeks shown, not a fixed scale. Same comparison as the 2025 holdout eval (regressor
+    MAE 12.87 vs. the market's own 11.90, see scripts/train_model.py) -- not shown elsewhere
+    on the live site itself, this is the first place that comparison is tracked in-season."""
+    decided = [w for w in weekly if w["avg_err"] is not None or w["market_avg_err"] is not None]
+    if not decided:
+        return '<p class="empty">No completed weeks tracked yet.</p>'
+    all_errs = [w["avg_err"] for w in decided if w["avg_err"] is not None]
+    all_errs += [w["market_avg_err"] for w in decided if w["market_avg_err"] is not None]
+    max_err = max(all_errs) if all_errs else 1
+    bars_html = ""
+    for w in reversed(decided):
+        model_err, market_err = w["avg_err"], w["market_avg_err"]
+        model_pct = (model_err / max_err * 100) if model_err is not None else 0
+        market_pct = (market_err / max_err * 100) if market_err is not None else 0
+        model_label = f"{model_err:.1f}" if model_err is not None else "n/a"
+        market_label = f"{market_err:.1f}" if market_err is not None else "n/a"
+        bars_html += (
+            '<div class="pair-col">'
+            f'<div class="pair-values"><span class="pair-model-text">{model_label}</span> vs '
+            f'<span class="pair-market-text">{market_label}</span></div>'
+            '<div class="pair-tracks">'
+            f'<div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: {model_pct:.1f}%"></div></div>'
+            f'<div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: {market_pct:.1f}%"></div></div>'
+            "</div>"
+            f'<div class="bar-label">{w["year"]} {_week_label(w)}</div>'
+            "</div>"
+        )
+    return (f'<div class="bar-chart">{bars_html}</div>'
+            '<div class="bar-legend"><span class="legend-swatch legend-model"></span>Model avg error (pts)'
+            '<span class="legend-swatch legend-market-sw"></span>Market avg error (pts) &middot; lower is better</div>')
+
+
 def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankroll: float,
                 weekly: list[dict]) -> str:
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
@@ -412,7 +487,9 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
     upcoming_html = "".join(render_pick_card(p, bankroll=bankroll) for p in upcoming) or '<p class="empty">No upcoming games with picks right now.</p>'
     results_html = "".join(render_pick_card(r, result=r) for r in results) or '<p class="empty">No completed games yet.</p>'
     weekly_html = render_weekly_table(weekly)
-    weekly_bar_html = render_weekly_win_pct_chart(weekly)
+    ml_chart_html = render_weekly_win_pct_chart(weekly)
+    ats_chart_html = render_ats_win_pct_chart(weekly)
+    margin_chart_html = render_margin_accuracy_chart(weekly)
 
     return f"""<!doctype html>
 <html lang="en">
@@ -439,6 +516,8 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .stat-value {{ font-size: 1.4rem; font-weight: 600; }}
   .stat-label {{ font-size: 0.75rem; color: var(--text-dim); margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.03em; }}
   h2 {{ font-size: 1.1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin: 2.5rem 0 1rem; }}
+  h3 {{ font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.03em; margin: 1.5rem 0 0.6rem; }}
+  h3:first-of-type {{ margin-top: 0.5rem; }}
   .card {{ background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }}
   .matchup {{ font-size: 1.05rem; font-weight: 600; }}
   .kickoff {{ color: var(--text-dim); font-size: 0.8rem; margin-bottom: 0.6rem; }}
@@ -474,6 +553,15 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .legend-swatch:first-child {{ margin-left: 0; }}
   .legend-model {{ background: var(--green); }}
   .legend-baseline {{ background: var(--amber); height: 2px; width: 12px; border-radius: 0; align-self: center; }}
+  .legend-market-sw {{ background: var(--accent); }}
+  .pair-col {{ display: flex; flex-direction: column; align-items: center; flex: 0 0 auto; width: 76px; }}
+  .pair-values {{ font-size: 0.68rem; color: var(--text-dim); margin-bottom: 0.3rem; white-space: nowrap; }}
+  .pair-model-text {{ color: var(--green); }}
+  .pair-market-text {{ color: var(--accent); }}
+  .pair-tracks {{ display: flex; gap: 4px; }}
+  .pair-track {{ width: 22px; }}
+  .pair-model-fill {{ background: var(--green); }}
+  .pair-market-fill {{ background: var(--accent); }}
   .table-wrap {{ overflow-x: auto; margin-bottom: 1rem; }}
   .weekly-table {{ width: 100%; border-collapse: collapse; font-size: 0.85rem; background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }}
   .weekly-table th, .weekly-table td {{ padding: 0.6rem 0.9rem; text-align: left; white-space: nowrap; }}
@@ -492,8 +580,13 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
 
   <div class="stats-row">{stat_tiles}</div>
 
-  <h2>Weekly Win %</h2>
-  {weekly_bar_html}
+  <h2>Weekly Trends</h2>
+  <h3>Moneyline Win %</h3>
+  {ml_chart_html}
+  <h3>Against the Spread Win %</h3>
+  {ats_chart_html}
+  <h3>Margin Accuracy: Model vs. Market</h3>
+  {margin_chart_html}
 
   <h2>This Week's Picks</h2>
   {upcoming_html}
@@ -527,6 +620,12 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
     likely margin. Checked against the 2025 holdout: the model's spread picks covered at about the same
     rate on games with 28+ point market spreads (53.3%) as on more typical ones (53.2%) -- a wide gap on
     a lopsided game doesn't by itself mean the model is less reliable there.</p>
+    <p>The Weekly Trends charts track three things separately: moneyline win% against a true 50% coin-flip
+    reference, ATS win% against the real breakeven at standard -110 vig (52.4%, not 50% -- a spread market
+    is deliberately set so both sides are close to a coin flip, so 50% ATS is actually a losing record once
+    the vig is paid), and the model's average margin error against the market's own average margin error
+    on the same games -- i.e. is the model's predicted margin, on average, closer to or further from the
+    actual final score than the market spread's own implied margin was.</p>
     <p>Recommended wager is a paper amount only, sized with 25% fractional Kelly against a running
     $500 starting bankroll that compounds through settled picks. Cover probability treats the margin
     model's prediction error as normally distributed around its point estimate, using its own measured

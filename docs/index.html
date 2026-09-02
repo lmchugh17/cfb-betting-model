@@ -23,6 +23,8 @@
   .stat-value { font-size: 1.4rem; font-weight: 600; }
   .stat-label { font-size: 0.75rem; color: var(--text-dim); margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.03em; }
   h2 { font-size: 1.1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin: 2.5rem 0 1rem; }
+  h3 { font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.03em; margin: 1.5rem 0 0.6rem; }
+  h3:first-of-type { margin-top: 0.5rem; }
   .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
   .matchup { font-size: 1.05rem; font-weight: 600; }
   .kickoff { color: var(--text-dim); font-size: 0.8rem; margin-bottom: 0.6rem; }
@@ -58,6 +60,15 @@
   .legend-swatch:first-child { margin-left: 0; }
   .legend-model { background: var(--green); }
   .legend-baseline { background: var(--amber); height: 2px; width: 12px; border-radius: 0; align-self: center; }
+  .legend-market-sw { background: var(--accent); }
+  .pair-col { display: flex; flex-direction: column; align-items: center; flex: 0 0 auto; width: 76px; }
+  .pair-values { font-size: 0.68rem; color: var(--text-dim); margin-bottom: 0.3rem; white-space: nowrap; }
+  .pair-model-text { color: var(--green); }
+  .pair-market-text { color: var(--accent); }
+  .pair-tracks { display: flex; gap: 4px; }
+  .pair-track { width: 22px; }
+  .pair-model-fill { background: var(--green); }
+  .pair-market-fill { background: var(--accent); }
   .table-wrap { overflow-x: auto; margin-bottom: 1rem; }
   .weekly-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
   .weekly-table th, .weekly-table td { padding: 0.6rem 0.9rem; text-align: left; white-space: nowrap; }
@@ -76,8 +87,13 @@
 
   <div class="stats-row"><div class="stat-tile"><div class="stat-value">8</div><div class="stat-label">Picks Tracked</div></div><div class="stat-tile"><div class="stat-value">5/8</div><div class="stat-label">Moneyline (Straight-Up)</div></div><div class="stat-tile"><div class="stat-value">3-5-0</div><div class="stat-label">Against the Spread</div></div><div class="stat-tile"><div class="stat-value">14.3 pts</div><div class="stat-label">Avg. Margin Error</div></div><div class="stat-tile"><div class="stat-value">$481.99</div><div class="stat-label">Paper Bankroll</div></div></div>
 
-  <h2>Weekly Win %</h2>
+  <h2>Weekly Trends</h2>
+  <h3>Moneyline Win %</h3>
   <div class="bar-chart"><div class="bar-ref-line"></div><div class="bar-col"><div class="bar-value">62%</div><div class="bar-track"><div class="bar-fill above" style="height: 62.5%"></div><div class="baseline-marker" style="bottom: 75.0%" title="Favorite baseline: 75%"></div></div><div class="bar-label">2026 Week 0</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>Model moneyline win%<span class="legend-swatch legend-baseline"></span>Favorite baseline (same week)</div>
+  <h3>Against the Spread Win %</h3>
+  <div class="bar-chart"><div class="bar-ref-line" style="bottom: calc(1rem + 63px)"></div><div class="bar-col"><div class="bar-value">38%</div><div class="bar-track"><div class="bar-fill below" style="height: 37.5%"></div></div><div class="bar-label">2026 Week 0</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>ATS win% <span class="legend-swatch legend-baseline"></span>Breakeven at -110 (52.4%)</div>
+  <h3>Margin Accuracy: Model vs. Market</h3>
+  <div class="bar-chart"><div class="pair-col"><div class="pair-values"><span class="pair-model-text">14.3</span> vs <span class="pair-market-text">13.3</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 100.0%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 92.9%"></div></div></div><div class="bar-label">2026 Week 0</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>Model avg error (pts)<span class="legend-swatch legend-market-sw"></span>Market avg error (pts) &middot; lower is better</div>
 
   <h2>This Week's Picks</h2>
   
@@ -1401,6 +1417,12 @@
     likely margin. Checked against the 2025 holdout: the model's spread picks covered at about the same
     rate on games with 28+ point market spreads (53.3%) as on more typical ones (53.2%) -- a wide gap on
     a lopsided game doesn't by itself mean the model is less reliable there.</p>
+    <p>The Weekly Trends charts track three things separately: moneyline win% against a true 50% coin-flip
+    reference, ATS win% against the real breakeven at standard -110 vig (52.4%, not 50% -- a spread market
+    is deliberately set so both sides are close to a coin flip, so 50% ATS is actually a losing record once
+    the vig is paid), and the model's average margin error against the market's own average margin error
+    on the same games -- i.e. is the model's predicted margin, on average, closer to or further from the
+    actual final score than the market spread's own implied margin was.</p>
     <p>Recommended wager is a paper amount only, sized with 25% fractional Kelly against a running
     $500 starting bankroll that compounds through settled picks. Cover probability treats the margin
     model's prediction error as normally distributed around its point estimate, using its own measured
@@ -1415,7 +1437,7 @@
     over a trailing window) are including games from a prior season to fill that window, not just
     the current one. ELO and SRS handle this season boundary explicitly (regressed toward the mean);
     these rolling stats don't yet, so treat the confidence tier with extra caution early in the season.</p>
-    <p>Generated 2026-09-02 01:04 UTC.</p>
+    <p>Generated 2026-09-02 01:28 UTC.</p>
   </footer>
 </div>
 </body>
