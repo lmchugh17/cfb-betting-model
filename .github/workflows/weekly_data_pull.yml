@@ -4,7 +4,11 @@ on:
   schedule:
     # 13:00 UTC = 7am America/Denver during MDT (Mar-Nov). Shifts to 6am local
     # during MST (Nov-Mar) since GitHub cron is fixed UTC and doesn't track DST.
-    - cron: "0 13 * * 2,5,6"  # Tue/Fri/Sat
+    # TEMPORARY: daily through 2026-09-07 to stress-test the 2026-09-01/02 fixes (the
+    # git-add crash and the Open-Meteo timeout/circuit-breaker) across more real runs.
+    # Revert to "0 13 * * 2,5,6" (Tue/Fri/Sat) after that -- normal cadence keeps Odds
+    # API usage conservative for sharing with the future NFL build.
+    - cron: "0 13 * * *"  # daily (temporary, see above)
   workflow_dispatch: {}
 
 permissions:
