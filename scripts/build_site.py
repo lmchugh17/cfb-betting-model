@@ -346,8 +346,9 @@ def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None
     </div>"""
 
 
-def render_stat_tile(label: str, value: str) -> str:
-    return f'<div class="stat-tile"><div class="stat-value">{value}</div><div class="stat-label">{label}</div></div>'
+def render_stat_tile(label: str, value: str, marker: str = "") -> str:
+    marker_html = f'<sup class="stat-marker">{marker}</sup>' if marker else ""
+    return f'<div class="stat-tile"><div class="stat-value">{value}{marker_html}</div><div class="stat-label">{label}</div></div>'
 
 
 def _week_label(w: dict) -> str:
@@ -505,7 +506,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
         render_stat_tile("Picks Tracked", str(summary["n"])),
         render_stat_tile("Moneyline (Straight-Up)", ml_pct),
         render_stat_tile("Against the Spread", ats_pct),
-        render_stat_tile("Avg. Margin Error", avg_err),
+        render_stat_tile("Avg. Margin Error", avg_err, marker="&sect;"),
         render_stat_tile("Paper Bankroll", f"${bankroll:.2f}"),
     ])
 
@@ -539,6 +540,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .stats-row {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin: 1.5rem 0 2.5rem; }}
   .stat-tile {{ background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; text-align: center; }}
   .stat-value {{ font-size: 1.4rem; font-weight: 600; }}
+  .stat-marker {{ font-size: 0.75rem; font-weight: 400; color: var(--text-dim); margin-left: 0.1rem; }}
   .stat-label {{ font-size: 0.75rem; color: var(--text-dim); margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.03em; }}
   h2 {{ font-size: 1.1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin: 2.5rem 0 1rem; }}
   h3 {{ font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.03em; margin: 1.5rem 0 0.6rem; }}
@@ -598,7 +600,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .weekly-table th {{ color: var(--text-dim); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; border-bottom: 1px solid var(--border); }}
   .weekly-table tbody tr:not(:last-child) td {{ border-bottom: 1px solid var(--border); }}
   footer {{ margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.78rem; line-height: 1.5; }}
-  footer .footnote {{ font-size: 0.72rem; opacity: 0.8; }}
+  .footnote {{ font-size: 0.72rem; opacity: 0.8; color: var(--text-dim); margin-top: -0.5rem; margin-bottom: 1.5rem; }}
 </style>
 </head>
 <body>
@@ -617,6 +619,12 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   {ats_chart_html}
   <h3>Margin Accuracy: Model vs. Market</h3>
   {margin_chart_html}
+  <p class="footnote">&sect; Margin error for one game is |predicted margin &minus; actual final margin|,
+  in points -- e.g. picking a team to win by 10 when they win by 14 is a 4-point error. Averaging that
+  across every graded game gives the "Avg. Margin Error" stat above and each week's bars in this chart.
+  Lower is better for both the model's own number and the market's -- the real question this chart tracks
+  is whether the model is closing the gap on the market's own accuracy over time, not just whether picks
+  are winning.</p>
 
   <h2>This Week's Picks</h2>
   {upcoming_html}
@@ -630,20 +638,11 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   <footer>
     <p><strong>Methodology:</strong> 5-model stacked ensemble (logistic regression, random forest,
     XGBoost, LightGBM, extra trees) for win probability, plus a separate XGBoost regressor for
-    predicted margin. Features: ELO ratings, opponent-adjusted SRS ratings (iterative strength-of-schedule
+    predicted margin. Features: ELO ratings&Dagger;, opponent-adjusted SRS ratings (iterative strength-of-schedule
     solve), rolling 4-game team form, rolling ATS record, rest/bye-week, head-to-head history.
     Trained on 2021-2024 FBS seasons, held out all of 2025 for evaluation (75.5% straight-up accuracy,
     appropriately trailing the market's own 76.8% -- landing behind the market, not matching or beating it,
     is the healthy sign of a real model rather than a leakage bug).</p>
-    <p><strong>ELO</strong>, referenced throughout the picks below, is a rating system (originally from chess)
-    where every team starts at 1500 and gains or loses points after each game based on the result and how
-    surprising it was -- beating a stronger team gains more than beating a weaker one, and the size of the
-    swing scales with a K-factor (40 here, larger than a typical NBA ELO setup since a ~13-game CFB season
-    gives each result more information to react to). A team's ELO rating converts directly into a win
-    probability against any opponent -- that conversion, not the raw rating number, is what actually drives
-    the model. Home teams get a flat +65 rating bonus before that calculation, an unvalidated placeholder
-    (see <code>src/elo.py</code>) rather than a measured home-field value, same caveat as the confidence
-    tiers above.</p>
     <p>Two separate picks are shown per game: a <strong>moneyline pick</strong> (whichever team the model
     gives &gt;50% win probability -- who wins outright, no spread) and a <strong>spread pick</strong> (which
     side has value against the market line). These are often different teams, deliberately -- a big
@@ -663,13 +662,9 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
     "always take the market favorite" baseline (a plain 50% coin-flip line isn't the meaningful reference
     for straight-up picks -- even blindly picking favorites clears 50% easily), ATS win% against the real
     breakeven at standard -110 vig (52.4%, not 50% -- a spread market is deliberately set so both sides are
-    close to a coin flip, so 50% ATS is actually a losing record once the vig is paid), and <strong>margin
-    error</strong> -- the model's average margin error against the market's own average margin error on the
-    same games. Margin error for one game is simply |predicted margin &minus; actual final margin|, in points
-    (e.g. picking a team to win by 10 when they win by 14 is a 4-point error); averaging that across every
-    graded game gives the "Avg. Margin Error" stat above and each week's bar in the chart below. Lower is
-    better for both the model's own number and the market's -- the chart's real question is whether the
-    model is closing the gap on the market's own accuracy over time, not just whether picks are winning.</p>
+    close to a coin flip, so 50% ATS is actually a losing record once the vig is paid), and margin error&sect;
+    -- the model's average margin error against the market's own average margin error on the same games,
+    tracked week by week.</p>
     <p>Recommended wager is a paper amount only, sized with 25% fractional Kelly against a running
     $500 starting bankroll that compounds through settled picks. Cover probability treats the margin
     model's prediction error as normally distributed around its point estimate, using its own measured
@@ -684,6 +679,14 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
     over a trailing window) are including games from a prior season to fill that window, not just
     the current one. ELO and SRS handle this season boundary explicitly (regressed toward the mean);
     these rolling stats don't yet, so treat the confidence tier with extra caution early in the season.</p>
+    <p class="footnote">&Dagger; <strong>ELO</strong> is a rating system (originally from chess) where
+    every team starts at 1500 and gains or loses points after each game based on the result and how
+    surprising it was -- beating a stronger team gains more than beating a weaker one, and the size of
+    the swing scales with a K-factor (40 here, tuned for a ~13-game CFB season where each result carries
+    more information than a longer season would give it). A team's ELO rating converts directly into a
+    win probability against any opponent -- that conversion, not the raw rating number, is what actually
+    drives the model. Home teams get a flat +65 rating bonus before that calculation, an unvalidated
+    placeholder rather than a measured home-field value, same caveat as the confidence tiers above.</p>
     <p>Generated {generated_at}.</p>
   </footer>
 </div>
