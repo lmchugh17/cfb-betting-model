@@ -13,6 +13,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   pull-data:
@@ -72,3 +73,22 @@ jobs:
           git diff --cached --quiet && echo "No data changes" && exit 0
           git commit -m "Weekly data pull: $(date -u +%Y-%m-%d)"
           git push
+
+      # Doesn't depend on the account's own notification settings being configured
+      # right (can't verify those via API) -- a GitHub Issue is visible on the repo
+      # itself regardless. De-dupes into one running issue instead of a fresh one
+      # per failed day, in case something breaks and stays broken for a few runs.
+      - name: Alert on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          run_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          existing=$(gh issue list --repo "${{ github.repository }}" --state open \
+            --search "Weekly data pull failed in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --repo "${{ github.repository }}" --body "Failed again: $run_url"
+          else
+            gh issue create --repo "${{ github.repository }}" --title "Weekly data pull failed" \
+              --body "The scheduled data-pull workflow failed. Run: $run_url"
+          fi
