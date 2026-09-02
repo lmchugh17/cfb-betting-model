@@ -77,7 +77,7 @@ def main():
 
         print(f"Fetching forecast weather for {len(groups)} venue(s) covering {len(rows)} upcoming game(s)...",
               flush=True)
-        fetched, skipped, consecutive_failures = 0, 0, 0
+        fetched, skipped, consecutive_failures, remaining_venues = 0, 0, 0, 0
         for i, ((venue_id, lat, lon), games) in enumerate(groups.items(), 1):
             try:
                 hourly = fetch_forecast(lat, lon)
@@ -86,8 +86,9 @@ def main():
                 consecutive_failures += 1
                 print(f"  [{i}/{len(groups)}] WARN: venue {venue_id} forecast fetch failed: {e}", flush=True)
                 if consecutive_failures >= MAX_CONSECUTIVE_FAILURES:
+                    remaining_venues = len(groups) - i
                     print(f"  {consecutive_failures} venues in a row failed -- stopping early "
-                          f"({len(groups) - i} venue(s) skipped this run, will retry next pull). "
+                          f"({remaining_venues} venue(s) skipped this run, will retry next pull). "
                           "Likely Open-Meteo or the network path to it, not this script.", flush=True)
                     break
                 continue
@@ -112,6 +113,19 @@ def main():
 
         print(f"Wrote forecast weather for {fetched} game(s). {skipped} fell outside the forecast's "
               f"hourly range (kickoff right at the {FORECAST_HORIZON_DAYS}-day edge).")
+        if remaining_venues:
+            # GitHub Actions renders a `::warning::` line as a yellow annotation on the run's
+            # summary page, visible without failing the step -- deliberately not a nonzero
+            # exit here, since that would abort the job before the "Commit and push" step and
+            # throw away every other step's good data over one partial fetch. This just makes
+            # a partial run visible instead of reporting an identical green checkmark to a
+            # fully-successful one.
+            print(f"::warning::pull_weather_forecast.py only fetched some venues before its "
+                  f"circuit breaker tripped ({remaining_venues} venue(s) never attempted this run) "
+                  f"-- likely Open-Meteo rate-limiting GitHub Actions' shared IPs. Not fatal: "
+                  f"game_weather upserts by game_id, so the next scheduled pull will retry the "
+                  f"missed venues. If this keeps happening across multiple runs, some upcoming "
+                  f"games may be predicted without a weather signal for longer than intended.")
     finally:
         conn.close()
 
