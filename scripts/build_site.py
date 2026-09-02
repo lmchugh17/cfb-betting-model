@@ -397,11 +397,17 @@ def render_weekly_win_pct_chart(weekly: list[dict]) -> str:
             '<div class="bar-col">'
             f'<div class="bar-value">{pct:.0%}</div>'
             f'<div class="bar-track"><div class="bar-fill {css_class}" style="height: {pct * 100:.1f}%"></div>'
+            # bottom:50% here, not a chart-level line with a guessed pixel offset -- that
+            # approach measured from the whole card's bottom edge (label text and all),
+            # not the track's own height, and was quietly wrong the entire time (rendering
+            # at ~35% up instead of 50%). Percentage-inside-the-track is what actually
+            # works, same technique the favorite-baseline marker above already used correctly.
+            '<div class="ref-line-marker" style="bottom: 50%"></div>'
             f'{baseline_html}</div>'
             f'<div class="bar-label">{w["year"]} {_week_label(w)}</div>'
             "</div>"
         )
-    return (f'<div class="bar-chart"><div class="bar-ref-line"></div>{bars_html}</div>'
+    return (f'<div class="bar-chart">{bars_html}</div>'
             '<div class="bar-legend"><span class="legend-swatch legend-model"></span>Model moneyline win%'
             '<span class="legend-swatch legend-baseline"></span>Favorite baseline (same week)</div>')
 
@@ -422,11 +428,12 @@ def render_ats_win_pct_chart(weekly: list[dict]) -> str:
         bars_html += (
             '<div class="bar-col">'
             f'<div class="bar-value">{pct:.0%}</div>'
-            f'<div class="bar-track"><div class="bar-fill {css_class}" style="height: {pct * 100:.1f}%"></div></div>'
+            f'<div class="bar-track"><div class="bar-fill {css_class}" style="height: {pct * 100:.1f}%"></div>'
+            f'<div class="ref-line-marker" style="bottom: {ATS_BREAKEVEN * 100:.1f}%"></div></div>'
             f'<div class="bar-label">{w["year"]} {_week_label(w)}</div>'
             "</div>"
         )
-    return (f'<div class="bar-chart"><div class="bar-ref-line" style="bottom: calc(1rem + {ATS_BREAKEVEN * 120:.0f}px)"></div>{bars_html}</div>'
+    return (f'<div class="bar-chart">{bars_html}</div>'
             f'<div class="bar-legend"><span class="legend-swatch legend-model"></span>ATS win% '
             f'<span class="legend-swatch legend-baseline"></span>Breakeven at -110 ({ATS_BREAKEVEN:.1%})</div>')
 
@@ -539,7 +546,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .result-line {{ margin-top: 0.7rem; padding-top: 0.6rem; border-top: 1px solid var(--border); font-size: 0.85rem; }}
   .empty {{ color: var(--text-dim); font-size: 0.9rem; }}
   .bar-chart {{ position: relative; display: flex; align-items: flex-end; gap: 0.75rem; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1rem 1rem; margin-bottom: 1rem; overflow-x: auto; }}
-  .bar-ref-line {{ position: absolute; left: 1rem; right: 1rem; bottom: calc(1rem + 60px); border-top: 1px dashed var(--border); }}
+  .ref-line-marker {{ position: absolute; left: -3px; right: -3px; height: 0; border-top: 1px dashed var(--text-dim); }}
   .bar-col {{ display: flex; flex-direction: column; align-items: center; flex: 0 0 auto; width: 52px; }}
   .bar-value {{ font-size: 0.72rem; color: var(--text-dim); margin-bottom: 0.3rem; }}
   .bar-track {{ position: relative; width: 32px; height: 120px; background: rgba(255,255,255,0.05); border-radius: 4px; display: flex; align-items: flex-end; }}

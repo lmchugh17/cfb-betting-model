@@ -46,7 +46,7 @@
   .result-line { margin-top: 0.7rem; padding-top: 0.6rem; border-top: 1px solid var(--border); font-size: 0.85rem; }
   .empty { color: var(--text-dim); font-size: 0.9rem; }
   .bar-chart { position: relative; display: flex; align-items: flex-end; gap: 0.75rem; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1rem 1rem; margin-bottom: 1rem; overflow-x: auto; }
-  .bar-ref-line { position: absolute; left: 1rem; right: 1rem; bottom: calc(1rem + 60px); border-top: 1px dashed var(--border); }
+  .ref-line-marker { position: absolute; left: -3px; right: -3px; height: 0; border-top: 1px dashed var(--text-dim); }
   .bar-col { display: flex; flex-direction: column; align-items: center; flex: 0 0 auto; width: 52px; }
   .bar-value { font-size: 0.72rem; color: var(--text-dim); margin-bottom: 0.3rem; }
   .bar-track { position: relative; width: 32px; height: 120px; background: rgba(255,255,255,0.05); border-radius: 4px; display: flex; align-items: flex-end; }
@@ -89,9 +89,9 @@
 
   <h2>Weekly Trends</h2>
   <h3>Moneyline Win %</h3>
-  <div class="bar-chart"><div class="bar-ref-line"></div><div class="bar-col"><div class="bar-value">62%</div><div class="bar-track"><div class="bar-fill above" style="height: 62.5%"></div><div class="baseline-marker" style="bottom: 75.0%" title="Favorite baseline: 75%"></div></div><div class="bar-label">2026 Week 0</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>Model moneyline win%<span class="legend-swatch legend-baseline"></span>Favorite baseline (same week)</div>
+  <div class="bar-chart"><div class="bar-col"><div class="bar-value">62%</div><div class="bar-track"><div class="bar-fill above" style="height: 62.5%"></div><div class="ref-line-marker" style="bottom: 50%"></div><div class="baseline-marker" style="bottom: 75.0%" title="Favorite baseline: 75%"></div></div><div class="bar-label">2026 Week 0</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>Model moneyline win%<span class="legend-swatch legend-baseline"></span>Favorite baseline (same week)</div>
   <h3>Against the Spread Win %</h3>
-  <div class="bar-chart"><div class="bar-ref-line" style="bottom: calc(1rem + 63px)"></div><div class="bar-col"><div class="bar-value">38%</div><div class="bar-track"><div class="bar-fill below" style="height: 37.5%"></div></div><div class="bar-label">2026 Week 0</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>ATS win% <span class="legend-swatch legend-baseline"></span>Breakeven at -110 (52.4%)</div>
+  <div class="bar-chart"><div class="bar-col"><div class="bar-value">38%</div><div class="bar-track"><div class="bar-fill below" style="height: 37.5%"></div><div class="ref-line-marker" style="bottom: 52.4%"></div></div><div class="bar-label">2026 Week 0</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>ATS win% <span class="legend-swatch legend-baseline"></span>Breakeven at -110 (52.4%)</div>
   <h3>Margin Accuracy: Model vs. Market</h3>
   <div class="bar-chart"><div class="pair-col"><div class="pair-values"><span class="pair-model-text">14.3</span> vs <span class="pair-market-text">13.3</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 100.0%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 92.9%"></div></div></div><div class="bar-label">2026 Week 0</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>Model avg error (pts)<span class="legend-swatch legend-market-sw"></span>Market avg error (pts) &middot; lower is better</div>
 
@@ -1437,7 +1437,7 @@
     over a trailing window) are including games from a prior season to fill that window, not just
     the current one. ELO and SRS handle this season boundary explicitly (regressed toward the mean);
     these rolling stats don't yet, so treat the confidence tier with extra caution early in the season.</p>
-    <p>Generated 2026-09-02 01:28 UTC.</p>
+    <p>Generated 2026-09-02 01:56 UTC.</p>
   </footer>
 </div>
 </body>
