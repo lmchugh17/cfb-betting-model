@@ -5,7 +5,8 @@ scheduled Claude Code session, task 11).
 """
 import json
 import sys
-from datetime import datetime, timezone
+from collections import defaultdict
+from datetime import date, datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -87,24 +88,81 @@ def fetch_results(conn) -> list[dict]:
     return [dict(zip(cols, r)) for r in rows]
 
 
+def _week_zero_cutoff(dates: list[str]) -> str | None:
+    """CFBD bundles a small slate of early season-opener games (what broadcasters/fans
+    already call 'Week 0') into the same week=1 as the following week's main slate --
+    confirmed 2026-09-02: week 1 spans Aug 29 - Sep 7, but games only actually happen on
+    Aug 29-30 and Sep 3-7, a clean 3-day gap in between. Finds that gap generically (the
+    largest gap between distinct game dates) rather than hardcoding a calendar date, so it
+    still works correctly in a season where the split falls on a different date. Returns
+    the first date that should stay in week 1, or None if week 1 has no real gap to split."""
+    if len(dates) < 2:
+        return None
+    parsed = sorted(date.fromisoformat(d) for d in set(dates))
+    gaps = [(parsed[i + 1] - parsed[i]).days for i in range(len(parsed) - 1)]
+    max_gap = max(gaps)
+    if max_gap < 2:
+        return None
+    return parsed[gaps.index(max_gap) + 1].isoformat()
+
+
 def fetch_weekly_performance(conn) -> list[dict]:
-    """One row per (year, week) with that week's moneyline and ATS record --
-    lets the season-long summary tiles be checked against week-by-week form
-    instead of only a single cumulative number."""
+    """One row per (year, display_week) with that week's moneyline record, ATS record,
+    and a same-week 'always take the market favorite' straight-up baseline -- lets the
+    season-long summary tiles be checked against week-by-week form, and the model's own
+    moneyline record against a trivial baseline that needs no model at all, instead of
+    only a single cumulative number. display_week splits CFBD's week=1 into a true week 0
+    (see _week_zero_cutoff) when that week actually bundles two slates."""
     rows = conn.execute("""
-        SELECT year, week, COUNT(*),
-               SUM(CASE WHEN moneyline_pick_won = 1 THEN 1 ELSE 0 END),
-               SUM(CASE WHEN moneyline_pick IS NOT NULL THEN 1 ELSE 0 END),
-               SUM(CASE WHEN pick_covered = 1 THEN 1 ELSE 0 END),
-               SUM(CASE WHEN pick_covered = 0 THEN 1 ELSE 0 END),
-               SUM(CASE WHEN pick_covered IS NULL AND pick_team IS NOT NULL THEN 1 ELSE 0 END),
-               AVG(ABS(predicted_margin - actual_margin))
+        SELECT year, week, DATE(start_date), home_team, away_team, market_spread,
+               actual_winner, moneyline_pick_won, pick_covered, pick_team,
+               ABS(predicted_margin - actual_margin) AS margin_error
         FROM prediction_results
-        GROUP BY year, week
-        ORDER BY year DESC, week DESC
     """).fetchall()
-    cols = ["year", "week", "n", "ml_wins", "ml_decided", "ats_wins", "ats_losses", "ats_pushes", "avg_err"]
-    return [dict(zip(cols, r)) for r in rows]
+
+    # The week-0/week-1 gap only shows up once you look at the WHOLE week-1 span, not just
+    # completed games -- early in the season prediction_results (completed only) might only
+    # contain the small week-0 slate so far, with no visible gap yet. Pull all week=1 dates
+    # from `predictions` (upcoming + completed) instead, purely to find the split point.
+    week1_dates_by_year = defaultdict(list)
+    for year, week, d in conn.execute("SELECT year, week, DATE(start_date) FROM predictions WHERE week = 1"):
+        week1_dates_by_year[year].append(d)
+    cutoffs = {year: _week_zero_cutoff(dates) for year, dates in week1_dates_by_year.items()}
+
+    buckets = defaultdict(lambda: {"n": 0, "ml_wins": 0, "ml_decided": 0, "ats_wins": 0,
+                                    "ats_losses": 0, "ats_pushes": 0, "fav_wins": 0, "fav_decided": 0,
+                                    "margin_errors": []})
+    for year, week, d, home, away, spread, winner, ml_won, covered, pick_team, margin_err in rows:
+        display_week = week
+        if week == 1 and cutoffs.get(year) and d < cutoffs[year]:
+            display_week = 0
+        b = buckets[(year, display_week)]
+        b["n"] += 1
+        if ml_won is not None:
+            b["ml_decided"] += 1
+            b["ml_wins"] += ml_won
+        if covered == 1:
+            b["ats_wins"] += 1
+        elif covered == 0:
+            b["ats_losses"] += 1
+        elif covered is None and pick_team is not None:
+            b["ats_pushes"] += 1
+        if spread is not None and spread != 0:
+            favorite = home if spread < 0 else away
+            b["fav_decided"] += 1
+            b["fav_wins"] += int(winner == favorite)
+        if margin_err is not None:
+            b["margin_errors"].append(margin_err)
+
+    result = []
+    for (year, week), b in buckets.items():
+        avg_err = sum(b["margin_errors"]) / len(b["margin_errors"]) if b["margin_errors"] else None
+        result.append({"year": year, "week": week, "n": b["n"], "ml_wins": b["ml_wins"],
+                        "ml_decided": b["ml_decided"], "ats_wins": b["ats_wins"], "ats_losses": b["ats_losses"],
+                        "ats_pushes": b["ats_pushes"], "fav_wins": b["fav_wins"], "fav_decided": b["fav_decided"],
+                        "avg_err": avg_err})
+    result.sort(key=lambda r: (r["year"], r["week"]), reverse=True)
+    return result
 
 
 def compute_current_bankroll(conn) -> float:
@@ -278,6 +336,10 @@ def render_stat_tile(label: str, value: str) -> str:
     return f'<div class="stat-tile"><div class="stat-value">{value}</div><div class="stat-label">{label}</div></div>'
 
 
+def _week_label(w: dict) -> str:
+    return "Postseason" if w.get("week") is None else f"Week {w['week']}"
+
+
 def render_weekly_table(weekly: list[dict]) -> str:
     if not weekly:
         return '<p class="empty">No completed weeks tracked yet.</p>'
@@ -285,14 +347,15 @@ def render_weekly_table(weekly: list[dict]) -> str:
     for w in weekly:
         ml_pct = f"{w['ml_wins']}-{w['ml_decided'] - w['ml_wins']} ({w['ml_wins']/w['ml_decided']:.0%})" if w["ml_decided"] else "n/a"
         ats_pct = f"{w['ats_wins']}-{w['ats_losses']}-{w['ats_pushes']}"
+        fav_pct = (f"{w['fav_wins']}-{w['fav_decided'] - w['fav_wins']} ({w['fav_wins']/w['fav_decided']:.0%})"
+                   if w["fav_decided"] else "n/a")
         avg_err = f"{w['avg_err']:.1f}" if w["avg_err"] is not None else "n/a"
-        season_type_label = "Postseason" if w.get("week") is None else f"Week {w['week']}"
         rows_html += (
-            f"<tr><td>{w['year']} {season_type_label}</td><td>{w['n']}</td>"
-            f"<td>{ml_pct}</td><td>{ats_pct}</td><td>{avg_err} pts</td></tr>"
+            f"<tr><td>{w['year']} {_week_label(w)}</td><td>{w['n']}</td>"
+            f"<td>{ml_pct}</td><td>{fav_pct}</td><td>{ats_pct}</td><td>{avg_err} pts</td></tr>"
         )
     return f"""<div class="table-wrap"><table class="weekly-table">
-      <thead><tr><th>Week</th><th>Games</th><th>Moneyline</th><th>ATS</th><th>Avg. Error</th></tr></thead>
+      <thead><tr><th>Week</th><th>Games</th><th>Moneyline</th><th>Favorite Baseline</th><th>ATS</th><th>Avg. Error</th></tr></thead>
       <tbody>{rows_html}</tbody>
     </table></div>"""
 
@@ -300,23 +363,33 @@ def render_weekly_table(weekly: list[dict]) -> str:
 def render_weekly_win_pct_chart(weekly: list[dict]) -> str:
     """Moneyline win% per week as a simple CSS bar chart -- oldest week first (left to
     right) so it reads as a trend, opposite of the table's newest-first order. Bar height
-    is win% of vertical space; a dashed line at the 50% mark gives a coin-flip reference."""
+    is win% of vertical space; a dashed line at the 50% mark gives a coin-flip reference.
+    A second marker on each bar shows that same week's "always take the market favorite"
+    straight-up record -- a trivial baseline that needs no model at all, so a bar that
+    doesn't clear its own baseline marker is a real red flag, not just a bad week."""
     decided = [w for w in weekly if w["ml_decided"]]
     if not decided:
         return '<p class="empty">No completed weeks tracked yet.</p>'
     bars_html = ""
     for w in reversed(decided):  # weekly is newest-first; chart wants oldest-first
         pct = w["ml_wins"] / w["ml_decided"]
-        label = "Postseason" if w.get("week") is None else f"Wk {w['week']}"
         css_class = "above" if pct >= 0.5 else "below"
+        baseline_html = ""
+        if w["fav_decided"]:
+            fav_pct = w["fav_wins"] / w["fav_decided"]
+            baseline_html = (f'<div class="baseline-marker" style="bottom: {fav_pct * 100:.1f}%" '
+                              f'title="Favorite baseline: {fav_pct:.0%}"></div>')
         bars_html += (
             '<div class="bar-col">'
             f'<div class="bar-value">{pct:.0%}</div>'
-            f'<div class="bar-track"><div class="bar-fill {css_class}" style="height: {pct * 100:.1f}%"></div></div>'
-            f'<div class="bar-label">{w["year"]} {label}</div>'
+            f'<div class="bar-track"><div class="bar-fill {css_class}" style="height: {pct * 100:.1f}%"></div>'
+            f'{baseline_html}</div>'
+            f'<div class="bar-label">{w["year"]} {_week_label(w)}</div>'
             "</div>"
         )
-    return f'<div class="bar-chart"><div class="bar-ref-line"></div>{bars_html}</div>'
+    return (f'<div class="bar-chart"><div class="bar-ref-line"></div>{bars_html}</div>'
+            '<div class="bar-legend"><span class="legend-swatch legend-model"></span>Model moneyline win%'
+            '<span class="legend-swatch legend-baseline"></span>Favorite baseline (same week)</div>')
 
 
 def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankroll: float,
@@ -390,11 +463,17 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .bar-ref-line {{ position: absolute; left: 1rem; right: 1rem; bottom: calc(1rem + 60px); border-top: 1px dashed var(--border); }}
   .bar-col {{ display: flex; flex-direction: column; align-items: center; flex: 0 0 auto; width: 52px; }}
   .bar-value {{ font-size: 0.72rem; color: var(--text-dim); margin-bottom: 0.3rem; }}
-  .bar-track {{ width: 32px; height: 120px; background: rgba(255,255,255,0.05); border-radius: 4px; display: flex; align-items: flex-end; overflow: hidden; }}
+  .bar-track {{ position: relative; width: 32px; height: 120px; background: rgba(255,255,255,0.05); border-radius: 4px; display: flex; align-items: flex-end; }}
   .bar-fill {{ width: 100%; border-radius: 3px 3px 0 0; }}
   .bar-fill.above {{ background: var(--green); }}
   .bar-fill.below {{ background: var(--red); }}
+  .baseline-marker {{ position: absolute; left: -3px; right: -3px; height: 2px; background: var(--amber); }}
   .bar-label {{ font-size: 0.68rem; color: var(--text-dim); margin-top: 0.4rem; text-align: center; white-space: nowrap; }}
+  .bar-legend {{ display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; color: var(--text-dim); margin: 0.6rem 0 1rem; flex-wrap: wrap; }}
+  .legend-swatch {{ display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-left: 0.6rem; }}
+  .legend-swatch:first-child {{ margin-left: 0; }}
+  .legend-model {{ background: var(--green); }}
+  .legend-baseline {{ background: var(--amber); height: 2px; width: 12px; border-radius: 0; align-self: center; }}
   .table-wrap {{ overflow-x: auto; margin-bottom: 1rem; }}
   .weekly-table {{ width: 100%; border-collapse: collapse; font-size: 0.85rem; background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }}
   .weekly-table th, .weekly-table td {{ padding: 0.6rem 0.9rem; text-align: left; white-space: nowrap; }}
@@ -413,15 +492,17 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
 
   <div class="stats-row">{stat_tiles}</div>
 
+  <h2>Weekly Win %</h2>
+  {weekly_bar_html}
+
   <h2>This Week's Picks</h2>
   {upcoming_html}
 
-  <h2>Weekly Performance</h2>
-  {weekly_bar_html}
-  {weekly_html}
-
   <h2>Recent Results</h2>
   {results_html}
+
+  <h2>Weekly Performance</h2>
+  {weekly_html}
 
   <footer>
     <p><strong>Methodology:</strong> 5-model stacked ensemble (logistic regression, random forest,
