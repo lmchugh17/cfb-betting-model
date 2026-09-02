@@ -12,9 +12,17 @@ import requests
 SEARCH_URL = "https://site.api.espn.com/apis/search/v2"
 ROSTER_URL = "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/{team_id}/roster"
 
+# Short on purpose, same reasoning as src/weather_client.py's REQUEST_TIMEOUT_S: this is
+# hit in a per-team loop (up to 138 sequential calls in scripts/scrape_injuries.py), and a
+# free/unauthenticated API being called from a datacenter/CI IP range (GitHub Actions) is
+# exactly the kind of traffic these APIs often throttle harder than normal residential
+# requests -- confirmed for Open-Meteo 2026-09-02, not yet observed here, but the same
+# structural risk applies and a short timeout costs nothing when things are working fine.
+REQUEST_TIMEOUT_S = 10
+
 
 def find_team_espn_id(school_name: str, mascot: str | None = None) -> str | None:
-    resp = requests.get(SEARCH_URL, params={"query": school_name, "limit": 10}, timeout=30)
+    resp = requests.get(SEARCH_URL, params={"query": school_name, "limit": 10}, timeout=REQUEST_TIMEOUT_S)
     resp.raise_for_status()
     data = resp.json()
 
@@ -51,7 +59,7 @@ def find_team_espn_id(school_name: str, mascot: str | None = None) -> str | None
 
 
 def fetch_roster_with_injuries(espn_team_id: str) -> list:
-    resp = requests.get(ROSTER_URL.format(team_id=espn_team_id), timeout=30)
+    resp = requests.get(ROSTER_URL.format(team_id=espn_team_id), timeout=REQUEST_TIMEOUT_S)
     resp.raise_for_status()
     data = resp.json()
     players = []

@@ -20,6 +20,7 @@ games get corrected to their real recorded weather instead.
 
 Usage: .venv/bin/python scripts/pull_weather_forecast.py
 """
+import random
 import sys
 from collections import defaultdict
 from datetime import datetime, timedelta, timezone
@@ -74,26 +75,31 @@ def main():
         groups = defaultdict(list)
         for game_id, venue_id, start_date, lat, lon in rows:
             groups[(venue_id, lat, lon)].append((game_id, start_date))
+        # Shuffled so a bad run's failures don't always land on the same tail-end venues --
+        # unshuffled, a circuit breaker tripping partway through would starve whichever
+        # venues happen to sort last every single run, not spread the misses around.
+        shuffled_groups = list(groups.items())
+        random.shuffle(shuffled_groups)
 
-        print(f"Fetching forecast weather for {len(groups)} venue(s) covering {len(rows)} upcoming game(s)...",
+        print(f"Fetching forecast weather for {len(shuffled_groups)} venue(s) covering {len(rows)} upcoming game(s)...",
               flush=True)
         fetched, skipped, consecutive_failures, remaining_venues = 0, 0, 0, 0
-        for i, ((venue_id, lat, lon), games) in enumerate(groups.items(), 1):
+        for i, ((venue_id, lat, lon), games) in enumerate(shuffled_groups, 1):
             try:
                 hourly = fetch_forecast(lat, lon)
                 consecutive_failures = 0
             except Exception as e:
                 consecutive_failures += 1
-                print(f"  [{i}/{len(groups)}] WARN: venue {venue_id} forecast fetch failed: {e}", flush=True)
+                print(f"  [{i}/{len(shuffled_groups)}] WARN: venue {venue_id} forecast fetch failed: {e}", flush=True)
                 if consecutive_failures >= MAX_CONSECUTIVE_FAILURES:
-                    remaining_venues = len(groups) - i
+                    remaining_venues = len(shuffled_groups) - i
                     print(f"  {consecutive_failures} venues in a row failed -- stopping early "
                           f"({remaining_venues} venue(s) skipped this run, will retry next pull). "
                           "Likely Open-Meteo or the network path to it, not this script.", flush=True)
                     break
                 continue
-            if i % 20 == 0 or i == len(groups):
-                print(f"  [{i}/{len(groups)}] venues fetched so far...", flush=True)
+            if i % 20 == 0 or i == len(shuffled_groups):
+                print(f"  [{i}/{len(shuffled_groups)}] venues fetched so far...", flush=True)
             for game_id, kickoff in games:
                 weather = nearest_hour(hourly, kickoff)
                 if weather is None:
