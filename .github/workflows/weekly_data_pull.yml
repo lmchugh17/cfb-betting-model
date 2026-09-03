@@ -4,11 +4,15 @@ on:
   schedule:
     # 13:00 UTC = 7am America/Denver during MDT (Mar-Nov). Shifts to 6am local
     # during MST (Nov-Mar) since GitHub cron is fixed UTC and doesn't track DST.
-    # TEMPORARY: daily through 2026-09-07 to stress-test the 2026-09-01/02 fixes (the
-    # git-add crash and the Open-Meteo timeout/circuit-breaker) across more real runs.
-    # Revert to "0 13 * * 2,5,6" (Tue/Fri/Sat) after that -- normal cadence keeps Odds
-    # API usage conservative for sharing with the future NFL build.
-    - cron: "0 13 * * *"  # daily (temporary, see above)
+    # EXTENDED TEST WINDOW, still not the standing cadence: switched from Tue/Fri/Sat
+    # to daily on 2026-09-01/02 to stress-test that week's fixes (the git-add crash
+    # and the Open-Meteo timeout/circuit-breaker); user extended the daily window on
+    # 2026-09-03 to roughly 8-10 more days (~through 2026-09-11 to 09-13) rather than
+    # reverting on the original 09-07 date -- explicitly not a permanent decision yet.
+    # Revert to "0 13 * * 2,5,6" (Tue/Fri/Sat) around then unless extended again.
+    # (Odds API budget isn't the constraint either way -- daily is well inside the
+    # free tier: 3 credits/pull * 365/yr ~= 1,095/yr vs. the tier's 6,000/yr.)
+    - cron: "0 13 * * *"  # daily (extended test window, see above)
   workflow_dispatch: {}
 
 permissions:
