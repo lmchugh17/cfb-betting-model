@@ -37,11 +37,6 @@ jobs:
           CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
         run: python scripts/backfill.py 2026 2026
 
-      - name: Pull latest player stats and rosters
-        env:
-          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
-        run: python scripts/backfill_players.py 2026 2026
-
       - name: Pull latest team box score stats
         env:
           CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
