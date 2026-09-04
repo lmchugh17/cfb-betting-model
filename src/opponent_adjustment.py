@@ -56,8 +56,9 @@ def compute_weekly_srs(games_rows: list[dict]) -> dict:
     Returns {(year, week, team): srs_entering_that_week}. Week 1 of a season
     uses the prior season's final SRS, regressed 50% toward 0, as its prior
     (mirrors the ELO module's between-season regression, same roster-turnover
-    rationale) -- 2021 (our earliest backfilled season) has no prior, so it
-    starts at 0 for everyone.
+    rationale) -- whichever season is earliest in the games passed in has no
+    prior, so it starts at 0 for everyone (2011, as of the 2026-09-03 historical
+    backfill; originally 2021 before that).
     """
     by_season = defaultdict(list)
     for g in games_rows:

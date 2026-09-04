@@ -53,6 +53,24 @@ FEATURE_COLUMNS = [
 
 N_SPLITS = 3  # TimeSeriesSplit folds for OOF stacking -- kept small since each CFB season is short
 
+# NIL (Name, Image, Likeness) began mid-2021, almost exactly matching this project's original
+# training range (2021-2025) -- so before the 2026-09-03 historical backfill added 2011-2020,
+# every training row was already NIL-era and this constant did nothing. Now that pre-NIL
+# seasons are in the pool too, pre-2021 rows get a flat reduced weight rather than full say
+# equal to today's roster-construction reality (free player movement via NIL/transfer-portal
+# economics). A flat two-tier split, not a continuous per-year decay, was chosen deliberately:
+# NIL is a real structural break in how rosters get built, not a gradual drift, so a smooth
+# decay would blur a discontinuity that's actually there. PRE_NIL_SAMPLE_WEIGHT is a first-pass
+# number, not empirically tuned -- same "documented, not rigorously calibrated" treatment as
+# this project's other first-pass constants (e.g. the ELO home-field bonus, RETRAIN_REVIEW_THRESHOLD).
+NIL_ERA_START_YEAR = 2021
+PRE_NIL_SAMPLE_WEIGHT = 0.5
+
+
+def compute_nil_era_sample_weight(years: pd.Series) -> np.ndarray:
+    """1.0 for 2021+ (NIL era), PRE_NIL_SAMPLE_WEIGHT for anything earlier."""
+    return np.where(years.to_numpy() >= NIL_ERA_START_YEAR, 1.0, PRE_NIL_SAMPLE_WEIGHT)
+
 
 def prepare_matrix(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
     X = df[FEATURE_COLUMNS].copy()
@@ -83,26 +101,32 @@ class StackingEnsemble:
     meta_model: LogisticRegression = None
     feature_medians: pd.Series = None
 
-    def fit(self, X: pd.DataFrame, y: pd.Series):
+    def fit(self, X: pd.DataFrame, y: pd.Series, sample_weight: np.ndarray | None = None):
         self.base_models = {}
         oof_preds = np.zeros((len(X), len(_base_classifiers())))
         tscv = TimeSeriesSplit(n_splits=N_SPLITS)
+        sw = np.asarray(sample_weight) if sample_weight is not None else None
 
         for i, (name, model) in enumerate(_base_classifiers().items()):
             pipeline = Pipeline([("scaler", StandardScaler()), ("model", model)])
             fold_preds = np.full(len(X), np.nan)
             for train_idx, val_idx in tscv.split(X):
                 pipeline_fold = Pipeline([("scaler", StandardScaler()), ("model", model.__class__(**model.get_params()))])
-                pipeline_fold.fit(X.iloc[train_idx], y.iloc[train_idx])
+                # sklearn Pipeline forwards fit params to a named step via "<step>__<param>" --
+                # StandardScaler itself doesn't take sample_weight, only the model step does.
+                fold_kwargs = {"model__sample_weight": sw[train_idx]} if sw is not None else {}
+                pipeline_fold.fit(X.iloc[train_idx], y.iloc[train_idx], **fold_kwargs)
                 fold_preds[val_idx] = pipeline_fold.predict_proba(X.iloc[val_idx])[:, 1]
             oof_preds[:, i] = fold_preds
 
-            pipeline.fit(X, y)  # refit on full training set for inference-time use
+            fit_kwargs = {"model__sample_weight": sw} if sw is not None else {}
+            pipeline.fit(X, y, **fit_kwargs)  # refit on full training set for inference-time use
             self.base_models[name] = pipeline
 
         valid_rows = ~np.isnan(oof_preds).any(axis=1)
         self.meta_model = LogisticRegression(C=0.1, max_iter=1000)
-        self.meta_model.fit(oof_preds[valid_rows], y.iloc[valid_rows])
+        meta_sw = sw[valid_rows] if sw is not None else None
+        self.meta_model.fit(oof_preds[valid_rows], y.iloc[valid_rows], sample_weight=meta_sw)
         return self
 
     def predict_proba(self, X: pd.DataFrame) -> np.ndarray:
@@ -119,10 +143,10 @@ class StackingEnsemble:
         return {"base": base_probs, "final": final}
 
 
-def train_margin_regressor(X: pd.DataFrame, y: pd.Series) -> XGBRegressor:
+def train_margin_regressor(X: pd.DataFrame, y: pd.Series, sample_weight: np.ndarray | None = None) -> XGBRegressor:
     model = XGBRegressor(random_state=42, n_estimators=300, max_depth=4, learning_rate=0.05,
                           subsample=0.8, colsample_bytree=0.8)
-    model.fit(X, y)
+    model.fit(X, y, sample_weight=sample_weight)
     return model
 
 
