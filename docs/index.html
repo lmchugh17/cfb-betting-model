@@ -1463,9 +1463,10 @@
     XGBoost, LightGBM, extra trees) for win probability, plus a separate XGBoost regressor for
     predicted margin. Features: ELO ratings&Dagger;, opponent-adjusted SRS ratings (iterative strength-of-schedule
     solve), rolling 4-game team form, rolling ATS record, rest/bye-week, head-to-head history.
-    Trained on 2021-2024 FBS seasons, held out all of 2025 for evaluation (75.5% straight-up accuracy,
-    appropriately trailing the market's own 76.8% -- landing behind the market, not matching or beating it,
-    is the healthy sign of a real model rather than a leakage bug).</p>
+    Trained on 2011-2024 FBS seasons (pre-2021 games weighted at half the influence of 2021+ data, since
+    NIL and the modern transfer portal changed how rosters get built), held out all of 2025 for evaluation
+    (75.5% straight-up accuracy, appropriately trailing the market's own 76.8% -- landing behind the market,
+    not matching or beating it, is the healthy sign of a real model rather than a leakage bug).</p>
     <p>Two separate picks are shown per game: a <strong>moneyline pick</strong> (whichever team the model
     gives &gt;50% win probability -- who wins outright, no spread) and a <strong>spread pick</strong> (which
     side has value against the market line). These are often different teams, deliberately -- a big
@@ -1510,7 +1511,7 @@
     win probability against any opponent -- that conversion, not the raw rating number, is what actually
     drives the model. Home teams get a flat +65 rating bonus before that calculation, an unvalidated
     placeholder rather than a measured home-field value, same caveat as the confidence tiers above.</p>
-    <p>Generated 2026-09-04 18:34 UTC.</p>
+    <p>Generated 2026-09-04 22:28 UTC.</p>
   </footer>
 </div>
 <script>
