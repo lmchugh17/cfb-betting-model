@@ -113,7 +113,28 @@ def _week_zero_cutoff(dates: list[str]) -> str | None:
     return parsed[gaps.index(max_gap) + 1].isoformat()
 
 
-def fetch_weekly_performance(conn) -> list[dict]:
+def compute_week0_cutoffs(conn) -> dict:
+    """{year: cutoff_date | None}, see _week_zero_cutoff -- computed once and shared by
+    fetch_weekly_performance (aggregation) and group_results_by_week (per-game display_week
+    for the Past Picks tab), so both agree on which games count as "week 0" vs "week 1".
+    The week-0/week-1 gap only shows up once you look at the WHOLE week-1 span, not just
+    completed games -- early in the season prediction_results (completed only) might only
+    contain the small week-0 slate so far, with no visible gap yet. Pull all week=1 dates
+    from `predictions` (upcoming + completed) instead, purely to find the split point."""
+    week1_dates_by_year = defaultdict(list)
+    for year, week, d in conn.execute("SELECT year, week, DATE(start_date) FROM predictions WHERE week = 1"):
+        week1_dates_by_year[year].append(d)
+    return {year: _week_zero_cutoff(dates) for year, dates in week1_dates_by_year.items()}
+
+
+def display_week_for(year: int, week: int, start_date: str, cutoffs: dict) -> int:
+    d = start_date[:10]
+    if week == 1 and cutoffs.get(year) and d < cutoffs[year]:
+        return 0
+    return week
+
+
+def fetch_weekly_performance(conn, cutoffs: dict) -> list[dict]:
     """One row per (year, display_week) with that week's moneyline record, ATS record,
     and a same-week 'always take the market favorite' straight-up baseline -- lets the
     season-long summary tiles be checked against week-by-week form, and the model's own
@@ -129,24 +150,13 @@ def fetch_weekly_performance(conn) -> list[dict]:
         LEFT JOIN polymarket_odds po ON po.game_id = pr.game_id
     """).fetchall()
 
-    # The week-0/week-1 gap only shows up once you look at the WHOLE week-1 span, not just
-    # completed games -- early in the season prediction_results (completed only) might only
-    # contain the small week-0 slate so far, with no visible gap yet. Pull all week=1 dates
-    # from `predictions` (upcoming + completed) instead, purely to find the split point.
-    week1_dates_by_year = defaultdict(list)
-    for year, week, d in conn.execute("SELECT year, week, DATE(start_date) FROM predictions WHERE week = 1"):
-        week1_dates_by_year[year].append(d)
-    cutoffs = {year: _week_zero_cutoff(dates) for year, dates in week1_dates_by_year.items()}
-
     buckets = defaultdict(lambda: {"n": 0, "ml_wins": 0, "ml_decided": 0, "ats_wins": 0,
                                     "ats_losses": 0, "ats_pushes": 0, "fav_wins": 0, "fav_decided": 0,
                                     "margin_errors": [], "market_margin_errors": [],
                                     "model_briers": [], "poly_briers": []})
     for (year, week, d, home, away, spread, winner, ml_won, covered, pick_team, actual_margin,
          margin_err, win_prob_home, home_points, away_points, poly_home_prob) in rows:
-        display_week = week
-        if week == 1 and cutoffs.get(year) and d < cutoffs[year]:
-            display_week = 0
+        display_week = display_week_for(year, week, d, cutoffs)
         b = buckets[(year, display_week)]
         b["n"] += 1
         if ml_won is not None:
@@ -568,6 +578,47 @@ def render_polymarket_accuracy_chart(weekly: list[dict]) -> str:
             '<span class="legend-swatch legend-market-sw"></span>Polymarket Brier score &middot; lower is better</div>')
 
 
+def group_results_by_week(results: list[dict], cutoffs: dict) -> list[tuple]:
+    """Buckets fetch_results() output (newest-game-first) into (year, display_week) groups
+    for the Past Picks tab -- each game keeps its existing relative order within its group,
+    groups themselves sorted newest week first. Mirrors fetch_weekly_performance's own
+    bucketing (same cutoffs dict) so the per-week record shown in each group's <summary>
+    always matches the Weekly Performance table above."""
+    buckets = defaultdict(list)
+    for r in results:
+        dw = display_week_for(r["year"], r["week"], r["start_date"], cutoffs)
+        buckets[(r["year"], dw)].append(r)
+    return sorted(buckets.items(), key=lambda kv: kv[0], reverse=True)
+
+
+def render_history_tab(results: list[dict], cutoffs: dict, weekly: list[dict]) -> str:
+    """Past Picks tab: one collapsible <details> group per week (most recent open by
+    default, older weeks collapsed) instead of one long flat list of every completed game
+    -- history only grows from here, so this keeps the page from turning into an endless
+    scroll once a few weeks have piled up. Each group's <summary> shows the same ML/ATS
+    record as its row in the Weekly Performance table, so the record is visible without
+    expanding the group at all."""
+    if not results:
+        return '<p class="empty">No completed games yet.</p>'
+    weekly_by_key = {(w["year"], w["week"]): w for w in weekly}
+    groups_html = ""
+    for i, ((year, week), games) in enumerate(group_results_by_week(results, cutoffs)):
+        w = weekly_by_key.get((year, week))
+        record_html = ""
+        if w:
+            ml_pct = f"{w['ml_wins']}-{w['ml_decided'] - w['ml_wins']}" if w["ml_decided"] else "n/a"
+            ats_pct = f"{w['ats_wins']}-{w['ats_losses']}-{w['ats_pushes']}"
+            record_html = f'<span class="week-record">ML {ml_pct} &middot; ATS {ats_pct}</span>'
+        cards_html = "".join(render_pick_card(g, result=g) for g in games)
+        open_attr = " open" if i == 0 else ""
+        groups_html += (
+            f'<details class="week-group"{open_attr}>'
+            f'<summary><span class="week-title">{year} {_week_label({"week": week})}</span>{record_html}</summary>'
+            f'<div class="week-cards">{cards_html}</div></details>'
+        )
+    return groups_html
+
+
 def render_upcoming_filters(upcoming: list[dict]) -> str:
     """Team/conference dropdowns for narrowing 'This Week's Picks' to one team or conference
     at a glance -- client-side only (options + data-teams/data-confs on each card, see
@@ -590,7 +641,7 @@ def render_upcoming_filters(upcoming: list[dict]) -> str:
 
 
 def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankroll: float,
-                weekly: list[dict]) -> str:
+                weekly: list[dict], cutoffs: dict) -> str:
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     ml_pct = f"{summary['ml_wins']}/{summary['ml_decided']}" if summary["ml_decided"] else "0/0"
@@ -608,7 +659,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
 
     upcoming_html = "".join(render_pick_card(p, bankroll=bankroll) for p in upcoming) or '<p class="empty">No upcoming games with picks right now.</p>'
     upcoming_filters_html = render_upcoming_filters(upcoming)
-    results_html = "".join(render_pick_card(r, result=r) for r in results) or '<p class="empty">No completed games yet.</p>'
+    history_html = render_history_tab(results, cutoffs, weekly)
     weekly_html = render_weekly_table(weekly)
     ml_chart_html = render_weekly_win_pct_chart(weekly)
     ats_chart_html = render_ats_win_pct_chart(weekly)
@@ -701,6 +752,18 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .filter-row label {{ display: flex; align-items: center; gap: 0.4rem; }}
   .filter-row select {{ background: var(--card); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.35rem 0.6rem; font-size: 0.85rem; max-width: 60vw; }}
   .filter-count {{ margin-left: auto; }}
+  .tabs {{ display: flex; gap: 0.5rem; margin: 1rem 0 1.25rem; }}
+  .tab-btn {{ background: var(--card); color: var(--text-dim); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.85rem; font-family: inherit; cursor: pointer; }}
+  .tab-btn.active {{ color: var(--text); border-color: var(--accent); background: rgba(79,140,255,0.12); }}
+  .tab-panel[hidden] {{ display: none; }}
+  .week-group {{ background: var(--card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 1rem; overflow: hidden; }}
+  .week-group summary {{ cursor: pointer; list-style: none; padding: 0.9rem 1.1rem; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }}
+  .week-group summary::-webkit-details-marker {{ display: none; }}
+  .week-title {{ display: flex; align-items: center; }}
+  .week-title::before {{ content: '\25B8'; display: inline-block; margin-right: 0.6rem; color: var(--text-dim); transition: transform 0.15s; }}
+  .week-group[open] .week-title::before {{ transform: rotate(90deg); }}
+  .week-record {{ font-weight: 400; color: var(--text-dim); font-size: 0.78rem; white-space: nowrap; }}
+  .week-cards {{ padding: 0 1.1rem 1.1rem; }}
   footer {{ margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.78rem; line-height: 1.5; }}
   .footnote {{ font-size: 0.72rem; opacity: 0.8; color: var(--text-dim); margin-top: -0.5rem; margin-bottom: 1.5rem; }}
 </style>
@@ -740,12 +803,20 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   independently from the model's own features, same as always. The number in parentheses next to each
   week is how many of that week's games actually had a matching Polymarket market to grade against.</p>
 
-  <h2>This Week's Picks</h2>
-  {upcoming_filters_html}
-  <div id="upcoming-list">{upcoming_html}</div>
+  <h2>Picks</h2>
+  <div class="tabs">
+    <button type="button" class="tab-btn active" data-tab="upcoming">This Week's Picks</button>
+    <button type="button" class="tab-btn" data-tab="history">Past Picks</button>
+  </div>
 
-  <h2>Recent Results</h2>
-  {results_html}
+  <div id="tab-upcoming" class="tab-panel">
+    {upcoming_filters_html}
+    <div id="upcoming-list">{upcoming_html}</div>
+  </div>
+
+  <div id="tab-history" class="tab-panel" hidden>
+    {history_html}
+  </div>
 
   <footer>
     <p><strong>Methodology:</strong> 5-model stacked ensemble (logistic regression, random forest,
@@ -826,6 +897,17 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   teamSel.addEventListener('change', applyFilters);
   confSel.addEventListener('change', applyFilters);
 }})();
+(function() {{
+  var tabBtns = Array.prototype.slice.call(document.querySelectorAll('.tab-btn'));
+  tabBtns.forEach(function(btn) {{
+    btn.addEventListener('click', function() {{
+      tabBtns.forEach(function(b) {{ b.classList.remove('active'); }});
+      btn.classList.add('active');
+      document.querySelectorAll('.tab-panel').forEach(function(p) {{ p.hidden = true; }});
+      document.getElementById('tab-' + btn.dataset.tab).hidden = false;
+    }});
+  }});
+}})();
 </script>
 </body>
 </html>"""
@@ -838,10 +920,11 @@ def main():
     results = fetch_results(conn)
     summary = fetch_summary(conn)
     bankroll = compute_current_bankroll(conn)
-    weekly = fetch_weekly_performance(conn)
+    cutoffs = compute_week0_cutoffs(conn)
+    weekly = fetch_weekly_performance(conn, cutoffs)
 
     OUTPUT_PATH.parent.mkdir(exist_ok=True)
-    OUTPUT_PATH.write_text(build_html(upcoming, results, summary, bankroll, weekly))
+    OUTPUT_PATH.write_text(build_html(upcoming, results, summary, bankroll, weekly, cutoffs))
     print(f"Wrote {OUTPUT_PATH} ({len(upcoming)} upcoming, {len(results)} completed, "
           f"{len(weekly)} week(s) tracked, bankroll ${bankroll:.2f})")
 
