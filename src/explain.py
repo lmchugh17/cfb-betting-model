@@ -53,9 +53,12 @@ def _describe_feature(feature: str, row: dict, home_team: str, away_team: str) -
     if feature == "elo_diff":
         diff = g("elo_diff")
         leader, trailer = (home_team, away_team) if diff > 0 else (away_team, home_team)
-        return f"{leader} carries a {abs(diff):.0f}-point ELO advantage over {trailer} ({g('elo_home'):.0f} vs {g('elo_away'):.0f})."
+        # &Dagger; matches the ELO footnote marker used in scripts/build_site.py's methodology
+        # paragraph and footer definition -- attached here too so a reader landing on any
+        # individual game card (not just the footer) can trace "ELO" back to its explanation.
+        return f"{leader} carries a {abs(diff):.0f}-point ELO&Dagger; advantage over {trailer} ({g('elo_home'):.0f} vs {g('elo_away'):.0f})."
     if feature == "elo_expected_home":
-        return f"Pre-game ELO gives {home_team} a {g('elo_expected_home'):.0%} win probability."
+        return f"Pre-game ELO&Dagger; gives {home_team} a {g('elo_expected_home'):.0%} win probability."
     if feature == "srs_diff":
         diff = g("srs_diff")
         leader, trailer = (home_team, away_team) if diff > 0 else (away_team, home_team)
