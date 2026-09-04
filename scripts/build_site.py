@@ -56,7 +56,8 @@ def fetch_upcoming(conn) -> list[dict]:
                p.model_breakdown_json, p.cover_probability, p.kelly_fraction,
                p.moneyline_pick, p.moneyline_win_prob, p.moneyline_confidence_tier,
                p.spread_price, p.spread_price_source, p.spread_price_book_count,
-               p.min_current_season_games, p.low_sample_team, p.low_sample_team_games
+               p.min_current_season_games, p.low_sample_team, p.low_sample_team_games,
+               g.home_conference, g.away_conference
         FROM predictions p
         JOIN games g ON p.game_id = g.id
         WHERE g.home_points IS NULL
@@ -68,7 +69,8 @@ def fetch_upcoming(conn) -> list[dict]:
             "model_breakdown_json", "cover_probability", "kelly_fraction",
             "moneyline_pick", "moneyline_win_prob", "moneyline_confidence_tier",
             "spread_price", "spread_price_source", "spread_price_book_count",
-            "min_current_season_games", "low_sample_team", "low_sample_team_games"]
+            "min_current_season_games", "low_sample_team", "low_sample_team_games",
+            "home_conference", "away_conference"]
     return [dict(zip(cols, r)) for r in rows]
 
 
@@ -351,8 +353,17 @@ def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None
             f'spread pick {cover} the spread</div>'
         )
 
+    # Team/conference filter hooks -- only meaningful (and only present) on upcoming picks;
+    # fetch_results doesn't join in conference, so these are quietly absent on result cards,
+    # which is fine since the filter only ever queries within #upcoming-list.
+    filter_attrs = ""
+    if p.get("home_conference") is not None or p.get("away_conference") is not None:
+        teams_val = f'{_esc_attr(p["home_team"])}|{_esc_attr(p["away_team"])}'
+        confs_val = f'{_esc_attr(p.get("home_conference"))}|{_esc_attr(p.get("away_conference"))}'
+        filter_attrs = f' data-teams="{teams_val}" data-confs="{confs_val}"'
+
     return f"""
-    <div class="card">
+    <div class="card"{filter_attrs}>
       <div class="matchup">{p["away_team"]} @ {p["home_team"]}</div>
       <div class="kickoff">{fmt_kickoff(p["start_date"])}</div>
       <div class="prediction-line">Model: {p["home_team"]} by {p["predicted_margin"]:+.1f} ({p["win_prob_home"]:.0%} win prob) &middot; Market: {market_line}</div>
@@ -365,6 +376,10 @@ def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None
       {model_breakdown_html}
       {result_html}
     </div>"""
+
+
+def _esc_attr(s: str | None) -> str:
+    return (s or "").replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;").replace(">", "&gt;")
 
 
 def render_stat_tile(label: str, value: str, marker: str = "") -> str:
@@ -553,6 +568,27 @@ def render_polymarket_accuracy_chart(weekly: list[dict]) -> str:
             '<span class="legend-swatch legend-market-sw"></span>Polymarket Brier score &middot; lower is better</div>')
 
 
+def render_upcoming_filters(upcoming: list[dict]) -> str:
+    """Team/conference dropdowns for narrowing 'This Week's Picks' to one team or conference
+    at a glance -- client-side only (options + data-teams/data-confs on each card, see
+    render_pick_card), since there's no backend to query against on a static GitHub Pages
+    site. Deliberately scoped to the upcoming-picks list only (#upcoming-list), not the
+    stats/trends sections above it -- this is a "find this weekend's games" convenience,
+    not a historical-performance filter."""
+    teams = sorted({t for p in upcoming for t in (p.get("home_team"), p.get("away_team")) if t})
+    confs = sorted({c for p in upcoming for c in (p.get("home_conference"), p.get("away_conference")) if c})
+    if not teams:
+        return ""
+    team_options = "".join(f'<option value="{_esc_attr(t)}">{t}</option>' for t in teams)
+    conf_options = "".join(f'<option value="{_esc_attr(c)}">{c}</option>' for c in confs)
+    return f"""<div class="filter-row">
+      <label>Team <select id="team-filter"><option value="">All Teams</option>{team_options}</select></label>
+      <label>Conference <select id="conf-filter"><option value="">All Conferences</option>{conf_options}</select></label>
+      <span id="filter-count" class="filter-count"></span>
+    </div>
+    <p id="filter-empty" class="empty" style="display:none">No games match this filter.</p>"""
+
+
 def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankroll: float,
                 weekly: list[dict]) -> str:
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
@@ -571,6 +607,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
     ])
 
     upcoming_html = "".join(render_pick_card(p, bankroll=bankroll) for p in upcoming) or '<p class="empty">No upcoming games with picks right now.</p>'
+    upcoming_filters_html = render_upcoming_filters(upcoming)
     results_html = "".join(render_pick_card(r, result=r) for r in results) or '<p class="empty">No completed games yet.</p>'
     weekly_html = render_weekly_table(weekly)
     ml_chart_html = render_weekly_win_pct_chart(weekly)
@@ -660,6 +697,10 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .weekly-table th, .weekly-table td {{ padding: 0.6rem 0.9rem; text-align: left; white-space: nowrap; }}
   .weekly-table th {{ color: var(--text-dim); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; border-bottom: 1px solid var(--border); }}
   .weekly-table tbody tr:not(:last-child) td {{ border-bottom: 1px solid var(--border); }}
+  .filter-row {{ display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin: 0 0 1rem; font-size: 0.85rem; color: var(--text-dim); }}
+  .filter-row label {{ display: flex; align-items: center; gap: 0.4rem; }}
+  .filter-row select {{ background: var(--card); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.35rem 0.6rem; font-size: 0.85rem; max-width: 60vw; }}
+  .filter-count {{ margin-left: auto; }}
   footer {{ margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.78rem; line-height: 1.5; }}
   .footnote {{ font-size: 0.72rem; opacity: 0.8; color: var(--text-dim); margin-top: -0.5rem; margin-bottom: 1.5rem; }}
 </style>
@@ -700,7 +741,8 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   week is how many of that week's games actually had a matching Polymarket market to grade against.</p>
 
   <h2>This Week's Picks</h2>
-  {upcoming_html}
+  {upcoming_filters_html}
+  <div id="upcoming-list">{upcoming_html}</div>
 
   <h2>Recent Results</h2>
   {results_html}
@@ -760,6 +802,31 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
     <p>Generated {generated_at}.</p>
   </footer>
 </div>
+<script>
+(function() {{
+  var teamSel = document.getElementById('team-filter');
+  var confSel = document.getElementById('conf-filter');
+  if (!teamSel || !confSel) return;  // no filter row rendered (no upcoming games this run)
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#upcoming-list .card'));
+  var countEl = document.getElementById('filter-count');
+  var emptyEl = document.getElementById('filter-empty');
+
+  function applyFilters() {{
+    var team = teamSel.value, conf = confSel.value, visible = 0;
+    cards.forEach(function(card) {{
+      var teams = (card.dataset.teams || '').split('|');
+      var confs = (card.dataset.confs || '').split('|');
+      var show = (!team || teams.indexOf(team) !== -1) && (!conf || confs.indexOf(conf) !== -1);
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    }});
+    countEl.textContent = (team || conf) ? (visible + ' of ' + cards.length + ' shown') : '';
+    emptyEl.style.display = (visible === 0 && cards.length > 0) ? '' : 'none';
+  }}
+  teamSel.addEventListener('change', applyFilters);
+  confSel.addEventListener('change', applyFilters);
+}})();
+</script>
 </body>
 </html>"""
 
