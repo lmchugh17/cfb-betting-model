@@ -727,7 +727,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .bar-value-above {{ transform: translate(-50%, -100%); margin-bottom: 0.25rem; color: var(--text); background: var(--card); padding: 0 3px; border-radius: 3px; }}
   .baseline-marker {{ position: absolute; left: -3px; right: -3px; height: 2px; background: var(--amber); }}
   .baseline-label {{ position: absolute; right: 2px; top: -0.75em; font-size: 0.6rem; color: var(--amber); white-space: nowrap; background: var(--card); padding: 0 2px; border-radius: 2px; }}
-  .bar-label {{ font-size: 0.68rem; color: var(--text-dim); margin-top: 0.4rem; text-align: center; white-space: nowrap; }}
+  .bar-label {{ font-size: 0.68rem; color: var(--text-dim); margin-top: 0.4rem; text-align: center; width: 100%; }}
   .bar-legend {{ display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; color: var(--text-dim); margin: 0.6rem 0 1rem; flex-wrap: wrap; }}
   .legend-swatch {{ display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-left: 0.6rem; }}
   .legend-swatch:first-child {{ margin-left: 0; }}
@@ -760,7 +760,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .week-group summary {{ cursor: pointer; list-style: none; padding: 0.9rem 1.1rem; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }}
   .week-group summary::-webkit-details-marker {{ display: none; }}
   .week-title {{ display: flex; align-items: center; }}
-  .week-title::before {{ content: '\25B8'; display: inline-block; margin-right: 0.6rem; color: var(--text-dim); transition: transform 0.15s; }}
+  .week-title::before {{ content: '\\25B8'; display: inline-block; margin-right: 0.6rem; color: var(--text-dim); transition: transform 0.15s; }}
   .week-group[open] .week-title::before {{ transform: rotate(90deg); }}
   .week-record {{ font-weight: 400; color: var(--text-dim); font-size: 0.78rem; white-space: nowrap; }}
   .week-cards {{ padding: 0 1.1rem 1.1rem; }}
