@@ -422,6 +422,28 @@ def render_weekly_table(weekly: list[dict]) -> str:
     </table></div>"""
 
 
+BAR_TRACK_HEIGHT_PX = 120  # matches .bar-track { height: 120px } below
+BASELINE_LABEL_BASE_OFFSET_PX = 7  # ~0.75em at the label's own 0.6rem font-size
+# How far (in px) render_bar_value's own label extends from the bar's pct line -- the
+# baseline label needs at least this much clearance from that line to never collide with it.
+VALUE_LABEL_CLEARANCE_PX = 22
+
+
+def _baseline_label_style(pct: float, fav_pct: float) -> str:
+    """Positions a favorite-baseline % label above or below its own marker line, far
+    enough to clear this bar's OWN value label (render_bar_value, anchored at the pct
+    line) even when pct and fav_pct are close together. A fixed em-offset only works when
+    the two lines are far apart -- e.g. 82% vs a 75% baseline are just 7 points (8.4px on
+    the 120px track) apart, well inside the ~20px zone the value label actually occupies,
+    so a static offset collided regardless of which side it was placed on. This scales the
+    offset up dynamically (in real pixel terms against the track's fixed height) whenever
+    the two lines are close, rather than a one-size-fits-all constant."""
+    gap_px = abs(pct - fav_pct) * BAR_TRACK_HEIGHT_PX
+    offset_px = max(BASELINE_LABEL_BASE_OFFSET_PX, VALUE_LABEL_CLEARANCE_PX - gap_px)
+    side = "top" if fav_pct >= pct else "bottom"
+    return f"{side}: -{offset_px:.0f}px;"
+
+
 def render_bar_value(pct: float, min_pct_for_inside: float = 0.15) -> str:
     """The bar's own %-value label, shared by every weekly bar chart. Sits just inside the
     top of the bar (dark text directly on the bar's own green/red fill) when there's enough
@@ -458,7 +480,8 @@ def render_weekly_win_pct_chart(weekly: list[dict]) -> str:
             baseline_html = (
                 f'<div class="baseline-marker" style="bottom: {fav_pct * 100:.1f}%" '
                 f'title="Favorite baseline: {fav_pct:.0%}">'
-                f'<span class="baseline-label">{fav_pct:.0%}</span></div>'
+                f'<span class="baseline-label" style="{_baseline_label_style(pct, fav_pct)}">'
+                f'{fav_pct:.0%}</span></div>'
             )
         bars_html += (
             '<div class="bar-col">'
@@ -726,7 +749,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .bar-value-inside {{ transform: translate(-50%, 0.35rem); color: #fff; font-weight: 700; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }}
   .bar-value-above {{ transform: translate(-50%, -100%); margin-bottom: 0.25rem; color: var(--text); background: var(--card); padding: 0 3px; border-radius: 3px; }}
   .baseline-marker {{ position: absolute; left: -3px; right: -3px; height: 2px; background: var(--amber); }}
-  .baseline-label {{ position: absolute; right: 2px; top: -0.75em; font-size: 0.6rem; color: var(--amber); white-space: nowrap; background: var(--card); padding: 0 2px; border-radius: 2px; }}
+  .baseline-label {{ position: absolute; right: 2px; font-size: 0.6rem; color: var(--amber); white-space: nowrap; background: var(--card); padding: 0 2px; border-radius: 2px; }}
   .bar-label {{ font-size: 0.68rem; color: var(--text-dim); margin-top: 0.4rem; text-align: center; width: 100%; }}
   .bar-legend {{ display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; color: var(--text-dim); margin: 0.6rem 0 1rem; flex-wrap: wrap; }}
   .legend-swatch {{ display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-left: 0.6rem; }}
