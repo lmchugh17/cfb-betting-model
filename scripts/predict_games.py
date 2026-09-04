@@ -244,7 +244,10 @@ def main():
             "elo_home": elo_home, "elo_away": elo_away, "elo_diff": elo_home - elo_away,
             "elo_expected_home": elo_expected_home,
             "srs_home": srs_home, "srs_away": srs_away, "srs_diff": srs_home - srs_away,
-            "home_ats_pct": current_ats.get(home), "away_ats_pct": current_ats.get(away),
+            "home_ats_pct": current_ats.get(home, (None, None))[0],
+            "away_ats_pct": current_ats.get(away, (None, None))[0],
+            "home_ats_count": current_ats.get(home, (None, None))[1],
+            "away_ats_count": current_ats.get(away, (None, None))[1],
             "home_rest_days": home_rest, "away_rest_days": away_rest,
             "home_bye_week": home_rest >= 10, "away_bye_week": away_rest >= 10,
             "h2h_home_win_pct": h2h_f.get("h2h_home_win_pct"),
@@ -271,10 +274,12 @@ def main():
         record["weather_temperature_f"] = wx.get("temperature_f")
         record["weather_wind_speed_mph"] = wx.get("wind_speed_mph")
         record["weather_precipitation_in"] = wx.get("precipitation_in")
-        home_wx_pct = current_adverse_wx_ats.get(home)
-        away_wx_pct = current_adverse_wx_ats.get(away)
+        home_wx_pct, home_wx_count = current_adverse_wx_ats.get(home, (None, None))
+        away_wx_pct, away_wx_count = current_adverse_wx_ats.get(away, (None, None))
         record["home_adverse_wx_ats_pct"] = home_wx_pct
         record["away_adverse_wx_ats_pct"] = away_wx_pct
+        record["home_adverse_wx_ats_count"] = home_wx_count
+        record["away_adverse_wx_ats_count"] = away_wx_count
         # Zero (not missing) when this game isn't itself in adverse weather, or either
         # team lacks enough adverse-weather history yet -- matches build_features.py.
         record["adverse_wx_ats_edge"] = (

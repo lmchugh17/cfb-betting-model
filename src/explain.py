@@ -65,9 +65,12 @@ def _describe_feature(feature: str, row: dict, home_team: str, away_team: str) -
     if feature in ("home_ats_pct", "away_ats_pct"):
         team = home_team if feature == "home_ats_pct" else away_team
         pct = g(feature)
+        n = g("home_ats_count" if feature == "home_ats_pct" else "away_ats_count")
         # pct is nan (not None) for a team with zero decided ATS games -- pd.isna catches
         # NaN, unlike the "is not None" check this replaced, which let "nan%" print verbatim.
-        return f"{team} has covered the spread in {pct:.0%} of their last games." if pd.notna(pct) else None
+        if not pd.notna(pct):
+            return None
+        return f"{team} has covered the spread in {pct:.0%} of its last {int(n)} game{'s' if n != 1 else ''}."
     if feature in ("home_rest_days", "away_rest_days"):
         team = home_team if feature == "home_rest_days" else away_team
         days = g(feature)
@@ -87,11 +90,14 @@ def _describe_feature(feature: str, row: dict, home_team: str, away_team: str) -
         if not g("is_adverse_weather") or not edge:
             return None  # not itself an adverse-weather game, or a genuine tie/missing-history zero
         home_pct, away_pct = g("home_adverse_wx_ats_pct"), g("away_adverse_wx_ats_pct")
+        home_n, away_n = g("home_adverse_wx_ats_count"), g("away_adverse_wx_ats_count")
         leader, trailer = (home_team, away_team) if edge > 0 else (away_team, home_team)
         leader_pct, trailer_pct = (home_pct, away_pct) if edge > 0 else (away_pct, home_pct)
-        return (f"In games with {_describe_weather_condition(row)}, {leader} has covered the spread "
-                f"{leader_pct:.0%} of the time over its recent games in similar conditions, "
-                f"versus {trailer}'s {trailer_pct:.0%}.")
+        leader_n, trailer_n = (home_n, away_n) if edge > 0 else (away_n, home_n)
+        return (f"In its last {int(leader_n)} game{'s' if leader_n != 1 else ''} with "
+                f"{_describe_weather_condition(row)}, {leader} has covered the spread {leader_pct:.0%} "
+                f"of the time, versus {trailer}'s {trailer_pct:.0%} over its last {int(trailer_n)} "
+                f"such game{'s' if trailer_n != 1 else ''}.")
     if feature.startswith("diff_avg_"):
         stat = feature.replace("diff_avg_", "")
         home_val, away_val, diff = g(f"home_avg_{stat}"), g(f"away_avg_{stat}"), g(feature)

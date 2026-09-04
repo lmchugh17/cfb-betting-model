@@ -78,7 +78,11 @@ def compute_current_opponent_srs(long_df: pd.DataFrame, srs: dict, window: int =
 
 
 def compute_current_ats_pct(games_with_covers: list[dict], window: int = ATS_WINDOW) -> dict:
-    """games_with_covers: dicts with team, start_date, covered (bool|None, None=push/excluded)."""
+    """games_with_covers: dicts with team, start_date, covered (bool|None, None=push/excluded).
+    Returns {team: (pct, n)} -- n is the actual decided-game count behind pct (<=window,
+    fewer early in a team's tracked history), not just window itself, so callers writing
+    explanation text can say "last N games" precisely instead of assuming the window size
+    always held."""
     by_team = defaultdict(list)
     for row in games_with_covers:
         by_team[row["team"]].append(row)
@@ -87,7 +91,7 @@ def compute_current_ats_pct(games_with_covers: list[dict], window: int = ATS_WIN
         rows.sort(key=lambda r: r["start_date"])
         decided = [r["covered"] for r in rows if r["covered"] is not None][-window:]
         if decided:
-            result[team] = sum(decided) / len(decided)
+            result[team] = (sum(decided) / len(decided), len(decided))
     return result
 
 
