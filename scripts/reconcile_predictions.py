@@ -15,6 +15,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from src.db import get_connection, init_db
 
 RETRAIN_REVIEW_THRESHOLD = 50  # arbitrary first-pass number, not tuned
+# Separate, larger threshold for confidence-tier recalibration specifically -- not the same
+# question as the retrain trigger above. The 2025 holdout (934 games) already found tiers only
+# weakly separated (50.3%/51.9%/53.3% cover rate); trusting a 1-2pt cover-rate gap between
+# tiers on 2026 data alone needs a real sample per tier, not just 50 games. User set this
+# range (150-200) 2026-09-03; using the low end so the flag fires as soon as it's meaningful.
+TIER_RECAL_REVIEW_THRESHOLD = 150
 
 
 def main():
@@ -39,6 +45,8 @@ def main():
     print("-" * 90)
     ml_wins = ml_total = 0
     ats_wins = ats_losses = ats_pushes = 0
+    graded_tiered = 0  # decided (non-push) spread picks that also have a confidence tier --
+    # the population a tier-recalibration pass would actually segment and measure cover rate on
     errors = []
     for r in rows:
         (year, week, home, away, pred_margin, actual_margin, win_prob, actual_winner,
@@ -54,6 +62,8 @@ def main():
             ats_mark = "W" if covered else "L"
             ats_wins += covered
             ats_losses += 1 - covered
+            if tier is not None:
+                graded_tiered += 1
         elif pick is not None:
             ats_mark = "P"
             ats_pushes += 1
@@ -74,6 +84,14 @@ def main():
               f"(scripts/train_model.py) that folds 2026 in as new training data.")
     else:
         print(f"\n{len(rows)}/{RETRAIN_REVIEW_THRESHOLD} completed games toward the retrain review point.")
+
+    if graded_tiered >= TIER_RECAL_REVIEW_THRESHOLD:
+        print(f"\n{graded_tiered} graded, tiered spread picks -- past the "
+              f"{TIER_RECAL_REVIEW_THRESHOLD}-pick confidence-tier recalibration point. Worth "
+              f"checking whether tiers separate cleanly by cover rate on 2026 data.")
+    else:
+        print(f"{graded_tiered}/{TIER_RECAL_REVIEW_THRESHOLD} graded, tiered spread picks "
+              f"toward the confidence-tier recalibration review point.")
 
 
 if __name__ == "__main__":
