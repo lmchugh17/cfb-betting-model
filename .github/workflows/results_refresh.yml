@@ -1,0 +1,59 @@
+name: Saturday results refresh
+
+# Separate from weekly_data_pull.yml on purpose: this is JUST a results refresh
+# (fresh scores + rebuilt site), not the full daily pipeline. Deliberately does NOT
+# touch odds/weather/injuries/predictions/explanations -- no Claude routine involved,
+# no new predictions, no re-pulled lines. Exists solely so the site doesn't show
+# stale scores for up to 24 hours on the day with the most games and the widest
+# kickoff-to-kickoff spread (noon ET to past midnight ET).
+#
+# 4 fixed times spanning CFB Saturday's actual kickoff windows, ~3.5h apart (times in
+# EDT; GitHub cron is fixed UTC and doesn't track DST, so these drift an hour earlier
+# in US-clock terms once EST starts in November -- same caveat as weekly_data_pull.yml):
+#   4:00pm ET  (20:00 UTC Sat) -- catches noon-kickoff games' finals
+#   7:30pm ET  (23:30 UTC Sat) -- catches early-afternoon-kickoff games' finals
+#   11:00pm ET (03:00 UTC Sun) -- catches primetime-kickoff games' finals
+#   2:30am ET  (06:30 UTC Sun) -- catches the latest West Coast finals
+# The last two land on a UTC-calendar Sunday even though they're still "Saturday
+# night" in US time -- that's correct, not a bug, and separate from Sunday's own
+# unrelated 13:00 UTC standing run in weekly_data_pull.yml.
+on:
+  schedule:
+    - cron: "0 20 * * 6"
+    - cron: "30 23 * * 6"
+    - cron: "0 3 * * 0"
+    - cron: "30 6 * * 0"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-results:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Refresh current-season scores
+        env:
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+        run: python scripts/backfill.py 2026 2026
+
+      - name: Rebuild site
+        run: python scripts/build_site.py
+
+      - name: Commit and push if scores changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/cfb.db docs/index.html
+          git diff --cached --quiet && echo "No score changes" && exit 0
+          git commit -m "Results refresh: $(date -u +%Y-%m-%dT%H:%M)Z"
+          git push
