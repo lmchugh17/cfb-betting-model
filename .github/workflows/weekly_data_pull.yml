@@ -4,15 +4,14 @@ on:
   schedule:
     # 13:00 UTC = 7am America/Denver during MDT (Mar-Nov). Shifts to 6am local
     # during MST (Nov-Mar) since GitHub cron is fixed UTC and doesn't track DST.
-    # EXTENDED TEST WINDOW, still not the standing cadence: switched from Tue/Fri/Sat
-    # to daily on 2026-09-01/02 to stress-test that week's fixes (the git-add crash
-    # and the Open-Meteo timeout/circuit-breaker); user extended the daily window on
-    # 2026-09-03 to roughly 8-10 more days (~through 2026-09-11 to 09-13) rather than
-    # reverting on the original 09-07 date -- explicitly not a permanent decision yet.
-    # Revert to "0 13 * * 2,5,6" (Tue/Fri/Sat) around then unless extended again.
-    # (Odds API budget isn't the constraint either way -- daily is well inside the
-    # free tier: 3 credits/pull * 365/yr ~= 1,095/yr vs. the tier's 6,000/yr.)
-    - cron: "0 13 * * *"  # daily (extended test window, see above)
+    # STANDING CADENCE as of 2026-09-05: Thursday-Monday (4,5,6,0,1), covering every day
+    # CFB games are actually played (Thu/Fri/Sat slates plus Sun/Mon carryover and bowl
+    # season) while skipping Tue/Wed, when nothing is happening to pull results for.
+    # Supersedes the earlier "extended daily test window, revert to Tue/Fri/Sat" plan --
+    # this is the new standing schedule, not another temporary extension.
+    # (Odds API budget isn't the constraint either way -- 5 days/week is well inside the
+    # free tier: 3 credits/pull * ~5/wk * 52wk ~= 780/yr vs. the tier's 6,000/yr.)
+    - cron: "0 13 * * 4,5,6,0,1"  # Thu-Mon
   workflow_dispatch: {}
 
 permissions:
