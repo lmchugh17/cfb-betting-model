@@ -73,3 +73,9 @@ class CFBDClient:
     def games_teams(self, year: int, week: int, season_type: str = "regular") -> list:
         # Unlike /games, /lines, /stats/player/season -- this endpoint requires a week param.
         return self.get("/games/teams", {"year": year, "week": week, "seasonType": season_type})
+
+    def rankings(self, year: int, season_type: str = "regular") -> list:
+        # Returns every poll (AP, Coaches, FCS Coaches, etc.) for every week in one call --
+        # caller filters to the one poll it wants. No classification filter needed here,
+        # unlike /games -- polls only ever rank real teams, never bundle in FCS/D2/D3 noise.
+        return self.get("/rankings", {"year": year, "seasonType": season_type})

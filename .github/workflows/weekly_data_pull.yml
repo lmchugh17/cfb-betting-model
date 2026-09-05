@@ -41,6 +41,11 @@ jobs:
           CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
         run: python scripts/backfill_team_game_stats.py 2026 2026
 
+      - name: Pull latest AP Top 25 rankings
+        env:
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+        run: python scripts/pull_ap_rankings.py 2026
+
       - name: Pull live odds
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}

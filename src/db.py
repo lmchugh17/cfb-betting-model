@@ -22,6 +22,18 @@ CREATE TABLE IF NOT EXISTS team_seasons (
     PRIMARY KEY (team_id, year)
 );
 
+-- AP Top 25, one row per (year, week, season_type, team) that was actually ranked that
+-- week -- unranked teams just have no row, rather than a row with a NULL/0 rank. Display
+-- only (site shows "No. N" next to a ranked team's name); not a trained model feature.
+CREATE TABLE IF NOT EXISTS ap_rankings (
+    year INTEGER NOT NULL,
+    week INTEGER NOT NULL,
+    season_type TEXT NOT NULL,
+    team TEXT NOT NULL,
+    rank INTEGER NOT NULL,
+    PRIMARY KEY (year, week, season_type, team)
+);
+
 CREATE TABLE IF NOT EXISTS venues (
     id INTEGER PRIMARY KEY,
     name TEXT,

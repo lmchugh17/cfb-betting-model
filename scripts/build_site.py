@@ -50,7 +50,7 @@ def _net_decimal_odds(odds: int) -> float:
 
 def fetch_upcoming(conn) -> list[dict]:
     rows = conn.execute("""
-        SELECT p.game_id, p.year, p.week, p.start_date, p.home_team, p.away_team,
+        SELECT p.game_id, p.year, p.week, p.season_type, p.start_date, p.home_team, p.away_team,
                p.predicted_margin, p.win_prob_home, p.market_spread, p.pick_team,
                p.edge, p.confidence_tier, p.highlights_json, p.tldr, p.bullets_json,
                p.model_breakdown_json, p.cover_probability, p.kelly_fraction,
@@ -63,7 +63,7 @@ def fetch_upcoming(conn) -> list[dict]:
         WHERE g.home_points IS NULL
         ORDER BY p.start_date
     """).fetchall()
-    cols = ["game_id", "year", "week", "start_date", "home_team", "away_team",
+    cols = ["game_id", "year", "week", "season_type", "start_date", "home_team", "away_team",
             "predicted_margin", "win_prob_home", "market_spread", "pick_team",
             "edge", "confidence_tier", "highlights_json", "tldr", "bullets_json",
             "model_breakdown_json", "cover_probability", "kelly_fraction",
@@ -76,7 +76,7 @@ def fetch_upcoming(conn) -> list[dict]:
 
 def fetch_results(conn) -> list[dict]:
     rows = conn.execute("""
-        SELECT game_id, year, week, start_date, home_team, away_team, predicted_margin,
+        SELECT game_id, year, week, season_type, start_date, home_team, away_team, predicted_margin,
                win_prob_home, market_spread, actual_margin, home_points, away_points, pick_team,
                edge, confidence_tier, highlights_json, tldr, bullets_json,
                ats_pick_won_straight_up, pick_covered, model_breakdown_json, cover_probability, kelly_fraction,
@@ -85,7 +85,7 @@ def fetch_results(conn) -> list[dict]:
                low_sample_team, low_sample_team_games
         FROM prediction_results ORDER BY start_date DESC
     """).fetchall()
-    cols = ["game_id", "year", "week", "start_date", "home_team", "away_team", "predicted_margin",
+    cols = ["game_id", "year", "week", "season_type", "start_date", "home_team", "away_team", "predicted_margin",
             "win_prob_home", "market_spread", "actual_margin", "home_points", "away_points", "pick_team",
             "edge", "confidence_tier", "highlights_json", "tldr", "bullets_json",
             "ats_pick_won_straight_up", "pick_covered", "model_breakdown_json", "cover_probability", "kelly_fraction",
@@ -93,6 +93,21 @@ def fetch_results(conn) -> list[dict]:
             "spread_price", "spread_price_source", "spread_price_book_count", "min_current_season_games",
             "low_sample_team", "low_sample_team_games"]
     return [dict(zip(cols, r)) for r in rows]
+
+
+def fetch_ap_rankings(conn) -> dict:
+    """{(year, week, season_type, team): rank} -- each game looks up ITS OWN week's poll,
+    not the latest one, so a "Past Picks" card correctly shows what a team was ranked at
+    the time (e.g. a team that was preseason #3 but has since fallen out keeps showing
+    #3 on that old card, matching every other point-in-time stat this site already shows
+    rather than silently becoming "current" and inconsistent with the rest of the page)."""
+    rows = conn.execute("SELECT year, week, season_type, team, rank FROM ap_rankings").fetchall()
+    return {(year, week, season_type, team): rank for year, week, season_type, team, rank in rows}
+
+
+def _ranked_name(team: str, year, week, season_type, rankings: dict) -> str:
+    rank = rankings.get((year, week, season_type, team))
+    return f"No. {rank} {team}" if rank else team
 
 
 def _week_zero_cutoff(dates: list[str]) -> str | None:
@@ -294,7 +309,8 @@ def render_wager_line(p: dict, bankroll: float | None) -> str:
     )
 
 
-def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None = None) -> str:
+def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None = None,
+                      rankings: dict | None = None) -> str:
     highlights = json.loads(p["highlights_json"]) if p.get("highlights_json") else []
     bullets = json.loads(p["bullets_json"]) if p.get("bullets_json") else []
     tldr = p.get("tldr")
@@ -372,9 +388,14 @@ def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None
         confs_val = f'{_esc_attr(p.get("home_conference"))}|{_esc_attr(p.get("away_conference"))}'
         filter_attrs = f' data-teams="{teams_val}" data-confs="{confs_val}"'
 
+    rankings = rankings or {}
+    week_key = (p["year"], p["week"], p["season_type"])
+    away_display = _ranked_name(p["away_team"], *week_key, rankings)
+    home_display = _ranked_name(p["home_team"], *week_key, rankings)
+
     return f"""
     <div class="card"{filter_attrs}>
-      <div class="matchup">{p["away_team"]} @ {p["home_team"]}</div>
+      <div class="matchup">{away_display} @ {home_display}</div>
       <div class="kickoff">{fmt_kickoff(p["start_date"])}</div>
       <div class="prediction-line">Model: {p["home_team"]} by {p["predicted_margin"]:+.1f} ({p["win_prob_home"]:.0%} win prob) &middot; Market: {market_line}</div>
       {ml_html}
@@ -614,7 +635,7 @@ def group_results_by_week(results: list[dict], cutoffs: dict) -> list[tuple]:
     return sorted(buckets.items(), key=lambda kv: kv[0], reverse=True)
 
 
-def render_history_tab(results: list[dict], cutoffs: dict, weekly: list[dict]) -> str:
+def render_history_tab(results: list[dict], cutoffs: dict, weekly: list[dict], rankings: dict) -> str:
     """Past Picks tab: one collapsible <details> group per week (most recent open by
     default, older weeks collapsed) instead of one long flat list of every completed game
     -- history only grows from here, so this keeps the page from turning into an endless
@@ -632,7 +653,7 @@ def render_history_tab(results: list[dict], cutoffs: dict, weekly: list[dict]) -
             ml_pct = f"{w['ml_wins']}-{w['ml_decided'] - w['ml_wins']}" if w["ml_decided"] else "n/a"
             ats_pct = f"{w['ats_wins']}-{w['ats_losses']}-{w['ats_pushes']}"
             record_html = f'<span class="week-record">ML {ml_pct} &middot; ATS {ats_pct}</span>'
-        cards_html = "".join(render_pick_card(g, result=g) for g in games)
+        cards_html = "".join(render_pick_card(g, result=g, rankings=rankings) for g in games)
         open_attr = " open" if i == 0 else ""
         groups_html += (
             f'<details class="week-group"{open_attr}>'
@@ -664,7 +685,7 @@ def render_upcoming_filters(upcoming: list[dict]) -> str:
 
 
 def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankroll: float,
-                weekly: list[dict], cutoffs: dict) -> str:
+                weekly: list[dict], cutoffs: dict, rankings: dict) -> str:
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     ml_pct = f"{summary['ml_wins']}/{summary['ml_decided']}" if summary["ml_decided"] else "0/0"
@@ -680,9 +701,9 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
         render_stat_tile("Paper Bankroll", f"${bankroll:.2f}"),
     ])
 
-    upcoming_html = "".join(render_pick_card(p, bankroll=bankroll) for p in upcoming) or '<p class="empty">No upcoming games with picks right now.</p>'
+    upcoming_html = "".join(render_pick_card(p, bankroll=bankroll, rankings=rankings) for p in upcoming) or '<p class="empty">No upcoming games with picks right now.</p>'
     upcoming_filters_html = render_upcoming_filters(upcoming)
-    history_html = render_history_tab(results, cutoffs, weekly)
+    history_html = render_history_tab(results, cutoffs, weekly, rankings)
     weekly_html = render_weekly_table(weekly)
     ml_chart_html = render_weekly_win_pct_chart(weekly)
     ats_chart_html = render_ats_win_pct_chart(weekly)
@@ -946,9 +967,10 @@ def main():
     bankroll = compute_current_bankroll(conn)
     cutoffs = compute_week0_cutoffs(conn)
     weekly = fetch_weekly_performance(conn, cutoffs)
+    rankings = fetch_ap_rankings(conn)
 
     OUTPUT_PATH.parent.mkdir(exist_ok=True)
-    OUTPUT_PATH.write_text(build_html(upcoming, results, summary, bankroll, weekly, cutoffs))
+    OUTPUT_PATH.write_text(build_html(upcoming, results, summary, bankroll, weekly, cutoffs, rankings))
     print(f"Wrote {OUTPUT_PATH} ({len(upcoming)} upcoming, {len(results)} completed, "
           f"{len(weekly)} week(s) tracked, bankroll ${bankroll:.2f})")
 
