@@ -1,28 +1,47 @@
-name: Saturday results refresh
+name: Results refresh
 
 # Separate from weekly_data_pull.yml on purpose: this is JUST a results refresh
 # (fresh scores + rebuilt site), not the full daily pipeline. Deliberately does NOT
 # touch odds/weather/injuries/predictions/explanations -- no Claude routine involved,
 # no new predictions, no re-pulled lines. Exists solely so the site doesn't show
-# stale scores for up to 24 hours on the day with the most games and the widest
-# kickoff-to-kickoff spread (noon ET to past midnight ET).
+# stale scores for up to 24 hours on days with games spread across a wide kickoff
+# window (or, worse, up to 3 days -- see weekly_data_pull.yml's standing Thu-Mon
+# cadence skips Tue/Wed entirely, so a Monday result with no catch-up would
+# otherwise sit stale until the following Thursday; not an issue for CFB itself
+# since it has no regular Monday slate, but the same principle is why NFL's own
+# results_refresh.yml treats Monday night as important, not optional).
 #
-# 4 fixed times spanning CFB Saturday's actual kickoff windows, ~3.5h apart (times in
-# EDT; GitHub cron is fixed UTC and doesn't track DST, so these drift an hour earlier
-# in US-clock terms once EST starts in November -- same caveat as weekly_data_pull.yml):
-#   4:00pm ET  (20:00 UTC Sat) -- catches noon-kickoff games' finals
-#   7:30pm ET  (23:30 UTC Sat) -- catches early-afternoon-kickoff games' finals
-#   11:00pm ET (03:00 UTC Sun) -- catches primetime-kickoff games' finals
-#   2:30am ET  (06:30 UTC Sun) -- catches the latest West Coast finals
-# The last two land on a UTC-calendar Sunday even though they're still "Saturday
-# night" in US time -- that's correct, not a bug, and separate from Sunday's own
-# unrelated 13:00 UTC standing run in weekly_data_pull.yml.
+# All times below in EDT; GitHub cron is fixed UTC and doesn't track DST, so these
+# drift an hour earlier in US-clock terms once EST starts in November -- same
+# caveat as weekly_data_pull.yml. A UTC day-of-week that differs from the US-time
+# day label (e.g. "2:00am ET Saturday" landing on UTC-Sunday) is correct, not a bug.
+#
+# Thursday -- early-window CFB games plus the primetime slot that overlaps TNF:
+#   9:00pm ET  (01:00 UTC Fri)
+#   11:30pm ET (03:30 UTC Fri)
+# Friday -- CFB's Friday slate has grown to span nearly the same noon-to-midnight
+# window as Saturday, so this mirrors Saturday's own schedule one day earlier:
+#   3:30pm ET  (19:30 UTC Fri)
+#   7:00pm ET  (23:00 UTC Fri)
+#   10:30pm ET (02:30 UTC Sat)
+#   2:00am ET  (06:00 UTC Sat)
+# Saturday -- the main slate, noon ET to past midnight ET:
+#   3:30pm ET  (19:30 UTC Sat) -- catches noon-kickoff games' finals
+#   7:00pm ET  (23:00 UTC Sat) -- catches early-afternoon-kickoff games' finals
+#   10:30pm ET (02:30 UTC Sun) -- catches primetime-kickoff games' finals
+#   2:00am ET  (06:00 UTC Sun) -- catches the latest West Coast finals
 on:
   schedule:
-    - cron: "0 20 * * 6"
-    - cron: "30 23 * * 6"
-    - cron: "0 3 * * 0"
-    - cron: "30 6 * * 0"
+    - cron: "0 1 * * 5"
+    - cron: "30 3 * * 5"
+    - cron: "30 19 * * 5"
+    - cron: "0 23 * * 5"
+    - cron: "30 2 * * 6"
+    - cron: "0 6 * * 6"
+    - cron: "30 19 * * 6"
+    - cron: "0 23 * * 6"
+    - cron: "30 2 * * 0"
+    - cron: "0 6 * * 0"
   workflow_dispatch: {}
 
 permissions:
