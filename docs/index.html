@@ -83,6 +83,8 @@
   .filter-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin: 0 0 1rem; font-size: 0.85rem; color: var(--text-dim); }
   .filter-row label { display: flex; align-items: center; gap: 0.4rem; }
   .filter-row select { background: var(--card); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.35rem 0.6rem; font-size: 0.85rem; max-width: 60vw; }
+  .checkbox-label { cursor: pointer; }
+  .checkbox-label input { width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer; }
   .filter-count { margin-left: auto; }
   .tabs { display: flex; gap: 0.5rem; margin: 1rem 0 1.25rem; }
   .tab-btn { background: var(--card); color: var(--text-dim); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.85rem; font-family: inherit; cursor: pointer; }
@@ -148,11 +150,12 @@
     <div class="filter-row">
       <label>Team <select id="team-filter"><option value="">All Teams</option><option value="Abilene Christian">Abilene Christian</option><option value="Air Force">Air Force</option><option value="Alabama">Alabama</option><option value="Alcorn State">Alcorn State</option><option value="App State">App State</option><option value="Arizona">Arizona</option><option value="Arizona State">Arizona State</option><option value="Arkansas">Arkansas</option><option value="Arkansas State">Arkansas State</option><option value="Army">Army</option><option value="Auburn">Auburn</option><option value="Austin Peay">Austin Peay</option><option value="BYU">BYU</option><option value="Ball State">Ball State</option><option value="Baylor">Baylor</option><option value="Boise State">Boise State</option><option value="Boston College">Boston College</option><option value="Bowling Green">Bowling Green</option><option value="Bryant">Bryant</option><option value="California">California</option><option value="Central Michigan">Central Michigan</option><option value="Charleston Southern">Charleston Southern</option><option value="Charlotte">Charlotte</option><option value="Cincinnati">Cincinnati</option><option value="Clemson">Clemson</option><option value="Coastal Carolina">Coastal Carolina</option><option value="Colorado State">Colorado State</option><option value="Duke">Duke</option><option value="Duquesne">Duquesne</option><option value="East Carolina">East Carolina</option><option value="Eastern Kentucky">Eastern Kentucky</option><option value="Florida">Florida</option><option value="Florida Atlantic">Florida Atlantic</option><option value="Florida International">Florida International</option><option value="Florida State">Florida State</option><option value="Fordham">Fordham</option><option value="Furman">Furman</option><option value="Georgia">Georgia</option><option value="Georgia Southern">Georgia Southern</option><option value="Hampton">Hampton</option><option value="Hawai'i">Hawai'i</option><option value="Houston">Houston</option><option value="Houston Christian">Houston Christian</option><option value="Idaho State">Idaho State</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Iowa State">Iowa State</option><option value="Jacksonville State">Jacksonville State</option><option value="James Madison">James Madison</option><option value="Kansas">Kansas</option><option value="Kansas State">Kansas State</option><option value="Kent State">Kent State</option><option value="Kentucky">Kentucky</option><option value="LSU">LSU</option><option value="Lafayette">Lafayette</option><option value="Lamar">Lamar</option><option value="Liberty">Liberty</option><option value="Louisiana">Louisiana</option><option value="Louisiana Tech">Louisiana Tech</option><option value="Louisville">Louisville</option><option value="Maine">Maine</option><option value="Marshall">Marshall</option><option value="Maryland">Maryland</option><option value="Memphis">Memphis</option><option value="Mercyhurst">Mercyhurst</option><option value="Miami (OH)">Miami (OH)</option><option value="Michigan">Michigan</option><option value="Middle Tennessee">Middle Tennessee</option><option value="Mississippi State">Mississippi State</option><option value="Mississippi Valley State">Mississippi Valley State</option><option value="Missouri">Missouri</option><option value="Missouri State">Missouri State</option><option value="Morgan State">Morgan State</option><option value="Murray State">Murray State</option><option value="Navy">Navy</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Mexico">New Mexico</option><option value="New Mexico State">New Mexico State</option><option value="Nicholls">Nicholls</option><option value="Norfolk State">Norfolk State</option><option value="North Alabama">North Alabama</option><option value="North Dakota State">North Dakota State</option><option value="North Texas">North Texas</option><option value="Northern Arizona">Northern Arizona</option><option value="Northern Illinois">Northern Illinois</option><option value="Northwestern">Northwestern</option><option value="Northwestern State">Northwestern State</option><option value="Notre Dame">Notre Dame</option><option value="Ohio">Ohio</option><option value="Ohio State">Ohio State</option><option value="Oklahoma State">Oklahoma State</option><option value="Old Dominion">Old Dominion</option><option value="Ole Miss">Ole Miss</option><option value="Oregon">Oregon</option><option value="Oregon State">Oregon State</option><option value="Penn State">Penn State</option><option value="Pittsburgh">Pittsburgh</option><option value="Portland State">Portland State</option><option value="Rhode Island">Rhode Island</option><option value="Rice">Rice</option><option value="SE Louisiana">SE Louisiana</option><option value="SMU">SMU</option><option value="Sacramento State">Sacramento State</option><option value="Sam Houston">Sam Houston</option><option value="San Diego State">San Diego State</option><option value="South Alabama">South Alabama</option><option value="South Carolina">South Carolina</option><option value="South Dakota State">South Dakota State</option><option value="South Florida">South Florida</option><option value="Southeast Missouri State">Southeast Missouri State</option><option value="Southern Miss">Southern Miss</option><option value="Syracuse">Syracuse</option><option value="Tarleton State">Tarleton State</option><option value="Temple">Temple</option><option value="Tennessee">Tennessee</option><option value="Tennessee State">Tennessee State</option><option value="Texas">Texas</option><option value="Texas A&amp;M">Texas A&M</option><option value="Texas State">Texas State</option><option value="Texas Tech">Texas Tech</option><option value="The Citadel">The Citadel</option><option value="Towson">Towson</option><option value="Troy">Troy</option><option value="Tulane">Tulane</option><option value="Tulsa">Tulsa</option><option value="UCLA">UCLA</option><option value="UConn">UConn</option><option value="UL Monroe">UL Monroe</option><option value="UNLV">UNLV</option><option value="UT Rio Grande Valley">UT Rio Grande Valley</option><option value="UTSA">UTSA</option><option value="Utah State">Utah State</option><option value="Utah Tech">Utah Tech</option><option value="VMI">VMI</option><option value="Vanderbilt">Vanderbilt</option><option value="Virginia Tech">Virginia Tech</option><option value="Washington">Washington</option><option value="Washington State">Washington State</option><option value="West Virginia">West Virginia</option><option value="Western Kentucky">Western Kentucky</option><option value="Western Michigan">Western Michigan</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option><option value="Youngstown State">Youngstown State</option></select></label>
       <label>Conference <select id="conf-filter"><option value="">All Conferences</option><option value="ACC">ACC</option><option value="American Athletic">American Athletic</option><option value="Big 12">Big 12</option><option value="Big Sky">Big Sky</option><option value="Big Ten">Big Ten</option><option value="Coastal Athletic">Coastal Athletic</option><option value="Conference USA">Conference USA</option><option value="FBS Independents">FBS Independents</option><option value="MEAC">MEAC</option><option value="MVFC">MVFC</option><option value="Mid-American">Mid-American</option><option value="Mountain West">Mountain West</option><option value="NEC">NEC</option><option value="OVC">OVC</option><option value="Pac-12">Pac-12</option><option value="Patriot">Patriot</option><option value="SEC">SEC</option><option value="SWAC">SWAC</option><option value="Southern">Southern</option><option value="Southland">Southland</option><option value="Sun Belt">Sun Belt</option><option value="UAC">UAC</option></select></label>
+      <label class="checkbox-label"><input type="checkbox" id="top25-filter"> Top 25 Only</label>
       <span id="filter-count" class="filter-count"></span>
     </div>
     <p id="filter-empty" class="empty" style="display:none">No games match this filter.</p>
     <div id="upcoming-list">
-    <div class="card" data-teams="Alabama|East Carolina" data-confs="SEC|American Athletic">
+    <div class="card" data-teams="Alabama|East Carolina" data-confs="SEC|American Athletic" data-ranked="1">
       <div class="matchup">East Carolina @ No. 13 Alabama</div>
       <div class="kickoff">Sat Sep 5, 12:00 PM EDT</div>
       <div class="prediction-line">Model: Alabama by +9.0 (72% win prob) &middot; Market: Alabama by 28.2</div>
@@ -165,7 +168,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">75%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">63%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">69%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">68%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">62%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Houston|Oregon State" data-confs="Big 12|Pac-12">
+    <div class="card" data-teams="Houston|Oregon State" data-confs="Big 12|Pac-12" data-ranked="1">
       <div class="matchup">Oregon State @ No. 23 Houston</div>
       <div class="kickoff">Sat Sep 5, 12:00 PM EDT</div>
       <div class="prediction-line">Model: Houston by +13.2 (86% win prob) &middot; Market: Houston by 21.0</div>
@@ -178,7 +181,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">85%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">86%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">85%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">83%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">85%</span></div></details>
       
     </div>
-    <div class="card" data-teams="West Virginia|Coastal Carolina" data-confs="Big 12|Sun Belt">
+    <div class="card" data-teams="West Virginia|Coastal Carolina" data-confs="Big 12|Sun Belt" data-ranked="0">
       <div class="matchup">Coastal Carolina @ West Virginia</div>
       <div class="kickoff">Sat Sep 5, 12:00 PM EDT</div>
       <div class="prediction-line">Model: West Virginia by +21.4 (87% win prob) &middot; Market: West Virginia by 21.0</div>
@@ -191,7 +194,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">83%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">86%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">89%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">91%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">84%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Syracuse|New Hampshire" data-confs="ACC|Coastal Athletic">
+    <div class="card" data-teams="Syracuse|New Hampshire" data-confs="ACC|Coastal Athletic" data-ranked="0">
       <div class="matchup">New Hampshire @ Syracuse</div>
       <div class="kickoff">Sat Sep 5, 12:00 PM EDT</div>
       <div class="prediction-line">Model: Syracuse by +14.4 (72% win prob) &middot; Market: Syracuse by 33.5</div>
@@ -204,7 +207,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">71%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">66%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">65%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">70%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">67%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Indiana|North Texas" data-confs="Big Ten|American Athletic">
+    <div class="card" data-teams="Indiana|North Texas" data-confs="Big Ten|American Athletic" data-ranked="1">
       <div class="matchup">North Texas @ No. 6 Indiana</div>
       <div class="kickoff">Sat Sep 5, 12:00 PM EDT</div>
       <div class="prediction-line">Model: Indiana by +17.7 (85% win prob) &middot; Market: Indiana by 40.8</div>
@@ -217,7 +220,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">87%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">81%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">91%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">82%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">75%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Nebraska|Ohio" data-confs="Big Ten|Mid-American">
+    <div class="card" data-teams="Nebraska|Ohio" data-confs="Big Ten|Mid-American" data-ranked="0">
       <div class="matchup">Ohio @ Nebraska</div>
       <div class="kickoff">Sat Sep 5, 12:00 PM EDT</div>
       <div class="prediction-line">Model: Nebraska by +9.4 (66% win prob) &middot; Market: Nebraska by 23.5</div>
@@ -230,7 +233,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">58%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">61%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">75%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">71%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">52%</span></div></details>
       
     </div>
-    <div class="card" data-teams="UConn|Lafayette" data-confs="FBS Independents|Patriot">
+    <div class="card" data-teams="UConn|Lafayette" data-confs="FBS Independents|Patriot" data-ranked="0">
       <div class="matchup">Lafayette @ UConn</div>
       <div class="kickoff">Sat Sep 5, 12:00 PM EDT</div>
       <div class="prediction-line">Model: UConn by +30.6 (91% win prob) &middot; Market: UConn by 19.5</div>
@@ -243,7 +246,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">92%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">96%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">96%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">93%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">94%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Army|Bryant" data-confs="American Athletic|Coastal Athletic">
+    <div class="card" data-teams="Army|Bryant" data-confs="American Athletic|Coastal Athletic" data-ranked="0">
       <div class="matchup">Bryant @ Army</div>
       <div class="kickoff">Sat Sep 5, 12:00 PM EDT</div>
       <div class="prediction-line">Model: Army by +23.5 (88% win prob) &middot; Market: Army by 36.5</div>
@@ -256,7 +259,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">90%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">86%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">91%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">92%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">81%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Bowling Green|Tarleton State" data-confs="Mid-American|UAC">
+    <div class="card" data-teams="Bowling Green|Tarleton State" data-confs="Mid-American|UAC" data-ranked="0">
       <div class="matchup">Tarleton State @ Bowling Green</div>
       <div class="kickoff">Sat Sep 5, 12:00 PM EDT</div>
       <div class="prediction-line">Model: Bowling Green by +16.8 (80% win prob) &middot; Market: Bowling Green by 2.5</div>
@@ -269,7 +272,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">79%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">71%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">80%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">81%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">73%</span></div></details>
       
     </div>
-    <div class="card" data-teams="James Madison|Liberty" data-confs="Sun Belt|Conference USA">
+    <div class="card" data-teams="James Madison|Liberty" data-confs="Sun Belt|Conference USA" data-ranked="0">
       <div class="matchup">Liberty @ James Madison</div>
       <div class="kickoff">Sat Sep 5, 12:00 PM EDT</div>
       <div class="prediction-line">Model: James Madison by +16.8 (87% win prob) &middot; Market: James Madison by 6.0</div>
@@ -282,7 +285,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">86%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">88%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">86%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">85%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">86%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Pittsburgh|Miami (OH)" data-confs="ACC|Mid-American">
+    <div class="card" data-teams="Pittsburgh|Miami (OH)" data-confs="ACC|Mid-American" data-ranked="0">
       <div class="matchup">Miami (OH) @ Pittsburgh</div>
       <div class="kickoff">Sat Sep 5, 12:30 PM EDT</div>
       <div class="prediction-line">Model: Pittsburgh by +11.8 (77% win prob) &middot; Market: Pittsburgh by 16.5</div>
@@ -295,7 +298,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">71%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">71%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">79%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">78%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">68%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Ohio State|Ball State" data-confs="Big Ten|Mid-American">
+    <div class="card" data-teams="Ohio State|Ball State" data-confs="Big Ten|Mid-American" data-ranked="1">
       <div class="matchup">Ball State @ No. 1 Ohio State</div>
       <div class="kickoff">Sat Sep 5, 12:30 PM EDT</div>
       <div class="prediction-line">Model: Ohio State by +33.0 (92% win prob) &middot; Market: Ohio State by 50.8</div>
@@ -308,7 +311,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">97%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">97%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">98%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">98%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">93%</span></div></details>
       
     </div>
-    <div class="card" data-teams="South Carolina|Kent State" data-confs="SEC|Mid-American">
+    <div class="card" data-teams="South Carolina|Kent State" data-confs="SEC|Mid-American" data-ranked="0">
       <div class="matchup">Kent State @ South Carolina</div>
       <div class="kickoff">Sat Sep 5, 12:45 PM EDT</div>
       <div class="prediction-line">Model: South Carolina by +23.3 (87% win prob) &middot; Market: South Carolina by 36.0</div>
@@ -321,7 +324,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">87%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">87%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">92%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">89%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">81%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Kentucky|Youngstown State" data-confs="SEC|MVFC">
+    <div class="card" data-teams="Kentucky|Youngstown State" data-confs="SEC|MVFC" data-ranked="0">
       <div class="matchup">Youngstown State @ Kentucky</div>
       <div class="kickoff">Sat Sep 5, 1:00 PM EDT</div>
       <div class="prediction-line">Model: Kentucky by +31.3 (90% win prob) &middot; Market: Kentucky by 22.5</div>
@@ -334,7 +337,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">89%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">93%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">97%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">96%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">87%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Iowa State|Southeast Missouri State" data-confs="Big 12|OVC">
+    <div class="card" data-teams="Iowa State|Southeast Missouri State" data-confs="Big 12|OVC" data-ranked="0">
       <div class="matchup">Southeast Missouri State @ Iowa State</div>
       <div class="kickoff">Sat Sep 5, 1:00 PM EDT</div>
       <div class="prediction-line">Model: Iowa State by +28.4 (90% win prob) &middot; Market: Iowa State by 29.5</div>
@@ -347,7 +350,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">93%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">93%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">95%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">90%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">88%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Air Force|Duquesne" data-confs="Mountain West|NEC">
+    <div class="card" data-teams="Air Force|Duquesne" data-confs="Mountain West|NEC" data-ranked="0">
       <div class="matchup">Duquesne @ Air Force</div>
       <div class="kickoff">Sat Sep 5, 1:00 PM EDT</div>
       <div class="prediction-line">Model: Air Force by +24.9 (91% win prob) &middot; Market: Air Force by 28.5</div>
@@ -360,7 +363,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">94%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">95%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">98%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">98%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">94%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Temple|Rhode Island" data-confs="American Athletic|Coastal Athletic">
+    <div class="card" data-teams="Temple|Rhode Island" data-confs="American Athletic|Coastal Athletic" data-ranked="0">
       <div class="matchup">Rhode Island @ Temple</div>
       <div class="kickoff">Sat Sep 5, 2:00 PM EDT</div>
       <div class="prediction-line">Model: Temple by +27.6 (82% win prob) &middot; Market: Temple by 14.5</div>
@@ -373,7 +376,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">80%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">77%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">84%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">81%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">74%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Georgia|Tennessee State" data-confs="SEC|OVC">
+    <div class="card" data-teams="Georgia|Tennessee State" data-confs="SEC|OVC" data-ranked="1">
       <div class="matchup">Tennessee State @ No. 3 Georgia</div>
       <div class="kickoff">Sat Sep 5, 3:00 PM EDT</div>
       <div class="prediction-line">Model: Georgia by +39.7 (92% win prob) &middot; Market: Georgia by 46.5</div>
@@ -386,7 +389,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">98%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">95%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">98%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">99%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">94%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Auburn|Baylor" data-confs="SEC|Big 12">
+    <div class="card" data-teams="Auburn|Baylor" data-confs="SEC|Big 12" data-ranked="0">
       <div class="matchup">Baylor @ Auburn</div>
       <div class="kickoff">Sat Sep 5, 3:30 PM EDT</div>
       <div class="prediction-line">Model: Auburn by +0.7 (67% win prob) &middot; Market: Auburn by 7.2</div>
@@ -399,7 +402,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">66%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">67%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">56%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">55%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">66%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Tennessee|Furman" data-confs="SEC|Southern">
+    <div class="card" data-teams="Tennessee|Furman" data-confs="SEC|Southern" data-ranked="1">
       <div class="matchup">Furman @ No. 20 Tennessee</div>
       <div class="kickoff">Sat Sep 5, 3:30 PM EDT</div>
       <div class="prediction-line">Model: Tennessee by +34.5 (92% win prob) &middot; Market: Tennessee by 46.5</div>
@@ -412,7 +415,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">96%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">96%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">98%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">99%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">94%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Texas|Texas State" data-confs="SEC|Pac-12">
+    <div class="card" data-teams="Texas|Texas State" data-confs="SEC|Pac-12" data-ranked="1">
       <div class="matchup">Texas State @ No. 5 Texas</div>
       <div class="kickoff">Sat Sep 5, 3:30 PM EDT</div>
       <div class="prediction-line">Model: Texas by +16.1 (80% win prob) &middot; Market: Texas by 29.5</div>
@@ -425,7 +428,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">74%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">76%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">84%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">85%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">69%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Cincinnati|Boston College" data-confs="Big 12|ACC">
+    <div class="card" data-teams="Cincinnati|Boston College" data-confs="Big 12|ACC" data-ranked="0">
       <div class="matchup">Boston College @ Cincinnati</div>
       <div class="kickoff">Sat Sep 5, 3:30 PM EDT</div>
       <div class="prediction-line">Model: Cincinnati by +11.4 (75% win prob) &middot; Market: Cincinnati by 7.5</div>
@@ -438,7 +441,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">76%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">70%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">72%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">68%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">66%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Duke|Tulane" data-confs="ACC|American Athletic">
+    <div class="card" data-teams="Duke|Tulane" data-confs="ACC|American Athletic" data-ranked="0">
       <div class="matchup">Tulane @ Duke</div>
       <div class="kickoff">Sat Sep 5, 3:30 PM EDT</div>
       <div class="prediction-line">Model: Duke by +0.6 (64% win prob) &middot; Market: Duke by 7.5</div>
@@ -451,7 +454,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">65%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">60%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">52%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">57%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">62%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Oregon|Boise State" data-confs="Big Ten|Pac-12">
+    <div class="card" data-teams="Oregon|Boise State" data-confs="Big Ten|Pac-12" data-ranked="1">
       <div class="matchup">Boise State @ No. 2 Oregon</div>
       <div class="kickoff">Sat Sep 5, 3:30 PM EDT</div>
       <div class="prediction-line">Model: Oregon by +13.4 (82% win prob) &middot; Market: Oregon by 24.8</div>
@@ -464,7 +467,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">83%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">77%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">84%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">82%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">73%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Penn State|Marshall" data-confs="Big Ten|Sun Belt">
+    <div class="card" data-teams="Penn State|Marshall" data-confs="Big Ten|Sun Belt" data-ranked="1">
       <div class="matchup">Marshall @ No. 18 Penn State</div>
       <div class="kickoff">Sat Sep 5, 3:30 PM EDT</div>
       <div class="prediction-line">Model: Penn State by +17.0 (87% win prob) &middot; Market: Penn State by 23.5</div>
@@ -477,7 +480,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">88%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">84%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">89%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">90%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">83%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Charlotte|The Citadel" data-confs="American Athletic|Southern">
+    <div class="card" data-teams="Charlotte|The Citadel" data-confs="American Athletic|Southern" data-ranked="0">
       <div class="matchup">The Citadel @ Charlotte</div>
       <div class="kickoff">Sat Sep 5, 3:30 PM EDT</div>
       <div class="prediction-line">Model: Charlotte by +20.8 (83% win prob) &middot; Market: Charlotte by 20.5</div>
@@ -490,7 +493,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">79%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">74%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">88%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">92%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">74%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Navy|Towson" data-confs="American Athletic|Coastal Athletic">
+    <div class="card" data-teams="Navy|Towson" data-confs="American Athletic|Coastal Athletic" data-ranked="0">
       <div class="matchup">Towson @ Navy</div>
       <div class="kickoff">Sat Sep 5, 3:30 PM EDT</div>
       <div class="prediction-line">Model: Navy by +37.6 (92% win prob) &middot; Market: Navy by 30.5</div>
@@ -503,7 +506,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">97%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">94%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">98%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">99%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">95%</span></div></details>
       
     </div>
-    <div class="card" data-teams="UTSA|UT Rio Grande Valley" data-confs="American Athletic|Southland">
+    <div class="card" data-teams="UTSA|UT Rio Grande Valley" data-confs="American Athletic|Southland" data-ranked="0">
       <div class="matchup">UT Rio Grande Valley @ UTSA</div>
       <div class="kickoff">Sat Sep 5, 3:30 PM EDT</div>
       <div class="prediction-line">Model: UTSA by +25.2 (83% win prob) &middot; Market: UTSA by 28.5</div>
@@ -516,7 +519,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">70%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">84%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">88%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">87%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">80%</span></div></details>
       
     </div>
-    <div class="card" data-teams="North Dakota State|Fordham" data-confs="Mountain West|Patriot">
+    <div class="card" data-teams="North Dakota State|Fordham" data-confs="Mountain West|Patriot" data-ranked="0">
       <div class="matchup">Fordham @ North Dakota State</div>
       <div class="kickoff">Sat Sep 5, 3:30 PM EDT</div>
       <div class="prediction-line">Model: North Dakota State by +28.8 (87% win prob) &middot; Market: North Dakota State by 41.5</div>
@@ -529,7 +532,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">92%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">86%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">90%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">82%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">82%</span></div></details>
       
     </div>
-    <div class="card" data-teams="App State|Maine" data-confs="Sun Belt|Coastal Athletic">
+    <div class="card" data-teams="App State|Maine" data-confs="Sun Belt|Coastal Athletic" data-ranked="0">
       <div class="matchup">Maine @ App State</div>
       <div class="kickoff">Sat Sep 5, 3:30 PM EDT</div>
       <div class="prediction-line">Model: App State by +21.0 (85% win prob) &middot; Market: App State by 19.5</div>
@@ -542,7 +545,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">81%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">84%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">86%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">87%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">79%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Tulsa|Oklahoma State" data-confs="American Athletic|Big 12">
+    <div class="card" data-teams="Tulsa|Oklahoma State" data-confs="American Athletic|Big 12" data-ranked="0">
       <div class="matchup">Oklahoma State @ Tulsa</div>
       <div class="kickoff">Sat Sep 5, 3:45 PM EDT</div>
       <div class="prediction-line">Model: Tulsa by +4.9 (63% win prob) &middot; Market: Oklahoma State by 13.5</div>
@@ -555,7 +558,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">61%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">62%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">57%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">49%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">66%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Arkansas|North Alabama" data-confs="SEC|UAC">
+    <div class="card" data-teams="Arkansas|North Alabama" data-confs="SEC|UAC" data-ranked="0">
       <div class="matchup">North Alabama @ Arkansas</div>
       <div class="kickoff">Sat Sep 5, 4:15 PM EDT</div>
       <div class="prediction-line">Model: Arkansas by +38.1 (91% win prob) &middot; Market: Arkansas by 40.5</div>
@@ -568,7 +571,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">95%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">96%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">98%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">97%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">95%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Iowa|Northern Illinois" data-confs="Big Ten|Mountain West">
+    <div class="card" data-teams="Iowa|Northern Illinois" data-confs="Big Ten|Mountain West" data-ranked="1">
       <div class="matchup">Northern Illinois @ No. 22 Iowa</div>
       <div class="kickoff">Sat Sep 5, 4:15 PM EDT</div>
       <div class="prediction-line">Model: Iowa by +22.2 (88% win prob) &middot; Market: Iowa by 31.8</div>
@@ -581,7 +584,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">92%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">89%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">90%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">91%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">85%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Southern Miss|Alcorn State" data-confs="Sun Belt|SWAC">
+    <div class="card" data-teams="Southern Miss|Alcorn State" data-confs="Sun Belt|SWAC" data-ranked="0">
       <div class="matchup">Alcorn State @ Southern Miss</div>
       <div class="kickoff">Sat Sep 5, 5:00 PM EDT</div>
       <div class="prediction-line">Model: Southern Miss by +28.0 (90% win prob) &middot; Market: Southern Miss by 20.5</div>
@@ -594,7 +597,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">91%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">93%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">95%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">96%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">88%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Colorado State|Wyoming" data-confs="Pac-12|Mountain West">
+    <div class="card" data-teams="Colorado State|Wyoming" data-confs="Pac-12|Mountain West" data-ranked="0">
       <div class="matchup">Wyoming @ Colorado State</div>
       <div class="kickoff">Sat Sep 5, 6:00 PM EDT</div>
       <div class="prediction-line">Model: Colorado State by -3.4 (58% win prob) &middot; Market: Colorado State by 3.0</div>
@@ -607,7 +610,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">52%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">63%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">50%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">45%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">62%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Old Dominion|Norfolk State" data-confs="Sun Belt|MEAC">
+    <div class="card" data-teams="Old Dominion|Norfolk State" data-confs="Sun Belt|MEAC" data-ranked="0">
       <div class="matchup">Norfolk State @ Old Dominion</div>
       <div class="kickoff">Sat Sep 5, 6:00 PM EDT</div>
       <div class="prediction-line">Model: Old Dominion by +30.7 (92% win prob) &middot; Market: Old Dominion by 40.5</div>
@@ -620,7 +623,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">97%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">97%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">99%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">99%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">98%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Texas A&amp;M|Missouri State" data-confs="SEC|Conference USA">
+    <div class="card" data-teams="Texas A&amp;M|Missouri State" data-confs="SEC|Conference USA" data-ranked="1">
       <div class="matchup">Missouri State @ No. 8 Texas A&M</div>
       <div class="kickoff">Sat Sep 5, 7:00 PM EDT</div>
       <div class="prediction-line">Model: Texas A&M by +22.1 (87% win prob) &middot; Market: Texas A&M by 40.5</div>
@@ -633,7 +636,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">89%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">84%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">91%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">89%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">80%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Vanderbilt|Austin Peay" data-confs="SEC|UAC">
+    <div class="card" data-teams="Vanderbilt|Austin Peay" data-confs="SEC|UAC" data-ranked="0">
       <div class="matchup">Austin Peay @ Vanderbilt</div>
       <div class="kickoff">Sat Sep 5, 7:00 PM EDT</div>
       <div class="prediction-line">Model: Vanderbilt by +29.6 (91% win prob) &middot; Market: Vanderbilt by 29.5</div>
@@ -646,7 +649,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">96%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">93%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">97%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">97%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">93%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Texas Tech|Abilene Christian" data-confs="Big 12|UAC">
+    <div class="card" data-teams="Texas Tech|Abilene Christian" data-confs="Big 12|UAC" data-ranked="1">
       <div class="matchup">Abilene Christian @ No. 12 Texas Tech</div>
       <div class="kickoff">Sat Sep 5, 7:00 PM EDT</div>
       <div class="prediction-line">Model: Texas Tech by +33.7 (91% win prob) &middot; Market: Texas Tech by 42.5</div>
@@ -659,7 +662,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">97%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">95%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">97%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">98%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">93%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Kansas State|Nicholls" data-confs="Big 12|Southland">
+    <div class="card" data-teams="Kansas State|Nicholls" data-confs="Big 12|Southland" data-ranked="0">
       <div class="matchup">Nicholls @ Kansas State</div>
       <div class="kickoff">Sat Sep 5, 7:00 PM EDT</div>
       <div class="prediction-line">Model: Kansas State by +29.1 (90% win prob) &middot; Market: Kansas State by 40.5</div>
@@ -672,7 +675,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">94%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">94%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">94%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">90%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">91%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Utah State|Idaho State" data-confs="Pac-12|Big Sky">
+    <div class="card" data-teams="Utah State|Idaho State" data-confs="Pac-12|Big Sky" data-ranked="0">
       <div class="matchup">Idaho State @ Utah State</div>
       <div class="kickoff">Sat Sep 5, 7:00 PM EDT</div>
       <div class="prediction-line">Model: Utah State by +11.7 (81% win prob) &middot; Market: Utah State by 14.0</div>
@@ -685,7 +688,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">84%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">72%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">78%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">85%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">73%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Memphis|Arkansas State" data-confs="American Athletic|Sun Belt">
+    <div class="card" data-teams="Memphis|Arkansas State" data-confs="American Athletic|Sun Belt" data-ranked="0">
       <div class="matchup">Arkansas State @ Memphis</div>
       <div class="kickoff">Sat Sep 5, 7:00 PM EDT</div>
       <div class="prediction-line">Model: Memphis by +9.4 (75% win prob) &middot; Market: Memphis by 11.2</div>
@@ -698,7 +701,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">70%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">75%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">72%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">72%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">68%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Rice|Houston Christian" data-confs="American Athletic|Southland">
+    <div class="card" data-teams="Rice|Houston Christian" data-confs="American Athletic|Southland" data-ranked="0">
       <div class="matchup">Houston Christian @ Rice</div>
       <div class="kickoff">Sat Sep 5, 7:00 PM EDT</div>
       <div class="prediction-line">Model: Rice by +29.0 (88% win prob) &middot; Market: Rice by 22.5</div>
@@ -711,7 +714,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">84%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">88%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">94%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">93%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">86%</span></div></details>
       
     </div>
-    <div class="card" data-teams="South Florida|Florida International" data-confs="American Athletic|Conference USA">
+    <div class="card" data-teams="South Florida|Florida International" data-confs="American Athletic|Conference USA" data-ranked="0">
       <div class="matchup">Florida International @ South Florida</div>
       <div class="kickoff">Sat Sep 5, 7:00 PM EDT</div>
       <div class="prediction-line">Model: South Florida by +23.3 (87% win prob) &middot; Market: South Florida by 14.5</div>
@@ -724,7 +727,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">91%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">86%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">89%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">89%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">81%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Middle Tennessee|Murray State" data-confs="Conference USA|MVFC">
+    <div class="card" data-teams="Middle Tennessee|Murray State" data-confs="Conference USA|MVFC" data-ranked="0">
       <div class="matchup">Murray State @ Middle Tennessee</div>
       <div class="kickoff">Sat Sep 5, 7:00 PM EDT</div>
       <div class="prediction-line">Model: Middle Tennessee by +26.5 (90% win prob) &middot; Market: Middle Tennessee by 20.5</div>
@@ -737,7 +740,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">87%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">92%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">96%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">96%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">91%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Jacksonville State|Eastern Kentucky" data-confs="Conference USA|UAC">
+    <div class="card" data-teams="Jacksonville State|Eastern Kentucky" data-confs="Conference USA|UAC" data-ranked="0">
       <div class="matchup">Eastern Kentucky @ Jacksonville State</div>
       <div class="kickoff">Sat Sep 5, 7:00 PM EDT</div>
       <div class="prediction-line">Model: Jacksonville State by +31.1 (91% win prob) &middot; Market: Jacksonville State by 20.5</div>
@@ -750,7 +753,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">92%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">93%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">97%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">97%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">93%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Georgia Southern|Charleston Southern" data-confs="Sun Belt|OVC">
+    <div class="card" data-teams="Georgia Southern|Charleston Southern" data-confs="Sun Belt|OVC" data-ranked="0">
       <div class="matchup">Charleston Southern @ Georgia Southern</div>
       <div class="kickoff">Sat Sep 5, 7:00 PM EDT</div>
       <div class="prediction-line">Model: Georgia Southern by +30.1 (91% win prob) &middot; Market: Georgia Southern by 25.5</div>
@@ -763,7 +766,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">90%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">95%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">97%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">98%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">96%</span></div></details>
       
     </div>
-    <div class="card" data-teams="South Alabama|SE Louisiana" data-confs="Sun Belt|Southland">
+    <div class="card" data-teams="South Alabama|SE Louisiana" data-confs="Sun Belt|Southland" data-ranked="0">
       <div class="matchup">SE Louisiana @ South Alabama</div>
       <div class="kickoff">Sat Sep 5, 7:00 PM EDT</div>
       <div class="prediction-line">Model: South Alabama by +24.2 (90% win prob) &middot; Market: South Alabama by 12.5</div>
@@ -776,7 +779,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">88%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">95%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">96%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">96%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">92%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Troy|Sam Houston" data-confs="Sun Belt|Conference USA">
+    <div class="card" data-teams="Troy|Sam Houston" data-confs="Sun Belt|Conference USA" data-ranked="0">
       <div class="matchup">Sam Houston @ Troy</div>
       <div class="kickoff">Sat Sep 5, 7:00 PM EDT</div>
       <div class="prediction-line">Model: Troy by +10.1 (83% win prob) &middot; Market: Troy by 16.5</div>
@@ -789,7 +792,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">85%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">79%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">75%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">78%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">80%</span></div></details>
       
     </div>
-    <div class="card" data-teams="LSU|Clemson" data-confs="SEC|ACC">
+    <div class="card" data-teams="LSU|Clemson" data-confs="SEC|ACC" data-ranked="1">
       <div class="matchup">Clemson @ No. 11 LSU</div>
       <div class="kickoff">Sat Sep 5, 7:30 PM EDT</div>
       <div class="prediction-line">Model: LSU by +2.0 (57% win prob) &middot; Market: LSU by 10.0</div>
@@ -802,7 +805,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">58%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">54%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">53%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">56%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">53%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Mississippi State|UL Monroe" data-confs="SEC|Sun Belt">
+    <div class="card" data-teams="Mississippi State|UL Monroe" data-confs="SEC|Sun Belt" data-ranked="0">
       <div class="matchup">UL Monroe @ Mississippi State</div>
       <div class="kickoff">Sat Sep 5, 7:30 PM EDT</div>
       <div class="prediction-line">Model: Mississippi State by +18.1 (86% win prob) &middot; Market: Mississippi State by 28.5</div>
@@ -815,7 +818,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">84%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">87%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">89%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">91%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">80%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Virginia Tech|VMI" data-confs="ACC|Southern">
+    <div class="card" data-teams="Virginia Tech|VMI" data-confs="ACC|Southern" data-ranked="0">
       <div class="matchup">VMI @ Virginia Tech</div>
       <div class="kickoff">Sat Sep 5, 7:30 PM EDT</div>
       <div class="prediction-line">Model: Virginia Tech by +45.9 (91% win prob) &middot; Market: Virginia Tech by 55.5</div>
@@ -828,7 +831,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">94%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">95%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">99%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">99%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">92%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Michigan|Western Michigan" data-confs="Big Ten|Mid-American">
+    <div class="card" data-teams="Michigan|Western Michigan" data-confs="Big Ten|Mid-American" data-ranked="1">
       <div class="matchup">Western Michigan @ No. 16 Michigan</div>
       <div class="kickoff">Sat Sep 5, 7:30 PM EDT</div>
       <div class="prediction-line">Model: Michigan by +10.8 (76% win prob) &middot; Market: Michigan by 27.5</div>
@@ -841,7 +844,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">78%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">66%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">81%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">75%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">61%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Louisiana Tech|Northwestern State" data-confs="Sun Belt|Southland">
+    <div class="card" data-teams="Louisiana Tech|Northwestern State" data-confs="Sun Belt|Southland" data-ranked="0">
       <div class="matchup">Northwestern State @ Louisiana Tech</div>
       <div class="kickoff">Sat Sep 5, 7:30 PM EDT</div>
       <div class="prediction-line">Model: Louisiana Tech by +37.8 (92% win prob) &middot; Market: Louisiana Tech by 44.5</div>
@@ -854,7 +857,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">98%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">96%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">98%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">100%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">94%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Florida|Florida Atlantic" data-confs="SEC|American Athletic">
+    <div class="card" data-teams="Florida|Florida Atlantic" data-confs="SEC|American Athletic" data-ranked="0">
       <div class="matchup">Florida Atlantic @ Florida</div>
       <div class="kickoff">Sat Sep 5, 7:45 PM EDT</div>
       <div class="prediction-line">Model: Florida by +15.2 (80% win prob) &middot; Market: Florida by 26.5</div>
@@ -867,7 +870,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">79%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">75%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">79%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">81%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">68%</span></div></details>
       
     </div>
-    <div class="card" data-teams="BYU|Utah Tech" data-confs="Big 12|Big Sky">
+    <div class="card" data-teams="BYU|Utah Tech" data-confs="Big 12|Big Sky" data-ranked="1">
       <div class="matchup">Utah Tech @ No. 14 BYU</div>
       <div class="kickoff">Sat Sep 5, 8:00 PM EDT</div>
       <div class="prediction-line">Model: BYU by +32.9 (90% win prob) &middot; Market: BYU by 51.5</div>
@@ -880,7 +883,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">94%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">92%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">96%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">95%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">90%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Maryland|Hampton" data-confs="Big Ten|Coastal Athletic">
+    <div class="card" data-teams="Maryland|Hampton" data-confs="Big Ten|Coastal Athletic" data-ranked="0">
       <div class="matchup">Hampton @ Maryland</div>
       <div class="kickoff">Sat Sep 5, 8:00 PM EDT</div>
       <div class="prediction-line">Model: Maryland by +28.3 (89% win prob) &middot; Market: Maryland by 45.5</div>
@@ -893,7 +896,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">89%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">88%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">95%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">95%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">85%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Northwestern|South Dakota State" data-confs="Big Ten|MVFC">
+    <div class="card" data-teams="Northwestern|South Dakota State" data-confs="Big Ten|MVFC" data-ranked="0">
       <div class="matchup">South Dakota State @ Northwestern</div>
       <div class="kickoff">Sat Sep 5, 8:00 PM EDT</div>
       <div class="prediction-line">Model: Northwestern by +17.4 (83% win prob) &middot; Market: Northwestern by 13.5</div>
@@ -906,7 +909,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">82%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">77%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">84%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">83%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">76%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Louisiana|Lamar" data-confs="Sun Belt|Southland">
+    <div class="card" data-teams="Louisiana|Lamar" data-confs="Sun Belt|Southland" data-ranked="0">
       <div class="matchup">Lamar @ Louisiana</div>
       <div class="kickoff">Sat Sep 5, 8:00 PM EDT</div>
       <div class="prediction-line">Model: Louisiana by +22.0 (89% win prob) &middot; Market: Louisiana by 20.5</div>
@@ -919,7 +922,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">87%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">93%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">94%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">91%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">90%</span></div></details>
       
     </div>
-    <div class="card" data-teams="New Mexico State|Mercyhurst" data-confs="Conference USA|NEC">
+    <div class="card" data-teams="New Mexico State|Mercyhurst" data-confs="Conference USA|NEC" data-ranked="0">
       <div class="matchup">Mercyhurst @ New Mexico State</div>
       <div class="kickoff">Sat Sep 5, 9:00 PM EDT</div>
       <div class="prediction-line">Model: New Mexico State by +15.9 (69% win prob) &middot; Market: New Mexico State by 28.5</div>
@@ -932,7 +935,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">55%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">68%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">70%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">73%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">63%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Arizona|Northern Arizona" data-confs="Big 12|Big Sky">
+    <div class="card" data-teams="Arizona|Northern Arizona" data-confs="Big 12|Big Sky" data-ranked="0">
       <div class="matchup">Northern Arizona @ Arizona</div>
       <div class="kickoff">Sat Sep 5, 9:30 PM EDT</div>
       <div class="prediction-line">Model: Arizona by +24.6 (90% win prob) &middot; Market: Arizona by 31.5</div>
@@ -945,7 +948,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">92%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">94%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">93%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">91%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">89%</span></div></details>
       
     </div>
-    <div class="card" data-teams="San Diego State|Portland State" data-confs="Pac-12|Big Sky">
+    <div class="card" data-teams="San Diego State|Portland State" data-confs="Pac-12|Big Sky" data-ranked="0">
       <div class="matchup">Portland State @ San Diego State</div>
       <div class="kickoff">Sat Sep 5, 9:30 PM EDT</div>
       <div class="prediction-line">Model: San Diego State by +37.8 (92% win prob) &middot; Market: San Diego State by 40.5</div>
@@ -958,7 +961,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">97%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">97%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">99%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">99%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">95%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Arizona State|Morgan State" data-confs="Big 12|MEAC">
+    <div class="card" data-teams="Arizona State|Morgan State" data-confs="Big 12|MEAC" data-ranked="0">
       <div class="matchup">Morgan State @ Arizona State</div>
       <div class="kickoff">Sat Sep 5, 10:00 PM EDT</div>
       <div class="prediction-line">Model: Arizona State by +39.9 (92% win prob) &middot; Market: Arizona State by 43.5</div>
@@ -971,7 +974,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">96%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">97%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">98%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">99%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">95%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Hawai'i|UNLV" data-confs="Mountain West|Mountain West">
+    <div class="card" data-teams="Hawai'i|UNLV" data-confs="Mountain West|Mountain West" data-ranked="0">
       <div class="matchup">UNLV @ Hawai'i</div>
       <div class="kickoff">Sat Sep 5, 10:00 PM EDT</div>
       <div class="prediction-line">Model: Hawai'i by -3.2 (47% win prob) &middot; Market: UNLV by 3.0</div>
@@ -984,7 +987,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">44%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">43%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">49%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">48%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">50%</span></div></details>
       
     </div>
-    <div class="card" data-teams="New Mexico|Central Michigan" data-confs="Mountain West|Mid-American">
+    <div class="card" data-teams="New Mexico|Central Michigan" data-confs="Mountain West|Mid-American" data-ranked="0">
       <div class="matchup">Central Michigan @ New Mexico</div>
       <div class="kickoff">Sat Sep 5, 10:00 PM EDT</div>
       <div class="prediction-line">Model: New Mexico by +11.3 (81% win prob) &middot; Market: New Mexico by 10.8</div>
@@ -997,7 +1000,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">80%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">76%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">78%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">77%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">78%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Sacramento State|Mississippi Valley State" data-confs="Mid-American|SWAC">
+    <div class="card" data-teams="Sacramento State|Mississippi Valley State" data-confs="Mid-American|SWAC" data-ranked="0">
       <div class="matchup">Mississippi Valley State @ Sacramento State</div>
       <div class="kickoff">Sat Sep 5, 10:00 PM EDT</div>
       <div class="prediction-line">Model: Sacramento State by +27.6 (88% win prob) &middot; Market: Sacramento State by 37.5</div>
@@ -1010,7 +1013,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">85%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">83%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">92%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">97%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">87%</span></div></details>
       
     </div>
-    <div class="card" data-teams="California|UCLA" data-confs="ACC|Big Ten">
+    <div class="card" data-teams="California|UCLA" data-confs="ACC|Big Ten" data-ranked="0">
       <div class="matchup">UCLA @ California</div>
       <div class="kickoff">Sat Sep 5, 10:30 PM EDT</div>
       <div class="prediction-line">Model: California by +9.1 (79% win prob) &middot; Market: UCLA by 2.0</div>
@@ -1023,7 +1026,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">71%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">79%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">73%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">78%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">76%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Nevada|Western Kentucky" data-confs="Mountain West|Conference USA">
+    <div class="card" data-teams="Nevada|Western Kentucky" data-confs="Mountain West|Conference USA" data-ranked="0">
       <div class="matchup">Western Kentucky @ Nevada</div>
       <div class="kickoff">Sat Sep 5, 10:30 PM EDT</div>
       <div class="prediction-line">Model: Nevada by -2.4 (44% win prob) &middot; Market: Western Kentucky by 1.5</div>
@@ -1036,7 +1039,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">44%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">43%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">42%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">46%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">46%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Washington|Washington State" data-confs="Big Ten|Pac-12">
+    <div class="card" data-teams="Washington|Washington State" data-confs="Big Ten|Pac-12" data-ranked="1">
       <div class="matchup">Washington State @ No. 17 Washington</div>
       <div class="kickoff">Sun Sep 6, 4:00 PM EDT</div>
       <div class="prediction-line">Model: Washington by +10.5 (80% win prob) &middot; Market: Washington by 23.2</div>
@@ -1049,7 +1052,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">77%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">78%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">81%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">76%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">72%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Ole Miss|Louisville" data-confs="SEC|ACC">
+    <div class="card" data-teams="Ole Miss|Louisville" data-confs="SEC|ACC" data-ranked="1">
       <div class="matchup">No. 24 Louisville @ No. 9 Ole Miss</div>
       <div class="kickoff">Sun Sep 6, 7:30 PM EDT</div>
       <div class="prediction-line">Model: Ole Miss by +10.0 (78% win prob) &middot; Market: Ole Miss by 6.8</div>
@@ -1062,7 +1065,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">77%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">75%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">70%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">72%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">73%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Notre Dame|Wisconsin" data-confs="FBS Independents|Big Ten">
+    <div class="card" data-teams="Notre Dame|Wisconsin" data-confs="FBS Independents|Big Ten" data-ranked="1">
       <div class="matchup">Wisconsin @ No. 4 Notre Dame</div>
       <div class="kickoff">Sun Sep 6, 7:30 PM EDT</div>
       <div class="prediction-line">Model: Notre Dame by +22.8 (91% win prob) &middot; Market: Notre Dame by 20.2</div>
@@ -1075,7 +1078,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">96%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">92%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">94%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">98%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">92%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Florida State|SMU" data-confs="ACC|ACC">
+    <div class="card" data-teams="Florida State|SMU" data-confs="ACC|ACC" data-ranked="1">
       <div class="matchup">No. 19 SMU @ Florida State</div>
       <div class="kickoff">Mon Sep 7, 7:30 PM EDT</div>
       <div class="prediction-line">Model: Florida State by -0.1 (43% win prob) &middot; Market: SMU by 3.0</div>
@@ -1088,7 +1091,7 @@
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">40%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">45%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">43%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">48%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">43%</span></div></details>
       
     </div>
-    <div class="card" data-teams="Kansas|Missouri" data-confs="Big 12|SEC">
+    <div class="card" data-teams="Kansas|Missouri" data-confs="Big 12|SEC" data-ranked="0">
       <div class="matchup">Missouri @ Kansas</div>
       <div class="kickoff">Fri Sep 11, 8:00 PM EDT</div>
       <div class="prediction-line">Model: Kansas by -0.7 (49% win prob) &middot; Market: Missouri by 6.5</div>
@@ -1511,32 +1514,35 @@
     win probability against any opponent -- that conversion, not the raw rating number, is what actually
     drives the model. Home teams get a flat +65 rating bonus before that calculation, an unvalidated
     placeholder rather than a measured home-field value, same caveat as the confidence tiers above.</p>
-    <p>Generated 2026-09-05 06:04 UTC.</p>
+    <p>Generated 2026-09-05 06:13 UTC.</p>
   </footer>
 </div>
 <script>
 (function() {
   var teamSel = document.getElementById('team-filter');
   var confSel = document.getElementById('conf-filter');
+  var top25Chk = document.getElementById('top25-filter');
   if (!teamSel || !confSel) return;  // no filter row rendered (no upcoming games this run)
   var cards = Array.prototype.slice.call(document.querySelectorAll('#upcoming-list .card'));
   var countEl = document.getElementById('filter-count');
   var emptyEl = document.getElementById('filter-empty');
 
   function applyFilters() {
-    var team = teamSel.value, conf = confSel.value, visible = 0;
+    var team = teamSel.value, conf = confSel.value, top25 = top25Chk && top25Chk.checked, visible = 0;
     cards.forEach(function(card) {
       var teams = (card.dataset.teams || '').split('|');
       var confs = (card.dataset.confs || '').split('|');
-      var show = (!team || teams.indexOf(team) !== -1) && (!conf || confs.indexOf(conf) !== -1);
+      var show = (!team || teams.indexOf(team) !== -1) && (!conf || confs.indexOf(conf) !== -1)
+        && (!top25 || card.dataset.ranked === '1');
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     });
-    countEl.textContent = (team || conf) ? (visible + ' of ' + cards.length + ' shown') : '';
+    countEl.textContent = (team || conf || top25) ? (visible + ' of ' + cards.length + ' shown') : '';
     emptyEl.style.display = (visible === 0 && cards.length > 0) ? '' : 'none';
   }
   teamSel.addEventListener('change', applyFilters);
   confSel.addEventListener('change', applyFilters);
+  if (top25Chk) top25Chk.addEventListener('change', applyFilters);
 })();
 (function() {
   var tabBtns = Array.prototype.slice.call(document.querySelectorAll('.tab-btn'));

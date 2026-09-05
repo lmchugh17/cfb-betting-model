@@ -379,19 +379,20 @@ def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None
             f'spread pick {cover} the spread</div>'
         )
 
-    # Team/conference filter hooks -- only meaningful (and only present) on upcoming picks;
-    # fetch_results doesn't join in conference, so these are quietly absent on result cards,
-    # which is fine since the filter only ever queries within #upcoming-list.
-    filter_attrs = ""
-    if p.get("home_conference") is not None or p.get("away_conference") is not None:
-        teams_val = f'{_esc_attr(p["home_team"])}|{_esc_attr(p["away_team"])}'
-        confs_val = f'{_esc_attr(p.get("home_conference"))}|{_esc_attr(p.get("away_conference"))}'
-        filter_attrs = f' data-teams="{teams_val}" data-confs="{confs_val}"'
-
     rankings = rankings or {}
     week_key = (p["year"], p["week"], p["season_type"])
     away_display = _ranked_name(p["away_team"], *week_key, rankings)
     home_display = _ranked_name(p["home_team"], *week_key, rankings)
+    is_ranked_matchup = away_display != p["away_team"] or home_display != p["home_team"]
+
+    # Team/conference/Top-25 filter hooks -- only meaningful (and only present) on upcoming
+    # picks; fetch_results doesn't join in conference, so these are quietly absent on result
+    # cards, which is fine since the filter only ever queries within #upcoming-list.
+    filter_attrs = ""
+    if p.get("home_conference") is not None or p.get("away_conference") is not None:
+        teams_val = f'{_esc_attr(p["home_team"])}|{_esc_attr(p["away_team"])}'
+        confs_val = f'{_esc_attr(p.get("home_conference"))}|{_esc_attr(p.get("away_conference"))}'
+        filter_attrs = f' data-teams="{teams_val}" data-confs="{confs_val}" data-ranked="{1 if is_ranked_matchup else 0}"'
 
     return f"""
     <div class="card"{filter_attrs}>
@@ -679,6 +680,7 @@ def render_upcoming_filters(upcoming: list[dict]) -> str:
     return f"""<div class="filter-row">
       <label>Team <select id="team-filter"><option value="">All Teams</option>{team_options}</select></label>
       <label>Conference <select id="conf-filter"><option value="">All Conferences</option>{conf_options}</select></label>
+      <label class="checkbox-label"><input type="checkbox" id="top25-filter"> Top 25 Only</label>
       <span id="filter-count" class="filter-count"></span>
     </div>
     <p id="filter-empty" class="empty" style="display:none">No games match this filter.</p>"""
@@ -795,6 +797,8 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .filter-row {{ display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin: 0 0 1rem; font-size: 0.85rem; color: var(--text-dim); }}
   .filter-row label {{ display: flex; align-items: center; gap: 0.4rem; }}
   .filter-row select {{ background: var(--card); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.35rem 0.6rem; font-size: 0.85rem; max-width: 60vw; }}
+  .checkbox-label {{ cursor: pointer; }}
+  .checkbox-label input {{ width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer; }}
   .filter-count {{ margin-left: auto; }}
   .tabs {{ display: flex; gap: 0.5rem; margin: 1rem 0 1.25rem; }}
   .tab-btn {{ background: var(--card); color: var(--text-dim); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.85rem; font-family: inherit; cursor: pointer; }}
@@ -922,25 +926,28 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
 (function() {{
   var teamSel = document.getElementById('team-filter');
   var confSel = document.getElementById('conf-filter');
+  var top25Chk = document.getElementById('top25-filter');
   if (!teamSel || !confSel) return;  // no filter row rendered (no upcoming games this run)
   var cards = Array.prototype.slice.call(document.querySelectorAll('#upcoming-list .card'));
   var countEl = document.getElementById('filter-count');
   var emptyEl = document.getElementById('filter-empty');
 
   function applyFilters() {{
-    var team = teamSel.value, conf = confSel.value, visible = 0;
+    var team = teamSel.value, conf = confSel.value, top25 = top25Chk && top25Chk.checked, visible = 0;
     cards.forEach(function(card) {{
       var teams = (card.dataset.teams || '').split('|');
       var confs = (card.dataset.confs || '').split('|');
-      var show = (!team || teams.indexOf(team) !== -1) && (!conf || confs.indexOf(conf) !== -1);
+      var show = (!team || teams.indexOf(team) !== -1) && (!conf || confs.indexOf(conf) !== -1)
+        && (!top25 || card.dataset.ranked === '1');
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     }});
-    countEl.textContent = (team || conf) ? (visible + ' of ' + cards.length + ' shown') : '';
+    countEl.textContent = (team || conf || top25) ? (visible + ' of ' + cards.length + ' shown') : '';
     emptyEl.style.display = (visible === 0 && cards.length > 0) ? '' : 'none';
   }}
   teamSel.addEventListener('change', applyFilters);
   confSel.addEventListener('change', applyFilters);
+  if (top25Chk) top25Chk.addEventListener('change', applyFilters);
 }})();
 (function() {{
   var tabBtns = Array.prototype.slice.call(document.querySelectorAll('.tab-btn'));
