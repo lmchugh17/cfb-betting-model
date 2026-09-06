@@ -148,8 +148,8 @@
 
   <div id="tab-upcoming" class="tab-panel">
     <div class="filter-row">
-      <label>Team <select id="team-filter"><option value="">All Teams</option><option value="Florida State">Florida State</option><option value="Kansas">Kansas</option><option value="Louisville">Louisville</option><option value="Missouri">Missouri</option><option value="Notre Dame">Notre Dame</option><option value="Ole Miss">Ole Miss</option><option value="SMU">SMU</option><option value="Washington">Washington</option><option value="Washington State">Washington State</option><option value="Wisconsin">Wisconsin</option></select></label>
-      <label>Conference <select id="conf-filter"><option value="">All Conferences</option><option value="ACC">ACC</option><option value="Big 12">Big 12</option><option value="Big Ten">Big Ten</option><option value="FBS Independents">FBS Independents</option><option value="Pac-12">Pac-12</option><option value="SEC">SEC</option></select></label>
+      <label>Team <select id="team-filter"><option value="">All Teams</option><option value="Boston College">Boston College</option><option value="Florida A&amp;M">Florida A&M</option><option value="Florida State">Florida State</option><option value="Kansas">Kansas</option><option value="Louisville">Louisville</option><option value="Miami">Miami</option><option value="Missouri">Missouri</option><option value="NC State">NC State</option><option value="Norfolk State">Norfolk State</option><option value="Notre Dame">Notre Dame</option><option value="Ole Miss">Ole Miss</option><option value="Richmond">Richmond</option><option value="Rutgers">Rutgers</option><option value="SMU">SMU</option><option value="Villanova">Villanova</option><option value="Virginia">Virginia</option><option value="Washington">Washington</option><option value="Washington State">Washington State</option><option value="Wisconsin">Wisconsin</option></select></label>
+      <label>Conference <select id="conf-filter"><option value="">All Conferences</option><option value="ACC">ACC</option><option value="Big 12">Big 12</option><option value="Big Ten">Big Ten</option><option value="FBS Independents">FBS Independents</option><option value="MEAC">MEAC</option><option value="Pac-12">Pac-12</option><option value="Patriot">Patriot</option><option value="SEC">SEC</option><option value="SWAC">SWAC</option></select></label>
       <label class="checkbox-label"><input type="checkbox" id="top25-filter"> Top 25 Only</label>
       <span id="filter-count" class="filter-count"></span>
     </div>
@@ -205,6 +205,71 @@
       <div class="tldr">The market favors SMU by 3.0, but the model actually favors Florida State, essentially a pick'em at -0.1 -- a 2.9-point swing that makes Florida State the pick, though this is a low-confidence, close-to-even edge.</div>
       <ul class="bullets"><li>Florida State rates ahead once schedule strength is factored in, a 10.8-point opponent-adjusted margin edge (+17.0 vs +6.2), despite pre-game ELO&Dagger; giving it only a 43% win probability.</li><li>SMU has the better recent scoring margin (16.5 vs 2.0, last four games) and has covered the spread in 80% of its last five games, both real factors working against this pick.</li><li>SMU has also faced tougher recent competition than Florida State (+2.7 vs -9.4) -- with the numbers this mixed, this is a genuinely close call, not a strong lean.</li></ul>
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">40%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">45%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">43%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">48%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">43%</span></div></details>
+      
+    </div>
+    <div class="card" data-teams="Miami|Florida A&amp;M" data-confs="ACC|SWAC" data-ranked="0">
+      <div class="matchup">Florida A&M @ Miami</div>
+      <div class="kickoff">Thu Sep 10, 8:00 PM EDT</div>
+      <div class="prediction-line">Model: Miami by +48.0 (92% win prob) &middot; Market: no line</div>
+      <div class="pick-line">Moneyline pick: <strong>Miami</strong> (92% win prob) <span class="tier tier-high">HIGH Confidence&dagger;</span></div>
+      
+      
+      
+      
+      <ul class="bullets"><li>Pre-game ELO&Dagger; gives Miami a 88% win probability.</li><li>Miami has the edge in recent scoring margin (11.8 vs -31.2, last 4 games).</li><li>Miami has faced tougher recent competition than Florida A&M (average opponent rating +23.1 vs +1.6).</li><li>Miami has been the better team once schedule strength is accounted for, outrating Florida A&M by 65.6 points of opponent-adjusted margin (+38.4 vs -27.2).</li><li>Over their last 3 meetings, Miami has outscored Florida A&M by an average of 49.3 points.</li></ul>
+      <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">99%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">97%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">98%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">99%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">95%</span></div></details>
+      
+    </div>
+    <div class="card" data-teams="Louisville|Villanova" data-confs="ACC|Patriot" data-ranked="0">
+      <div class="matchup">Villanova @ Louisville</div>
+      <div class="kickoff">Fri Sep 11, 7:00 PM EDT</div>
+      <div class="prediction-line">Model: Louisville by +31.5 (89% win prob) &middot; Market: no line</div>
+      <div class="pick-line">Moneyline pick: <strong>Louisville</strong> (89% win prob) <span class="tier tier-high">HIGH Confidence&dagger;</span></div>
+      
+      
+      
+      
+      <ul class="bullets"><li>Louisville has the edge in recent scoring margin (3.2 vs -34.2, last 4 games).</li><li>Villanova has faced tougher recent competition than Louisville (average opponent rating +57.5 vs -3.2).</li><li>Pre-game ELO&Dagger; gives Louisville a 76% win probability.</li><li>Louisville has been the better team once schedule strength is accounted for, outrating Villanova by 18.9 points of opponent-adjusted margin (+6.2 vs -12.8).</li><li>Louisville carries a 136-point ELO&Dagger; advantage over Villanova (1614 vs 1478).</li></ul>
+      <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">85%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">93%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">93%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">94%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">92%</span></div></details>
+      
+    </div>
+    <div class="card" data-teams="Virginia|Norfolk State" data-confs="ACC|MEAC" data-ranked="0">
+      <div class="matchup">Norfolk State @ Virginia</div>
+      <div class="kickoff">Fri Sep 11, 7:00 PM EDT</div>
+      <div class="prediction-line">Model: Virginia by +39.0 (92% win prob) &middot; Market: no line</div>
+      <div class="pick-line">Moneyline pick: <strong>Virginia</strong> (92% win prob) <span class="tier tier-high">HIGH Confidence&dagger;</span></div>
+      
+      
+      
+      
+      <ul class="bullets"><li>Virginia has the edge in recent scoring margin (11.2 vs -44.2, last 4 games).</li><li>Pre-game ELO&Dagger; gives Virginia a 80% win probability.</li><li>Virginia has faced tougher recent competition than Norfolk State (average opponent rating +24.5 vs -5.8).</li><li>Virginia has been the better team once schedule strength is accounted for, outrating Norfolk State by 47.0 points of opponent-adjusted margin (+26.0 vs -21.0).</li><li>Virginia carries a 178-point ELO&Dagger; advantage over Norfolk State (1614 vs 1436).</li></ul>
+      <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">99%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">98%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">99%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">99%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">98%</span></div></details>
+      
+    </div>
+    <div class="card" data-teams="NC State|Richmond" data-confs="ACC|Patriot" data-ranked="0">
+      <div class="matchup">Richmond @ NC State</div>
+      <div class="kickoff">Fri Sep 11, 7:00 PM EDT</div>
+      <div class="prediction-line">Model: NC State by +26.7 (89% win prob) &middot; Market: no line</div>
+      <div class="pick-line">Moneyline pick: <strong>NC State</strong> (89% win prob) <span class="tier tier-high">HIGH Confidence&dagger;</span></div>
+      
+      
+      
+      
+      <ul class="bullets"><li>NC State has the edge in recent scoring margin (7.8 vs -26.0, last 4 games).</li><li>Pre-game ELO&Dagger; gives NC State a 70% win probability.</li><li>Richmond has been the better team once schedule strength is accounted for, outrating NC State by 5.0 points of opponent-adjusted margin (-26.0 vs -21.0).</li><li>Richmond has covered the spread in 60% of its last 5 games.</li><li>Richmond has faced tougher recent competition than NC State (average opponent rating +16.8 vs +14.6).</li></ul>
+      <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">91%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">89%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">93%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">93%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">88%</span></div></details>
+      
+    </div>
+    <div class="card" data-teams="Boston College|Rutgers" data-confs="ACC|Big Ten" data-ranked="0">
+      <div class="matchup">Rutgers @ Boston College</div>
+      <div class="kickoff">Fri Sep 11, 7:30 PM EDT</div>
+      <div class="prediction-line">Model: Boston College by +1.2 (56% win prob) &middot; Market: Boston College by 3.5</div>
+      <div class="pick-line">Moneyline pick: <strong>Boston College</strong> (56% win prob) <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Rutgers +3.5 <span class="odds">(-110)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      
+      <div class="wager-line">Recommended wager: <strong>$0.42</strong> (1.8% of $24.01 paper bankroll, 25% Kelly) &middot; cover probability 56%</div>
+      <div class="tldr">Rutgers +3.5 is a low-confidence pick: the model's 1.2-point Boston College margin falls 2.3 points short of the market's 3.5-point line, largely because Rutgers has faced tougher competition this season (average opponent rating +44.0 vs +21.1).</div>
+      <ul class="bullets"><li>Rutgers has faced tougher recent competition than Boston College, with an average opponent rating of +44.0 versus +21.1.</li><li>Pre-game ELO gives Boston College just a 56% win probability, barely above a coin flip.</li><li>Boston College has a narrow edge in recent scoring margin (-6.8 vs -9.5 over the last 4 games) and yards per play (6.0 vs 5.9), but neither gap is large.</li><li>Once schedule strength is factored in, Rutgers rates 3.0 points better than Boston College in opponent-adjusted margin (-19.0 vs -16.0).</li><li>The model's cover probability for Rutgers is 55.7%, which is why this lands as a low confidence tier rather than a strong lean.</li></ul>
+      <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">48%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">58%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">57%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">46%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">60%</span></div></details>
       
     </div>
     <div class="card" data-teams="Kansas|Missouri" data-confs="Big 12|SEC" data-ranked="0">
@@ -1514,7 +1579,7 @@
     win probability against any opponent -- that conversion, not the raw rating number, is what actually
     drives the model. Home teams get a flat +65 rating bonus before that calculation, an unvalidated
     placeholder rather than a measured home-field value, same caveat as the confidence tiers above.</p>
-    <p>Generated 2026-09-06 10:09 UTC.</p>
+    <p>Generated 2026-09-06 14:09 UTC.</p>
   </footer>
 </div>
 <script>
