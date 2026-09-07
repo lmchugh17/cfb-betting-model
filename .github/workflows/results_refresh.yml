@@ -30,6 +30,12 @@ name: Results refresh
 #   7:00pm ET  (23:00 UTC Sat) -- catches early-afternoon-kickoff games' finals
 #   10:30pm ET (02:30 UTC Sun) -- catches primetime-kickoff games' finals
 #   2:00am ET  (06:00 UTC Sun) -- catches the latest West Coast finals
+# Sunday -- CFB has no regular Sunday slate of its own, but the AP releases its updated
+# Top 25 poll Sunday afternoon regardless of whether CFB plays that day. Without this,
+# the new week's rankings wouldn't show up until the standing Monday pull (already
+# observed running ~4h late some days), so this single checkpoint exists purely to catch
+# the poll same-day -- it still refreshes scores too (harmless, just usually a no-op).
+#   3:00pm ET  (19:00 UTC Sun)
 on:
   schedule:
     - cron: "0 1 * * 5"
@@ -42,6 +48,7 @@ on:
     - cron: "0 23 * * 6"
     - cron: "30 2 * * 0"
     - cron: "0 6 * * 0"
+    - cron: "0 19 * * 0"
   workflow_dispatch: {}
 
 permissions:
@@ -64,6 +71,11 @@ jobs:
         env:
           CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
         run: python scripts/backfill.py 2026 2026
+
+      - name: Refresh AP Top 25 rankings
+        env:
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+        run: python scripts/pull_ap_rankings.py 2026
 
       - name: Rebuild site
         run: python scripts/build_site.py

@@ -623,17 +623,18 @@ def render_polymarket_accuracy_chart(weekly: list[dict]) -> str:
             '<span class="legend-swatch legend-market-sw"></span>Polymarket Brier score &middot; lower is better</div>')
 
 
-def group_results_by_week(results: list[dict], cutoffs: dict) -> list[tuple]:
-    """Buckets fetch_results() output (newest-game-first) into (year, display_week) groups
-    for the Past Picks tab -- each game keeps its existing relative order within its group,
-    groups themselves sorted newest week first. Mirrors fetch_weekly_performance's own
-    bucketing (same cutoffs dict) so the per-week record shown in each group's <summary>
-    always matches the Weekly Performance table above."""
+def group_games_by_week(games: list[dict], cutoffs: dict, newest_first: bool) -> list[tuple]:
+    """Buckets a list of game/pick dicts (each game keeps its existing relative order
+    within its group) into (year, display_week) groups -- shared by both the Past Picks
+    tab (newest week first) and the upcoming list (nearest/current week first, so a
+    bettor sees this week before next week's already-lined games). Mirrors
+    fetch_weekly_performance's own bucketing (same cutoffs dict) so a per-week record
+    shown anywhere else on the page always agrees with this grouping."""
     buckets = defaultdict(list)
-    for r in results:
+    for r in games:
         dw = display_week_for(r["year"], r["week"], r["start_date"], cutoffs)
         buckets[(r["year"], dw)].append(r)
-    return sorted(buckets.items(), key=lambda kv: kv[0], reverse=True)
+    return sorted(buckets.items(), key=lambda kv: kv[0], reverse=newest_first)
 
 
 def render_history_tab(results: list[dict], cutoffs: dict, weekly: list[dict], rankings: dict) -> str:
@@ -647,7 +648,7 @@ def render_history_tab(results: list[dict], cutoffs: dict, weekly: list[dict], r
         return '<p class="empty">No completed games yet.</p>'
     weekly_by_key = {(w["year"], w["week"]): w for w in weekly}
     groups_html = ""
-    for i, ((year, week), games) in enumerate(group_results_by_week(results, cutoffs)):
+    for i, ((year, week), games) in enumerate(group_games_by_week(results, cutoffs, newest_first=True)):
         w = weekly_by_key.get((year, week))
         record_html = ""
         if w:
@@ -664,8 +665,31 @@ def render_history_tab(results: list[dict], cutoffs: dict, weekly: list[dict], r
     return groups_html
 
 
+def render_upcoming_tab(upcoming: list[dict], cutoffs: dict, bankroll: float | None, rankings: dict) -> str:
+    """This week's games and any already-lined games from next week (CFBD posts lines
+    before a week's own display-week boundary closes -- e.g. Tue/Wed games after a
+    Sun/Mon slate) were previously one flat undifferentiated list. Same collapsible
+    <details>-per-week treatment as render_history_tab, but nearest/current week first
+    and open by default -- a bettor cares about this week before next week's games,
+    the opposite priority from Past Picks looking backward at the most recent result."""
+    if not upcoming:
+        return '<p class="empty">No upcoming games with picks right now.</p>'
+    groups_html = ""
+    for i, ((year, week), games) in enumerate(group_games_by_week(upcoming, cutoffs, newest_first=False)):
+        n = len(games)
+        record_html = f'<span class="week-record">{n} game{"s" if n != 1 else ""}</span>'
+        cards_html = "".join(render_pick_card(g, bankroll=bankroll, rankings=rankings) for g in games)
+        open_attr = " open" if i == 0 else ""
+        groups_html += (
+            f'<details class="week-group"{open_attr}>'
+            f'<summary><span class="week-title">{year} {_week_label({"week": week})}</span>{record_html}</summary>'
+            f'<div class="week-cards">{cards_html}</div></details>'
+        )
+    return groups_html
+
+
 def render_upcoming_filters(upcoming: list[dict]) -> str:
-    """Team/conference dropdowns for narrowing 'This Week's Picks' to one team or conference
+    """Team/conference dropdowns for narrowing 'Upcoming Picks' to one team or conference
     at a glance -- client-side only (options + data-teams/data-confs on each card, see
     render_pick_card), since there's no backend to query against on a static GitHub Pages
     site. Deliberately scoped to the upcoming-picks list only (#upcoming-list), not the
@@ -703,7 +727,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
         render_stat_tile("Paper Bankroll", f"${bankroll:.2f}"),
     ])
 
-    upcoming_html = "".join(render_pick_card(p, bankroll=bankroll, rankings=rankings) for p in upcoming) or '<p class="empty">No upcoming games with picks right now.</p>'
+    upcoming_html = render_upcoming_tab(upcoming, cutoffs, bankroll, rankings)
     upcoming_filters_html = render_upcoming_filters(upcoming)
     history_html = render_history_tab(results, cutoffs, weekly, rankings)
     weekly_html = render_weekly_table(weekly)
@@ -853,7 +877,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
 
   <h2>Picks</h2>
   <div class="tabs">
-    <button type="button" class="tab-btn active" data-tab="upcoming">This Week's Picks</button>
+    <button type="button" class="tab-btn active" data-tab="upcoming">Upcoming Picks</button>
     <button type="button" class="tab-btn" data-tab="history">Past Picks</button>
   </div>
 
@@ -929,11 +953,17 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   var top25Chk = document.getElementById('top25-filter');
   if (!teamSel || !confSel) return;  // no filter row rendered (no upcoming games this run)
   var cards = Array.prototype.slice.call(document.querySelectorAll('#upcoming-list .card'));
+  var weekGroups = Array.prototype.slice.call(document.querySelectorAll('#upcoming-list .week-group'));
+  // Remember each week's own default open/closed state (nearest week open, others closed)
+  // so clearing the filters restores the normal page-load look instead of leaving whatever
+  // state a previous filter forced groups into.
+  var defaultOpen = weekGroups.map(function(g) {{ return g.open; }});
   var countEl = document.getElementById('filter-count');
   var emptyEl = document.getElementById('filter-empty');
 
   function applyFilters() {{
     var team = teamSel.value, conf = confSel.value, top25 = top25Chk && top25Chk.checked, visible = 0;
+    var filterActive = !!(team || conf || top25);
     cards.forEach(function(card) {{
       var teams = (card.dataset.teams || '').split('|');
       var confs = (card.dataset.confs || '').split('|');
@@ -942,7 +972,20 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     }});
-    countEl.textContent = (team || conf || top25) ? (visible + ' of ' + cards.length + ' shown') : '';
+    // A card matching the filter inside a COLLAPSED week would otherwise stay invisible --
+    // force each week open/closed based on whether it contains a match while a filter is
+    // active; once cleared, go back to each week's own normal default state.
+    weekGroups.forEach(function(group, i) {{
+      if (filterActive) {{
+        var hasMatch = Array.prototype.some.call(group.querySelectorAll('.card'), function(c) {{
+          return c.style.display !== 'none';
+        }});
+        group.open = hasMatch;
+      }} else {{
+        group.open = defaultOpen[i];
+      }}
+    }});
+    countEl.textContent = filterActive ? (visible + ' of ' + cards.length + ' shown') : '';
     emptyEl.style.display = (visible === 0 && cards.length > 0) ? '' : 'none';
   }}
   teamSel.addEventListener('change', applyFilters);

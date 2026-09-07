@@ -142,7 +142,7 @@
 
   <h2>Picks</h2>
   <div class="tabs">
-    <button type="button" class="tab-btn active" data-tab="upcoming">This Week's Picks</button>
+    <button type="button" class="tab-btn active" data-tab="upcoming">Upcoming Picks</button>
     <button type="button" class="tab-btn" data-tab="history">Past Picks</button>
   </div>
 
@@ -154,7 +154,7 @@
       <span id="filter-count" class="filter-count"></span>
     </div>
     <p id="filter-empty" class="empty" style="display:none">No games match this filter.</p>
-    <div id="upcoming-list">
+    <div id="upcoming-list"><details class="week-group" open><summary><span class="week-title">2026 Week 1</span><span class="week-record">4 games</span></summary><div class="week-cards">
     <div class="card" data-teams="Washington|Washington State" data-confs="Big Ten|Pac-12" data-ranked="1">
       <div class="matchup">Washington State @ No. 17 Washington</div>
       <div class="kickoff">Sun Sep 6, 4:00 PM EDT</div>
@@ -206,7 +206,7 @@
       <ul class="bullets"><li>Florida State rates ahead once schedule strength is factored in, a 10.8-point opponent-adjusted margin edge (+17.0 vs +6.2), despite pre-game ELO&Dagger; giving it only a 43% win probability.</li><li>SMU has the better recent scoring margin (16.5 vs 2.0, last four games) and has covered the spread in 80% of its last five games, both real factors working against this pick.</li><li>SMU has also faced tougher recent competition than Florida State (+2.7 vs -9.4) -- with the numbers this mixed, this is a genuinely close call, not a strong lean.</li></ul>
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">40%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">45%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">43%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">48%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">43%</span></div></details>
       
-    </div>
+    </div></div></details><details class="week-group"><summary><span class="week-title">2026 Week 2</span><span class="week-record">76 games</span></summary><div class="week-cards">
     <div class="card" data-teams="Miami|Florida A&amp;M" data-confs="ACC|SWAC" data-ranked="0">
       <div class="matchup">Florida A&M @ Miami</div>
       <div class="kickoff">Thu Sep 10, 8:00 PM EDT</div>
@@ -1194,7 +1194,7 @@
       <ul class="bullets"><li>Pre-game ELO&Dagger; gives Ole Miss a 91% win probability.</li><li>Ole Miss has the edge in recent scoring margin (12.8 vs -20.5, last 4 games).</li><li>Ole Miss has faced tougher recent competition than Charlotte (average opponent rating +33.3 vs +19.2).</li><li>Ole Miss has been the better team once schedule strength is accounted for, outrating Charlotte by 13.7 points of opponent-adjusted margin (+11.7 vs -2.0).</li><li>Ole Miss carries a 339-point ELO&Dagger; advantage over Charlotte (1690 vs 1351).</li></ul>
       <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">98%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">94%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">98%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">99%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">95%</span></div></details>
       
-    </div></div>
+    </div></div></details></div>
   </div>
 
   <div id="tab-history" class="tab-panel" hidden>
@@ -2489,7 +2489,7 @@
     win probability against any opponent -- that conversion, not the raw rating number, is what actually
     drives the model. Home teams get a flat +65 rating bonus before that calculation, an unvalidated
     placeholder rather than a measured home-field value, same caveat as the confidence tiers above.</p>
-    <p>Generated 2026-09-07 14:14 UTC.</p>
+    <p>Generated 2026-09-07 16:44 UTC.</p>
   </footer>
 </div>
 <script>
@@ -2499,11 +2499,17 @@
   var top25Chk = document.getElementById('top25-filter');
   if (!teamSel || !confSel) return;  // no filter row rendered (no upcoming games this run)
   var cards = Array.prototype.slice.call(document.querySelectorAll('#upcoming-list .card'));
+  var weekGroups = Array.prototype.slice.call(document.querySelectorAll('#upcoming-list .week-group'));
+  // Remember each week's own default open/closed state (nearest week open, others closed)
+  // so clearing the filters restores the normal page-load look instead of leaving whatever
+  // state a previous filter forced groups into.
+  var defaultOpen = weekGroups.map(function(g) { return g.open; });
   var countEl = document.getElementById('filter-count');
   var emptyEl = document.getElementById('filter-empty');
 
   function applyFilters() {
     var team = teamSel.value, conf = confSel.value, top25 = top25Chk && top25Chk.checked, visible = 0;
+    var filterActive = !!(team || conf || top25);
     cards.forEach(function(card) {
       var teams = (card.dataset.teams || '').split('|');
       var confs = (card.dataset.confs || '').split('|');
@@ -2512,7 +2518,20 @@
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     });
-    countEl.textContent = (team || conf || top25) ? (visible + ' of ' + cards.length + ' shown') : '';
+    // A card matching the filter inside a COLLAPSED week would otherwise stay invisible --
+    // force each week open/closed based on whether it contains a match while a filter is
+    // active; once cleared, go back to each week's own normal default state.
+    weekGroups.forEach(function(group, i) {
+      if (filterActive) {
+        var hasMatch = Array.prototype.some.call(group.querySelectorAll('.card'), function(c) {
+          return c.style.display !== 'none';
+        });
+        group.open = hasMatch;
+      } else {
+        group.open = defaultOpen[i];
+      }
+    });
+    countEl.textContent = filterActive ? (visible + ' of ' + cards.length + ' shown') : '';
     emptyEl.style.display = (visible === 0 && cards.length > 0) ? '' : 'none';
   }
   teamSel.addEventListener('change', applyFilters);
