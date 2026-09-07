@@ -96,17 +96,38 @@ def fetch_results(conn) -> list[dict]:
 
 
 def fetch_ap_rankings(conn) -> dict:
-    """{(year, week, season_type, team): rank} -- each game looks up ITS OWN week's poll,
-    not the latest one, so a "Past Picks" card correctly shows what a team was ranked at
-    the time (e.g. a team that was preseason #3 but has since fallen out keeps showing
-    #3 on that old card, matching every other point-in-time stat this site already shows
-    rather than silently becoming "current" and inconsistent with the rest of the page)."""
+    """{team: [(chrono_key, rank), ...]}, sorted ascending by chrono_key -- one entry per
+    week that team actually appeared in the AP poll. _ranked_name does a "most recent
+    poll at or before this game's own week" lookup against this, so a team's rank
+    carries forward from its last known appearance until a fresher poll is pulled,
+    rather than flickering to unranked every week a new poll hasn't landed yet (CFBD
+    itself often lags a few days behind the real Sunday release, and results_refresh.yml
+    only checks for a new poll a few times a week -- this is expected, not a bug to work
+    around upstream, so the display layer carries forward instead). chrono_key orders
+    regular season before postseason within a year (season_type alone doesn't sort
+    correctly against week -- postseason week 1 is chronologically AFTER every regular
+    week, not before regular week 2)."""
     rows = conn.execute("SELECT year, week, season_type, team, rank FROM ap_rankings").fetchall()
-    return {(year, week, season_type, team): rank for year, week, season_type, team, rank in rows}
+    by_team = defaultdict(list)
+    for year, week, season_type, team, rank in rows:
+        chrono = (year, 0 if season_type == "regular" else 1, week)
+        by_team[team].append((chrono, rank))
+    for team, history in by_team.items():
+        history.sort(key=lambda h: h[0])
+    return dict(by_team)
 
 
 def _ranked_name(team: str, year, week, season_type, rankings: dict) -> str:
-    rank = rankings.get((year, week, season_type, team))
+    history = rankings.get(team)
+    if not history:
+        return team
+    chrono = (year, 0 if season_type == "regular" else 1, week)
+    rank = None
+    for c, r in history:
+        if c <= chrono:
+            rank = r
+        else:
+            break
     return f"No. {rank} {team}" if rank else team
 
 
