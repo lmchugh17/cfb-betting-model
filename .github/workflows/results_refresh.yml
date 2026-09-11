@@ -60,10 +60,25 @@ jobs:
         run: python scripts/build_site.py
 
       - name: Commit and push if scores changed
+        # Retries on push rejection: now that this runs every 4h, it can genuinely
+        # collide with weekly_data_pull.yml's own push (that job takes ~11 minutes
+        # here, a wide collision window) -- confirmed for real on the NFL sibling
+        # project 2026-09-11 (same shape, a run's fresh commit silently dropped on
+        # a bare `git push`). Rebase-and-retry instead of failing once.
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/cfb.db docs/index.html
           git diff --cached --quiet && echo "No score changes" && exit 0
           git commit -m "Results refresh: $(date -u +%Y-%m-%dT%H:%M)Z"
-          git push
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt) -- another workflow pushed in the meantime, rebasing and retrying..."
+            git fetch origin master
+            git rebase origin/master
+            sleep $((RANDOM % 8 + 2))
+          done
+          echo "::error::Push failed after 5 attempts."
+          exit 1

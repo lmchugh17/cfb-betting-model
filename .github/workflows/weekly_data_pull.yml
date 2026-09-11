@@ -75,7 +75,22 @@ jobs:
           if [ -f data/injuries_archive.csv ]; then git add data/injuries_archive.csv; fi
           git diff --cached --quiet && echo "No data changes" && exit 0
           git commit -m "Weekly data pull: $(date -u +%Y-%m-%d)"
-          git push
+          # Retries on push rejection -- this run takes several minutes, and
+          # results_refresh.yml now runs every 4h, so the two can genuinely race
+          # for the ref (confirmed for real on the NFL sibling project 2026-09-11).
+          # Rebase-and-retry rather than a bare push that fails once and drops the
+          # whole run's work.
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt) -- another workflow pushed in the meantime, rebasing and retrying..."
+            git fetch origin master
+            git rebase origin/master
+            sleep $((RANDOM % 8 + 2))
+          done
+          echo "::error::Push failed after 5 attempts."
+          exit 1
 
       # Doesn't depend on the account's own notification settings being configured
       # right (can't verify those via API) -- a GitHub Issue is visible on the repo
