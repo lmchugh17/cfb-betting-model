@@ -1,54 +1,33 @@
 name: Results refresh
 
-# Separate from weekly_data_pull.yml on purpose: this is JUST a results refresh
+# Separate from weekly_data_pull.yml on purpose: this is JUST a scores refresh
 # (fresh scores + rebuilt site), not the full daily pipeline. Deliberately does NOT
-# touch odds/weather/injuries/predictions/explanations -- no Claude routine involved,
-# no new predictions, no re-pulled lines. Exists solely so the site doesn't show
-# stale scores for up to 24 hours on days with games spread across a wide kickoff
-# window (or, worse, up to 3 days -- see weekly_data_pull.yml's standing Thu-Mon
-# cadence skips Tue/Wed entirely, so a Monday result with no catch-up would
-# otherwise sit stale until the following Thursday; not an issue for CFB itself
-# since it has no regular Monday slate, but the same principle is why NFL's own
-# results_refresh.yml treats Monday night as important, not optional).
+# touch odds/weather/injuries/predictions/explanations/AP-rankings -- no Claude
+# routine involved, no CFBD calls beyond the 2 needed for scores (weekly_data_pull.yml
+# already refreshes those on its own Thu-Mon cadence).
 #
-# All times below in EDT; GitHub cron is fixed UTC and doesn't track DST, so these
-# drift an hour earlier in US-clock terms once EST starts in November -- same
-# caveat as weekly_data_pull.yml. A UTC day-of-week that differs from the US-time
-# day label (e.g. "2:00am ET Saturday" landing on UTC-Sunday) is correct, not a bug.
+# REWRITTEN 2026-09-10 after a real incident: the previous version used a hand-picked
+# list of day-specific checkpoints (Thu/Fri/Sat/Sun only), reasoning "CFB has no
+# regular Monday slate." That assumption was false -- Florida State @ SMU played
+# Monday 2026-09-07 and sat with no score on the site for 3 days, since
+# weekly_data_pull.yml's own Thu-Mon cadence also skips Tue/Wed, so nothing caught it
+# until the following Thursday. The real distribution (checked against 2026's actual
+# schedule): CFB has games on literally every day of the week, just concentrated on
+# Sat >> Fri/Sun > Wed/Thu > Tue/Mon. A day-of-week allowlist is the wrong shape for
+# this -- runs every day instead now, no exceptions.
 #
-# Thursday -- early-window CFB games plus the primetime slot that overlaps TNF:
-#   9:00pm ET  (01:00 UTC Fri)
-#   11:30pm ET (03:30 UTC Fri)
-# Friday -- CFB's Friday slate has grown to span nearly the same noon-to-midnight
-# window as Saturday, so this mirrors Saturday's own schedule one day earlier:
-#   3:30pm ET  (19:30 UTC Fri)
-#   7:00pm ET  (23:00 UTC Fri)
-#   10:30pm ET (02:30 UTC Sat)
-#   2:00am ET  (06:00 UTC Sat)
-# Saturday -- the main slate, noon ET to past midnight ET:
-#   3:30pm ET  (19:30 UTC Sat) -- catches noon-kickoff games' finals
-#   7:00pm ET  (23:00 UTC Sat) -- catches early-afternoon-kickoff games' finals
-#   10:30pm ET (02:30 UTC Sun) -- catches primetime-kickoff games' finals
-#   2:00am ET  (06:00 UTC Sun) -- catches the latest West Coast finals
-# Sunday -- CFB has no regular Sunday slate of its own, but the AP releases its updated
-# Top 25 poll Sunday afternoon regardless of whether CFB plays that day. Without this,
-# the new week's rankings wouldn't show up until the standing Monday pull (already
-# observed running ~4h late some days), so this single checkpoint exists purely to catch
-# the poll same-day -- it still refreshes scores too (harmless, just usually a no-op).
-#   3:00pm ET  (19:00 UTC Sun)
+# Uses scripts/refresh_scores_only.py (2 CFBD calls/run: games() regular+postseason,
+# updates only already-known game ids) instead of backfill.py (~7 calls/run) --
+# CFBD's free tier is 1,000 calls/month shared with weekly_data_pull.yml's own
+# (growing-through-the-season) usage, so a frequent job needs the leanest possible
+# call footprint. At every 4 hours this is 6 runs/day * 2 calls = ~360/month --
+# combined with weekly_data_pull.yml's own usage (~220-560/month depending on how
+# many weeks of team-game-stats exist so far), comfortably under the cap even at
+# late-season peak. Worst-case staleness is now a uniform <=4h every single day,
+# down from what was, in practice, up to 3 days on an uncovered day.
 on:
   schedule:
-    - cron: "0 1 * * 5"
-    - cron: "30 3 * * 5"
-    - cron: "30 19 * * 5"
-    - cron: "0 23 * * 5"
-    - cron: "30 2 * * 6"
-    - cron: "0 6 * * 6"
-    - cron: "30 19 * * 6"
-    - cron: "0 23 * * 6"
-    - cron: "30 2 * * 0"
-    - cron: "0 6 * * 0"
-    - cron: "0 19 * * 0"
+    - cron: "0 */4 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -67,15 +46,10 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Refresh current-season scores
+      - name: Refresh current-season scores (lean, 2 CFBD calls)
         env:
           CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
-        run: python scripts/backfill.py 2026 2026
-
-      - name: Refresh AP Top 25 rankings
-        env:
-          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
-        run: python scripts/pull_ap_rankings.py 2026
+        run: python scripts/refresh_scores_only.py 2026
 
       - name: Rebuild site
         run: python scripts/build_site.py
