@@ -25,9 +25,14 @@ name: Results refresh
 # many weeks of team-game-stats exist so far), comfortably under the cap even at
 # late-season peak. Worst-case staleness is now a uniform <=4h every single day,
 # down from what was, in practice, up to 3 days on an uncovered day.
+#
+# Season-scoped 2026-09-10 (per user request -- no need to poll year-round when
+# there's nothing to refresh): August (kickoff week) through January (national
+# championship). Cron's month field doesn't wrap a range across the year boundary,
+# so it's listed as two pieces, "8-12,1" -- same 6 months either way.
 on:
   schedule:
-    - cron: "0 */4 * * *"
+    - cron: "0 */4 * 8-12,1 *"
   workflow_dispatch: {}
 
 permissions:
