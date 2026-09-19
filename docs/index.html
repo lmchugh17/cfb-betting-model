@@ -90,6 +90,15 @@
   .tab-btn { background: var(--card); color: var(--text-dim); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.85rem; font-family: inherit; cursor: pointer; }
   .tab-btn.active { color: var(--text); border-color: var(--accent); background: rgba(79,140,255,0.12); }
   .tab-panel[hidden] { display: none; }
+  .seg-toggle { display: flex; gap: 0.5rem; margin: 0 0 1rem; }
+  .seg-btn { background: var(--card); color: var(--text-dim); border: 1px solid var(--border); border-radius: 8px; padding: 0.4rem 0.9rem; font-size: 0.8rem; font-family: inherit; cursor: pointer; }
+  .seg-btn.active { color: var(--text); border-color: var(--accent); background: rgba(79,140,255,0.12); }
+  .perf-panel[hidden] { display: none; }
+  @media (max-width: 520px) {
+    .conf-table th, .conf-table td { padding: 0.5rem 0.5rem; }
+    .conf-table td:first-child { white-space: normal; }
+    .conf-table .pct { display: block; color: var(--text-dim); font-size: 0.75rem; }
+  }
   .week-group { background: var(--card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 1rem; overflow: hidden; }
   .week-group summary { cursor: pointer; list-style: none; padding: 0.9rem 1.1rem; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
   .week-group summary::-webkit-details-marker { display: none; }
@@ -111,11 +120,24 @@
 
   <div class="stats-row"><div class="stat-tile"><div class="stat-value">189</div><div class="stat-label">Picks Tracked</div></div><div class="stat-tile"><div class="stat-value">164/189</div><div class="stat-label">Moneyline (Straight-Up)</div></div><div class="stat-tile"><div class="stat-value">62-83-2</div><div class="stat-label">Against the Spread</div></div><div class="stat-tile"><div class="stat-value">16.2 pts<sup class="stat-marker">&sect;</sup></div><div class="stat-label">Avg. Margin Error</div></div><div class="stat-tile"><div class="stat-value">$500.00</div><div class="stat-label">Paper Bankroll (since Sep 19)</div></div></div>
 
-  <h2>Weekly Performance</h2>
-  <div class="table-wrap"><table class="weekly-table">
+  <h2>Record</h2>
+  <div class="seg-toggle">
+    <button type="button" class="seg-btn active" data-perf="week" aria-pressed="true">By week</button>
+    <button type="button" class="seg-btn" data-perf="conf" aria-pressed="false">By conference</button>
+  </div>
+  <div id="perf-week" class="perf-panel"><div class="table-wrap"><table class="weekly-table">
       <thead><tr><th>Week</th><th>Moneyline</th><th>Spread</th></tr></thead>
       <tbody><tr><td>2026 Week 3</td><td>4-0 (100%)</td><td>2-2-0</td></tr><tr><td>2026 Week 2</td><td>73-13 (85%)</td><td>19-25-0</td></tr><tr><td>2026 Week 1</td><td>82-9 (90%)</td><td>38-51-2</td></tr><tr><td>2026 Week 0</td><td>5-3 (62%)</td><td>3-5-0</td></tr></tbody>
+    </table></div></div>
+  <div id="perf-conf" class="perf-panel" hidden>
+    <div class="table-wrap"><table class="weekly-table conf-table">
+      <thead><tr><th>Conference</th><th>Games</th><th>Moneyline</th><th>Spread</th></tr></thead>
+      <tbody><tr><td>Big Ten</td><td>37</td><td>30-7 <span class="pct">(81%)</span></td><td>16-18-1 <span class="pct">(47%)</span></td></tr><tr><td>ACC</td><td>32</td><td>25-7 <span class="pct">(78%)</span></td><td>7-18-1 <span class="pct">(28%)</span></td></tr><tr><td>Big 12</td><td>32</td><td>29-3 <span class="pct">(91%)</span></td><td>14-12-0 <span class="pct">(54%)</span></td></tr><tr><td>SEC</td><td>31</td><td>30-1 <span class="pct">(97%)</span></td><td>8-18-0 <span class="pct">(31%)</span></td></tr><tr><td>Sun Belt</td><td>28</td><td>25-3 <span class="pct">(89%)</span></td><td>13-8-0 <span class="pct">(62%)</span></td></tr><tr><td>American Athletic</td><td>27</td><td>22-5 <span class="pct">(81%)</span></td><td>12-13-0 <span class="pct">(48%)</span></td></tr><tr><td>Mid-American</td><td>27</td><td>23-4 <span class="pct">(85%)</span></td><td>4-13-1 <span class="pct">(24%)</span></td></tr><tr><td>Conference USA</td><td>22</td><td>20-2 <span class="pct">(91%)</span></td><td>7-11-0 <span class="pct">(39%)</span></td></tr><tr><td>Mountain West</td><td>22</td><td>15-7 <span class="pct">(68%)</span></td><td>6-11-0 <span class="pct">(35%)</span></td></tr><tr><td>Pac-12</td><td>16</td><td>15-1 <span class="pct">(94%)</span></td><td>7-8-0 <span class="pct">(47%)</span></td></tr><tr><td>Coastal Athletic</td><td>13</td><td>13-0 <span class="pct">(100%)</span></td><td>3-5-0 <span class="pct">(38%)</span></td></tr><tr><td>Big Sky</td><td>12</td><td>10-2 <span class="pct">(83%)</span></td><td>3-4-0 <span class="pct">(43%)</span></td></tr><tr><td>SWAC</td><td>10</td><td>10-0 <span class="pct">(100%)</span></td><td>2-2-0 <span class="pct">(50%)</span></td></tr><tr><td>OVC</td><td>8</td><td>8-0 <span class="pct">(100%)</span></td><td>2-2-0 <span class="pct">(50%)</span></td></tr><tr><td>NEC</td><td>7</td><td>7-0 <span class="pct">(100%)</span></td><td>0-3-0 <span class="pct">(0%)</span></td></tr><tr><td>Patriot</td><td>7</td><td>7-0 <span class="pct">(100%)</span></td><td>2-0-0 <span class="pct">(100%)</span></td></tr><tr><td>UAC</td><td>7</td><td>6-1 <span class="pct">(86%)</span></td><td>3-3-0 <span class="pct">(50%)</span></td></tr><tr><td>Southern</td><td>6</td><td>5-1 <span class="pct">(83%)</span></td><td>0-3-0 <span class="pct">(0%)</span></td></tr><tr><td>Southland</td><td>6</td><td>6-0 <span class="pct">(100%)</span></td><td>3-3-0 <span class="pct">(50%)</span></td></tr><tr><td>MVFC</td><td>5</td><td>4-1 <span class="pct">(80%)</span></td><td>4-0-0 <span class="pct">(100%)</span></td></tr><tr><td>FBS Independents</td><td>4</td><td>3-1 <span class="pct">(75%)</span></td><td>2-2-0 <span class="pct">(50%)</span></td></tr><tr><td>MEAC</td><td>4</td><td>4-0 <span class="pct">(100%)</span></td><td>1-1-0 <span class="pct">(50%)</span></td></tr><tr><td>FCS Independents</td><td>1</td><td>1-0 <span class="pct">(100%)</span></td><td>0-1-0 <span class="pct">(0%)</span></td></tr></tbody>
     </table></div>
+    <p class="footnote">A game counts once for each conference involved (Big Ten vs. SEC counts toward
+    both), so these rows add up to more than the overall record. Most conferences have only a few dozen
+    games so far, too few to say the model is better or worse in one than another yet.</p>
+  </div>
 
   <h2>Weekly Trends</h2>
   <h3>Moneyline Win %</h3>
@@ -3614,7 +3636,7 @@
     win probability against any opponent -- that conversion, not the raw rating number, is what actually
     drives the model. Home teams get a flat +65 rating bonus before that calculation, an unvalidated
     placeholder rather than a measured home-field value, same caveat as the confidence tiers above.</p>
-    <p>Generated 2026-09-19 20:09 UTC.</p>
+    <p>Generated 2026-09-19 20:13 UTC.</p>
   </footer>
 </div>
 <script>
@@ -3671,6 +3693,18 @@
       btn.classList.add('active');
       document.querySelectorAll('.tab-panel').forEach(function(p) { p.hidden = true; });
       document.getElementById('tab-' + btn.dataset.tab).hidden = false;
+    });
+  });
+})();
+(function() {
+  var segBtns = Array.prototype.slice.call(document.querySelectorAll('.seg-btn'));
+  segBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      segBtns.forEach(function(b) { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+      document.querySelectorAll('.perf-panel').forEach(function(p) { p.hidden = true; });
+      document.getElementById('perf-' + btn.dataset.perf).hidden = false;
     });
   });
 })();

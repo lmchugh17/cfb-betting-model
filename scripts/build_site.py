@@ -249,6 +249,35 @@ def fetch_weekly_performance(conn, cutoffs: dict) -> list[dict]:
     return result
 
 
+def fetch_conference_performance(conn) -> list[dict]:
+    """Moneyline and spread records per conference. A game counts once for EACH distinct
+    conference involved (Big Ten vs SEC counts toward both; a conference game counts once),
+    so the rows don't sum to the overall record. Pushes counted the same way as
+    fetch_weekly_performance: no cover result but a spread pick was made."""
+    rows = conn.execute("""
+        SELECT pr.moneyline_pick_won, pr.pick_covered, pr.pick_team, g.home_conference, g.away_conference
+        FROM prediction_results pr JOIN games g ON g.id = pr.game_id
+    """).fetchall()
+    buckets = defaultdict(lambda: {"n": 0, "ml_wins": 0, "ml_decided": 0,
+                                    "ats_wins": 0, "ats_losses": 0, "ats_pushes": 0})
+    for ml_won, covered, pick_team, home_conf, away_conf in rows:
+        for conf in {c for c in (home_conf, away_conf) if c}:
+            b = buckets[conf]
+            b["n"] += 1
+            if ml_won is not None:
+                b["ml_decided"] += 1
+                b["ml_wins"] += ml_won
+            if covered == 1:
+                b["ats_wins"] += 1
+            elif covered == 0:
+                b["ats_losses"] += 1
+            elif pick_team is not None:
+                b["ats_pushes"] += 1
+    result = [{"conference": conf, **b} for conf, b in buckets.items()]
+    result.sort(key=lambda r: (-r["n"], r["conference"]))
+    return result
+
+
 def compute_current_bankroll(conn) -> float:
     """Chronological paper-bankroll replay: starts at STARTING_BANKROLL and compounds through
     every settled (non-push) pick whose game kicked off at or after BANKROLL_RESTART_UTC, in
@@ -471,6 +500,27 @@ def render_weekly_table(weekly: list[dict]) -> str:
         )
     return f"""<div class="table-wrap"><table class="weekly-table">
       <thead><tr><th>Week</th><th>Moneyline</th><th>Spread</th></tr></thead>
+      <tbody>{rows_html}</tbody>
+    </table></div>"""
+
+
+def render_conference_table(conf_rows: list[dict]) -> str:
+    """Same moneyline/spread scoreboard as render_weekly_table, one row per conference."""
+    if not conf_rows:
+        return '<p class="empty">No completed games tracked yet.</p>'
+    rows_html = ""
+    for c in conf_rows:
+        ml = (f"{c['ml_wins']}-{c['ml_decided'] - c['ml_wins']} "
+              f"<span class=\"pct\">({c['ml_wins']/c['ml_decided']:.0%})</span>"
+              if c["ml_decided"] else "n/a")
+        ats_decided = c["ats_wins"] + c["ats_losses"]
+        ats = f"{c['ats_wins']}-{c['ats_losses']}-{c['ats_pushes']}"
+        if ats_decided:
+            ats += f" <span class=\"pct\">({c['ats_wins']/ats_decided:.0%})</span>"
+        rows_html += (f"<tr><td>{c['conference']}</td><td>{c['n']}</td>"
+                      f"<td>{ml}</td><td>{ats}</td></tr>")
+    return f"""<div class="table-wrap"><table class="weekly-table conf-table">
+      <thead><tr><th>Conference</th><th>Games</th><th>Moneyline</th><th>Spread</th></tr></thead>
       <tbody>{rows_html}</tbody>
     </table></div>"""
 
@@ -742,7 +792,7 @@ def render_upcoming_filters(upcoming: list[dict]) -> str:
 
 
 def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankroll: float,
-                weekly: list[dict], cutoffs: dict, rankings: dict) -> str:
+                weekly: list[dict], cutoffs: dict, rankings: dict, conferences: list[dict]) -> str:
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     ml_pct = f"{summary['ml_wins']}/{summary['ml_decided']}" if summary["ml_decided"] else "0/0"
@@ -762,6 +812,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
     upcoming_filters_html = render_upcoming_filters(upcoming)
     history_html = render_history_tab(results, cutoffs, weekly, rankings)
     weekly_html = render_weekly_table(weekly)
+    conf_html = render_conference_table(conferences)
     ml_chart_html = render_weekly_win_pct_chart(weekly)
     ats_chart_html = render_ats_win_pct_chart(weekly)
     margin_chart_html = render_margin_accuracy_chart(weekly)
@@ -859,6 +910,15 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .tab-btn {{ background: var(--card); color: var(--text-dim); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.85rem; font-family: inherit; cursor: pointer; }}
   .tab-btn.active {{ color: var(--text); border-color: var(--accent); background: rgba(79,140,255,0.12); }}
   .tab-panel[hidden] {{ display: none; }}
+  .seg-toggle {{ display: flex; gap: 0.5rem; margin: 0 0 1rem; }}
+  .seg-btn {{ background: var(--card); color: var(--text-dim); border: 1px solid var(--border); border-radius: 8px; padding: 0.4rem 0.9rem; font-size: 0.8rem; font-family: inherit; cursor: pointer; }}
+  .seg-btn.active {{ color: var(--text); border-color: var(--accent); background: rgba(79,140,255,0.12); }}
+  .perf-panel[hidden] {{ display: none; }}
+  @media (max-width: 520px) {{
+    .conf-table th, .conf-table td {{ padding: 0.5rem 0.5rem; }}
+    .conf-table td:first-child {{ white-space: normal; }}
+    .conf-table .pct {{ display: block; color: var(--text-dim); font-size: 0.75rem; }}
+  }}
   .week-group {{ background: var(--card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 1rem; overflow: hidden; }}
   .week-group summary {{ cursor: pointer; list-style: none; padding: 0.9rem 1.1rem; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }}
   .week-group summary::-webkit-details-marker {{ display: none; }}
@@ -880,8 +940,18 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
 
   <div class="stats-row">{stat_tiles}</div>
 
-  <h2>Weekly Performance</h2>
-  {weekly_html}
+  <h2>Record</h2>
+  <div class="seg-toggle">
+    <button type="button" class="seg-btn active" data-perf="week" aria-pressed="true">By week</button>
+    <button type="button" class="seg-btn" data-perf="conf" aria-pressed="false">By conference</button>
+  </div>
+  <div id="perf-week" class="perf-panel">{weekly_html}</div>
+  <div id="perf-conf" class="perf-panel" hidden>
+    {conf_html}
+    <p class="footnote">A game counts once for each conference involved (Big Ten vs. SEC counts toward
+    both), so these rows add up to more than the overall record. Most conferences have only a few dozen
+    games so far, too few to say the model is better or worse in one than another yet.</p>
+  </div>
 
   <h2>Weekly Trends</h2>
   <h3>Moneyline Win %</h3>
@@ -1041,6 +1111,18 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
     }});
   }});
 }})();
+(function() {{
+  var segBtns = Array.prototype.slice.call(document.querySelectorAll('.seg-btn'));
+  segBtns.forEach(function(btn) {{
+    btn.addEventListener('click', function() {{
+      segBtns.forEach(function(b) {{ b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); }});
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+      document.querySelectorAll('.perf-panel').forEach(function(p) {{ p.hidden = true; }});
+      document.getElementById('perf-' + btn.dataset.perf).hidden = false;
+    }});
+  }});
+}})();
 </script>
 </body>
 </html>"""
@@ -1062,9 +1144,10 @@ def main():
     cutoffs = compute_week0_cutoffs(conn)
     weekly = fetch_weekly_performance(conn, cutoffs)
     rankings = fetch_ap_rankings(conn)
+    conferences = fetch_conference_performance(conn)
 
     OUTPUT_PATH.parent.mkdir(exist_ok=True)
-    OUTPUT_PATH.write_text(build_html(upcoming, results, summary, bankroll, weekly, cutoffs, rankings))
+    OUTPUT_PATH.write_text(build_html(upcoming, results, summary, bankroll, weekly, cutoffs, rankings, conferences))
     print(f"Wrote {OUTPUT_PATH} ({len(upcoming)} upcoming, {len(results)} completed, "
           f"{len(weekly)} week(s) tracked, bankroll ${bankroll:.2f})")
 
