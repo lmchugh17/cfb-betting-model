@@ -8,7 +8,6 @@ Usage: .venv/bin/python scripts/predict_games.py [--allow-started] <game_id> [<g
 Games that have already kicked off are skipped unless --allow-started is passed.
 """
 import json
-import math
 import sys
 from datetime import date, datetime, timezone
 from pathlib import Path
@@ -20,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.ats_and_situational import (compute_ats_results, compute_h2h_features,
                                       median_spread_per_game)
+from src.bet_sizing import MAX_BET_FRACTION, break_even, size_bet
 from src.box_score_features import add_derived_rate_stats, build_long_format
 from src.db import get_connection, init_db
 from src.elo import HOME_ADVANTAGE_ELO, CFBElo
@@ -65,43 +65,11 @@ def moneyline_confidence_tier(win_prob_picked_side: float | None) -> str | None:
     return "low"
 
 
-KELLY_FRACTION_CAP = 0.25  # 25% fractional Kelly, matches the NBA reference model's own cap
 # CFBD's /lines (the source of market_spread) gives the spread number but not its price --
 # src.spread_pricing looks up the real per-book median price from live_odds when a recent
 # pull has it. This is the fallback for when it doesn't (game too far out for the ~2-week
 # odds board, or a team-name match miss) -- a stated assumption, not a measured value.
 ASSUMED_SPREAD_ODDS_AMERICAN = -110
-
-
-def _american_odds_to_net_decimal(odds: int) -> float:
-    return 100 / abs(odds) if odds < 0 else odds / 100
-
-
-def _normal_cdf(x: float) -> float:
-    return 0.5 * (1 + math.erf(x / math.sqrt(2)))
-
-
-def cover_probability_and_kelly(edge: float | None, is_home_pick: bool, regressor_rmse: float,
-                                 spread_odds_american: int = ASSUMED_SPREAD_ODDS_AMERICAN
-                                 ) -> tuple[float | None, float | None]:
-    """cover_probability is for the PICKED side specifically, not always the home side --
-    edge is defined as home's edge over the market, so picking the away side needs 1 minus
-    the home cover probability. Treats the regressor's residuals as approximately
-    Normal(0, rmse) around its point estimate -- rmse is the model's own measured error on
-    the 2025 holdout (see scripts/train_model.py), not an assumed number. kelly_fraction is
-    the recommended fraction of bankroll to wager, already capped at KELLY_FRACTION_CAP; the
-    site converts this to a dollar amount against the running paper bankroll at display time.
-    spread_odds_american defaults to the standing assumption but should be the real measured
-    per-book price (src.spread_pricing) when the caller has one -- makes the Kelly math
-    reflect the actual price being bet, not just the number of points."""
-    if edge is None:
-        return None, None
-    p_home_covers = _normal_cdf(edge / regressor_rmse)
-    p_cover = p_home_covers if is_home_pick else (1 - p_home_covers)
-    b = _american_odds_to_net_decimal(spread_odds_american)
-    kelly_full = p_cover - (1 - p_cover) / b
-    kelly = max(0.0, kelly_full) * KELLY_FRACTION_CAP
-    return p_cover, kelly
 
 
 # The larger of the two rolling windows compute_current_rolling_form/compute_current_ats_pct
@@ -317,7 +285,6 @@ def main():
     detailed = bundle["ensemble"].predict_proba_detailed(X)
     win_probs = detailed["final"]
     margins = bundle["regressor"].predict(X)
-    regressor_rmse = bundle["regressor_metrics"]["rmse"]
     predicted_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     for i, row in df.iterrows():
@@ -358,9 +325,15 @@ def main():
                 spread_price, spread_price_source = ASSUMED_SPREAD_ODDS_AMERICAN, "assumed"
                 print(f"Spread price: {spread_price} (assumed -- no per-book pricing available for this game)")
 
-            cover_prob, kelly = cover_probability_and_kelly(
-                edge, pick_team == row["home_team"], regressor_rmse, spread_price)
-            print(f"Cover probability: {cover_prob:.0%} -> {kelly:.1%} of bankroll recommended (25% Kelly)")
+            # Calibrated on the 2025 holdout, 25% Kelly capped at 2%, no bet below break-even
+            # (src.bet_sizing explains why the original Normal(0, RMSE) formula was replaced).
+            cover_prob, kelly = size_bet(edge, spread_price)
+            if kelly > 0:
+                print(f"Cover probability (calibrated): {cover_prob:.0%} -> {kelly:.1%} of bankroll "
+                      f"recommended (25% Kelly, capped at {MAX_BET_FRACTION:.0%})")
+            else:
+                print(f"Cover probability (calibrated): {cover_prob:.0%} -> no bet "
+                      f"(below the {break_even(spread_price):.1%} break-even at {spread_price})")
         else:
             print("Market: no line available")
 

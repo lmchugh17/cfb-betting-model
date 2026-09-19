@@ -12,6 +12,7 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from src.bet_sizing import BANKROLL_RESTART_UTC, MAX_BET_FRACTION, break_even, size_bet
 from src.db import get_connection, init_db
 
 EASTERN = ZoneInfo("America/New_York")  # handles EDT/EST correctly across the DST transition
@@ -249,23 +250,25 @@ def fetch_weekly_performance(conn, cutoffs: dict) -> list[dict]:
 
 
 def compute_current_bankroll(conn) -> float:
-    """Chronological paper-bankroll replay: starts at STARTING_BANKROLL and compounds
-    through every settled (non-push) pick in date order using its own kelly_fraction and
-    its own spread_price (real per-book price when that pick had one, else the standing
-    -110 assumption) -- each pick's payout uses the SAME price its Kelly fraction was
-    actually sized against, not a blanket -110 for every historical bet regardless of what
-    was really available at the time. Upcoming picks size their recommended wager off this
-    running total rather than the fixed starting amount, same as the NBA reference site."""
+    """Chronological paper-bankroll replay: starts at STARTING_BANKROLL and compounds through
+    every settled (non-push) pick whose game kicked off at or after BANKROLL_RESTART_UTC, in
+    date order. Each bet is sized with src.bet_sizing (calibrated cover probability, 25% Kelly,
+    capped, no bet below break-even) from that pick's own edge and spread_price (real per-book
+    price when it had one, else the standing -110 assumption), and pays out at that same price.
+    The bankroll restarted at $500 on 2026-09-19 when this sizing replaced the original one;
+    picks before the restart keep their stored values but don't count toward it. Upcoming picks
+    size their recommended wager off this running total."""
     rows = conn.execute("""
-        SELECT kelly_fraction, pick_covered, spread_price FROM prediction_results
-        WHERE kelly_fraction IS NOT NULL AND pick_covered IS NOT NULL
+        SELECT edge, pick_covered, spread_price FROM prediction_results
+        WHERE edge IS NOT NULL AND pick_covered IS NOT NULL AND start_date >= ?
         ORDER BY start_date ASC
-    """).fetchall()
+    """, (BANKROLL_RESTART_UTC,)).fetchall()
     bankroll = STARTING_BANKROLL
-    for kelly_fraction, covered, spread_price in rows:
-        b = _net_decimal_odds(spread_price if spread_price is not None else ASSUMED_SPREAD_ODDS_AMERICAN)
-        wager = bankroll * kelly_fraction
-        bankroll += wager * b if covered else -wager
+    for edge, covered, spread_price in rows:
+        price = spread_price if spread_price is not None else ASSUMED_SPREAD_ODDS_AMERICAN
+        _, fraction = size_bet(edge, price)
+        wager = bankroll * fraction
+        bankroll += wager * _net_decimal_odds(price) if covered else -wager
     return bankroll
 
 
@@ -320,12 +323,19 @@ def render_model_breakdown(breakdown_json: str | None) -> str:
 
 
 def render_wager_line(p: dict, bankroll: float | None) -> str:
-    if bankroll is None or not p.get("kelly_fraction") or p.get("cover_probability") is None:
+    if bankroll is None or p.get("cover_probability") is None:
         return ""
-    wager = bankroll * p["kelly_fraction"]
+    fraction = p.get("kelly_fraction") or 0.0
+    if fraction <= 0:
+        price = p.get("spread_price") if p.get("spread_price") is not None else ASSUMED_SPREAD_ODDS_AMERICAN
+        return (
+            f'<div class="wager-line">No bet &middot; cover probability {p["cover_probability"]:.0%} '
+            f'doesn&rsquo;t clear the {break_even(price):.1%} break-even at this price</div>'
+        )
+    wager = bankroll * fraction
     return (
         f'<div class="wager-line">Recommended wager: <strong>${wager:.2f}</strong> '
-        f'({p["kelly_fraction"]:.1%} of ${bankroll:.2f} paper bankroll, 25% Kelly) '
+        f'({fraction:.1%} of ${bankroll:.2f} paper bankroll, 25% Kelly capped at {MAX_BET_FRACTION:.0%}) '
         f'&middot; cover probability {p["cover_probability"]:.0%}</div>'
     )
 
@@ -745,7 +755,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
         render_stat_tile("Moneyline (Straight-Up)", ml_pct),
         render_stat_tile("Against the Spread", ats_pct),
         render_stat_tile("Avg. Margin Error", avg_err, marker="&sect;"),
-        render_stat_tile("Paper Bankroll", f"${bankroll:.2f}"),
+        render_stat_tile("Paper Bankroll (since Sep 19)", f"${bankroll:.2f}"),
     ])
 
     upcoming_html = render_upcoming_tab(upcoming, cutoffs, bankroll, rankings)
@@ -942,12 +952,19 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
     close to a coin flip, so 50% ATS is actually a losing record once the vig is paid), and margin error&sect;
     -- the model's average margin error against the market's own average margin error on the same games,
     tracked week by week.</p>
-    <p>Recommended wager is a paper amount only, sized with 25% fractional Kelly against a running
-    $500 starting bankroll that compounds through settled picks. Cover probability treats the margin
-    model's prediction error as normally distributed around its point estimate, using its own measured
-    RMSE on the 2025 holdout. The spread pick's price is the real median price across sportsbooks when
-    a recent odds pull has one for that side.* Nothing here is real money or a recommendation to place
+    <p>Recommended wager is a paper amount only, sized with 25% fractional Kelly, capped at 2% of the
+    bankroll per game, against a $500 bankroll that compounds through settled picks. Cover probability
+    is calibrated against how often picks with the same size edge actually covered on the 2025 holdout
+    season; when it doesn&rsquo;t clear the break-even for the pick&rsquo;s price, the card says
+    &ldquo;No bet&rdquo;. The spread pick's price is the real median price across sportsbooks when a
+    recent odds pull has one for that side.* Nothing here is real money or a recommendation to place
     a real bet.</p>
+    <p>The paper bankroll restarted at $500 for games kicking off from 8&nbsp;pm ET on September 19,
+    2026, when this sizing replaced the original one. The original treated the model&rsquo;s
+    disagreement with the market as if the market knew nothing, which overstated cover chances
+    (picks it rated 85% likely covered about 64% of the time on the 2025 holdout) and sized bets far
+    too large. Picks before the restart keep their original records; they just don&rsquo;t count
+    toward the new bankroll.</p>
     <p class="footnote">* No per-book pricing was available for this game (too far out for the ~2-week
     odds board, or a name-matching miss) -- falls back to the standard -110-both-sides assumption
     instead of a measured value.</p>
@@ -1033,6 +1050,12 @@ def main():
     init_db()
     conn = get_connection()
     upcoming = fetch_upcoming(conn)
+    # Size every upcoming pick with the current rule from its own edge and price, so picks
+    # saved before the 2026-09-19 sizing change don't show a wager from the old formula.
+    for p in upcoming:
+        if p.get("edge") is not None:
+            price = p["spread_price"] if p.get("spread_price") is not None else ASSUMED_SPREAD_ODDS_AMERICAN
+            p["cover_probability"], p["kelly_fraction"] = size_bet(p["edge"], price)
     results = fetch_results(conn)
     summary = fetch_summary(conn)
     bankroll = compute_current_bankroll(conn)
