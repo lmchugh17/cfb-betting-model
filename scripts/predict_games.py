@@ -4,7 +4,8 @@ like the training pipeline. Loads the trained model bundle, prints a
 prediction + grounded explanation facts for each requested game, and persists
 the pick to the predictions table so the site can show a real track record.
 
-Usage: .venv/bin/python scripts/predict_games.py <game_id> [<game_id> ...]
+Usage: .venv/bin/python scripts/predict_games.py [--allow-started] <game_id> [<game_id> ...]
+Games that have already kicked off are skipped unless --allow-started is passed.
 """
 import json
 import math
@@ -158,9 +159,11 @@ def load_all_games(conn) -> list[dict]:
 
 
 def main():
-    target_ids = [int(x) for x in sys.argv[1:]]
+    args = sys.argv[1:]
+    allow_started = "--allow-started" in args
+    target_ids = [int(x) for x in args if x != "--allow-started"]
     if not target_ids:
-        sys.exit("Usage: predict_games.py <game_id> [<game_id> ...]")
+        sys.exit("Usage: predict_games.py [--allow-started] <game_id> [<game_id> ...]")
 
     init_db()
     bundle = joblib.load(MODEL_PATH)
@@ -171,6 +174,22 @@ def main():
     if len(targets) != len(target_ids):
         found = {g["id"] for g in targets}
         sys.exit(f"Game id(s) not found: {set(target_ids) - found}")
+
+    # Never save a pick for a game that has already kicked off. Predictions upsert by game_id and
+    # are graded against what the site showed before kickoff, so a post-kickoff run would either add
+    # a pick made mid-game or overwrite the graded one (16 of the first 2026 picks were saved after
+    # kickoff by manual rebuild runs before this guard existed). --allow-started is the deliberate
+    # override, e.g. backtesting against a scratch copy of the database.
+    now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S")
+    started = [g for g in targets if g["start_date"][:19] <= now_iso]
+    if started and not allow_started:
+        for g in started:
+            print(f"SKIP {g['id']} ({g['away_team']} @ {g['home_team']}): kicked off {g['start_date']}, "
+                  f"not saving a post-kickoff pick")
+        targets = [g for g in targets if g not in started]
+        if not targets:
+            sys.exit("Nothing to predict: every requested game has already kicked off.")
+        target_ids = [g["id"] for g in targets]
 
     # Exclude target games from "completed" state even if already played -- this keeps the
     # script usable as an honest backtest (predicting a game using only what was knowable
