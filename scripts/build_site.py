@@ -6,6 +6,7 @@ scheduled Claude Code session, task 11).
 import json
 import sys
 from collections import defaultdict
+from html import escape as html_escape
 from datetime import date, datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -36,6 +37,16 @@ ATS_BREAKEVEN = 110 / 210
 # how this was measured against the real distribution of tracked games per team.
 LOW_SAMPLE_GAME_THRESHOLD = 20
 
+# Team-color theme picker (scripts/pull_team_colors.py writes this file). Every FBS team is
+# offered except these two, per the site owner; Miami (OH) stays in.
+TEAM_COLORS_PATH = Path(__file__).resolve().parent.parent / "data" / "team_colors.json"
+EXCLUDED_THEME_TEAMS = {"Florida", "Miami"}
+CARD_BG = "#171a21"  # matches --card below
+# The accent colors small text (active tab labels, chart-free UI chrome), so it has to meet
+# WCAG AA's 4.5:1 for normal-size text against the card background. Most primary colors are
+# too dark for a dark page (e.g. Michigan's #00274c is ~1.3:1), so they get lightened.
+MIN_TEXT_CONTRAST = 4.5
+
 MODEL_LABELS = {
     "logistic_regression": "Logistic Regression",
     "random_forest": "Random Forest",
@@ -47,6 +58,72 @@ MODEL_LABELS = {
 
 def _net_decimal_odds(odds: int) -> float:
     return 100 / abs(odds) if odds < 0 else odds / 100
+
+
+def _hex_to_rgb(h: str) -> tuple:
+    h = h.lstrip("#")
+    return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
+
+
+def _relative_luminance(rgb: tuple) -> float:
+    def channel(c):
+        c /= 255
+        return c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
+    r, g, b = (channel(c) for c in rgb)
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def _contrast(a: tuple, b: tuple) -> float:
+    hi, lo = sorted((_relative_luminance(a), _relative_luminance(b)), reverse=True)
+    return (hi + 0.05) / (lo + 0.05)
+
+
+def _lighten_until_readable(rgb: tuple, bg: tuple) -> tuple[tuple, float]:
+    """Mixes rgb toward white in 5% steps until it reaches MIN_TEXT_CONTRAST on bg.
+    Returns (color, how much white was mixed in)."""
+    for step in range(0, 101, 5):
+        t = step / 100
+        c = tuple(round(x + (255 - x) * t) for x in rgb)
+        if _contrast(c, bg) >= MIN_TEXT_CONTRAST:
+            return c, t
+    return (255, 255, 255), 1.0
+
+
+def _is_neutral(rgb: tuple) -> bool:
+    """White, black, or gray -- says nothing about which team it is."""
+    return max(rgb) - min(rgb) < 30
+
+
+def _readable_accent(primary: str, alternate: str | None) -> tuple:
+    """The team's primary color, lightened just enough to be readable -- unless that takes
+    more than a 25% mix with white (navy washes out to gray, e.g. Michigan's #00274c), in which
+    case a non-neutral alternate color is used if it gets there with less lightening
+    (Michigan's maize). White/black/gray alternates are never used: they don't read as the team."""
+    bg = _hex_to_rgb(CARD_BG)
+    p, p_mix = _lighten_until_readable(_hex_to_rgb(primary), bg)
+    if p_mix <= 0.25 or not alternate or _is_neutral(_hex_to_rgb(alternate)):
+        return p
+    a, a_mix = _lighten_until_readable(_hex_to_rgb(alternate), bg)
+    return a if a_mix < p_mix else p
+
+
+def load_team_themes() -> list[dict]:
+    if not TEAM_COLORS_PATH.exists():
+        return []
+    themes = []
+    for school, c in json.loads(TEAM_COLORS_PATH.read_text()).items():
+        if school in EXCLUDED_THEME_TEAMS or not c.get("color"):
+            continue
+        accent = _readable_accent(c["color"], c.get("alternate_color"))
+        themes.append({
+            "school": school,
+            "accent": "#%02x%02x%02x" % accent,
+            "accentBg": "rgba(%d,%d,%d,0.14)" % accent,
+            # The stripe uses the teams' exact colors -- it's decorative, carries no text.
+            "stripe1": c["color"],
+            "stripe2": c.get("alternate_color") or c["color"],
+        })
+    return sorted(themes, key=lambda t: t["school"])
 
 
 def fetch_upcoming(conn) -> list[dict]:
@@ -792,8 +869,12 @@ def render_upcoming_filters(upcoming: list[dict]) -> str:
 
 
 def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankroll: float,
-                weekly: list[dict], cutoffs: dict, rankings: dict, conferences: list[dict]) -> str:
+                weekly: list[dict], cutoffs: dict, rankings: dict, conferences: list[dict],
+                themes: list[dict]) -> str:
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    theme_options = "".join(
+        f'<option value="{html_escape(t["school"])}">{html_escape(t["school"])}</option>' for t in themes)
+    themes_json = json.dumps(themes).replace("</", "<\\/")
 
     ml_pct = f"{summary['ml_wins']}/{summary['ml_decided']}" if summary["ml_decided"] else "0/0"
     ats_pct = (f"{summary['ats_wins']}-{summary['ats_losses']}-{summary['ats_pushes']}"
@@ -828,6 +909,10 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   :root {{
     --bg: #0f1115; --card: #171a21; --border: #262b36; --text: #e8eaed;
     --text-dim: #9aa1ac; --accent: #4f8cff; --green: #3ddc84; --red: #ff6161; --amber: #ffb84f;
+    /* --accent/--accent-bg/--stripe* are swapped by the team-color picker; --market is the chart
+       color for the market's own numbers and never changes, so a team theme can't blur it with
+       the model's green. */
+    --accent-bg: rgba(79,140,255,0.12); --stripe1: #4f8cff; --stripe2: #4f8cff; --market: #4f8cff;
   }}
   * {{ box-sizing: border-box; }}
   body {{
@@ -886,15 +971,15 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .legend-model {{ background: var(--green); }}
   .legend-baseline {{ background: var(--amber); height: 2px; width: 12px; border-radius: 0; align-self: center; }}
   .legend-ref {{ background: none; border-top: 1px dashed var(--text-dim); height: 0; width: 12px; border-radius: 0; align-self: center; }}
-  .legend-market-sw {{ background: var(--accent); }}
+  .legend-market-sw {{ background: var(--market); }}
   .pair-col {{ display: flex; flex-direction: column; align-items: center; flex: 0 0 auto; width: 76px; }}
   .pair-values {{ font-size: 0.68rem; color: var(--text-dim); margin-bottom: 0.3rem; white-space: nowrap; }}
   .pair-model-text {{ color: var(--green); }}
-  .pair-market-text {{ color: var(--accent); }}
+  .pair-market-text {{ color: var(--market); }}
   .pair-tracks {{ display: flex; gap: 4px; }}
   .pair-track {{ width: 22px; }}
   .pair-model-fill {{ background: var(--green); }}
-  .pair-market-fill {{ background: var(--accent); }}
+  .pair-market-fill {{ background: var(--market); }}
   .table-wrap {{ overflow-x: auto; margin-bottom: 1rem; }}
   .weekly-table {{ width: 100%; border-collapse: collapse; font-size: 0.85rem; background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }}
   .weekly-table th, .weekly-table td {{ padding: 0.6rem 0.9rem; text-align: left; white-space: nowrap; }}
@@ -908,11 +993,16 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .filter-count {{ margin-left: auto; }}
   .tabs {{ display: flex; gap: 0.5rem; margin: 1rem 0 1.25rem; }}
   .tab-btn {{ background: var(--card); color: var(--text-dim); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.85rem; font-family: inherit; cursor: pointer; }}
-  .tab-btn.active {{ color: var(--text); border-color: var(--accent); background: rgba(79,140,255,0.12); }}
+  .tab-btn.active {{ color: var(--text); border-color: var(--accent); background: var(--accent-bg); }}
   .tab-panel[hidden] {{ display: none; }}
   .seg-toggle {{ display: flex; gap: 0.5rem; margin: 0 0 1rem; }}
   .seg-btn {{ background: var(--card); color: var(--text-dim); border: 1px solid var(--border); border-radius: 8px; padding: 0.4rem 0.9rem; font-size: 0.8rem; font-family: inherit; cursor: pointer; }}
-  .seg-btn.active {{ color: var(--text); border-color: var(--accent); background: rgba(79,140,255,0.12); }}
+  .seg-btn.active {{ color: var(--text); border-color: var(--accent); background: var(--accent-bg); }}
+  .team-stripe {{ height: 5px; margin: 0 -1rem; background: linear-gradient(90deg, var(--stripe1) 0 70%, var(--stripe2) 70% 100%); }}
+  .theme-picker {{ display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.9rem; font-size: 0.8rem; color: var(--text-dim); }}
+  .theme-picker select {{ background: var(--card); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.3rem 0.5rem; font-size: 0.8rem; font-family: inherit; max-width: 60vw; }}
+  .theme-picker select:focus {{ outline: 2px solid var(--accent); outline-offset: 1px; }}
+  h1 {{ border-left: 4px solid var(--accent); padding-left: 0.6rem; }}
   .perf-panel[hidden] {{ display: none; }}
   @media (max-width: 520px) {{
     .conf-table th, .conf-table td {{ padding: 0.5rem 0.5rem; }}
@@ -932,10 +1022,14 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
 </style>
 </head>
 <body>
+<div class="team-stripe" aria-hidden="true"></div>
 <div class="wrap">
   <header>
     <h1>CFB Betting Model</h1>
     <p class="tagline">Opponent-adjusted college football predictions vs. the market. Personal research project, not financial advice.</p>
+    <label class="theme-picker">Team colors
+      <select id="theme-select"><option value="">Default</option>{theme_options}</select>
+    </label>
   </header>
 
   <div class="stats-row">{stat_tiles}</div>
@@ -1112,6 +1206,29 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   }});
 }})();
 (function() {{
+  var THEMES = {themes_json};
+  var sel = document.getElementById('theme-select');
+  if (!sel) return;
+  var root = document.documentElement;
+  var KEY = 'cfb-team-theme';
+  var VARS = {{'--accent': 'accent', '--accent-bg': 'accentBg', '--stripe1': 'stripe1', '--stripe2': 'stripe2'}};
+  function apply(school) {{
+    var theme = null;
+    for (var i = 0; i < THEMES.length; i++) if (THEMES[i].school === school) theme = THEMES[i];
+    Object.keys(VARS).forEach(function(v) {{
+      if (theme) root.style.setProperty(v, theme[VARS[v]]); else root.style.removeProperty(v);
+    }});
+    sel.value = theme ? school : '';
+  }}
+  var saved = null;
+  try {{ saved = localStorage.getItem(KEY); }} catch (e) {{}}
+  if (saved) apply(saved);
+  sel.addEventListener('change', function() {{
+    apply(sel.value);
+    try {{ if (sel.value) localStorage.setItem(KEY, sel.value); else localStorage.removeItem(KEY); }} catch (e) {{}}
+  }});
+}})();
+(function() {{
   var segBtns = Array.prototype.slice.call(document.querySelectorAll('.seg-btn'));
   segBtns.forEach(function(btn) {{
     btn.addEventListener('click', function() {{
@@ -1145,9 +1262,11 @@ def main():
     weekly = fetch_weekly_performance(conn, cutoffs)
     rankings = fetch_ap_rankings(conn)
     conferences = fetch_conference_performance(conn)
+    themes = load_team_themes()
 
     OUTPUT_PATH.parent.mkdir(exist_ok=True)
-    OUTPUT_PATH.write_text(build_html(upcoming, results, summary, bankroll, weekly, cutoffs, rankings, conferences))
+    OUTPUT_PATH.write_text(build_html(upcoming, results, summary, bankroll, weekly, cutoffs, rankings,
+                                      conferences, themes))
     print(f"Wrote {OUTPUT_PATH} ({len(upcoming)} upcoming, {len(results)} completed, "
           f"{len(weekly)} week(s) tracked, bankroll ${bankroll:.2f})")
 

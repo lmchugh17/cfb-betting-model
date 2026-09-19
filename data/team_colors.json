@@ -1,0 +1,692 @@
+{
+ "Air Force": {
+  "mascot": "Falcons",
+  "color": "#003594",
+  "alternate_color": "#ffffff"
+ },
+ "Akron": {
+  "mascot": "Zips",
+  "color": "#041e42",
+  "alternate_color": "#a89968"
+ },
+ "Alabama": {
+  "mascot": "Crimson Tide",
+  "color": "#9e1b32",
+  "alternate_color": "#ffffff"
+ },
+ "App State": {
+  "mascot": "Mountaineers",
+  "color": "#000000",
+  "alternate_color": "#ffcd00"
+ },
+ "Arizona": {
+  "mascot": "Wildcats",
+  "color": "#cc0033",
+  "alternate_color": "#003366"
+ },
+ "Arizona State": {
+  "mascot": "Sun Devils",
+  "color": "#ffc627",
+  "alternate_color": "#8c1d40"
+ },
+ "Arkansas": {
+  "mascot": "Razorbacks",
+  "color": "#a32136",
+  "alternate_color": "#ffffff"
+ },
+ "Arkansas State": {
+  "mascot": "Red Wolves",
+  "color": "#cc092f",
+  "alternate_color": "#000000"
+ },
+ "Army": {
+  "mascot": "Black Knights",
+  "color": "#000000",
+  "alternate_color": "#d3bc8d"
+ },
+ "Auburn": {
+  "mascot": "Tigers",
+  "color": "#0c2340",
+  "alternate_color": "#f26522"
+ },
+ "BYU": {
+  "mascot": "Cougars",
+  "color": "#003da5",
+  "alternate_color": "#002e5d"
+ },
+ "Ball State": {
+  "mascot": "Cardinals",
+  "color": "#ba0c2f",
+  "alternate_color": "#ffffff"
+ },
+ "Baylor": {
+  "mascot": "Bears",
+  "color": "#154734",
+  "alternate_color": "#ffb81c"
+ },
+ "Boise State": {
+  "mascot": "Broncos",
+  "color": "#0033a0",
+  "alternate_color": "#d64309"
+ },
+ "Boston College": {
+  "mascot": "Eagles",
+  "color": "#8c2232",
+  "alternate_color": "#dbcca6"
+ },
+ "Bowling Green": {
+  "mascot": "Falcons",
+  "color": "#fd5000",
+  "alternate_color": "#4f2c1d"
+ },
+ "Buffalo": {
+  "mascot": "Bulls",
+  "color": "#005bbb",
+  "alternate_color": "#ffffff"
+ },
+ "California": {
+  "mascot": "Golden Bears",
+  "color": "#041e42",
+  "alternate_color": "#ffc72c"
+ },
+ "Central Michigan": {
+  "mascot": "Chippewas",
+  "color": "#6a0032",
+  "alternate_color": "#ffc82e"
+ },
+ "Charlotte": {
+  "mascot": "49ers",
+  "color": "#005035",
+  "alternate_color": "#a49665"
+ },
+ "Cincinnati": {
+  "mascot": "Bearcats",
+  "color": "#000000",
+  "alternate_color": "#e00122"
+ },
+ "Clemson": {
+  "mascot": "Tigers",
+  "color": "#f56600",
+  "alternate_color": "#522d80"
+ },
+ "Coastal Carolina": {
+  "mascot": "Chanticleers",
+  "color": "#006f71",
+  "alternate_color": "#a27752"
+ },
+ "Colorado": {
+  "mascot": "Buffaloes",
+  "color": "#cfb87c",
+  "alternate_color": "#000000"
+ },
+ "Colorado State": {
+  "mascot": "Rams",
+  "color": "#1e4d2b",
+  "alternate_color": "#c8c372"
+ },
+ "Delaware": {
+  "mascot": "Blue Hens",
+  "color": "#00539f",
+  "alternate_color": "#ffd200"
+ },
+ "Duke": {
+  "mascot": "Blue Devils",
+  "color": "#00539b",
+  "alternate_color": "#ffffff"
+ },
+ "East Carolina": {
+  "mascot": "Pirates",
+  "color": "#592a8a",
+  "alternate_color": "#fdc82f"
+ },
+ "Eastern Michigan": {
+  "mascot": "Eagles",
+  "color": "#046a38",
+  "alternate_color": "#ffffff"
+ },
+ "Florida": {
+  "mascot": "Gators",
+  "color": "#0021a5",
+  "alternate_color": "#fa4616"
+ },
+ "Florida Atlantic": {
+  "mascot": "Owls",
+  "color": "#003366",
+  "alternate_color": "#cc0000"
+ },
+ "Florida International": {
+  "mascot": "Panthers",
+  "color": "#091f3f",
+  "alternate_color": "#c3993f"
+ },
+ "Florida State": {
+  "mascot": "Seminoles",
+  "color": "#782f40",
+  "alternate_color": "#ceb888"
+ },
+ "Fresno State": {
+  "mascot": "Bulldogs",
+  "color": "#c41230",
+  "alternate_color": "#13284c"
+ },
+ "Georgia": {
+  "mascot": "Bulldogs",
+  "color": "#ba0c2f",
+  "alternate_color": "#2c2a29"
+ },
+ "Georgia Southern": {
+  "mascot": "Eagles",
+  "color": "#041e42",
+  "alternate_color": "#ffffff"
+ },
+ "Georgia State": {
+  "mascot": "Panthers",
+  "color": "#0039a6",
+  "alternate_color": "#ffffff"
+ },
+ "Georgia Tech": {
+  "mascot": "Yellow Jackets",
+  "color": "#b3a369",
+  "alternate_color": "#ffffff"
+ },
+ "Hawai'i": {
+  "mascot": "Rainbow Warriors",
+  "color": "#024731",
+  "alternate_color": "#000000"
+ },
+ "Houston": {
+  "mascot": "Cougars",
+  "color": "#c8102e",
+  "alternate_color": "#ffffff"
+ },
+ "Illinois": {
+  "mascot": "Fighting Illini",
+  "color": "#ff5f05",
+  "alternate_color": "#13294b"
+ },
+ "Indiana": {
+  "mascot": "Hoosiers",
+  "color": "#990000",
+  "alternate_color": "#ffffff"
+ },
+ "Iowa": {
+  "mascot": "Hawkeyes",
+  "color": "#000000",
+  "alternate_color": "#ffcd00"
+ },
+ "Iowa State": {
+  "mascot": "Cyclones",
+  "color": "#c8102e",
+  "alternate_color": "#f1be48"
+ },
+ "Jacksonville State": {
+  "mascot": "Gamecocks",
+  "color": "#cc0000",
+  "alternate_color": "#000000"
+ },
+ "James Madison": {
+  "mascot": "Dukes",
+  "color": "#450084",
+  "alternate_color": "#cbb677"
+ },
+ "Kansas": {
+  "mascot": "Jayhawks",
+  "color": "#0051ba",
+  "alternate_color": "#e8000d"
+ },
+ "Kansas State": {
+  "mascot": "Wildcats",
+  "color": "#512888",
+  "alternate_color": "#ffffff"
+ },
+ "Kennesaw State": {
+  "mascot": "Owls",
+  "color": "#fdbb30",
+  "alternate_color": "#0b1315"
+ },
+ "Kent State": {
+  "mascot": "Golden Flashes",
+  "color": "#002664",
+  "alternate_color": "#eaab00"
+ },
+ "Kentucky": {
+  "mascot": "Wildcats",
+  "color": "#0033a0",
+  "alternate_color": "#ffffff"
+ },
+ "LSU": {
+  "mascot": "Tigers",
+  "color": "#461d7c",
+  "alternate_color": "#fdd023"
+ },
+ "Liberty": {
+  "mascot": "Flames",
+  "color": "#0a254e",
+  "alternate_color": "#b72025"
+ },
+ "Louisiana": {
+  "mascot": "Ragin' Cajuns",
+  "color": "#ce181e",
+  "alternate_color": "#000000"
+ },
+ "Louisiana Tech": {
+  "mascot": "Bulldogs",
+  "color": "#003087",
+  "alternate_color": "#cb333b"
+ },
+ "Louisville": {
+  "mascot": "Cardinals",
+  "color": "#c9001f",
+  "alternate_color": "#000000"
+ },
+ "Marshall": {
+  "mascot": "Thundering Herd",
+  "color": "#00b140",
+  "alternate_color": "#000000"
+ },
+ "Maryland": {
+  "mascot": "Terrapins",
+  "color": "#ce1126",
+  "alternate_color": "#ffffff"
+ },
+ "Massachusetts": {
+  "mascot": "Minutemen",
+  "color": "#881c1c",
+  "alternate_color": "#ffffff"
+ },
+ "Memphis": {
+  "mascot": "Tigers",
+  "color": "#00498f",
+  "alternate_color": "#9c9ea1"
+ },
+ "Miami": {
+  "mascot": "Hurricanes",
+  "color": "#f47321",
+  "alternate_color": "#005030"
+ },
+ "Miami (OH)": {
+  "mascot": "RedHawks",
+  "color": "#c41230",
+  "alternate_color": "#ffffff"
+ },
+ "Michigan": {
+  "mascot": "Wolverines",
+  "color": "#00274c",
+  "alternate_color": "#ffcb05"
+ },
+ "Michigan State": {
+  "mascot": "Spartans",
+  "color": "#173f35",
+  "alternate_color": "#ffffff"
+ },
+ "Middle Tennessee": {
+  "mascot": "Blue Raiders",
+  "color": "#036eb7",
+  "alternate_color": "#ffffff"
+ },
+ "Minnesota": {
+  "mascot": "Golden Gophers",
+  "color": "#7a0019",
+  "alternate_color": "#ffcc33"
+ },
+ "Mississippi State": {
+  "mascot": "Bulldogs",
+  "color": "#5d1725",
+  "alternate_color": "#c1c6c8"
+ },
+ "Missouri": {
+  "mascot": "Tigers",
+  "color": "#f1b82d",
+  "alternate_color": "#000000"
+ },
+ "Missouri State": {
+  "mascot": "Bears",
+  "color": "#5e0009",
+  "alternate_color": "#ffffff"
+ },
+ "NC State": {
+  "mascot": "Wolfpack",
+  "color": "#cc0000",
+  "alternate_color": "#ffffff"
+ },
+ "Navy": {
+  "mascot": "Midshipmen",
+  "color": "#00225b",
+  "alternate_color": "#b5a67c"
+ },
+ "Nebraska": {
+  "mascot": "Cornhuskers",
+  "color": "#d00000",
+  "alternate_color": "#ffffff"
+ },
+ "Nevada": {
+  "mascot": "Wolf Pack",
+  "color": "#041e42",
+  "alternate_color": "#8a8d8f"
+ },
+ "New Mexico": {
+  "mascot": "Lobos",
+  "color": "#ba0c2f",
+  "alternate_color": "#a7a8aa"
+ },
+ "New Mexico State": {
+  "mascot": "Aggies",
+  "color": "#8c0b42",
+  "alternate_color": "#ffffff"
+ },
+ "North Carolina": {
+  "mascot": "Tar Heels",
+  "color": "#7bafd4",
+  "alternate_color": "#13294b"
+ },
+ "North Dakota State": {
+  "mascot": "Bison",
+  "color": "#00583d",
+  "alternate_color": "#ffc425"
+ },
+ "North Texas": {
+  "mascot": "Mean Green",
+  "color": "#00853e",
+  "alternate_color": "#ffffff"
+ },
+ "Northern Illinois": {
+  "mascot": "Huskies",
+  "color": "#c8102e",
+  "alternate_color": "#000000"
+ },
+ "Northwestern": {
+  "mascot": "Wildcats",
+  "color": "#582c83",
+  "alternate_color": "#ffffff"
+ },
+ "Notre Dame": {
+  "mascot": "Fighting Irish",
+  "color": "#0c2340",
+  "alternate_color": "#c99700"
+ },
+ "Ohio": {
+  "mascot": "Bobcats",
+  "color": "#024230",
+  "alternate_color": "#ffffff"
+ },
+ "Ohio State": {
+  "mascot": "Buckeyes",
+  "color": "#ba0c2f",
+  "alternate_color": "#a7b1b7"
+ },
+ "Oklahoma": {
+  "mascot": "Sooners",
+  "color": "#841617",
+  "alternate_color": "#ffffff"
+ },
+ "Oklahoma State": {
+  "mascot": "Cowboys",
+  "color": "#fe5c00",
+  "alternate_color": "#000000"
+ },
+ "Old Dominion": {
+  "mascot": "Monarchs",
+  "color": "#043657",
+  "alternate_color": "#98c5ea"
+ },
+ "Ole Miss": {
+  "mascot": "Rebels",
+  "color": "#13294b",
+  "alternate_color": "#cf142b"
+ },
+ "Oregon": {
+  "mascot": "Ducks",
+  "color": "#007030",
+  "alternate_color": "#fee11a"
+ },
+ "Oregon State": {
+  "mascot": "Beavers",
+  "color": "#dc4405",
+  "alternate_color": "#000000"
+ },
+ "Penn State": {
+  "mascot": "Nittany Lions",
+  "color": "#001e44",
+  "alternate_color": "#ffffff"
+ },
+ "Pittsburgh": {
+  "mascot": "Panthers",
+  "color": "#003594",
+  "alternate_color": "#ffb81c"
+ },
+ "Purdue": {
+  "mascot": "Boilermakers",
+  "color": "#ceb888",
+  "alternate_color": "#000000"
+ },
+ "Rice": {
+  "mascot": "Owls",
+  "color": "#00205b",
+  "alternate_color": "#c1c6c8"
+ },
+ "Rutgers": {
+  "mascot": "Scarlet Knights",
+  "color": "#ce0e2d",
+  "alternate_color": "#ffffff"
+ },
+ "SMU": {
+  "mascot": "Mustangs",
+  "color": "#d70000",
+  "alternate_color": "#0033a1"
+ },
+ "Sacramento State": {
+  "mascot": "Hornets",
+  "color": "#00573c",
+  "alternate_color": "#cdb97d"
+ },
+ "Sam Houston": {
+  "mascot": "Bearkats",
+  "color": "#f56423",
+  "alternate_color": "#ffffff"
+ },
+ "San Diego State": {
+  "mascot": "Aztecs",
+  "color": "#a6192e",
+  "alternate_color": "#000000"
+ },
+ "San Jos\u00e9 State": {
+  "mascot": "Spartans",
+  "color": "#0055a2",
+  "alternate_color": "#e5a823"
+ },
+ "South Alabama": {
+  "mascot": "Jaguars",
+  "color": "#00205b",
+  "alternate_color": "#bf0d3e"
+ },
+ "South Carolina": {
+  "mascot": "Gamecocks",
+  "color": "#73000a",
+  "alternate_color": "#000000"
+ },
+ "South Florida": {
+  "mascot": "Bulls",
+  "color": "#006747",
+  "alternate_color": "#cfc493"
+ },
+ "Southern Miss": {
+  "mascot": "Golden Eagles",
+  "color": "#ffc72c",
+  "alternate_color": "#231f20"
+ },
+ "Stanford": {
+  "mascot": "Cardinal",
+  "color": "#8c1515",
+  "alternate_color": "#ffffff"
+ },
+ "Syracuse": {
+  "mascot": "Orange",
+  "color": "#f76900",
+  "alternate_color": "#000e54"
+ },
+ "TCU": {
+  "mascot": "Horned Frogs",
+  "color": "#4d1979",
+  "alternate_color": "#ffffff"
+ },
+ "Temple": {
+  "mascot": "Owls",
+  "color": "#a41e35",
+  "alternate_color": "#ffffff"
+ },
+ "Tennessee": {
+  "mascot": "Volunteers",
+  "color": "#ff8200",
+  "alternate_color": "#ffffff"
+ },
+ "Texas": {
+  "mascot": "Longhorns",
+  "color": "#bf5700",
+  "alternate_color": "#ffffff"
+ },
+ "Texas A&M": {
+  "mascot": "Aggies",
+  "color": "#500000",
+  "alternate_color": "#ffffff"
+ },
+ "Texas State": {
+  "mascot": "Bobcats",
+  "color": "#501214",
+  "alternate_color": "#6a5638"
+ },
+ "Texas Tech": {
+  "mascot": "Red Raiders",
+  "color": "#c30020",
+  "alternate_color": "#000000"
+ },
+ "Toledo": {
+  "mascot": "Rockets",
+  "color": "#0b2240",
+  "alternate_color": "#ffcd00"
+ },
+ "Troy": {
+  "mascot": "Trojans",
+  "color": "#862633",
+  "alternate_color": "#b1b1b1"
+ },
+ "Tulane": {
+  "mascot": "Green Wave",
+  "color": "#006747",
+  "alternate_color": "#418fde"
+ },
+ "Tulsa": {
+  "mascot": "Golden Hurricane",
+  "color": "#003595",
+  "alternate_color": "#d0b787"
+ },
+ "UAB": {
+  "mascot": "Blazers",
+  "color": "#1a5632",
+  "alternate_color": "#fdb913"
+ },
+ "UCF": {
+  "mascot": "Knights",
+  "color": "#000000",
+  "alternate_color": "#b4a169"
+ },
+ "UCLA": {
+  "mascot": "Bruins",
+  "color": "#2774ae",
+  "alternate_color": "#f2a900"
+ },
+ "UConn": {
+  "mascot": "Huskies",
+  "color": "#000e2f",
+  "alternate_color": "#ffffff"
+ },
+ "UL Monroe": {
+  "mascot": "Warhawks",
+  "color": "#840029",
+  "alternate_color": "#fdb913"
+ },
+ "UNLV": {
+  "mascot": "Rebels",
+  "color": "#cf0a2c",
+  "alternate_color": "#cac8c8"
+ },
+ "USC": {
+  "mascot": "Trojans",
+  "color": "#990000",
+  "alternate_color": "#ffcc00"
+ },
+ "UTEP": {
+  "mascot": "Miners",
+  "color": "#ff8200",
+  "alternate_color": "#041e42"
+ },
+ "UTSA": {
+  "mascot": "Roadrunners",
+  "color": "#0c2340",
+  "alternate_color": "#f15a22"
+ },
+ "Utah": {
+  "mascot": "Utes",
+  "color": "#be0000",
+  "alternate_color": "#ffffff"
+ },
+ "Utah State": {
+  "mascot": "Aggies",
+  "color": "#0f2439",
+  "alternate_color": "#ffffff"
+ },
+ "Vanderbilt": {
+  "mascot": "Commodores",
+  "color": "#000000",
+  "alternate_color": "#cfae70"
+ },
+ "Virginia": {
+  "mascot": "Cavaliers",
+  "color": "#232d4b",
+  "alternate_color": "#f84c1e"
+ },
+ "Virginia Tech": {
+  "mascot": "Hokies",
+  "color": "#861f41",
+  "alternate_color": "#e87722"
+ },
+ "Wake Forest": {
+  "mascot": "Demon Deacons",
+  "color": "#ceb888",
+  "alternate_color": "#2c2a29"
+ },
+ "Washington": {
+  "mascot": "Huskies",
+  "color": "#33006f",
+  "alternate_color": "#e8d3a2"
+ },
+ "Washington State": {
+  "mascot": "Cougars",
+  "color": "#a60f2d",
+  "alternate_color": "#4d4d4d"
+ },
+ "West Virginia": {
+  "mascot": "Mountaineers",
+  "color": "#eaaa00",
+  "alternate_color": "#002855"
+ },
+ "Western Kentucky": {
+  "mascot": "Hilltoppers",
+  "color": "#c60c30",
+  "alternate_color": "#ffffff"
+ },
+ "Western Michigan": {
+  "mascot": "Broncos",
+  "color": "#532e1f",
+  "alternate_color": "#f1c500"
+ },
+ "Wisconsin": {
+  "mascot": "Badgers",
+  "color": "#a00000",
+  "alternate_color": "#ffffff"
+ },
+ "Wyoming": {
+  "mascot": "Cowboys",
+  "color": "#492f24",
+  "alternate_color": "#ffc425"
+ }
+}
