@@ -3,6 +3,11 @@ needed for rolling-form and Four-Factors-style features. Not pulled by backfill.
 since /games/teams requires a week param (unlike /games, /lines, /stats/player/season).
 
 Only stores stats for games already in our (FBS-filtered) games table.
+
+Usage: .venv/bin/python scripts/backfill_team_game_stats.py [start_year] [end_year] [--all]
+Each week costs one CFBD call per season_type, so by default this only re-pulls weeks that
+still have completed games without box scores, plus the newest completed week (CFBD fills
+those in over several hours). --all re-pulls every week, for a periodic full sweep.
 """
 import sys
 from pathlib import Path
@@ -106,9 +111,32 @@ def upsert_game_teams(conn, games_teams_payload: list, known_game_ids: set) -> i
     return written
 
 
+def weeks_needing_stats(conn, year: int, season_type: str, all_weeks: list) -> list:
+    """Weeks actually worth re-pulling: any week that still has a completed game with no
+    box-score rows, plus the newest completed week (CFBD fills those in over several hours).
+    Weeks whose games all have stats are final and cost a CFBD call to re-download for nothing --
+    on the daily pull that was every week of the season, every day (~16 calls/day by December
+    against a 1,000-call month). `--all` forces the old behaviour for a periodic full sweep."""
+    rows = conn.execute(
+        """SELECT g.week, SUM(t.game_id IS NULL) AS missing
+           FROM games g
+           LEFT JOIN (SELECT DISTINCT game_id FROM team_game_stats) t ON t.game_id = g.id
+           WHERE g.year = ? AND g.season_type = ? AND g.home_points IS NOT NULL
+           GROUP BY g.week""",
+        (year, season_type),
+    ).fetchall()
+    if not rows:
+        return []
+    needed = {week for week, missing in rows if missing}
+    needed.add(max(week for week, _ in rows))
+    return [w for w in all_weeks if w in needed]
+
+
 def main():
-    start_year = int(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_START_YEAR
-    end_year = int(sys.argv[2]) if len(sys.argv) > 2 else DEFAULT_END_YEAR
+    args = [a for a in sys.argv[1:] if a != "--all"]
+    pull_all = "--all" in sys.argv[1:]
+    start_year = int(args[0]) if args else DEFAULT_START_YEAR
+    end_year = int(args[1]) if len(args) > 1 else DEFAULT_END_YEAR
 
     init_db()
     client = CFBDClient()
@@ -123,10 +151,20 @@ def main():
                 )]
                 if not weeks:
                     continue
+                if not pull_all:
+                    skipped = len(weeks)
+                    weeks = weeks_needing_stats(conn, year, season_type, weeks)
+                    skipped -= len(weeks)
+                    if not weeks:
+                        print(f"{year} {season_type}: every week already has box scores, nothing to pull")
+                        continue
+                    print(f"{year} {season_type}: pulling weeks {weeks} "
+                          f"({skipped} complete week(s) skipped, 1 CFBD call each)")
                 known_game_ids = {r[0] for r in conn.execute(
                     "SELECT id FROM games WHERE year=? AND season_type=?", (year, season_type),
                 )}
-                print(f"{year} {season_type}: pulling {len(weeks)} weeks...")
+                if pull_all:
+                    print(f"{year} {season_type}: pulling all {len(weeks)} weeks (--all)...")
                 total = 0
                 for week in weeks:
                     payload = client.games_teams(year, week, season_type)

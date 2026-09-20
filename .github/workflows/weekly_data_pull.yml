@@ -43,7 +43,16 @@ jobs:
       - name: Pull latest team box score stats
         env:
           CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
-        run: python scripts/backfill_team_game_stats.py 2026 2026
+        # One CFBD call per week per season_type, and this used to re-pull every week of the
+        # season on every run (~16 calls/day by December against the 1,000-call free month).
+        # Default now pulls only weeks with missing box scores plus the newest completed week;
+        # Mondays do a full sweep so anything CFBD revised later still gets picked up.
+        run: |
+          if [ "$(date -u +%u)" = "1" ]; then
+            python scripts/backfill_team_game_stats.py 2026 2026 --all
+          else
+            python scripts/backfill_team_game_stats.py 2026 2026
+          fi
 
       - name: Pull latest AP Top 25 rankings
         env:
