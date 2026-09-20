@@ -31,6 +31,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          # Caches pip's downloaded wheels (keyed on requirements.txt), not the installed env --
+          # this job averages ~8 minutes and most of it is installing pandas/xgboost/lightgbm.
+          # requirements.txt is unpinned, so pip still resolves current versions from the index.
+          cache: pip
 
       - name: Install dependencies
         run: pip install -r requirements.txt

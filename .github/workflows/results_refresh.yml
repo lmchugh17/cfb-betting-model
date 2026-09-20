@@ -97,6 +97,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          # See weekly_data_pull.yml: caches pip's wheel downloads, keyed on requirements.txt.
+          cache: pip
 
       - name: Install dependencies
         run: pip install -r requirements.txt
@@ -128,8 +130,21 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/cfb.db docs/index.html
-          git diff --cached --quiet && echo "No score changes" && exit 0
+          # Don't commit the 32MB data/cfb.db here. This job ran ~105 times in 30 days and each
+          # commit stores another near-full copy of the binary (repo: 296MB working, 124MB packed).
+          # Scores are cheap to re-fetch every run (ESPN is free, CFBD's 2 calls are spent anyway)
+          # and weekly_data_pull.yml still commits the DB daily, so nothing is lost but the churn.
+          git checkout -- data/cfb.db
+          # The page embeds its own "Generated ..." timestamp, so it differs on every build even
+          # when no score did. Only commit when something other than that line changed -- a no-op
+          # push would still trigger a Pages deploy (140 of those in 30 days).
+          if ! git diff -- docs/index.html | grep '^[+-]' | grep -v '^\(+++\|---\)' | grep -qv 'Generated '; then
+            echo "Only the generated-at timestamp changed -- nothing to publish"
+            git checkout -- docs/index.html
+            exit 0
+          fi
+          git add docs/index.html
+          git diff --cached --quiet && echo "No site changes" && exit 0
           git commit -m "Results refresh: $(date -u +%Y-%m-%dT%H:%M)Z"
           for attempt in 1 2 3 4 5; do
             if git push; then
