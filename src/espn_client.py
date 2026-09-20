@@ -11,6 +11,7 @@ import requests
 
 SEARCH_URL = "https://site.api.espn.com/apis/search/v2"
 ROSTER_URL = "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/{team_id}/roster"
+SCOREBOARD_URL = "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard"
 
 # Short on purpose, same reasoning as src/weather_client.py's REQUEST_TIMEOUT_S: this is
 # hit in a per-team loop (up to 138 sequential calls in scripts/scrape_injuries.py), and a
@@ -66,6 +67,16 @@ def fetch_roster_with_injuries(espn_team_id: str) -> list:
     for group in data.get("athletes", []):
         players.extend(group.get("items", []))
     return players
+
+
+def fetch_scoreboard(date_yyyymmdd: str, limit: int = 400) -> list:
+    """All FBS-and-opponent games ESPN lists for one date, with live/final scores.
+    groups=80 is ESPN's FBS grouping; the default page size is small, hence limit."""
+    resp = requests.get(SCOREBOARD_URL,
+                        params={"dates": date_yyyymmdd, "groups": 80, "limit": limit},
+                        timeout=REQUEST_TIMEOUT_S)
+    resp.raise_for_status()
+    return resp.json().get("events", [])
 
 
 def polite_sleep():

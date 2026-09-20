@@ -106,6 +106,16 @@ jobs:
           CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
         run: python scripts/refresh_scores_only.py 2026
 
+      # CFBD's finals can lag hours behind the game (2026-09-19: Florida State @ Alabama was
+      # Final on ESPN while CFBD still had no score 5.5h after kickoff). This fills only the
+      # gaps CFBD hasn't posted yet and never overwrites a score with NULL. Best-effort: ESPN's
+      # site API is undocumented and free APIs do block GitHub Actions IP ranges, so a failure
+      # here must not fail the refresh -- CFBD's own pass already ran above.
+      - name: Fill in finals ESPN already has (best-effort)
+        continue-on-error: true
+        timeout-minutes: 3
+        run: python scripts/refresh_scores_espn.py 2026
+
       - name: Rebuild site
         run: python scripts/build_site.py
 
