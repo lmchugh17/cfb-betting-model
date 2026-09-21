@@ -2,14 +2,62 @@
 # starts scheduled workflows at each hour of the day. Every scheduled run we have
 # measured starts 1.7-7h after its cron time, worst overnight UTC, and some hours
 # have no data at all. This fires at :13 and :43 every hour and only echoes, so each
-# run's createdAt minus its cron time is the pure queue delay. Analyzed from
+# run's createdAt minus its cron time is the pure queue delay. One cron line per slot
+# and the cron string in run-name, so a run hours late still names its own slot. Analyzed from
 # `gh run list --workflow schedule_delay_probe.yml`; no commits, no API calls.
 name: Schedule delay probe
+run-name: "probe ${{ github.event.schedule || 'manual' }}"
 
 on:
   schedule:
-    - cron: "13 * * * *"
-    - cron: "43 * * * *"
+    - cron: "13 0 * * *"
+    - cron: "43 0 * * *"
+    - cron: "13 1 * * *"
+    - cron: "43 1 * * *"
+    - cron: "13 2 * * *"
+    - cron: "43 2 * * *"
+    - cron: "13 3 * * *"
+    - cron: "43 3 * * *"
+    - cron: "13 4 * * *"
+    - cron: "43 4 * * *"
+    - cron: "13 5 * * *"
+    - cron: "43 5 * * *"
+    - cron: "13 6 * * *"
+    - cron: "43 6 * * *"
+    - cron: "13 7 * * *"
+    - cron: "43 7 * * *"
+    - cron: "13 8 * * *"
+    - cron: "43 8 * * *"
+    - cron: "13 9 * * *"
+    - cron: "43 9 * * *"
+    - cron: "13 10 * * *"
+    - cron: "43 10 * * *"
+    - cron: "13 11 * * *"
+    - cron: "43 11 * * *"
+    - cron: "13 12 * * *"
+    - cron: "43 12 * * *"
+    - cron: "13 13 * * *"
+    - cron: "43 13 * * *"
+    - cron: "13 14 * * *"
+    - cron: "43 14 * * *"
+    - cron: "13 15 * * *"
+    - cron: "43 15 * * *"
+    - cron: "13 16 * * *"
+    - cron: "43 16 * * *"
+    - cron: "13 17 * * *"
+    - cron: "43 17 * * *"
+    - cron: "13 18 * * *"
+    - cron: "43 18 * * *"
+    - cron: "13 19 * * *"
+    - cron: "43 19 * * *"
+    - cron: "13 20 * * *"
+    - cron: "43 20 * * *"
+    - cron: "13 21 * * *"
+    - cron: "43 21 * * *"
+    - cron: "13 22 * * *"
+    - cron: "43 22 * * *"
+    - cron: "13 23 * * *"
+    - cron: "43 23 * * *"
   workflow_dispatch:
 
 jobs:
