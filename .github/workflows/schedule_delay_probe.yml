@@ -1,0 +1,20 @@
+# TEMPORARY (added 2026-09-20, remove after ~2026-09-27): measures how late GitHub
+# starts scheduled workflows at each hour of the day. Every scheduled run we have
+# measured starts 1.7-7h after its cron time, worst overnight UTC, and some hours
+# have no data at all. This fires at :13 and :43 every hour and only echoes, so each
+# run's createdAt minus its cron time is the pure queue delay. Analyzed from
+# `gh run list --workflow schedule_delay_probe.yml`; no commits, no API calls.
+name: Schedule delay probe
+
+on:
+  schedule:
+    - cron: "13 * * * *"
+    - cron: "43 * * * *"
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - run: echo "schedule=${{ github.event.schedule }} started=$(date -u +%FT%TZ)"
