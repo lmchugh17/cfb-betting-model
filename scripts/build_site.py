@@ -407,6 +407,8 @@ def fmt_kickoff(iso_str: str) -> str:
 def tier_badge(tier: str | None, low_data: bool = False) -> str:
     if not tier:
         return ""
+    if tier == "nobet":
+        return '<span class="tier tier-nobet">NO BET</span>'
     # A dagger, not an asterisk -- the price line already uses * for a different footnote
     # (assumed vs. measured spread price); reusing the same mark for two different caveats
     # on one card would make it ambiguous which one applies.
@@ -485,11 +487,12 @@ def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None
             is_measured = p.get("spread_price_source") == "measured"
             price_label = f"{price}" + ("" if is_measured else "*")
             pick_spread_html = f' {pick_spread:+.1f} <span class="odds">({price_label})</span>'
-        # No confidence badge on a pick that's flagged no-bet for the blowout rule -- showing
-        # "HIGH Confidence" right above a line explaining the pick is staked at zero reads as a
-        # direct contradiction (see src.bet_sizing's module docstring for why this pattern is
-        # currently disabled). The wager line below already explains why.
-        spread_tier = None if is_blowout_underdog_pick(p.get("edge"), p.get("market_spread")) else p["confidence_tier"]
+        # A red "NO BET" badge, not the usual confidence tier, on a pick flagged no-bet for the
+        # blowout rule -- showing "HIGH Confidence" right above a line explaining the pick is
+        # staked at zero reads as a direct contradiction (see src.bet_sizing's module docstring
+        # for why this pattern is currently disabled). It's also a clearer eye-catcher than the
+        # wager line's prose alone for someone scanning the card quickly.
+        spread_tier = "nobet" if is_blowout_underdog_pick(p.get("edge"), p.get("market_spread")) else p["confidence_tier"]
         pick_html = (
             f'<div class="pick-line">Spread pick: <strong>{p["pick_team"]}{pick_spread_html}</strong> '
             f'{tier_badge(spread_tier, low_data)}</div>'
@@ -950,6 +953,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .tier-high {{ background: rgba(61,220,132,0.15); color: var(--green); }}
   .tier-medium {{ background: rgba(255,184,79,0.15); color: var(--amber); }}
   .tier-low {{ background: rgba(154,161,172,0.15); color: var(--text-dim); }}
+  .tier-nobet {{ background: rgba(255,97,97,0.15); color: var(--red); }}
   .wager-line {{ font-size: 0.85rem; color: var(--text-dim); margin-bottom: 0.6rem; }}
   .callout {{ font-size: 0.85rem; color: var(--amber); background: rgba(255,184,79,0.1); border: 1px solid rgba(255,184,79,0.25); border-radius: 8px; padding: 0.6rem 0.8rem; margin-bottom: 0.6rem; }}
   .tldr {{ font-style: italic; color: var(--text-dim); font-size: 0.88rem; margin-bottom: 0.6rem; }}
