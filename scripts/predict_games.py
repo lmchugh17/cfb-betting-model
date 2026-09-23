@@ -19,7 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.ats_and_situational import (compute_ats_results, compute_h2h_features,
                                       median_spread_per_game)
-from src.bet_sizing import MAX_BET_FRACTION, break_even, size_bet
+from src.bet_sizing import BLOWOUT_NO_BET_REASON, MAX_BET_FRACTION, break_even, is_blowout_underdog_pick, size_bet
 from src.box_score_features import add_derived_rate_stats, build_long_format
 from src.db import get_connection, init_db
 from src.elo import HOME_ADVANTAGE_ELO, CFBElo
@@ -327,10 +327,15 @@ def main():
 
             # Calibrated on the 2025 holdout, 25% Kelly capped at 2%, no bet below break-even
             # (src.bet_sizing explains why the original Normal(0, RMSE) formula was replaced).
-            cover_prob, kelly = size_bet(edge, spread_price)
+            # Also forced to no-bet for extreme-mismatch underdog picks (BLOWOUT_SPREAD_THRESHOLD)
+            # -- see src.bet_sizing's module docstring for why that pattern is currently disabled.
+            cover_prob, kelly = size_bet(edge, spread_price, row["market_spread"])
             if kelly > 0:
                 print(f"Cover probability (calibrated): {cover_prob:.0%} -> {kelly:.1%} of bankroll "
                       f"recommended (25% Kelly, capped at {MAX_BET_FRACTION:.0%})")
+            elif is_blowout_underdog_pick(edge, row["market_spread"]):
+                print(f"Cover probability (calibrated): {cover_prob:.0%} -> no bet, "
+                      + BLOWOUT_NO_BET_REASON.format(spread=row["market_spread"]))
             else:
                 print(f"Cover probability (calibrated): {cover_prob:.0%} -> no bet "
                       f"(below the {break_even(spread_price):.1%} break-even at {spread_price})")

@@ -13,7 +13,8 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from src.bet_sizing import BANKROLL_RESTART_UTC, MAX_BET_FRACTION, break_even, size_bet
+from src.bet_sizing import (BANKROLL_RESTART_UTC, BLOWOUT_NO_BET_REASON, MAX_BET_FRACTION, break_even,
+                             is_blowout_underdog_pick, size_bet)
 from src.db import get_connection, init_db
 
 EASTERN = ZoneInfo("America/New_York")  # handles EDT/EST correctly across the DST transition
@@ -365,14 +366,14 @@ def compute_current_bankroll(conn) -> float:
     picks before the restart keep their stored values but don't count toward it. Upcoming picks
     size their recommended wager off this running total."""
     rows = conn.execute("""
-        SELECT edge, pick_covered, spread_price FROM prediction_results
+        SELECT edge, pick_covered, spread_price, market_spread FROM prediction_results
         WHERE edge IS NOT NULL AND pick_covered IS NOT NULL AND start_date >= ?
         ORDER BY start_date ASC
     """, (BANKROLL_RESTART_UTC,)).fetchall()
     bankroll = STARTING_BANKROLL
-    for edge, covered, spread_price in rows:
+    for edge, covered, spread_price, market_spread in rows:
         price = spread_price if spread_price is not None else ASSUMED_SPREAD_ODDS_AMERICAN
-        _, fraction = size_bet(edge, price)
+        _, fraction = size_bet(edge, price, market_spread)
         wager = bankroll * fraction
         bankroll += wager * _net_decimal_odds(price) if covered else -wager
     return bankroll
@@ -433,6 +434,9 @@ def render_wager_line(p: dict, bankroll: float | None) -> str:
         return ""
     fraction = p.get("kelly_fraction") or 0.0
     if fraction <= 0:
+        if is_blowout_underdog_pick(p.get("edge"), p.get("market_spread")):
+            reason = BLOWOUT_NO_BET_REASON.format(spread=p["market_spread"])
+            return f'<div class="wager-line">No bet &middot; {reason}</div>'
         price = p.get("spread_price") if p.get("spread_price") is not None else ASSUMED_SPREAD_ODDS_AMERICAN
         return (
             f'<div class="wager-line">No bet &middot; cover probability {p["cover_probability"]:.0%} '
@@ -481,9 +485,14 @@ def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None
             is_measured = p.get("spread_price_source") == "measured"
             price_label = f"{price}" + ("" if is_measured else "*")
             pick_spread_html = f' {pick_spread:+.1f} <span class="odds">({price_label})</span>'
+        # No confidence badge on a pick that's flagged no-bet for the blowout rule -- showing
+        # "HIGH Confidence" right above a line explaining the pick is staked at zero reads as a
+        # direct contradiction (see src.bet_sizing's module docstring for why this pattern is
+        # currently disabled). The wager line below already explains why.
+        spread_tier = None if is_blowout_underdog_pick(p.get("edge"), p.get("market_spread")) else p["confidence_tier"]
         pick_html = (
             f'<div class="pick-line">Spread pick: <strong>{p["pick_team"]}{pick_spread_html}</strong> '
-            f'{tier_badge(p["confidence_tier"], low_data)}</div>'
+            f'{tier_badge(spread_tier, low_data)}</div>'
         )
     wager_html = render_wager_line(p, bankroll)
     model_breakdown_html = render_model_breakdown(p.get("model_breakdown_json"))
@@ -1254,7 +1263,7 @@ def main():
     for p in upcoming:
         if p.get("edge") is not None:
             price = p["spread_price"] if p.get("spread_price") is not None else ASSUMED_SPREAD_ODDS_AMERICAN
-            p["cover_probability"], p["kelly_fraction"] = size_bet(p["edge"], price)
+            p["cover_probability"], p["kelly_fraction"] = size_bet(p["edge"], price, p.get("market_spread"))
     results = fetch_results(conn)
     summary = fetch_summary(conn)
     bankroll = compute_current_bankroll(conn)
