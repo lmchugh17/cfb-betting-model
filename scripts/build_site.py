@@ -498,9 +498,9 @@ def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None
         # doesn't clear break-even (every LOW pick, and MEDIUM picks under ~5 points at -110):
         # the edge tiers predate bet sizing and don't line up with it. Only where the wager
         # line is shown (upcoming cards) -- past cards keep their tier as shown pre-kickoff.
-        # Red stays reserved for the blowout rule's override.
+        # Red stays reserved for the blowout rule's override, also upcoming cards only.
         spread_tier = p["confidence_tier"]
-        if is_blowout_underdog_pick(p.get("edge"), p.get("market_spread")):
+        if result is None and is_blowout_underdog_pick(p.get("edge"), p.get("market_spread")):
             spread_tier = "nobet"
         elif (bankroll is not None and p.get("cover_probability") is not None
               and not (p.get("kelly_fraction") or 0.0) > 0):
@@ -966,7 +966,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .tier-medium {{ background: rgba(255,184,79,0.15); color: var(--amber); }}
   .tier-low {{ background: rgba(154,161,172,0.15); color: var(--text-dim); }}
   .tier-nobet {{ background: rgba(255,97,97,0.15); color: var(--red); }}
-  .tier-nobet-breakeven {{ background: rgba(154,161,172,0.15); color: var(--text-dim); }}
+  .tier-nobet-breakeven {{ background: rgba(154,161,172,0.18); color: var(--text-dim); letter-spacing: 0.03em; }}
   .wager-line {{ font-size: 0.85rem; color: var(--text-dim); margin-bottom: 0.6rem; }}
   .callout {{ font-size: 0.85rem; color: var(--amber); background: rgba(255,184,79,0.1); border: 1px solid rgba(255,184,79,0.25); border-radius: 8px; padding: 0.6rem 0.8rem; margin-bottom: 0.6rem; }}
   .tldr {{ font-style: italic; color: var(--text-dim); font-size: 0.88rem; margin-bottom: 0.6rem; }}
