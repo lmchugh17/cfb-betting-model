@@ -409,6 +409,8 @@ def tier_badge(tier: str | None, low_data: bool = False) -> str:
         return ""
     if tier == "nobet":
         return '<span class="tier tier-nobet">NO BET</span>'
+    if tier == "nobet-breakeven":
+        return '<span class="tier tier-nobet-breakeven">NO BET</span>'
     # A dagger, not an asterisk -- the price line already uses * for a different footnote
     # (assumed vs. measured spread price); reusing the same mark for two different caveats
     # on one card would make it ambiguous which one applies.
@@ -492,7 +494,17 @@ def render_pick_card(p: dict, result: dict | None = None, bankroll: float | None
         # staked at zero reads as a direct contradiction (see src.bet_sizing's module docstring
         # for why this pattern is currently disabled). It's also a clearer eye-catcher than the
         # wager line's prose alone for someone scanning the card quickly.
-        spread_tier = "nobet" if is_blowout_underdog_pick(p.get("edge"), p.get("market_spread")) else p["confidence_tier"]
+        # Same idea in gray for a pick staked at zero because its calibrated cover probability
+        # doesn't clear break-even (every LOW pick, and MEDIUM picks under ~5 points at -110):
+        # the edge tiers predate bet sizing and don't line up with it. Only where the wager
+        # line is shown (upcoming cards) -- past cards keep their tier as shown pre-kickoff.
+        # Red stays reserved for the blowout rule's override.
+        spread_tier = p["confidence_tier"]
+        if is_blowout_underdog_pick(p.get("edge"), p.get("market_spread")):
+            spread_tier = "nobet"
+        elif (bankroll is not None and p.get("cover_probability") is not None
+              and not (p.get("kelly_fraction") or 0.0) > 0):
+            spread_tier = "nobet-breakeven"
         pick_html = (
             f'<div class="pick-line">Spread pick: <strong>{p["pick_team"]}{pick_spread_html}</strong> '
             f'{tier_badge(spread_tier, low_data)}</div>'
@@ -954,6 +966,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .tier-medium {{ background: rgba(255,184,79,0.15); color: var(--amber); }}
   .tier-low {{ background: rgba(154,161,172,0.15); color: var(--text-dim); }}
   .tier-nobet {{ background: rgba(255,97,97,0.15); color: var(--red); }}
+  .tier-nobet-breakeven {{ background: rgba(154,161,172,0.15); color: var(--text-dim); }}
   .wager-line {{ font-size: 0.85rem; color: var(--text-dim); margin-bottom: 0.6rem; }}
   .callout {{ font-size: 0.85rem; color: var(--amber); background: rgba(255,184,79,0.1); border: 1px solid rgba(255,184,79,0.25); border-radius: 8px; padding: 0.6rem 0.8rem; margin-bottom: 0.6rem; }}
   .tldr {{ font-style: italic; color: var(--text-dim); font-size: 0.88rem; margin-bottom: 0.6rem; }}

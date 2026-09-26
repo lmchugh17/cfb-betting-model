@@ -41,6 +41,7 @@
   .tier-medium { background: rgba(255,184,79,0.15); color: var(--amber); }
   .tier-low { background: rgba(154,161,172,0.15); color: var(--text-dim); }
   .tier-nobet { background: rgba(255,97,97,0.15); color: var(--red); }
+  .tier-nobet-breakeven { background: rgba(154,161,172,0.15); color: var(--text-dim); }
   .wager-line { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 0.6rem; }
   .callout { font-size: 0.85rem; color: var(--amber); background: rgba(255,184,79,0.1); border: 1px solid rgba(255,184,79,0.25); border-radius: 8px; padding: 0.6rem 0.8rem; margin-bottom: 0.6rem; }
   .tldr { font-style: italic; color: var(--text-dim); font-size: 0.88rem; margin-bottom: 0.6rem; }
@@ -132,7 +133,7 @@
     </label>
   </header>
 
-  <div class="stats-row"><div class="stat-tile"><div class="stat-value">262</div><div class="stat-label">Picks Tracked</div></div><div class="stat-tile"><div class="stat-value">228/262</div><div class="stat-label">Moneyline (Straight-Up)</div></div><div class="stat-tile"><div class="stat-value">105-112-3</div><div class="stat-label">Against the Spread</div></div><div class="stat-tile"><div class="stat-value">14.6 pts<sup class="stat-marker">&sect;</sup></div><div class="stat-label">Avg. Margin Error</div></div><div class="stat-tile"><div class="stat-value">$489.57</div><div class="stat-label">Paper Bankroll (since Sep 19)</div></div></div>
+  <div class="stats-row"><div class="stat-tile"><div class="stat-value">261</div><div class="stat-label">Picks Tracked</div></div><div class="stat-tile"><div class="stat-value">227/261</div><div class="stat-label">Moneyline (Straight-Up)</div></div><div class="stat-tile"><div class="stat-value">104-112-3</div><div class="stat-label">Against the Spread</div></div><div class="stat-tile"><div class="stat-value">14.6 pts<sup class="stat-marker">&sect;</sup></div><div class="stat-label">Avg. Margin Error</div></div><div class="stat-tile"><div class="stat-value">$489.57</div><div class="stat-label">Paper Bankroll (since Sep 19)</div></div></div>
 
   <h2>Record</h2>
   <div class="seg-toggle">
@@ -141,12 +142,12 @@
   </div>
   <div id="perf-week" class="perf-panel"><div class="table-wrap"><table class="weekly-table">
       <thead><tr><th>Week</th><th>Moneyline</th><th>Spread</th></tr></thead>
-      <tbody><tr><td>2026 Week 4</td><td>2-0 (100%)</td><td>2-0-0</td></tr><tr><td>2026 Week 3</td><td>66-9 (88%)</td><td>43-31-1</td></tr><tr><td>2026 Week 2</td><td>73-13 (85%)</td><td>19-25-0</td></tr><tr><td>2026 Week 1</td><td>82-9 (90%)</td><td>38-51-2</td></tr><tr><td>2026 Week 0</td><td>5-3 (62%)</td><td>3-5-0</td></tr></tbody>
+      <tbody><tr><td>2026 Week 4</td><td>1-0 (100%)</td><td>1-0-0</td></tr><tr><td>2026 Week 3</td><td>66-9 (88%)</td><td>43-31-1</td></tr><tr><td>2026 Week 2</td><td>73-13 (85%)</td><td>19-25-0</td></tr><tr><td>2026 Week 1</td><td>82-9 (90%)</td><td>38-51-2</td></tr><tr><td>2026 Week 0</td><td>5-3 (62%)</td><td>3-5-0</td></tr></tbody>
     </table></div></div>
   <div id="perf-conf" class="perf-panel" hidden>
     <div class="table-wrap"><table class="weekly-table conf-table">
       <thead><tr><th>Conference</th><th>Games</th><th>Moneyline</th><th>Spread</th></tr></thead>
-      <tbody><tr><td>Big Ten</td><td>52</td><td>44-8 <span class="pct">(85%)</span></td><td>23-25-2 <span class="pct">(48%)</span></td></tr><tr><td>Big 12</td><td>45</td><td>41-4 <span class="pct">(91%)</span></td><td>21-18-0 <span class="pct">(54%)</span></td></tr><tr><td>Sun Belt</td><td>43</td><td>37-6 <span class="pct">(86%)</span></td><td>21-15-0 <span class="pct">(58%)</span></td></tr><tr><td>ACC</td><td>42</td><td>33-9 <span class="pct">(79%)</span></td><td>15-20-1 <span class="pct">(43%)</span></td></tr><tr><td>SEC</td><td>42</td><td>38-4 <span class="pct">(90%)</span></td><td>18-19-0 <span class="pct">(49%)</span></td></tr><tr><td>American Athletic</td><td>40</td><td>33-7 <span class="pct">(82%)</span></td><td>18-20-0 <span class="pct">(47%)</span></td></tr><tr><td>Mid-American</td><td>40</td><td>36-4 <span class="pct">(90%)</span></td><td>9-21-1 <span class="pct">(30%)</span></td></tr><tr><td>Conference USA</td><td>32</td><td>29-3 <span class="pct">(91%)</span></td><td>16-12-0 <span class="pct">(57%)</span></td></tr><tr><td>Mountain West</td><td>29</td><td>22-7 <span class="pct">(76%)</span></td><td>11-13-0 <span class="pct">(46%)</span></td></tr><tr><td>Pac-12</td><td>24</td><td>22-2 <span class="pct">(92%)</span></td><td>8-15-0 <span class="pct">(35%)</span></td></tr><tr><td>Big Sky</td><td>14</td><td>12-2 <span class="pct">(86%)</span></td><td>4-5-0 <span class="pct">(44%)</span></td></tr><tr><td>Coastal Athletic</td><td>14</td><td>14-0 <span class="pct">(100%)</span></td><td>4-5-0 <span class="pct">(44%)</span></td></tr><tr><td>MVFC</td><td>10</td><td>9-1 <span class="pct">(90%)</span></td><td>5-4-0 <span class="pct">(56%)</span></td></tr><tr><td>NEC</td><td>10</td><td>10-0 <span class="pct">(100%)</span></td><td>2-4-0 <span class="pct">(33%)</span></td></tr><tr><td>SWAC</td><td>10</td><td>10-0 <span class="pct">(100%)</span></td><td>2-2-0 <span class="pct">(50%)</span></td></tr><tr><td>OVC</td><td>9</td><td>9-0 <span class="pct">(100%)</span></td><td>3-2-0 <span class="pct">(60%)</span></td></tr><tr><td>Southland</td><td>9</td><td>8-1 <span class="pct">(89%)</span></td><td>5-4-0 <span class="pct">(56%)</span></td></tr><tr><td>Patriot</td><td>7</td><td>7-0 <span class="pct">(100%)</span></td><td>2-0-0 <span class="pct">(100%)</span></td></tr><tr><td>Southern</td><td>7</td><td>6-1 <span class="pct">(86%)</span></td><td>1-3-0 <span class="pct">(25%)</span></td></tr><tr><td>UAC</td><td>7</td><td>6-1 <span class="pct">(86%)</span></td><td>3-3-0 <span class="pct">(50%)</span></td></tr><tr><td>FBS Independents</td><td>6</td><td>5-1 <span class="pct">(83%)</span></td><td>4-2-0 <span class="pct">(67%)</span></td></tr><tr><td>MEAC</td><td>5</td><td>5-0 <span class="pct">(100%)</span></td><td>1-2-0 <span class="pct">(33%)</span></td></tr><tr><td>FCS Independents</td><td>1</td><td>1-0 <span class="pct">(100%)</span></td><td>0-1-0 <span class="pct">(0%)</span></td></tr></tbody>
+      <tbody><tr><td>Big Ten</td><td>52</td><td>44-8 <span class="pct">(85%)</span></td><td>23-25-2 <span class="pct">(48%)</span></td></tr><tr><td>Big 12</td><td>45</td><td>41-4 <span class="pct">(91%)</span></td><td>21-18-0 <span class="pct">(54%)</span></td></tr><tr><td>Sun Belt</td><td>43</td><td>37-6 <span class="pct">(86%)</span></td><td>21-15-0 <span class="pct">(58%)</span></td></tr><tr><td>ACC</td><td>42</td><td>33-9 <span class="pct">(79%)</span></td><td>15-20-1 <span class="pct">(43%)</span></td></tr><tr><td>SEC</td><td>42</td><td>38-4 <span class="pct">(90%)</span></td><td>18-19-0 <span class="pct">(49%)</span></td></tr><tr><td>Mid-American</td><td>40</td><td>36-4 <span class="pct">(90%)</span></td><td>9-21-1 <span class="pct">(30%)</span></td></tr><tr><td>American Athletic</td><td>39</td><td>32-7 <span class="pct">(82%)</span></td><td>17-20-0 <span class="pct">(46%)</span></td></tr><tr><td>Conference USA</td><td>32</td><td>29-3 <span class="pct">(91%)</span></td><td>16-12-0 <span class="pct">(57%)</span></td></tr><tr><td>Mountain West</td><td>29</td><td>22-7 <span class="pct">(76%)</span></td><td>11-13-0 <span class="pct">(46%)</span></td></tr><tr><td>Pac-12</td><td>24</td><td>22-2 <span class="pct">(92%)</span></td><td>8-15-0 <span class="pct">(35%)</span></td></tr><tr><td>Big Sky</td><td>14</td><td>12-2 <span class="pct">(86%)</span></td><td>4-5-0 <span class="pct">(44%)</span></td></tr><tr><td>Coastal Athletic</td><td>14</td><td>14-0 <span class="pct">(100%)</span></td><td>4-5-0 <span class="pct">(44%)</span></td></tr><tr><td>MVFC</td><td>10</td><td>9-1 <span class="pct">(90%)</span></td><td>5-4-0 <span class="pct">(56%)</span></td></tr><tr><td>NEC</td><td>10</td><td>10-0 <span class="pct">(100%)</span></td><td>2-4-0 <span class="pct">(33%)</span></td></tr><tr><td>SWAC</td><td>10</td><td>10-0 <span class="pct">(100%)</span></td><td>2-2-0 <span class="pct">(50%)</span></td></tr><tr><td>OVC</td><td>9</td><td>9-0 <span class="pct">(100%)</span></td><td>3-2-0 <span class="pct">(60%)</span></td></tr><tr><td>Southland</td><td>9</td><td>8-1 <span class="pct">(89%)</span></td><td>5-4-0 <span class="pct">(56%)</span></td></tr><tr><td>Patriot</td><td>7</td><td>7-0 <span class="pct">(100%)</span></td><td>2-0-0 <span class="pct">(100%)</span></td></tr><tr><td>Southern</td><td>7</td><td>6-1 <span class="pct">(86%)</span></td><td>1-3-0 <span class="pct">(25%)</span></td></tr><tr><td>UAC</td><td>7</td><td>6-1 <span class="pct">(86%)</span></td><td>3-3-0 <span class="pct">(50%)</span></td></tr><tr><td>FBS Independents</td><td>6</td><td>5-1 <span class="pct">(83%)</span></td><td>4-2-0 <span class="pct">(67%)</span></td></tr><tr><td>MEAC</td><td>5</td><td>5-0 <span class="pct">(100%)</span></td><td>1-2-0 <span class="pct">(33%)</span></td></tr><tr><td>FCS Independents</td><td>1</td><td>1-0 <span class="pct">(100%)</span></td><td>0-1-0 <span class="pct">(0%)</span></td></tr></tbody>
     </table></div>
     <p class="footnote">A game counts once for each conference involved (Big Ten vs. SEC counts toward
     both), so these rows add up to more than the overall record. Most conferences have only a few dozen
@@ -155,11 +156,11 @@
 
   <h2>Weekly Trends</h2>
   <h3>Moneyline Win %</h3>
-  <div class="bar-chart"><div class="bar-col"><div class="bar-track"><div class="bar-value bar-value-inside" style="bottom: 62.5%">62%</div><div class="bar-fill above" style="height: 62.5%"></div><div class="baseline-marker" style="bottom: 75.0%" title="Favorite baseline: 75%"><span class="baseline-label" style="top: -7px;">75%</span></div></div><div class="bar-label">2026 Week 0</div></div><div class="bar-col"><div class="bar-track"><div class="bar-value bar-value-inside" style="bottom: 90.1%">90%</div><div class="bar-fill above" style="height: 90.1%"></div><div class="baseline-marker" style="bottom: 91.2%" title="Favorite baseline: 91%"><span class="baseline-label" style="top: -21px;">91%</span></div></div><div class="bar-label">2026 Week 1</div></div><div class="bar-col"><div class="bar-track"><div class="bar-value bar-value-inside" style="bottom: 84.9%">85%</div><div class="bar-fill above" style="height: 84.9%"></div><div class="baseline-marker" style="bottom: 84.1%" title="Favorite baseline: 84%"><span class="baseline-label" style="bottom: -21px;">84%</span></div></div><div class="bar-label">2026 Week 2</div></div><div class="bar-col"><div class="bar-track"><div class="bar-value bar-value-inside" style="bottom: 88.0%">88%</div><div class="bar-fill above" style="height: 88.0%"></div><div class="baseline-marker" style="bottom: 89.3%" title="Favorite baseline: 89%"><span class="baseline-label" style="top: -20px;">89%</span></div></div><div class="bar-label">2026 Week 3</div></div><div class="bar-col"><div class="bar-track"><div class="bar-value bar-value-inside" style="bottom: 100.0%">100%</div><div class="bar-fill above" style="height: 100.0%"></div><div class="baseline-marker" style="bottom: 50.0%" title="Favorite baseline: 50%"><span class="baseline-label" style="bottom: -7px;">50%</span></div></div><div class="bar-label">2026 Week 4</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>Model moneyline win%<span class="legend-swatch legend-baseline"></span>Favorite baseline (same week)</div>
+  <div class="bar-chart"><div class="bar-col"><div class="bar-track"><div class="bar-value bar-value-inside" style="bottom: 62.5%">62%</div><div class="bar-fill above" style="height: 62.5%"></div><div class="baseline-marker" style="bottom: 75.0%" title="Favorite baseline: 75%"><span class="baseline-label" style="top: -7px;">75%</span></div></div><div class="bar-label">2026 Week 0</div></div><div class="bar-col"><div class="bar-track"><div class="bar-value bar-value-inside" style="bottom: 90.1%">90%</div><div class="bar-fill above" style="height: 90.1%"></div><div class="baseline-marker" style="bottom: 91.2%" title="Favorite baseline: 91%"><span class="baseline-label" style="top: -21px;">91%</span></div></div><div class="bar-label">2026 Week 1</div></div><div class="bar-col"><div class="bar-track"><div class="bar-value bar-value-inside" style="bottom: 84.9%">85%</div><div class="bar-fill above" style="height: 84.9%"></div><div class="baseline-marker" style="bottom: 84.1%" title="Favorite baseline: 84%"><span class="baseline-label" style="bottom: -21px;">84%</span></div></div><div class="bar-label">2026 Week 2</div></div><div class="bar-col"><div class="bar-track"><div class="bar-value bar-value-inside" style="bottom: 88.0%">88%</div><div class="bar-fill above" style="height: 88.0%"></div><div class="baseline-marker" style="bottom: 89.3%" title="Favorite baseline: 89%"><span class="baseline-label" style="top: -20px;">89%</span></div></div><div class="bar-label">2026 Week 3</div></div><div class="bar-col"><div class="bar-track"><div class="bar-value bar-value-inside" style="bottom: 100.0%">100%</div><div class="bar-fill above" style="height: 100.0%"></div><div class="baseline-marker" style="bottom: 0.0%" title="Favorite baseline: 0%"><span class="baseline-label" style="bottom: -7px;">0%</span></div></div><div class="bar-label">2026 Week 4</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>Model moneyline win%<span class="legend-swatch legend-baseline"></span>Favorite baseline (same week)</div>
   <h3>Against the Spread Win %</h3>
   <div class="bar-chart"><div class="ref-line-corner-label">Breakeven 52.4%</div><div class="bar-col"><div class="bar-track"><div class="bar-value bar-value-inside" style="bottom: 37.5%">38%</div><div class="bar-fill below" style="height: 37.5%"></div><div class="ref-line-marker" style="bottom: 52.4%"></div></div><div class="bar-label">2026 Week 0</div></div><div class="bar-col"><div class="bar-track"><div class="bar-value bar-value-inside" style="bottom: 42.7%">43%</div><div class="bar-fill below" style="height: 42.7%"></div><div class="ref-line-marker" style="bottom: 52.4%"></div></div><div class="bar-label">2026 Week 1</div></div><div class="bar-col"><div class="bar-track"><div class="bar-value bar-value-inside" style="bottom: 43.2%">43%</div><div class="bar-fill below" style="height: 43.2%"></div><div class="ref-line-marker" style="bottom: 52.4%"></div></div><div class="bar-label">2026 Week 2</div></div><div class="bar-col"><div class="bar-track"><div class="bar-value bar-value-inside" style="bottom: 58.1%">58%</div><div class="bar-fill above" style="height: 58.1%"></div><div class="ref-line-marker" style="bottom: 52.4%"></div></div><div class="bar-label">2026 Week 3</div></div><div class="bar-col"><div class="bar-track"><div class="bar-value bar-value-inside" style="bottom: 100.0%">100%</div><div class="bar-fill above" style="height: 100.0%"></div><div class="ref-line-marker" style="bottom: 52.4%"></div></div><div class="bar-label">2026 Week 4</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>ATS win% <span class="legend-swatch legend-ref"></span>Breakeven at -110 (52.4%)</div>
   <h3>Margin Accuracy: Model vs. Market</h3>
-  <div class="bar-chart"><div class="pair-col"><div class="pair-values"><span class="pair-model-text">14.3</span> vs <span class="pair-market-text">13.3</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 82.7%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 76.8%"></div></div></div><div class="bar-label">2026 Week 0</div></div><div class="pair-col"><div class="pair-values"><span class="pair-model-text">17.3</span> vs <span class="pair-market-text">13.8</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 100.0%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 79.5%"></div></div></div><div class="bar-label">2026 Week 1</div></div><div class="pair-col"><div class="pair-values"><span class="pair-model-text">15.3</span> vs <span class="pair-market-text">11.2</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 88.3%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 64.4%"></div></div></div><div class="bar-label">2026 Week 2</div></div><div class="pair-col"><div class="pair-values"><span class="pair-model-text">10.6</span> vs <span class="pair-market-text">9.6</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 61.1%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 55.6%"></div></div></div><div class="bar-label">2026 Week 3</div></div><div class="pair-col"><div class="pair-values"><span class="pair-model-text">6.6</span> vs <span class="pair-market-text">9.8</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 38.2%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 56.3%"></div></div></div><div class="bar-label">2026 Week 4</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>Model avg error (pts)<span class="legend-swatch legend-market-sw"></span>Market avg error (pts) &middot; lower is better</div>
+  <div class="bar-chart"><div class="pair-col"><div class="pair-values"><span class="pair-model-text">14.3</span> vs <span class="pair-market-text">13.3</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 77.4%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 72.0%"></div></div></div><div class="bar-label">2026 Week 0</div></div><div class="pair-col"><div class="pair-values"><span class="pair-model-text">17.3</span> vs <span class="pair-market-text">13.8</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 93.7%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 74.5%"></div></div></div><div class="bar-label">2026 Week 1</div></div><div class="pair-col"><div class="pair-values"><span class="pair-model-text">15.3</span> vs <span class="pair-market-text">11.2</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 82.7%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 60.3%"></div></div></div><div class="bar-label">2026 Week 2</div></div><div class="pair-col"><div class="pair-values"><span class="pair-model-text">10.6</span> vs <span class="pair-market-text">9.6</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 57.3%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 52.1%"></div></div></div><div class="bar-label">2026 Week 3</div></div><div class="pair-col"><div class="pair-values"><span class="pair-model-text">12.5</span> vs <span class="pair-market-text">18.5</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 67.7%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 100.0%"></div></div></div><div class="bar-label">2026 Week 4</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>Model avg error (pts)<span class="legend-swatch legend-market-sw"></span>Market avg error (pts) &middot; lower is better</div>
   <p class="footnote">&sect; Margin error for one game is |predicted margin &minus; actual final margin|,
   in points -- e.g. picking a team to win by 10 when they win by 14 is a 4-point error. Averaging that
   across every graded game gives the "Avg. Margin Error" stat above and each week's bars in this chart.
@@ -167,7 +168,7 @@
   is whether the model is closing the gap on the market's own accuracy over time, not just whether picks
   are winning.</p>
   <h3>Win Probability Accuracy: Model vs. Polymarket&para;</h3>
-  <div class="bar-chart"><div class="pair-col"><div class="pair-values"><span class="pair-model-text">0.139</span> vs <span class="pair-market-text">0.098</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 55.7%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 39.0%"></div></div></div><div class="bar-label">2026 Week 1 (42)</div></div><div class="pair-col"><div class="pair-values"><span class="pair-model-text">0.187</span> vs <span class="pair-market-text">0.141</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 74.8%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 56.3%"></div></div></div><div class="bar-label">2026 Week 2 (48)</div></div><div class="pair-col"><div class="pair-values"><span class="pair-model-text">0.130</span> vs <span class="pair-market-text">0.109</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 51.9%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 43.5%"></div></div></div><div class="bar-label">2026 Week 3 (57)</div></div><div class="pair-col"><div class="pair-values"><span class="pair-model-text">0.176</span> vs <span class="pair-market-text">0.174</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 70.3%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 69.5%"></div></div></div><div class="bar-label">2026 Week 4 (2)</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>Model Brier score<span class="legend-swatch legend-market-sw"></span>Polymarket Brier score &middot; lower is better</div>
+  <div class="bar-chart"><div class="pair-col"><div class="pair-values"><span class="pair-model-text">0.139</span> vs <span class="pair-market-text">0.098</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 55.7%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 39.0%"></div></div></div><div class="bar-label">2026 Week 1 (42)</div></div><div class="pair-col"><div class="pair-values"><span class="pair-model-text">0.187</span> vs <span class="pair-market-text">0.141</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 74.8%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 56.3%"></div></div></div><div class="bar-label">2026 Week 2 (48)</div></div><div class="pair-col"><div class="pair-values"><span class="pair-model-text">0.130</span> vs <span class="pair-market-text">0.109</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 51.9%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 43.5%"></div></div></div><div class="bar-label">2026 Week 3 (57)</div></div><div class="pair-col"><div class="pair-values"><span class="pair-model-text">0.203</span> vs <span class="pair-market-text">0.207</span></div><div class="pair-tracks"><div class="bar-track pair-track"><div class="bar-fill pair-model-fill" style="height: 81.1%"></div></div><div class="bar-track pair-track"><div class="bar-fill pair-market-fill" style="height: 82.8%"></div></div></div><div class="bar-label">2026 Week 4 (1)</div></div></div><div class="bar-legend"><span class="legend-swatch legend-model"></span>Model Brier score<span class="legend-swatch legend-market-sw"></span>Polymarket Brier score &middot; lower is better</div>
   <p class="footnote">&para; A post-game accuracy check only -- Polymarket's pre-game win probability
   for each game is pulled and stored before kickoff, then graded afterward the same way the model's own
   is, using Brier score (squared error between the probability and the actual 0/1 outcome -- e.g.
@@ -184,13 +185,26 @@
 
   <div id="tab-upcoming" class="tab-panel">
     <div class="filter-row">
-      <label>Team <select id="team-filter"><option value="">All Teams</option><option value="Air Force">Air Force</option><option value="Akron">Akron</option><option value="Alabama">Alabama</option><option value="App State">App State</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="Arkansas State">Arkansas State</option><option value="Auburn">Auburn</option><option value="Ball State">Ball State</option><option value="Baylor">Baylor</option><option value="Boise State">Boise State</option><option value="Boston College">Boston College</option><option value="Bowling Green">Bowling Green</option><option value="Bucknell">Bucknell</option><option value="Buffalo">Buffalo</option><option value="California">California</option><option value="Central Arkansas">Central Arkansas</option><option value="Central Michigan">Central Michigan</option><option value="Charlotte">Charlotte</option><option value="Cincinnati">Cincinnati</option><option value="Clemson">Clemson</option><option value="Colorado">Colorado</option><option value="Colorado State">Colorado State</option><option value="Delaware">Delaware</option><option value="Duke">Duke</option><option value="East Carolina">East Carolina</option><option value="Eastern Michigan">Eastern Michigan</option><option value="Florida">Florida</option><option value="Florida Atlantic">Florida Atlantic</option><option value="Florida International">Florida International</option><option value="Florida State">Florida State</option><option value="Fresno State">Fresno State</option><option value="Gardner-Webb">Gardner-Webb</option><option value="Georgia">Georgia</option><option value="Georgia Southern">Georgia Southern</option><option value="Georgia State">Georgia State</option><option value="Georgia Tech">Georgia Tech</option><option value="Hawai'i">Hawai'i</option><option value="Houston">Houston</option><option value="Houston Christian">Houston Christian</option><option value="Howard">Howard</option><option value="Illinois">Illinois</option><option value="Incarnate Word">Incarnate Word</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Iowa State">Iowa State</option><option value="Jacksonville State">Jacksonville State</option><option value="James Madison">James Madison</option><option value="Kansas State">Kansas State</option><option value="Kennesaw State">Kennesaw State</option><option value="Kent State">Kent State</option><option value="Kentucky">Kentucky</option><option value="LSU">LSU</option><option value="Lindenwood">Lindenwood</option><option value="Long Island University">Long Island University</option><option value="Louisiana">Louisiana</option><option value="Louisville">Louisville</option><option value="Marshall">Marshall</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Mercyhurst">Mercyhurst</option><option value="Miami">Miami</option><option value="Miami (OH)">Miami (OH)</option><option value="Michigan">Michigan</option><option value="Michigan State">Michigan State</option><option value="Middle Tennessee">Middle Tennessee</option><option value="Minnesota">Minnesota</option><option value="Mississippi State">Mississippi State</option><option value="Missouri">Missouri</option><option value="Missouri State">Missouri State</option><option value="NC State">NC State</option><option value="Navy">Navy</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Mexico">New Mexico</option><option value="New Mexico State">New Mexico State</option><option value="North Carolina Central">North Carolina Central</option><option value="North Texas">North Texas</option><option value="Northern Illinois">Northern Illinois</option><option value="Northwestern">Northwestern</option><option value="Notre Dame">Notre Dame</option><option value="Ohio">Ohio</option><option value="Ohio State">Ohio State</option><option value="Oklahoma">Oklahoma</option><option value="Oklahoma State">Oklahoma State</option><option value="Old Dominion">Old Dominion</option><option value="Ole Miss">Ole Miss</option><option value="Oregon">Oregon</option><option value="Oregon State">Oregon State</option><option value="Penn State">Penn State</option><option value="Pittsburgh">Pittsburgh</option><option value="Purdue">Purdue</option><option value="Rice">Rice</option><option value="Robert Morris">Robert Morris</option><option value="Rutgers">Rutgers</option><option value="SMU">SMU</option><option value="Sacramento State">Sacramento State</option><option value="Sam Houston">Sam Houston</option><option value="San Diego State">San Diego State</option><option value="South Alabama">South Alabama</option><option value="South Carolina">South Carolina</option><option value="South Florida">South Florida</option><option value="Southern Miss">Southern Miss</option><option value="Stanford">Stanford</option><option value="Stonehill">Stonehill</option><option value="TCU">TCU</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Texas A&amp;M">Texas A&M</option><option value="Texas State">Texas State</option><option value="Texas Tech">Texas Tech</option><option value="Toledo">Toledo</option><option value="Troy">Troy</option><option value="Tulane">Tulane</option><option value="Tulsa">Tulsa</option><option value="UAB">UAB</option><option value="UCF">UCF</option><option value="UCLA">UCLA</option><option value="UConn">UConn</option><option value="UL Monroe">UL Monroe</option><option value="UNLV">UNLV</option><option value="USC">USC</option><option value="UTEP">UTEP</option><option value="UTSA">UTSA</option><option value="Utah">Utah</option><option value="Utah State">Utah State</option><option value="Vanderbilt">Vanderbilt</option><option value="Virginia">Virginia</option><option value="Virginia Tech">Virginia Tech</option><option value="Wake Forest">Wake Forest</option><option value="Washington">Washington</option><option value="Washington State">Washington State</option><option value="West Virginia">West Virginia</option><option value="Western Kentucky">Western Kentucky</option><option value="Western Michigan">Western Michigan</option><option value="William &amp; Mary">William & Mary</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option></select></label>
+      <label>Team <select id="team-filter"><option value="">All Teams</option><option value="Air Force">Air Force</option><option value="Akron">Akron</option><option value="Alabama">Alabama</option><option value="App State">App State</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="Arkansas State">Arkansas State</option><option value="Army">Army</option><option value="Auburn">Auburn</option><option value="Ball State">Ball State</option><option value="Baylor">Baylor</option><option value="Boise State">Boise State</option><option value="Boston College">Boston College</option><option value="Bowling Green">Bowling Green</option><option value="Bucknell">Bucknell</option><option value="Buffalo">Buffalo</option><option value="California">California</option><option value="Central Arkansas">Central Arkansas</option><option value="Central Michigan">Central Michigan</option><option value="Charlotte">Charlotte</option><option value="Cincinnati">Cincinnati</option><option value="Clemson">Clemson</option><option value="Colorado">Colorado</option><option value="Colorado State">Colorado State</option><option value="Delaware">Delaware</option><option value="Duke">Duke</option><option value="East Carolina">East Carolina</option><option value="Eastern Michigan">Eastern Michigan</option><option value="Florida">Florida</option><option value="Florida Atlantic">Florida Atlantic</option><option value="Florida International">Florida International</option><option value="Florida State">Florida State</option><option value="Fresno State">Fresno State</option><option value="Gardner-Webb">Gardner-Webb</option><option value="Georgia">Georgia</option><option value="Georgia Southern">Georgia Southern</option><option value="Georgia State">Georgia State</option><option value="Georgia Tech">Georgia Tech</option><option value="Hawai'i">Hawai'i</option><option value="Houston">Houston</option><option value="Houston Christian">Houston Christian</option><option value="Howard">Howard</option><option value="Illinois">Illinois</option><option value="Incarnate Word">Incarnate Word</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Iowa State">Iowa State</option><option value="Jacksonville State">Jacksonville State</option><option value="James Madison">James Madison</option><option value="Kansas State">Kansas State</option><option value="Kennesaw State">Kennesaw State</option><option value="Kent State">Kent State</option><option value="Kentucky">Kentucky</option><option value="LSU">LSU</option><option value="Lindenwood">Lindenwood</option><option value="Long Island University">Long Island University</option><option value="Louisiana">Louisiana</option><option value="Louisville">Louisville</option><option value="Marshall">Marshall</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Mercyhurst">Mercyhurst</option><option value="Miami">Miami</option><option value="Miami (OH)">Miami (OH)</option><option value="Michigan">Michigan</option><option value="Michigan State">Michigan State</option><option value="Middle Tennessee">Middle Tennessee</option><option value="Minnesota">Minnesota</option><option value="Mississippi State">Mississippi State</option><option value="Missouri">Missouri</option><option value="Missouri State">Missouri State</option><option value="NC State">NC State</option><option value="Navy">Navy</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Mexico">New Mexico</option><option value="New Mexico State">New Mexico State</option><option value="North Carolina Central">North Carolina Central</option><option value="North Texas">North Texas</option><option value="Northern Illinois">Northern Illinois</option><option value="Northwestern">Northwestern</option><option value="Notre Dame">Notre Dame</option><option value="Ohio">Ohio</option><option value="Ohio State">Ohio State</option><option value="Oklahoma">Oklahoma</option><option value="Oklahoma State">Oklahoma State</option><option value="Old Dominion">Old Dominion</option><option value="Ole Miss">Ole Miss</option><option value="Oregon">Oregon</option><option value="Oregon State">Oregon State</option><option value="Penn State">Penn State</option><option value="Pittsburgh">Pittsburgh</option><option value="Purdue">Purdue</option><option value="Rice">Rice</option><option value="Robert Morris">Robert Morris</option><option value="Rutgers">Rutgers</option><option value="SMU">SMU</option><option value="Sacramento State">Sacramento State</option><option value="Sam Houston">Sam Houston</option><option value="San Diego State">San Diego State</option><option value="South Alabama">South Alabama</option><option value="South Carolina">South Carolina</option><option value="South Florida">South Florida</option><option value="Southern Miss">Southern Miss</option><option value="Stanford">Stanford</option><option value="Stonehill">Stonehill</option><option value="TCU">TCU</option><option value="Temple">Temple</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Texas A&amp;M">Texas A&M</option><option value="Texas State">Texas State</option><option value="Texas Tech">Texas Tech</option><option value="Toledo">Toledo</option><option value="Troy">Troy</option><option value="Tulane">Tulane</option><option value="Tulsa">Tulsa</option><option value="UAB">UAB</option><option value="UCF">UCF</option><option value="UCLA">UCLA</option><option value="UConn">UConn</option><option value="UL Monroe">UL Monroe</option><option value="UNLV">UNLV</option><option value="USC">USC</option><option value="UTEP">UTEP</option><option value="UTSA">UTSA</option><option value="Utah">Utah</option><option value="Utah State">Utah State</option><option value="Vanderbilt">Vanderbilt</option><option value="Virginia">Virginia</option><option value="Virginia Tech">Virginia Tech</option><option value="Wake Forest">Wake Forest</option><option value="Washington">Washington</option><option value="Washington State">Washington State</option><option value="West Virginia">West Virginia</option><option value="Western Kentucky">Western Kentucky</option><option value="Western Michigan">Western Michigan</option><option value="William &amp; Mary">William & Mary</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option></select></label>
       <label>Conference <select id="conf-filter"><option value="">All Conferences</option><option value="ACC">ACC</option><option value="American Athletic">American Athletic</option><option value="Big 12">Big 12</option><option value="Big Ten">Big Ten</option><option value="Conference USA">Conference USA</option><option value="FBS Independents">FBS Independents</option><option value="MEAC">MEAC</option><option value="Mid-American">Mid-American</option><option value="Mountain West">Mountain West</option><option value="NEC">NEC</option><option value="OVC">OVC</option><option value="Pac-12">Pac-12</option><option value="Patriot">Patriot</option><option value="SEC">SEC</option><option value="Southland">Southland</option><option value="Sun Belt">Sun Belt</option><option value="UAC">UAC</option></select></label>
       <label class="checkbox-label"><input type="checkbox" id="top25-filter"> Top 25 Only</label>
       <span id="filter-count" class="filter-count"></span>
     </div>
     <p id="filter-empty" class="empty" style="display:none">No games match this filter.</p>
-    <div id="upcoming-list"><details class="week-group" open><summary><span class="week-title">2026 Week 4</span><span class="week-record">69 games</span></summary><div class="week-cards">
+    <div id="upcoming-list"><details class="week-group" open><summary><span class="week-title">2026 Week 4</span><span class="week-record">70 games</span></summary><div class="week-cards">
+    <div class="card" data-teams="Temple|Army" data-confs="American Athletic|American Athletic" data-ranked="0">
+      <div class="matchup">Army @ Temple</div>
+      <div class="kickoff">Fri Sep 25, 4:00 PM EDT</div>
+      <div class="prediction-line">Model: Temple by -3.3 (39% win prob) &middot; Market: Army by 3.0</div>
+      <div class="pick-line">Moneyline pick: <strong>Army</strong> (61% win prob) <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Army -3.0 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
+      
+      <div class="wager-line">No bet &middot; cover probability 47% doesn&rsquo;t clear the 52.4% break-even at this price</div>
+      <div class="tldr">Army -3 is a virtual coin flip against the spread -- the model's edge is a quarter of a point, and the 47.5% cover probability sits below break-even, so it's a pass.</div>
+      <ul class="bullets"><li>Pre-game ELO gives Temple a 40% win probability, keeping Army as only a modest favorite.</li><li>Temple has faced tougher recent competition than Army (average opponent rating +9.2 vs -9.6).</li><li>Once schedule strength is factored in, Temple actually projects ahead of Army by 2.3 points of opponent-adjusted margin (Temple +11.3 vs Army +9.0).</li><li>Army has the better recent scoring margin over the last four games (Temple -5.5 vs Army 19.0).</li><li>Army has covered the spread in 80% of its last five games.</li></ul>
+      <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">30%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">43%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">45%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">48%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">37%</span></div></details>
+      
+    </div>
     <div class="card" data-teams="Rutgers|Howard" data-confs="Big Ten|MEAC" data-ranked="0">
       <div class="matchup">Howard @ Rutgers</div>
       <div class="kickoff">Fri Sep 25, 7:00 PM EDT</div>
@@ -209,7 +223,7 @@
       <div class="kickoff">Fri Sep 25, 7:00 PM EDT</div>
       <div class="prediction-line">Model: UAB by -12.4 (26% win prob) &middot; Market: Navy by 11.5</div>
       <div class="pick-line">Moneyline pick: <strong>Navy</strong> (74% win prob) <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Navy -11.5 <span class="odds">(-110)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Navy -11.5 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 48% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">Navy -11.5 is essentially a coin flip against the number -- the model's edge is under a point, and the 48% cover probability falls below the -110 break-even, so it's a pass.</div>
@@ -248,7 +262,7 @@
       <div class="kickoff">Sat Sep 26, 12:00 PM EDT</div>
       <div class="prediction-line">Model: Tennessee by -0.9 (45% win prob) &middot; Market: Texas by 5.5</div>
       <div class="pick-line">Moneyline pick: <strong>Texas</strong> (55% win prob) <span class="tier tier-low">LOW Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Tennessee +5.5 <span class="odds">(-110)</span></strong> <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Tennessee +5.5 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 52% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">Tennessee +5.5 shows a 4.6-point model edge over the market line, a medium-tier signal, but the 52% cover probability doesn't clear the -110 break-even, so it's a pass.</div>
@@ -300,7 +314,7 @@
       <div class="kickoff">Sat Sep 26, 12:00 PM EDT</div>
       <div class="prediction-line">Model: Boston College by -12.8 (21% win prob) &middot; Market: Virginia Tech by 14.0</div>
       <div class="pick-line">Moneyline pick: <strong>Virginia Tech</strong> (79% win prob) <span class="tier tier-high">HIGH Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Boston College +14.0 <span class="odds">(-110)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Boston College +14.0 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 48% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">Boston College +14 is a low-conviction lean -- the model's edge is just 1.2 points, and the 48% cover probability falls short of the -110 break-even, so it's a pass.</div>
@@ -313,7 +327,7 @@
       <div class="kickoff">Sat Sep 26, 12:00 PM EDT</div>
       <div class="prediction-line">Model: Louisville by +11.0 (80% win prob) &middot; Market: Louisville by 13.5</div>
       <div class="pick-line">Moneyline pick: <strong>Louisville</strong> (80% win prob) <span class="tier tier-high">HIGH Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Wake Forest +13.5 <span class="odds">(-110)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Wake Forest +13.5 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 50% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">Wake Forest +13.5 is a low-conviction fade -- the model's projected margin (11.0) is only 2.5 points softer than the market's 13.5-point line, and the 49.8% cover probability sits below break-even, so it's a pass.</div>
@@ -378,7 +392,7 @@
       <div class="kickoff">Sat Sep 26, 12:00 PM EDT</div>
       <div class="prediction-line">Model: Kent State by -0.3 (66% win prob) &middot; Market: Kent State by 4.5</div>
       <div class="pick-line">Moneyline pick: <strong>Kent State</strong> (66% win prob) <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Ball State +4.5 <span class="odds">(-110)</span></strong> <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Ball State +4.5 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 52% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">Ball State +4.5 is a medium-conviction lean in a game the model sees as a near pick'em (Kent State -0.3), but the 52.2% cover probability lands just short of the -110 break-even, so it's a pass.</div>
@@ -391,7 +405,7 @@
       <div class="kickoff">Sat Sep 26, 12:45 PM EDT</div>
       <div class="prediction-line">Model: Kentucky by +15.3 (81% win prob) &middot; Market: Kentucky by 19.5</div>
       <div class="pick-line">Moneyline pick: <strong>Kentucky</strong> (81% win prob) <span class="tier tier-high">HIGH Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>South Alabama +19.5 <span class="odds">(-109)</span></strong> <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>South Alabama +19.5 <span class="odds">(-109)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 52% doesn&rsquo;t clear the 52.2% break-even at this price</div>
       <div class="tldr">South Alabama +19.5 is a medium-conviction lean on a big number -- the model projects a smaller 15.3-point Kentucky win, 4.2 points off the market's 19.5-point line, but the 51.6% cover probability falls just short of the -109 break-even, so it's a pass.</div>
@@ -430,7 +444,7 @@
       <div class="kickoff">Sat Sep 26, 2:00 PM EDT</div>
       <div class="prediction-line">Model: Purdue by -30.2 (12% win prob) &middot; Market: Notre Dame by 27.5</div>
       <div class="pick-line">Moneyline pick: <strong>Notre Dame</strong> (88% win prob) <span class="tier tier-high">HIGH Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Notre Dame -27.5 <span class="odds">(-114)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Notre Dame -27.5 <span class="odds">(-114)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 50% doesn&rsquo;t clear the 53.3% break-even at this price</div>
       <div class="tldr">Notre Dame -27.5 is essentially a coin flip against the number -- the model's edge is only 2.7 points, and the resulting 50% cover probability doesn't clear the -114 break-even, so it's a pass.</div>
@@ -469,7 +483,7 @@
       <div class="kickoff">Sat Sep 26, 3:00 PM EDT</div>
       <div class="prediction-line">Model: Wyoming by -2.0 (42% win prob) &middot; Market: Hawai'i by 3.0</div>
       <div class="pick-line">Moneyline pick: <strong>Hawai'i</strong> (58% win prob) <span class="tier tier-low">LOW Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Wyoming +3.0 <span class="odds">(-110)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Wyoming +3.0 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 48% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">Wyoming getting 3 points off Hawai'i carries the model's lean, but at just a 1-point edge and a 48% cover probability, this grades as a pass at low confidence.</div>
@@ -521,7 +535,7 @@
       <div class="kickoff">Sat Sep 26, 3:30 PM EDT</div>
       <div class="prediction-line">Model: Iowa State by -8.0 (28% win prob) &middot; Market: Utah by 7.8</div>
       <div class="pick-line">Moneyline pick: <strong>Utah</strong> (72% win prob) <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Utah -7.8 <span class="odds">(-111)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Utah -7.8 <span class="odds">(-111)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 47% doesn&rsquo;t clear the 52.6% break-even at this price</div>
       <div class="tldr">Utah giving 7.75 barely clears the model's number, and with cover probability at 47%, this grades as a pass despite Utah projecting as the far better team.</div>
@@ -547,7 +561,7 @@
       <div class="kickoff">Sat Sep 26, 3:30 PM EDT</div>
       <div class="prediction-line">Model: Michigan by +1.4 (54% win prob) &middot; Market: Michigan by 5.5</div>
       <div class="pick-line">Moneyline pick: <strong>Michigan</strong> (54% win prob) <span class="tier tier-low">LOW Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Iowa +5.5 <span class="odds">(-110)</span></strong> <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Iowa +5.5 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 52% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">Iowa getting 5.5 is a medium-confidence lean built on a real underlying-margin edge, but a 52% cover probability keeps this just short of a playable number.</div>
@@ -586,7 +600,7 @@
       <div class="kickoff">Sat Sep 26, 3:30 PM EDT</div>
       <div class="prediction-line">Model: New Mexico State by -8.3 (27% win prob) &middot; Market: New Mexico by 12.8</div>
       <div class="pick-line">Moneyline pick: <strong>New Mexico</strong> (73% win prob) <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>New Mexico State +12.8 <span class="odds">(-110)</span></strong> <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>New Mexico State +12.8 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 52% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">New Mexico State getting 12.75 at home is a medium-confidence lean off the extra rest, but at a 52% cover probability this still grades as a pass.</div>
@@ -599,7 +613,7 @@
       <div class="kickoff">Sat Sep 26, 3:30 PM EDT</div>
       <div class="prediction-line">Model: Buffalo by +30.2 (90% win prob) &middot; Market: Buffalo by 28.5</div>
       <div class="pick-line">Moneyline pick: <strong>Buffalo</strong> (90% win prob) <span class="tier tier-high">HIGH Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Buffalo -28.5 <span class="odds">(-115)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Buffalo -28.5 <span class="odds">(-115)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       <div class="callout">Robert Morris has only 8 tracked games in our database (a recent FBS entrant, or a rarely-tracked crossover opponent -- our data only covers games involving an FBS team) -- its recent-form stats are a small, possibly unrepresentative sample, likely contributing to the 1.7-point gap between the model's margin and the market's line.</div>
       <div class="wager-line">No bet &middot; cover probability 49% doesn&rsquo;t clear the 53.5% break-even at this price</div>
       <div class="tldr">Pick is Buffalo -28.5 — the model actually agrees with the market here, a 1.7-point edge favoring the favorite, but the 49% cover probability falls just short of the -115 break-even, so it's a pass.</div>
@@ -638,7 +652,7 @@
       <div class="kickoff">Sat Sep 26, 4:00 PM EDT</div>
       <div class="prediction-line">Model: Georgia Southern by -15.4 (24% win prob) &middot; Market: Houston by 18.8</div>
       <div class="pick-line">Moneyline pick: <strong>Houston</strong> (76% win prob) <span class="tier tier-high">HIGH Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Georgia Southern +18.8 <span class="odds">(-110)</span></strong> <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Georgia Southern +18.8 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 51% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">Georgia Southern getting 18.75 as a heavy home underdog is a medium-confidence lean, but at a 51% cover probability this grades as a pass.</div>
@@ -651,7 +665,7 @@
       <div class="kickoff">Sat Sep 26, 4:00 PM EDT</div>
       <div class="prediction-line">Model: East Carolina by +37.5 (92% win prob) &middot; Market: East Carolina by 35.5</div>
       <div class="pick-line">Moneyline pick: <strong>East Carolina</strong> (92% win prob) <span class="tier tier-high">HIGH Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>East Carolina -35.5 <span class="odds">(-125)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>East Carolina -35.5 <span class="odds">(-125)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       <div class="callout">North Carolina Central has only 14 tracked games in our database (a recent FBS entrant, or a rarely-tracked crossover opponent -- our data only covers games involving an FBS team) -- its recent-form stats are a small, possibly unrepresentative sample, likely contributing to the 2.0-point gap between the model's margin and the market's line.</div>
       <div class="wager-line">No bet &middot; cover probability 49% doesn&rsquo;t clear the 55.6% break-even at this price</div>
       <div class="tldr">Pick is East Carolina -35.5 — the model sides with the favorite by a slim 2-point edge, but at -125 odds the 49.3% cover probability doesn't clear the 55.6% break-even, so it's a pass.</div>
@@ -677,7 +691,7 @@
       <div class="kickoff">Sat Sep 26, 5:00 PM EDT</div>
       <div class="prediction-line">Model: Michigan State by -5.7 (38% win prob) &middot; Market: Nebraska by 5.5</div>
       <div class="pick-line">Moneyline pick: <strong>Nebraska</strong> (62% win prob) <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Nebraska -5.5 <span class="odds">(-110)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Nebraska -5.5 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 47% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">Nebraska getting 5.5 on the road is a low-confidence lean in an otherwise even matchup, and at a 47% cover probability this grades as a pass.</div>
@@ -690,7 +704,7 @@
       <div class="kickoff">Sat Sep 26, 5:00 PM EDT</div>
       <div class="prediction-line">Model: Penn State by +12.8 (83% win prob) &middot; Market: Penn State by 9.8</div>
       <div class="pick-line">Moneyline pick: <strong>Penn State</strong> (83% win prob) <span class="tier tier-high">HIGH Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Penn State -9.8 <span class="odds">(-108)</span></strong> <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Penn State -9.8 <span class="odds">(-108)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 50% doesn&rsquo;t clear the 51.9% break-even at this price</div>
       <div class="tldr">Penn State laying 9.75 is a medium-confidence lean off a large talent gap, but at a 50% cover probability this grades as a pass.</div>
@@ -703,7 +717,7 @@
       <div class="kickoff">Sat Sep 26, 5:00 PM EDT</div>
       <div class="prediction-line">Model: Bowling Green by -17.0 (17% win prob) &middot; Market: South Florida by 17.5</div>
       <div class="pick-line">Moneyline pick: <strong>South Florida</strong> (83% win prob) <span class="tier tier-high">HIGH Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Bowling Green +17.5 <span class="odds">(-110)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Bowling Green +17.5 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 48% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">Bowling Green getting 17.5 at home is barely a lean, and with cover probability at 48%, this grades as a pass despite the huge underlying gap favoring South Florida.</div>
@@ -716,7 +730,7 @@
       <div class="kickoff">Sat Sep 26, 6:00 PM EDT</div>
       <div class="prediction-line">Model: Virginia by +15.1 (83% win prob) &middot; Market: Virginia by 19.5</div>
       <div class="pick-line">Moneyline pick: <strong>Virginia</strong> (83% win prob) <span class="tier tier-high">HIGH Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Delaware +19.5 <span class="odds">(-110)</span></strong> <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Delaware +19.5 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 52% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">Delaware getting 19.5 is a medium-confidence lean built on a perfect recent against-the-spread record, but a 52% cover probability keeps this just below a playable number.</div>
@@ -755,7 +769,7 @@
       <div class="kickoff">Sat Sep 26, 6:00 PM EDT</div>
       <div class="prediction-line">Model: Old Dominion by -8.2 (26% win prob) &middot; Market: James Madison by 6.0</div>
       <div class="pick-line">Moneyline pick: <strong>James Madison</strong> (74% win prob) <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>James Madison -6.0 <span class="odds">(-110)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>James Madison -6.0 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 49% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">James Madison giving 6 on the road is a low-confidence lean, and with cover probability at 49%, this grades as a pass despite a strong recent history against Old Dominion.</div>
@@ -794,7 +808,7 @@
       <div class="kickoff">Sat Sep 26, 7:00 PM EDT</div>
       <div class="prediction-line">Model: Alabama by +11.1 (82% win prob) &middot; Market: Alabama by 13.5</div>
       <div class="pick-line">Moneyline pick: <strong>Alabama</strong> (82% win prob) <span class="tier tier-high">HIGH Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>South Carolina +13.5 <span class="odds">(-110)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>South Carolina +13.5 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 50% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">South Carolina getting 13.5 is the lean, but the projected 2.4-point edge over the market line is too thin to clear the model's cover threshold, so this grades as no bet at low confidence.</div>
@@ -807,7 +821,7 @@
       <div class="kickoff">Sat Sep 26, 7:00 PM EDT</div>
       <div class="prediction-line">Model: Cincinnati by -7.2 (33% win prob) &middot; Market: Kansas State by 6.2</div>
       <div class="pick-line">Moneyline pick: <strong>Kansas State</strong> (67% win prob) <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Kansas State -6.2 <span class="odds">(-110)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Kansas State -6.2 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 48% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">Kansas State getting 6.25 on the road is a low-confidence lean despite a big underlying-margin edge, and at a 48% cover probability this grades as a pass.</div>
@@ -820,7 +834,7 @@
       <div class="kickoff">Sat Sep 26, 7:00 PM EDT</div>
       <div class="prediction-line">Model: West Virginia by +1.6 (65% win prob) &middot; Market: West Virginia by 2.5</div>
       <div class="pick-line">Moneyline pick: <strong>West Virginia</strong> (65% win prob) <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Oklahoma State +2.5 <span class="odds">(-110)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Oklahoma State +2.5 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 48% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">Oklahoma State getting 2.5 on the road is a low-confidence lean in a tight game, and at a 48% cover probability this grades as a pass.</div>
@@ -833,7 +847,7 @@
       <div class="kickoff">Sat Sep 26, 7:00 PM EDT</div>
       <div class="prediction-line">Model: Tulane by +18.9 (87% win prob) &middot; Market: Tulane by 18.5</div>
       <div class="pick-line">Moneyline pick: <strong>Tulane</strong> (87% win prob) <span class="tier tier-high">HIGH Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Tulane -18.5 <span class="odds">(-110)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Tulane -18.5 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 48% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">Tulane laying 18.5 is barely a lean, and at a 48% cover probability this grades as a pass despite the Green Wave projecting as the far better team.</div>
@@ -846,7 +860,7 @@
       <div class="kickoff">Sat Sep 26, 7:00 PM EDT</div>
       <div class="prediction-line">Model: Arkansas State by +5.2 (71% win prob) &middot; Market: Arkansas State by 5.8</div>
       <div class="pick-line">Moneyline pick: <strong>Arkansas State</strong> (71% win prob) <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Kennesaw State +5.8 <span class="odds">(-110)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Kennesaw State +5.8 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 48% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">Kennesaw State getting 5.75 on the road is a low-confidence lean, and at a 48% cover probability this grades as a pass.</div>
@@ -872,7 +886,7 @@
       <div class="kickoff">Sat Sep 26, 7:00 PM EDT</div>
       <div class="prediction-line">Model: Jacksonville State by +7.7 (77% win prob) &middot; Market: Jacksonville State by 7.0</div>
       <div class="pick-line">Moneyline pick: <strong>Jacksonville State</strong> (77% win prob) <span class="tier tier-high">HIGH Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Jacksonville State -7.0 <span class="odds">(-110)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Jacksonville State -7.0 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 48% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">Jacksonville State laying 7 at home is barely a lean, and at a 48% cover probability this grades as a pass despite the model still favoring the Gamecocks outright.</div>
@@ -898,7 +912,7 @@
       <div class="kickoff">Sat Sep 26, 7:30 PM EDT</div>
       <div class="prediction-line">Model: Washington State by -5.0 (28% win prob) &middot; Market: Arizona by 10.0</div>
       <div class="pick-line">Moneyline pick: <strong>Arizona</strong> (72% win prob) <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Washington State +10.0 <span class="odds">(-112)</span></strong> <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Washington State +10.0 <span class="odds">(-112)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 52% doesn&rsquo;t clear the 52.8% break-even at this price</div>
       <div class="tldr">Washington State at home is a medium-confidence lean, projected to beat the 10-point number by 5, but a 52% cover probability sits just below the price's break-even.</div>
@@ -911,7 +925,7 @@
       <div class="kickoff">Sat Sep 26, 7:30 PM EDT</div>
       <div class="prediction-line">Model: USC by +1.1 (59% win prob) &middot; Market: Oregon by 3.0</div>
       <div class="pick-line">Moneyline pick: <strong>USC</strong> (59% win prob) <span class="tier tier-low">LOW Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>USC +3.0 <span class="odds">(-110)</span></strong> <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>USC +3.0 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 52% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">USC at home is a medium-confidence lean, with the model's projected margin narrowly clearing the 3-point number on a 52% cover probability that falls just short of a recommended stake.</div>
@@ -950,7 +964,7 @@
       <div class="kickoff">Sat Sep 26, 7:30 PM EDT</div>
       <div class="prediction-line">Model: NC State by +9.4 (71% win prob) &middot; Market: NC State by 14.0</div>
       <div class="pick-line">Moneyline pick: <strong>NC State</strong> (71% win prob) <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>App State +14.0 <span class="odds">(-110)</span></strong> <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>App State +14.0 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 52% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">App State getting 14 on the road is a medium-confidence lean off a real adjusted-margin edge, but a 52% cover probability sits just below the price's break-even.</div>
@@ -963,7 +977,7 @@
       <div class="kickoff">Sat Sep 26, 7:45 PM EDT</div>
       <div class="prediction-line">Model: Mississippi State by +4.2 (63% win prob) &middot; Market: Mississippi State by 6.5</div>
       <div class="pick-line">Moneyline pick: <strong>Mississippi State</strong> (63% win prob) <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Missouri +6.5 <span class="odds">(-108)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Missouri +6.5 <span class="odds">(-108)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 50% doesn&rsquo;t clear the 51.9% break-even at this price</div>
       <div class="tldr">Missouri getting 6.5 on the road is a low-confidence lean, and at a 50% cover probability this grades as a pass.</div>
@@ -1002,7 +1016,7 @@
       <div class="kickoff">Sat Sep 26, 9:00 PM EDT</div>
       <div class="prediction-line">Model: SMU by +34.9 (90% win prob) &middot; Market: SMU by 34.8</div>
       <div class="pick-line">Moneyline pick: <strong>SMU</strong> (90% win prob) <span class="tier tier-high">HIGH Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>SMU -34.8 <span class="odds">(-110)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>SMU -34.8 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 47% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">SMU laying 34.75 barely clears the model's number, and at a 47% cover probability this grades as a pass despite the Mustangs projecting as the far better team.</div>
@@ -1015,7 +1029,7 @@
       <div class="kickoff">Sat Sep 26, 9:00 PM EDT</div>
       <div class="prediction-line">Model: UTEP by -6.1 (43% win prob) &middot; Market: Oregon State by 10.5</div>
       <div class="pick-line">Moneyline pick: <strong>Oregon State</strong> (57% win prob) <span class="tier tier-low">LOW Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>UTEP +10.5 <span class="odds">(-111)</span></strong> <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>UTEP +10.5 <span class="odds">(-111)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 52% doesn&rsquo;t clear the 52.6% break-even at this price</div>
       <div class="tldr">UTEP getting 10.5 at home is a medium-confidence lean, but a 52% cover probability sits just below the price's break-even.</div>
@@ -1054,7 +1068,7 @@
       <div class="kickoff">Sat Sep 26, 10:30 PM EDT</div>
       <div class="prediction-line">Model: Stanford by -5.0 (37% win prob) &middot; Market: Georgia Tech by 3.5</div>
       <div class="pick-line">Moneyline pick: <strong>Georgia Tech</strong> (63% win prob) <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Georgia Tech -3.5 <span class="odds">(-108)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Georgia Tech -3.5 <span class="odds">(-108)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 49% doesn&rsquo;t clear the 51.9% break-even at this price</div>
       <div class="tldr">Georgia Tech getting 3.5 on the road is a low-confidence lean, and at a 49% cover probability this grades as a pass.</div>
@@ -1080,7 +1094,7 @@
       <div class="kickoff">Sat Sep 26, 11:00 PM EDT</div>
       <div class="prediction-line">Model: Washington by +10.0 (78% win prob) &middot; Market: Washington by 10.0</div>
       <div class="pick-line">Moneyline pick: <strong>Washington</strong> (78% win prob) <span class="tier tier-high">HIGH Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Washington -10.0 <span class="odds">(-110)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
+      <div class="pick-line">Spread pick: <strong>Washington -10.0 <span class="odds">(-110)</span></strong> <span class="tier tier-nobet-breakeven">NO BET</span></div>
       
       <div class="wager-line">No bet &middot; cover probability 47% doesn&rsquo;t clear the 52.4% break-even at this price</div>
       <div class="tldr">Washington laying 10 at home is barely a lean, and at a 47% cover probability this grades as a pass in an otherwise even matchup by the model's own adjusted numbers.</div>
@@ -1091,20 +1105,7 @@
   </div>
 
   <div id="tab-history" class="tab-panel" hidden>
-    <details class="week-group" open><summary><span class="week-title">2026 Week 4</span><span class="week-record">ML 2-0 &middot; ATS 2-0-0</span></summary><div class="week-cards">
-    <div class="card">
-      <div class="matchup">Army @ Temple</div>
-      <div class="kickoff">Fri Sep 25, 4:00 PM EDT</div>
-      <div class="prediction-line">Model: Temple by -3.3 (39% win prob) &middot; Market: Army by 3.0</div>
-      <div class="pick-line">Moneyline pick: <strong>Army</strong> (61% win prob) <span class="tier tier-medium">MEDIUM Confidence&dagger;</span></div>
-      <div class="pick-line">Spread pick: <strong>Army -3.0 <span class="odds">(-110)</span></strong> <span class="tier tier-low">LOW Confidence&dagger;</span></div>
-      
-      
-      <div class="tldr">Army -3 is a virtual coin flip against the spread -- the model's edge is a quarter of a point, and the 47.5% cover probability sits below break-even, so it's a pass.</div>
-      <ul class="bullets"><li>Pre-game ELO gives Temple a 40% win probability, keeping Army as only a modest favorite.</li><li>Temple has faced tougher recent competition than Army (average opponent rating +9.2 vs -9.6).</li><li>Once schedule strength is factored in, Temple actually projects ahead of Army by 2.3 points of opponent-adjusted margin (Temple +11.3 vs Army +9.0).</li><li>Army has the better recent scoring margin over the last four games (Temple -5.5 vs Army 19.0).</li><li>Army has covered the spread in 80% of its last five games.</li></ul>
-      <details class="model-breakdown"><summary>Per-model breakdown (home win probability)</summary><div class="model-row"><span class="model-name">Logistic Regression</span><span class="model-prob">30%</span></div><div class="model-row"><span class="model-name">Random Forest</span><span class="model-prob">43%</span></div><div class="model-row"><span class="model-name">XGBoost</span><span class="model-prob">45%</span></div><div class="model-row"><span class="model-name">LightGBM</span><span class="model-prob">48%</span></div><div class="model-row"><span class="model-name">Extra Trees</span><span class="model-prob">37%</span></div></details>
-      <div class="result-line">Final: Temple 17 - 21 Army &mdash; moneyline pick was correct, spread pick covered the spread</div>
-    </div>
+    <details class="week-group" open><summary><span class="week-title">2026 Week 4</span><span class="week-record">ML 1-0 &middot; ATS 1-0-0</span></summary><div class="week-cards">
     <div class="card">
       <div class="matchup">Liberty @ Coastal Carolina</div>
       <div class="kickoff">Thu Sep 24, 7:30 PM EDT</div>
@@ -4560,7 +4561,7 @@
     win probability against any opponent -- that conversion, not the raw rating number, is what actually
     drives the model. Home teams get a flat +65 rating bonus before that calculation, an unvalidated
     placeholder rather than a measured home-field value, same caveat as the confidence tiers above.</p>
-    <p>Generated 2026-09-26 01:33 UTC.</p>
+    <p>Generated 2026-09-26 03:12 UTC.</p>
   </footer>
 </div>
 <script>
