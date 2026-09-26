@@ -965,7 +965,7 @@ def build_html(upcoming: list[dict], results: list[dict], summary: dict, bankrol
   .tier-high {{ background: rgba(61,220,132,0.15); color: var(--green); }}
   .tier-medium {{ background: rgba(255,184,79,0.15); color: var(--amber); }}
   .tier-low {{ background: rgba(154,161,172,0.15); color: var(--text-dim); }}
-  .tier-nobet {{ background: rgba(255,97,97,0.15); color: var(--red); }}
+  .tier-nobet {{ background: rgba(255,97,97,0.15); color: var(--red); letter-spacing: 0.03em; }}
   .tier-nobet-breakeven {{ background: rgba(154,161,172,0.18); color: var(--text-dim); letter-spacing: 0.03em; }}
   .wager-line {{ font-size: 0.85rem; color: var(--text-dim); margin-bottom: 0.6rem; }}
   .callout {{ font-size: 0.85rem; color: var(--amber); background: rgba(255,184,79,0.1); border: 1px solid rgba(255,184,79,0.25); border-radius: 8px; padding: 0.6rem 0.8rem; margin-bottom: 0.6rem; }}
