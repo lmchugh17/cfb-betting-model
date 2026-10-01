@@ -34,6 +34,30 @@ CREATE TABLE IF NOT EXISTS ap_rankings (
     PRIMARY KEY (year, week, season_type, team)
 );
 
+-- Preseason team context from CFBD, one row per (year, team). Neither comes from game
+-- results, which is the point: early in a season SRS/ELO are mostly last year's ratings
+-- regressed to the mean, and the model under-predicted early-season mismatches by ~6-7 pts
+-- against the market (2025 and 2026 weeks 1-4, |spread| >= 21). talent = 247Sports team
+-- talent composite (CFBD /talent, starts 2015). Returning production = share of last
+-- season's offensive PPA/usage that returns (CFBD /player/returning, offense only).
+CREATE TABLE IF NOT EXISTS team_talent (
+    year INTEGER NOT NULL,
+    team TEXT NOT NULL,
+    talent REAL,
+    PRIMARY KEY (year, team)
+);
+
+CREATE TABLE IF NOT EXISTS returning_production (
+    year INTEGER NOT NULL,
+    team TEXT NOT NULL,
+    percent_ppa REAL,
+    percent_passing_ppa REAL,
+    percent_rushing_ppa REAL,
+    percent_receiving_ppa REAL,
+    usage REAL,
+    PRIMARY KEY (year, team)
+);
+
 CREATE TABLE IF NOT EXISTS venues (
     id INTEGER PRIMARY KEY,
     name TEXT,
