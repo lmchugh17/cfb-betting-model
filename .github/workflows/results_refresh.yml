@@ -37,12 +37,30 @@ name: Results refresh
 # gave it, and the true noise days (Tue/Mon) drop from 6 checks/day to 2 instead of
 # vanishing entirely.
 #
-# All times below in EDT; GitHub cron is fixed UTC and doesn't track DST, so these
-# drift an hour earlier in US-clock terms once EST starts in November -- same caveat
-# as weekly_data_pull.yml. A UTC day-of-week that differs from the US-time day label
-# (e.g. Friday's late checkpoints landing on UTC-Saturday) is correct, not a bug --
-# both of a light day's checkpoints land on the FOLLOWING UTC calendar day since both
-# are late-night ET times (11pm and 3am).
+# RE-TIMED 2026-09-30 off measured game END times plus measured scheduler delay, not
+# kickoff clustering. End times: ESPN play-by-play last-play wallclock, 2026 weeks 1-4,
+# 325 games -- median length 3h26m, p90 3h59m. p90 end time (ET) by window: Sat noon
+# 4:30pm, Sat afternoon 8:23pm, Sat evening 11:26pm, Sat late 2:27am, Thu/Fri evening
+# 11:36pm-12:14am. Scheduler delay: a 1-week probe (2026-09-21..27, 303/303 slots ran)
+# measured median start delay by UTC hour -- ~3.1h at 18 UTC, ~2.3h at 22 UTC, ~4.7h at
+# 00 UTC, ~5.4h at 02 UTC. So each cron below is set to where its run actually LANDS,
+# shortly after a window's p90 end (EDT):
+#   18:13 UTC -> lands ~5:20pm   (Sat noon window)
+#   22:43 UTC -> lands ~9:00pm   (Sat afternoon window)
+#   00:13 UTC -> lands ~12:55am  (evening windows, every night -- Sat evening is the
+#                                 biggest window and previously waited until ~4am)
+#   02:13 UTC -> lands ~3:35am   (late/West-Coast window, every night)
+# No slot can land between ~10pm and ~12:50am EDT: anything scheduled at 23 UTC lands
+# ~1:30-2am UTC, and the delay jumps to ~4.7h at 00 UTC. Same 20 runs/week as the
+# 09-11 tapered design; light days (Mon-Thu) keep their 2 nightly checkpoints.
+# Fri/Sat/Sun get the 2 extra daytime ones.
+#
+# DST: GitHub cron is fixed UTC, so every slot is listed twice -- EDT months (8-10) and
+# EST months (11-12,1) one hour later -- so ET landing times hold across the 2026-11-01
+# switch. Open question: whether the delay curve tracks UTC or US-local load; re-check
+# run start times after the first EST weekend (2026-11-07/08).
+# A UTC day-of-week that differs from the ET day (the 00:13/02:13 runs cover the PREVIOUS
+# ET evening) is correct, not a bug.
 #
 # Minute offset to :13/:43, never :00/:30 -- GitHub Actions explicitly documents that
 # scheduled workflows can be delayed or dropped during high-load periods, and "high
@@ -56,33 +74,17 @@ name: Results refresh
 # boundary, so it's listed as two pieces, "8-12,1" -- same 6 months either way.
 on:
   schedule:
-    # Heavy tier -- Friday
-    - cron: "43 19 * 8-12,1 5"
-    - cron: "13 23 * 8-12,1 5"
-    - cron: "43 2 * 8-12,1 6"
-    - cron: "13 6 * 8-12,1 6"
-    # Heavy tier -- Saturday
-    - cron: "43 19 * 8-12,1 6"
-    - cron: "13 23 * 8-12,1 6"
-    - cron: "43 2 * 8-12,1 0"
-    - cron: "13 6 * 8-12,1 0"
-    # Heavy tier -- Sunday
-    - cron: "43 19 * 8-12,1 0"
-    - cron: "13 23 * 8-12,1 0"
-    - cron: "43 2 * 8-12,1 1"
-    - cron: "13 6 * 8-12,1 1"
-    # Light tier -- Monday (both checkpoints land UTC-Tuesday, late-night ET times)
-    - cron: "13 3 * 8-12,1 2"
-    - cron: "13 7 * 8-12,1 2"
-    # Light tier -- Tuesday (both land UTC-Wednesday)
-    - cron: "13 3 * 8-12,1 3"
-    - cron: "13 7 * 8-12,1 3"
-    # Light tier -- Wednesday (both land UTC-Thursday)
-    - cron: "13 3 * 8-12,1 4"
-    - cron: "13 7 * 8-12,1 4"
-    # Light tier -- Thursday (both land UTC-Friday)
-    - cron: "13 3 * 8-12,1 5"
-    - cron: "13 7 * 8-12,1 5"
+    # EDT (Aug-Oct): daytime checkpoints, Fri/Sat/Sun only (UTC day = ET day)
+    - cron: "13 18 * 8-10 0,5,6"
+    - cron: "43 22 * 8-10 0,5,6"
+    # EDT: nightly checkpoints, every day (cover the previous ET evening/late games)
+    - cron: "13 0 * 8-10 *"
+    - cron: "13 2 * 8-10 *"
+    # EST (Nov-Jan): same ET landing times, one hour later in UTC
+    - cron: "13 19 * 11-12,1 0,5,6"
+    - cron: "43 23 * 11-12,1 0,5,6"
+    - cron: "13 1 * 11-12,1 *"
+    - cron: "13 3 * 11-12,1 *"
   workflow_dispatch: {}
 
 permissions:
