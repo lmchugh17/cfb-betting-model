@@ -175,38 +175,34 @@ def fetch_results(conn) -> list[dict]:
 
 
 def fetch_ap_rankings(conn) -> dict:
-    """{team: [(chrono_key, rank), ...]}, sorted ascending by chrono_key -- one entry per
-    week that team actually appeared in the AP poll. _ranked_name does a "most recent
-    poll at or before this game's own week" lookup against this, so a team's rank
-    carries forward from its last known appearance until a fresher poll is pulled,
-    rather than flickering to unranked every week a new poll hasn't landed yet (CFBD
-    itself often lags a few days behind the real Sunday release, and results_refresh.yml
-    only checks for a new poll a few times a week -- this is expected, not a bug to work
-    around upstream, so the display layer carries forward instead). chrono_key orders
-    regular season before postseason within a year (season_type alone doesn't sort
-    correctly against week -- postseason week 1 is chronologically AFTER every regular
-    week, not before regular week 2)."""
+    """{chrono_key: {team: rank}}, one entry per AP poll pulled. _ranked_name looks up the
+    most recent poll at or before this game's own week, so ranks carry forward until a
+    fresher poll is pulled, rather than flickering to unranked every week a new poll hasn't
+    landed yet (CFBD itself often lags a few days behind the real Sunday release, and
+    results_refresh.yml only checks for a new poll a few times a week -- this is expected,
+    not a bug to work around upstream, so the display layer carries forward instead).
+    Carry-forward is per POLL, not per team: a team missing from that poll is unranked
+    (an earlier per-team version kept Virginia at No. 25 for weeks after it dropped out).
+    chrono_key orders regular season before postseason within a year (season_type alone
+    doesn't sort correctly against week -- postseason week 1 is chronologically AFTER every
+    regular week, not before regular week 2)."""
     rows = conn.execute("SELECT year, week, season_type, team, rank FROM ap_rankings").fetchall()
-    by_team = defaultdict(list)
+    polls = defaultdict(dict)
     for year, week, season_type, team, rank in rows:
         chrono = (year, 0 if season_type == "regular" else 1, week)
-        by_team[team].append((chrono, rank))
-    for team, history in by_team.items():
-        history.sort(key=lambda h: h[0])
-    return dict(by_team)
+        polls[chrono][team] = rank
+    return dict(sorted(polls.items()))
 
 
 def _ranked_name(team: str, year, week, season_type, rankings: dict) -> str:
-    history = rankings.get(team)
-    if not history:
-        return team
     chrono = (year, 0 if season_type == "regular" else 1, week)
-    rank = None
-    for c, r in history:
+    poll = None
+    for c, teams in rankings.items():
         if c <= chrono:
-            rank = r
+            poll = teams
         else:
             break
+    rank = poll.get(team) if poll else None
     return f"No. {rank} {team}" if rank else team
 
 
