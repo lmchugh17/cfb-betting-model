@@ -96319,3 +96319,449 @@ c4db3412210ed8e1045807c73f69b377,2026-10-10T17:47:14Z,2026-10-11T02:30:00Z,Fresn
 2bbbf3488a5d57c9c13ae578bad17a9d,2026-10-12T21:42:27Z,2026-10-15T00:00:00Z,Sam Houston State Bearkats,Western Kentucky Hilltoppers,2534,98,bovada,spreads,Western Kentucky Hilltoppers,-110.0,-1.0
 2bbbf3488a5d57c9c13ae578bad17a9d,2026-10-12T21:42:27Z,2026-10-15T00:00:00Z,Sam Houston State Bearkats,Western Kentucky Hilltoppers,2534,98,bovada,totals,Over,-110.0,53.0
 2bbbf3488a5d57c9c13ae578bad17a9d,2026-10-12T21:42:27Z,2026-10-15T00:00:00Z,Sam Houston State Bearkats,Western Kentucky Hilltoppers,2534,98,bovada,totals,Under,-110.0,53.0
+f00195614a0c305207222ba2044a9c24,2026-10-08T19:15:15Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,h2h,Colorado State Rams,330.0,
+f00195614a0c305207222ba2044a9c24,2026-10-08T19:15:15Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,h2h,Texas State Bobcats,-430.0,
+f00195614a0c305207222ba2044a9c24,2026-10-08T19:15:15Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,spreads,Colorado State Rams,-114.0,11.5
+f00195614a0c305207222ba2044a9c24,2026-10-08T19:15:15Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,spreads,Texas State Bobcats,-106.0,-11.5
+f00195614a0c305207222ba2044a9c24,2026-10-08T19:15:15Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,totals,Over,-110.0,64.5
+f00195614a0c305207222ba2044a9c24,2026-10-08T19:15:15Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,totals,Under,-110.0,64.5
+f00195614a0c305207222ba2044a9c24,2026-10-08T19:15:15Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,mybookieag,h2h,Colorado State Rams,340.0,
+f00195614a0c305207222ba2044a9c24,2026-10-08T19:15:15Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,mybookieag,h2h,Texas State Bobcats,-469.0,
+f00195614a0c305207222ba2044a9c24,2026-10-09T18:45:23Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,h2h,Colorado State Rams,340.0,
+f00195614a0c305207222ba2044a9c24,2026-10-09T18:45:23Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,h2h,Texas State Bobcats,-450.0,
+f00195614a0c305207222ba2044a9c24,2026-10-09T18:45:23Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,spreads,Colorado State Rams,-114.0,11.5
+f00195614a0c305207222ba2044a9c24,2026-10-09T18:45:23Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,spreads,Texas State Bobcats,-106.0,-11.5
+f00195614a0c305207222ba2044a9c24,2026-10-09T18:45:23Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,totals,Over,-112.0,65.5
+f00195614a0c305207222ba2044a9c24,2026-10-09T18:45:23Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,totals,Under,-108.0,65.5
+f00195614a0c305207222ba2044a9c24,2026-10-09T18:45:23Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,mybookieag,h2h,Colorado State Rams,350.0,
+f00195614a0c305207222ba2044a9c24,2026-10-09T18:45:23Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,mybookieag,h2h,Texas State Bobcats,-481.0,
+f00195614a0c305207222ba2044a9c24,2026-10-09T18:45:23Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,mybookieag,spreads,Colorado State Rams,-110.0,13.5
+f00195614a0c305207222ba2044a9c24,2026-10-09T18:45:23Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,mybookieag,spreads,Texas State Bobcats,-110.0,-13.5
+f00195614a0c305207222ba2044a9c24,2026-10-09T18:45:23Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,mybookieag,totals,Over,-110.0,65.5
+f00195614a0c305207222ba2044a9c24,2026-10-09T18:45:23Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,mybookieag,totals,Under,-110.0,65.5
+f00195614a0c305207222ba2044a9c24,2026-10-10T17:47:14Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,h2h,Colorado State Rams,340.0,
+f00195614a0c305207222ba2044a9c24,2026-10-10T17:47:14Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,h2h,Texas State Bobcats,-450.0,
+f00195614a0c305207222ba2044a9c24,2026-10-10T17:47:14Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,spreads,Colorado State Rams,-114.0,11.5
+f00195614a0c305207222ba2044a9c24,2026-10-10T17:47:14Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,spreads,Texas State Bobcats,-106.0,-11.5
+f00195614a0c305207222ba2044a9c24,2026-10-10T17:47:14Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,totals,Over,-112.0,65.5
+f00195614a0c305207222ba2044a9c24,2026-10-10T17:47:14Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,totals,Under,-108.0,65.5
+f00195614a0c305207222ba2044a9c24,2026-10-10T17:47:14Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,h2h,Colorado State Rams,330.0,
+f00195614a0c305207222ba2044a9c24,2026-10-10T17:47:14Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,h2h,Texas State Bobcats,-425.0,
+f00195614a0c305207222ba2044a9c24,2026-10-10T17:47:14Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,spreads,Colorado State Rams,-115.0,12.5
+f00195614a0c305207222ba2044a9c24,2026-10-10T17:47:14Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,spreads,Texas State Bobcats,-105.0,-12.5
+f00195614a0c305207222ba2044a9c24,2026-10-10T17:47:14Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,totals,Over,-110.0,67.5
+f00195614a0c305207222ba2044a9c24,2026-10-10T17:47:14Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,totals,Under,-110.0,67.5
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,fanduel,h2h,East Carolina Pirates,-220.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,fanduel,h2h,UAB Blazers,180.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,fanduel,spreads,East Carolina Pirates,-114.0,-5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,fanduel,spreads,UAB Blazers,-106.0,5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,fanduel,totals,Over,-110.0,51.5
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,fanduel,totals,Under,-110.0,51.5
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,draftkings,h2h,East Carolina Pirates,-205.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,draftkings,h2h,UAB Blazers,170.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,draftkings,spreads,East Carolina Pirates,-110.0,-5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,draftkings,spreads,UAB Blazers,-110.0,5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,draftkings,totals,Over,-110.0,51.5
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,draftkings,totals,Under,-110.0,51.5
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betonlineag,spreads,East Carolina Pirates,-118.0,-4.5
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betonlineag,spreads,UAB Blazers,-102.0,4.5
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betonlineag,totals,Over,-110.0,51.5
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betonlineag,totals,Under,-110.0,51.5
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,lowvig,spreads,East Carolina Pirates,-114.0,-4.5
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,lowvig,spreads,UAB Blazers,102.0,4.5
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,lowvig,totals,Over,-108.0,51.5
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,lowvig,totals,Under,-108.0,51.5
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betmgm,h2h,East Carolina Pirates,-210.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betmgm,h2h,UAB Blazers,175.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betmgm,spreads,East Carolina Pirates,-108.0,-5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betmgm,spreads,UAB Blazers,-110.0,5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betmgm,totals,Over,-112.0,51.5
+4bf071db691beaf54158c801a6cf093b,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betmgm,totals,Under,-105.0,51.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,fanduel,h2h,Georgia Southern Eagles,-182.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,fanduel,h2h,Old Dominion Monarchs,150.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,fanduel,spreads,Georgia Southern Eagles,-110.0,-3.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,fanduel,spreads,Old Dominion Monarchs,-110.0,3.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,fanduel,totals,Over,-115.0,48.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,fanduel,totals,Under,-104.0,48.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betrivers,h2h,Georgia Southern Eagles,-175.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betrivers,h2h,Old Dominion Monarchs,138.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betrivers,spreads,Georgia Southern Eagles,-125.0,-3.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betrivers,spreads,Old Dominion Monarchs,102.0,3.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betrivers,totals,Over,-110.0,50.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betrivers,totals,Under,-113.0,50.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betonlineag,spreads,Georgia Southern Eagles,-105.0,-4.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betonlineag,spreads,Old Dominion Monarchs,-115.0,4.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betonlineag,totals,Over,-110.0,50.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betonlineag,totals,Under,-110.0,50.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,lowvig,spreads,Georgia Southern Eagles,-101.0,-4.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,lowvig,spreads,Old Dominion Monarchs,-111.0,4.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,lowvig,totals,Over,-108.0,50.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,lowvig,totals,Under,-108.0,50.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,draftkings,h2h,Georgia Southern Eagles,-185.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,draftkings,h2h,Old Dominion Monarchs,154.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,draftkings,spreads,Georgia Southern Eagles,-110.0,-4.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,draftkings,spreads,Old Dominion Monarchs,-110.0,4.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,draftkings,totals,Over,-110.0,49.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,draftkings,totals,Under,-110.0,49.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betmgm,h2h,Georgia Southern Eagles,-185.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betmgm,h2h,Old Dominion Monarchs,150.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betmgm,spreads,Georgia Southern Eagles,-105.0,-4.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betmgm,spreads,Old Dominion Monarchs,-112.0,4.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betmgm,totals,Over,-110.0,49.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-11T18:01:58Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betmgm,totals,Under,-108.0,49.5
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,h2h,Colorado State Rams,340.0,
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,h2h,Texas State Bobcats,-450.0,
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,spreads,Colorado State Rams,-108.0,11.5
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,spreads,Texas State Bobcats,-112.0,-11.5
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,totals,Over,-110.0,67.5
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,totals,Under,-110.0,67.5
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,h2h,Colorado State Rams,350.0,
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,h2h,Texas State Bobcats,-455.0,
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,spreads,Colorado State Rams,-105.0,11.5
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,spreads,Texas State Bobcats,-115.0,-11.5
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,totals,Over,-110.0,67.5
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,totals,Under,-110.0,67.5
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betrivers,h2h,Colorado State Rams,430.0,
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betrivers,h2h,Texas State Bobcats,-625.0,
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betrivers,spreads,Colorado State Rams,-113.0,11.5
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betrivers,spreads,Texas State Bobcats,-110.0,-11.5
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betrivers,totals,Over,-110.0,67.5
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betrivers,totals,Under,-112.0,67.5
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betonlineag,spreads,Colorado State Rams,-105.0,11.5
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betonlineag,spreads,Texas State Bobcats,-115.0,-11.5
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betonlineag,totals,Over,-110.0,68.0
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betonlineag,totals,Under,-110.0,68.0
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,lowvig,spreads,Colorado State Rams,-101.0,11.5
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,lowvig,spreads,Texas State Bobcats,-111.0,-11.5
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,lowvig,totals,Over,-108.0,68.0
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,lowvig,totals,Under,-108.0,68.0
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betmgm,h2h,Colorado State Rams,350.0,
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betmgm,h2h,Texas State Bobcats,-450.0,
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betmgm,spreads,Colorado State Rams,-108.0,11.5
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betmgm,spreads,Texas State Bobcats,-110.0,-11.5
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betmgm,totals,Over,-110.0,67.5
+f00195614a0c305207222ba2044a9c24,2026-10-11T18:01:58Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betmgm,totals,Under,-108.0,67.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,fanduel,h2h,East Carolina Pirates,-194.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,fanduel,h2h,UAB Blazers,158.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,fanduel,spreads,East Carolina Pirates,-110.0,-4.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,fanduel,spreads,UAB Blazers,-110.0,4.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,fanduel,totals,Over,-112.0,47.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,fanduel,totals,Under,-108.0,47.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,draftkings,h2h,East Carolina Pirates,-192.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,draftkings,h2h,UAB Blazers,160.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,draftkings,spreads,East Carolina Pirates,-110.0,-4.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,draftkings,spreads,UAB Blazers,-110.0,4.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,draftkings,totals,Over,-110.0,47.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,draftkings,totals,Under,-110.0,47.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betonlineag,h2h,East Carolina Pirates,-185.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betonlineag,h2h,UAB Blazers,161.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betonlineag,spreads,East Carolina Pirates,-105.0,-4.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betonlineag,spreads,UAB Blazers,-115.0,4.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betonlineag,totals,Over,-125.0,46.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betonlineag,totals,Under,105.0,46.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,lowvig,h2h,East Carolina Pirates,-185.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,lowvig,h2h,UAB Blazers,161.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,lowvig,spreads,East Carolina Pirates,-101.0,-4.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,lowvig,spreads,UAB Blazers,-111.0,4.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,lowvig,totals,Over,-124.0,46.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,lowvig,totals,Under,106.0,46.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betmgm,h2h,East Carolina Pirates,-190.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betmgm,h2h,UAB Blazers,160.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betmgm,spreads,East Carolina Pirates,-108.0,-4.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betmgm,spreads,UAB Blazers,-110.0,4.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betmgm,totals,Over,-110.0,47.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betmgm,totals,Under,-108.0,47.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betrivers,h2h,East Carolina Pirates,-205.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betrivers,h2h,UAB Blazers,163.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betrivers,spreads,East Carolina Pirates,-110.0,-5.0
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betrivers,spreads,UAB Blazers,-113.0,5.0
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betrivers,totals,Over,-107.0,47.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betrivers,totals,Under,-117.0,47.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,mybookieag,h2h,East Carolina Pirates,-212.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,mybookieag,h2h,UAB Blazers,169.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,mybookieag,spreads,East Carolina Pirates,-110.0,-4.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,mybookieag,spreads,UAB Blazers,-110.0,4.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,mybookieag,totals,Over,-110.0,47.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,mybookieag,totals,Under,-110.0,47.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betus,h2h,East Carolina Pirates,-185.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betus,h2h,UAB Blazers,159.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betus,spreads,East Carolina Pirates,-110.0,-4.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betus,spreads,UAB Blazers,-110.0,4.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betus,totals,Over,-110.0,47.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betus,totals,Under,-110.0,47.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,bovada,h2h,East Carolina Pirates,-185.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,bovada,h2h,UAB Blazers,160.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,bovada,spreads,East Carolina Pirates,-110.0,-4.0
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,bovada,spreads,UAB Blazers,-110.0,4.0
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,bovada,totals,Over,-115.0,47.5
+4bf071db691beaf54158c801a6cf093b,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,bovada,totals,Under,-105.0,47.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,fanduel,h2h,Georgia Southern Eagles,-182.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,fanduel,h2h,Old Dominion Monarchs,150.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,fanduel,spreads,Georgia Southern Eagles,-110.0,-3.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,fanduel,spreads,Old Dominion Monarchs,-110.0,3.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,fanduel,totals,Over,-110.0,47.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,fanduel,totals,Under,-110.0,47.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betrivers,h2h,Georgia Southern Eagles,-167.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betrivers,h2h,Old Dominion Monarchs,135.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betrivers,spreads,Georgia Southern Eagles,-110.0,-3.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betrivers,spreads,Old Dominion Monarchs,-113.0,3.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betrivers,totals,Over,102.0,47.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betrivers,totals,Under,-125.0,47.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betonlineag,h2h,Georgia Southern Eagles,-167.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betonlineag,h2h,Old Dominion Monarchs,147.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betonlineag,spreads,Georgia Southern Eagles,-107.0,-4.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betonlineag,spreads,Old Dominion Monarchs,-113.0,4.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betonlineag,totals,Over,-104.0,48.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betonlineag,totals,Under,-116.0,48.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,lowvig,h2h,Georgia Southern Eagles,-167.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,lowvig,h2h,Old Dominion Monarchs,147.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,lowvig,spreads,Georgia Southern Eagles,-103.0,-4.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,lowvig,spreads,Old Dominion Monarchs,-109.0,4.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,lowvig,totals,Over,-102.0,48.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,lowvig,totals,Under,-115.0,48.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,draftkings,h2h,Georgia Southern Eagles,-180.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,draftkings,h2h,Old Dominion Monarchs,150.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,draftkings,spreads,Georgia Southern Eagles,-108.0,-4.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,draftkings,spreads,Old Dominion Monarchs,-112.0,4.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,draftkings,totals,Over,-112.0,47.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,draftkings,totals,Under,-108.0,47.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betmgm,h2h,Georgia Southern Eagles,-175.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betmgm,h2h,Old Dominion Monarchs,145.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betmgm,spreads,Georgia Southern Eagles,-110.0,-3.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betmgm,spreads,Old Dominion Monarchs,-108.0,3.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betmgm,totals,Over,-110.0,47.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betmgm,totals,Under,-108.0,47.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,mybookieag,h2h,Georgia Southern Eagles,-195.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,mybookieag,h2h,Old Dominion Monarchs,157.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,mybookieag,spreads,Georgia Southern Eagles,-110.0,-4.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,mybookieag,spreads,Old Dominion Monarchs,-110.0,4.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,mybookieag,totals,Over,-110.0,48.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,mybookieag,totals,Under,-110.0,48.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betus,h2h,Georgia Southern Eagles,-165.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betus,h2h,Old Dominion Monarchs,142.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betus,spreads,Georgia Southern Eagles,-105.0,-4.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betus,spreads,Old Dominion Monarchs,-115.0,4.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betus,totals,Over,-110.0,47.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betus,totals,Under,-110.0,47.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,bovada,h2h,Georgia Southern Eagles,-175.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,bovada,h2h,Old Dominion Monarchs,150.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,bovada,spreads,Georgia Southern Eagles,-110.0,-3.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,bovada,spreads,Old Dominion Monarchs,-110.0,3.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,bovada,totals,Over,-110.0,47.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-12T21:42:27Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,bovada,totals,Under,-110.0,47.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,h2h,Colorado State Rams,450.0,
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,h2h,Texas State Bobcats,-630.0,
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,spreads,Colorado State Rams,100.0,13.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,spreads,Texas State Bobcats,-122.0,-13.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,totals,Over,-115.0,70.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,totals,Under,-105.0,70.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,mybookieag,h2h,Colorado State Rams,390.0,
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,mybookieag,h2h,Texas State Bobcats,-549.0,
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,mybookieag,spreads,Colorado State Rams,-110.0,14.0
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,mybookieag,spreads,Texas State Bobcats,-110.0,-14.0
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,mybookieag,totals,Over,-110.0,71.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,mybookieag,totals,Under,-110.0,71.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,h2h,Colorado State Rams,425.0,
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,h2h,Texas State Bobcats,-575.0,
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,spreads,Colorado State Rams,-110.0,14.0
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,spreads,Texas State Bobcats,-110.0,-14.0
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,totals,Over,-108.0,71.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,totals,Under,-112.0,71.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betrivers,h2h,Colorado State Rams,510.0,
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betrivers,h2h,Texas State Bobcats,-835.0,
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betrivers,spreads,Colorado State Rams,-108.0,13.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betrivers,spreads,Texas State Bobcats,-115.0,-13.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betrivers,totals,Over,-109.0,71.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betrivers,totals,Under,-114.0,71.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betonlineag,h2h,Colorado State Rams,431.0,
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betonlineag,h2h,Texas State Bobcats,-575.0,
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betonlineag,spreads,Colorado State Rams,-110.0,14.0
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betonlineag,spreads,Texas State Bobcats,-110.0,-14.0
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betonlineag,totals,Over,-110.0,71.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betonlineag,totals,Under,-110.0,71.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,lowvig,h2h,Colorado State Rams,431.0,
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,lowvig,h2h,Texas State Bobcats,-575.0,
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,lowvig,spreads,Colorado State Rams,-106.0,14.0
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,lowvig,spreads,Texas State Bobcats,-106.0,-14.0
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,lowvig,totals,Over,-108.0,71.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,lowvig,totals,Under,-108.0,71.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betmgm,h2h,Colorado State Rams,450.0,
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betmgm,h2h,Texas State Bobcats,-600.0,
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betmgm,spreads,Colorado State Rams,-110.0,14.0
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betmgm,spreads,Texas State Bobcats,-108.0,-14.0
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betmgm,totals,Over,-108.0,71.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betmgm,totals,Under,-110.0,71.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betus,h2h,Colorado State Rams,440.0,
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betus,h2h,Texas State Bobcats,-575.0,
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betus,spreads,Colorado State Rams,-110.0,14.0
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betus,spreads,Texas State Bobcats,-110.0,-14.0
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betus,totals,Over,-110.0,71.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betus,totals,Under,-110.0,71.5
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,bovada,h2h,Colorado State Rams,425.0,
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,bovada,h2h,Texas State Bobcats,-600.0,
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,bovada,spreads,Colorado State Rams,-110.0,14.0
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,bovada,spreads,Texas State Bobcats,-110.0,-14.0
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,bovada,totals,Over,-110.0,71.0
+f00195614a0c305207222ba2044a9c24,2026-10-12T21:42:27Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,bovada,totals,Under,-110.0,71.0
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,fanduel,h2h,East Carolina Pirates,-215.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,fanduel,h2h,UAB Blazers,176.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,fanduel,spreads,East Carolina Pirates,-110.0,-5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,fanduel,spreads,UAB Blazers,-110.0,5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,fanduel,totals,Over,-105.0,48.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,fanduel,totals,Under,-115.0,48.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,draftkings,h2h,East Carolina Pirates,-218.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,draftkings,h2h,UAB Blazers,180.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,draftkings,spreads,East Carolina Pirates,-110.0,-5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,draftkings,spreads,UAB Blazers,-110.0,5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,draftkings,totals,Over,-105.0,48.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,draftkings,totals,Under,-115.0,48.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betonlineag,h2h,East Carolina Pirates,-215.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betonlineag,h2h,UAB Blazers,183.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betonlineag,spreads,East Carolina Pirates,-110.0,-5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betonlineag,spreads,UAB Blazers,-110.0,5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betonlineag,totals,Over,-115.0,48.0
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betonlineag,totals,Under,-105.0,48.0
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,lowvig,h2h,East Carolina Pirates,-215.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,lowvig,h2h,UAB Blazers,183.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,lowvig,spreads,East Carolina Pirates,-106.0,-5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,lowvig,spreads,UAB Blazers,-106.0,5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,lowvig,totals,Over,-114.0,48.0
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,lowvig,totals,Under,-103.0,48.0
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betmgm,h2h,East Carolina Pirates,-220.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betmgm,h2h,UAB Blazers,180.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betmgm,spreads,East Carolina Pirates,-110.0,-5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betmgm,spreads,UAB Blazers,-108.0,5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betmgm,totals,Over,-105.0,48.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betmgm,totals,Under,-112.0,48.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betrivers,h2h,East Carolina Pirates,-230.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betrivers,h2h,UAB Blazers,180.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betrivers,spreads,East Carolina Pirates,-110.0,-4.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betrivers,spreads,UAB Blazers,-113.0,4.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betrivers,totals,Over,-110.0,47.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betrivers,totals,Under,-113.0,47.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,mybookieag,h2h,East Carolina Pirates,-217.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,mybookieag,h2h,UAB Blazers,173.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,mybookieag,spreads,East Carolina Pirates,-110.0,-5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,mybookieag,spreads,UAB Blazers,-110.0,5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,mybookieag,totals,Over,-110.0,48.0
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,mybookieag,totals,Under,-110.0,48.0
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betus,h2h,East Carolina Pirates,-210.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betus,h2h,UAB Blazers,180.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betus,spreads,East Carolina Pirates,-110.0,-5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betus,spreads,UAB Blazers,-110.0,5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betus,totals,Over,-115.0,48.0
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,betus,totals,Under,-105.0,48.0
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,bovada,h2h,East Carolina Pirates,-210.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,bovada,h2h,UAB Blazers,175.0,
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,bovada,spreads,East Carolina Pirates,-110.0,-5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,bovada,spreads,UAB Blazers,-110.0,5.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,bovada,totals,Over,-105.0,48.5
+4bf071db691beaf54158c801a6cf093b,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,UAB Blazers,East Carolina Pirates,5,151,bovada,totals,Under,-115.0,48.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,fanduel,h2h,Georgia Southern Eagles,-156.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,fanduel,h2h,Old Dominion Monarchs,130.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,fanduel,spreads,Georgia Southern Eagles,-104.0,-3.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,fanduel,spreads,Old Dominion Monarchs,-118.0,3.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,fanduel,totals,Over,-106.0,46.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,fanduel,totals,Under,-114.0,46.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betrivers,h2h,Georgia Southern Eagles,-186.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betrivers,h2h,Old Dominion Monarchs,150.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betrivers,spreads,Georgia Southern Eagles,-106.0,-3.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betrivers,spreads,Old Dominion Monarchs,-118.0,3.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betrivers,totals,Over,-113.0,46.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betrivers,totals,Under,-110.0,46.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betonlineag,h2h,Georgia Southern Eagles,-155.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betonlineag,h2h,Old Dominion Monarchs,135.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betonlineag,spreads,Georgia Southern Eagles,-110.0,-3.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betonlineag,spreads,Old Dominion Monarchs,-110.0,3.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betonlineag,totals,Over,-105.0,46.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betonlineag,totals,Under,-115.0,46.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,lowvig,h2h,Georgia Southern Eagles,-155.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,lowvig,h2h,Old Dominion Monarchs,135.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,lowvig,spreads,Georgia Southern Eagles,-110.0,-3.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,lowvig,spreads,Old Dominion Monarchs,-102.0,3.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,lowvig,totals,Over,-103.0,46.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,lowvig,totals,Under,-114.0,46.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,draftkings,h2h,Georgia Southern Eagles,-166.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,draftkings,h2h,Old Dominion Monarchs,140.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,draftkings,spreads,Georgia Southern Eagles,-112.0,-3.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,draftkings,spreads,Old Dominion Monarchs,-108.0,3.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,draftkings,totals,Over,-110.0,46.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,draftkings,totals,Under,-110.0,46.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betmgm,h2h,Georgia Southern Eagles,-160.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betmgm,h2h,Old Dominion Monarchs,135.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betmgm,spreads,Georgia Southern Eagles,-115.0,-3.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betmgm,spreads,Old Dominion Monarchs,-105.0,3.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betmgm,totals,Over,-108.0,46.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betmgm,totals,Under,-110.0,46.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,mybookieag,h2h,Georgia Southern Eagles,-155.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,mybookieag,h2h,Old Dominion Monarchs,125.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,mybookieag,spreads,Georgia Southern Eagles,-110.0,-3.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,mybookieag,spreads,Old Dominion Monarchs,-110.0,3.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,mybookieag,totals,Over,-110.0,46.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,mybookieag,totals,Under,-110.0,46.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betus,h2h,Georgia Southern Eagles,-160.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betus,h2h,Old Dominion Monarchs,138.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betus,spreads,Georgia Southern Eagles,-110.0,-3.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betus,spreads,Old Dominion Monarchs,-110.0,3.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betus,totals,Over,-110.0,46.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,betus,totals,Under,-110.0,46.5
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,bovada,h2h,Georgia Southern Eagles,-160.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,bovada,h2h,Old Dominion Monarchs,135.0,
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,bovada,spreads,Georgia Southern Eagles,-120.0,-3.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,bovada,spreads,Old Dominion Monarchs,100.0,3.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,bovada,totals,Over,-110.0,47.0
+84fb3ff9d04d9f8c6aeb5c8cadf6fbb5,2026-10-15T17:43:40Z,2026-10-15T23:30:00Z,Old Dominion Monarchs,Georgia Southern Eagles,295,290,bovada,totals,Under,-110.0,47.0
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,h2h,Colorado State Rams,460.0,
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,h2h,Texas State Bobcats,-650.0,
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,spreads,Colorado State Rams,-110.0,14.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,spreads,Texas State Bobcats,-110.0,-14.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,totals,Over,-110.0,70.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,fanduel,totals,Under,-110.0,70.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,mybookieag,h2h,Colorado State Rams,450.0,
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,mybookieag,h2h,Texas State Bobcats,-676.0,
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,mybookieag,spreads,Colorado State Rams,-110.0,14.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,mybookieag,spreads,Texas State Bobcats,-110.0,-14.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,mybookieag,totals,Over,-110.0,71.0
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,mybookieag,totals,Under,-110.0,71.0
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,h2h,Colorado State Rams,470.0,
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,h2h,Texas State Bobcats,-650.0,
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,spreads,Colorado State Rams,-105.0,14.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,spreads,Texas State Bobcats,-115.0,-14.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,totals,Over,-115.0,70.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,draftkings,totals,Under,-105.0,70.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betrivers,h2h,Colorado State Rams,575.0,
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betrivers,h2h,Texas State Bobcats,-1000.0,
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betrivers,spreads,Colorado State Rams,-110.0,14.0
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betrivers,spreads,Texas State Bobcats,-113.0,-14.0
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betrivers,totals,Over,-112.0,69.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betrivers,totals,Under,-112.0,69.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betonlineag,h2h,Colorado State Rams,476.0,
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betonlineag,h2h,Texas State Bobcats,-650.0,
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betonlineag,spreads,Colorado State Rams,-106.0,14.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betonlineag,spreads,Texas State Bobcats,-114.0,-14.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betonlineag,totals,Over,-110.0,70.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betonlineag,totals,Under,-110.0,70.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,lowvig,h2h,Colorado State Rams,476.0,
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,lowvig,h2h,Texas State Bobcats,-650.0,
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,lowvig,spreads,Colorado State Rams,-102.0,14.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,lowvig,spreads,Texas State Bobcats,-110.0,-14.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,lowvig,totals,Over,-108.0,70.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,lowvig,totals,Under,-108.0,70.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betmgm,h2h,Colorado State Rams,475.0,
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betmgm,h2h,Texas State Bobcats,-625.0,
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betmgm,spreads,Colorado State Rams,-108.0,14.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betmgm,spreads,Texas State Bobcats,-110.0,-14.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betmgm,totals,Over,-110.0,70.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betmgm,totals,Under,-108.0,70.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betus,h2h,Colorado State Rams,475.0,
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betus,h2h,Texas State Bobcats,-650.0,
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betus,spreads,Colorado State Rams,-110.0,14.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betus,spreads,Texas State Bobcats,-110.0,-14.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betus,totals,Over,-110.0,71.0
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,betus,totals,Under,-110.0,71.0
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,bovada,h2h,Colorado State Rams,460.0,
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,bovada,h2h,Texas State Bobcats,-675.0,
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,bovada,spreads,Colorado State Rams,-110.0,15.0
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,bovada,spreads,Texas State Bobcats,-110.0,-15.0
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,bovada,totals,Over,-110.0,70.5
+f00195614a0c305207222ba2044a9c24,2026-10-15T17:43:40Z,2026-10-16T00:00:00Z,Texas State Bobcats,Colorado State Rams,326,36,bovada,totals,Under,-110.0,70.5
