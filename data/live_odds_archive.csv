@@ -110255,3 +110255,445 @@ b04425f83695783f343344ca6d33261c,2026-10-19T19:16:22Z,2026-10-22T00:00:00Z,Sam H
 b04425f83695783f343344ca6d33261c,2026-10-19T19:16:22Z,2026-10-22T00:00:00Z,Sam Houston State Bearkats,New Mexico State Aggies,2534,166,bovada,spreads,Sam Houston State Bearkats,-110.0,3.0
 b04425f83695783f343344ca6d33261c,2026-10-19T19:16:22Z,2026-10-22T00:00:00Z,Sam Houston State Bearkats,New Mexico State Aggies,2534,166,bovada,totals,Over,-110.0,45.5
 b04425f83695783f343344ca6d33261c,2026-10-19T19:16:22Z,2026-10-22T00:00:00Z,Sam Houston State Bearkats,New Mexico State Aggies,2534,166,bovada,totals,Under,-110.0,45.5
+1635891ddb79191dba2be031ad6dc762,2026-10-16T17:20:13Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,h2h,Kennesaw State Owls,270.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-16T17:20:13Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,h2h,Liberty Flames,-345.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-16T17:20:13Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,spreads,Kennesaw State Owls,-110.0,8.5
+1635891ddb79191dba2be031ad6dc762,2026-10-16T17:20:13Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,spreads,Liberty Flames,-110.0,-8.5
+1635891ddb79191dba2be031ad6dc762,2026-10-16T17:20:13Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,totals,Over,-112.0,47.5
+1635891ddb79191dba2be031ad6dc762,2026-10-16T17:20:13Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,totals,Under,-108.0,47.5
+1635891ddb79191dba2be031ad6dc762,2026-10-16T17:20:13Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,mybookieag,h2h,Kennesaw State Owls,270.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-16T17:20:13Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,mybookieag,h2h,Liberty Flames,-360.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-16T17:20:13Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,mybookieag,spreads,Kennesaw State Owls,-110.0,9.5
+1635891ddb79191dba2be031ad6dc762,2026-10-16T17:20:13Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,mybookieag,spreads,Liberty Flames,-110.0,-9.5
+1635891ddb79191dba2be031ad6dc762,2026-10-17T16:19:18Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,h2h,Kennesaw State Owls,285.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-17T16:19:18Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,h2h,Liberty Flames,-365.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-17T16:19:18Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,spreads,Kennesaw State Owls,-110.0,9.5
+1635891ddb79191dba2be031ad6dc762,2026-10-17T16:19:18Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,spreads,Liberty Flames,-110.0,-9.5
+1635891ddb79191dba2be031ad6dc762,2026-10-17T16:19:18Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,totals,Over,-112.0,48.5
+1635891ddb79191dba2be031ad6dc762,2026-10-17T16:19:18Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,totals,Under,-108.0,48.5
+1635891ddb79191dba2be031ad6dc762,2026-10-17T16:19:18Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,h2h,Kennesaw State Owls,270.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-17T16:19:18Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,h2h,Liberty Flames,-340.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-17T16:19:18Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,spreads,Kennesaw State Owls,-110.0,8.5
+1635891ddb79191dba2be031ad6dc762,2026-10-17T16:19:18Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,spreads,Liberty Flames,-110.0,-8.5
+1635891ddb79191dba2be031ad6dc762,2026-10-17T16:19:18Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,totals,Over,-110.0,47.5
+1635891ddb79191dba2be031ad6dc762,2026-10-17T16:19:18Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,totals,Under,-110.0,47.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,fanduel,h2h,Appalachian State Mountaineers,310.0,
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,fanduel,h2h,James Madison Dukes,-400.0,
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,fanduel,spreads,Appalachian State Mountaineers,-105.0,9.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,fanduel,spreads,James Madison Dukes,-115.0,-9.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,fanduel,totals,Over,-110.0,56.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,fanduel,totals,Under,-110.0,56.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,draftkings,h2h,Appalachian State Mountaineers,330.0,
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,draftkings,h2h,James Madison Dukes,-425.0,
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,draftkings,spreads,Appalachian State Mountaineers,-110.0,10.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,draftkings,spreads,James Madison Dukes,-110.0,-10.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,draftkings,totals,Over,-110.0,57.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,draftkings,totals,Under,-110.0,57.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betrivers,h2h,Appalachian State Mountaineers,325.0,
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betrivers,h2h,James Madison Dukes,-455.0,
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betrivers,spreads,Appalachian State Mountaineers,-117.0,10.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betrivers,spreads,James Madison Dukes,-107.0,-10.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betrivers,totals,Over,-114.0,57.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betrivers,totals,Under,-109.0,57.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,lowvig,spreads,Appalachian State Mountaineers,-104.0,10.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,lowvig,spreads,James Madison Dukes,-108.0,-10.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,lowvig,totals,Over,-108.0,57.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,lowvig,totals,Under,-108.0,57.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betonlineag,spreads,Appalachian State Mountaineers,-108.0,10.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betonlineag,spreads,James Madison Dukes,-112.0,-10.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betonlineag,totals,Over,-110.0,57.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betonlineag,totals,Under,-110.0,57.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betmgm,h2h,Appalachian State Mountaineers,320.0,
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betmgm,h2h,James Madison Dukes,-425.0,
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betmgm,spreads,Appalachian State Mountaineers,-105.0,10.0
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betmgm,spreads,James Madison Dukes,-112.0,-10.0
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betmgm,totals,Over,-105.0,57.5
+d476cb73381765342220f698035bc889,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betmgm,totals,Under,-112.0,57.5
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,h2h,Kennesaw State Owls,340.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,h2h,Liberty Flames,-450.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,spreads,Kennesaw State Owls,-110.0,10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,spreads,Liberty Flames,-110.0,-10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,totals,Over,-115.0,48.5
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,totals,Under,-105.0,48.5
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,h2h,Kennesaw State Owls,330.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,h2h,Liberty Flames,-425.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,spreads,Kennesaw State Owls,-110.0,10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,spreads,Liberty Flames,-110.0,-10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,totals,Over,-118.0,47.5
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,totals,Under,-102.0,47.5
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betrivers,h2h,Kennesaw State Owls,320.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betrivers,h2h,Liberty Flames,-435.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betrivers,spreads,Kennesaw State Owls,-118.0,10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betrivers,spreads,Liberty Flames,-106.0,-10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betrivers,totals,Over,-115.0,47.5
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betrivers,totals,Under,-108.0,47.5
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betonlineag,spreads,Kennesaw State Owls,-105.0,11.0
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betonlineag,spreads,Liberty Flames,-115.0,-11.0
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betonlineag,totals,Over,-110.0,48.0
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betonlineag,totals,Under,-110.0,48.0
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,lowvig,spreads,Kennesaw State Owls,-101.0,11.0
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,lowvig,spreads,Liberty Flames,-111.0,-11.0
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,lowvig,totals,Over,-108.0,48.0
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,lowvig,totals,Under,-108.0,48.0
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betmgm,h2h,Kennesaw State Owls,340.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betmgm,h2h,Liberty Flames,-450.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betmgm,spreads,Kennesaw State Owls,-108.0,10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betmgm,spreads,Liberty Flames,-110.0,-10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betmgm,totals,Over,-105.0,48.5
+1635891ddb79191dba2be031ad6dc762,2026-10-18T16:28:25Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betmgm,totals,Under,-112.0,48.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,fanduel,h2h,East Carolina Pirates,275.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,fanduel,h2h,Memphis Tigers,-350.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,fanduel,spreads,East Carolina Pirates,-110.0,9.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,fanduel,spreads,Memphis Tigers,-110.0,-9.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,fanduel,totals,Over,-110.0,53.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,fanduel,totals,Under,-110.0,53.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,draftkings,h2h,East Carolina Pirates,310.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,draftkings,h2h,Memphis Tigers,-395.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,draftkings,spreads,East Carolina Pirates,-105.0,9.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,draftkings,spreads,Memphis Tigers,-115.0,-9.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,draftkings,totals,Over,-110.0,53.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,draftkings,totals,Under,-110.0,53.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betrivers,h2h,East Carolina Pirates,300.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betrivers,h2h,Memphis Tigers,-420.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betrivers,spreads,East Carolina Pirates,-109.0,9.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betrivers,spreads,Memphis Tigers,-113.0,-9.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betrivers,totals,Over,-112.0,53.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betrivers,totals,Under,-110.0,53.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betonlineag,spreads,East Carolina Pirates,-105.0,10.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betonlineag,spreads,Memphis Tigers,-115.0,-10.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betonlineag,totals,Over,-110.0,53.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betonlineag,totals,Under,-110.0,53.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,lowvig,spreads,East Carolina Pirates,-101.0,10.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,lowvig,spreads,Memphis Tigers,-111.0,-10.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,lowvig,totals,Over,-108.0,53.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,lowvig,totals,Under,-108.0,53.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betmgm,h2h,East Carolina Pirates,290.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betmgm,h2h,Memphis Tigers,-350.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betmgm,spreads,East Carolina Pirates,-110.0,10.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betmgm,spreads,Memphis Tigers,-108.0,-10.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betmgm,totals,Over,-108.0,53.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-18T16:28:25Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betmgm,totals,Under,-110.0,53.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,fanduel,h2h,Appalachian State Mountaineers,340.0,
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,fanduel,h2h,James Madison Dukes,-450.0,
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,fanduel,spreads,Appalachian State Mountaineers,-110.0,10.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,fanduel,spreads,James Madison Dukes,-110.0,-10.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,fanduel,totals,Over,-110.0,56.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,fanduel,totals,Under,-110.0,56.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,draftkings,h2h,Appalachian State Mountaineers,330.0,
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,draftkings,h2h,James Madison Dukes,-425.0,
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,draftkings,spreads,Appalachian State Mountaineers,-105.0,10.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,draftkings,spreads,James Madison Dukes,-115.0,-10.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,draftkings,totals,Over,-115.0,56.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,draftkings,totals,Under,-105.0,56.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betrivers,h2h,Appalachian State Mountaineers,370.0,
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betrivers,h2h,James Madison Dukes,-530.0,
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betrivers,spreads,Appalachian State Mountaineers,-110.0,11.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betrivers,spreads,James Madison Dukes,-113.0,-11.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betrivers,totals,Over,-109.0,56.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betrivers,totals,Under,-114.0,56.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,lowvig,h2h,Appalachian State Mountaineers,350.0,
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,lowvig,h2h,James Madison Dukes,-450.0,
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,lowvig,spreads,Appalachian State Mountaineers,-111.0,11.0
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,lowvig,spreads,James Madison Dukes,-101.0,-11.0
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,lowvig,totals,Over,-108.0,57.0
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,lowvig,totals,Under,-108.0,57.0
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betonlineag,h2h,Appalachian State Mountaineers,350.0,
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betonlineag,h2h,James Madison Dukes,-450.0,
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betonlineag,spreads,Appalachian State Mountaineers,-115.0,11.0
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betonlineag,spreads,James Madison Dukes,-105.0,-11.0
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betonlineag,totals,Over,-110.0,57.0
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betonlineag,totals,Under,-110.0,57.0
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betmgm,h2h,Appalachian State Mountaineers,340.0,
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betmgm,h2h,James Madison Dukes,-450.0,
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betmgm,spreads,Appalachian State Mountaineers,-108.0,10.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betmgm,spreads,James Madison Dukes,-110.0,-10.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betmgm,totals,Over,-110.0,56.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betmgm,totals,Under,-108.0,56.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,mybookieag,h2h,Appalachian State Mountaineers,330.0,
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,mybookieag,h2h,James Madison Dukes,-450.0,
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,mybookieag,spreads,Appalachian State Mountaineers,-110.0,11.0
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,mybookieag,spreads,James Madison Dukes,-110.0,-11.0
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,mybookieag,totals,Over,-110.0,56.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,mybookieag,totals,Under,-110.0,56.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betus,h2h,Appalachian State Mountaineers,355.0,
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betus,h2h,James Madison Dukes,-450.0,
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betus,spreads,Appalachian State Mountaineers,-115.0,11.0
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betus,spreads,James Madison Dukes,-105.0,-11.0
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betus,totals,Over,-110.0,57.0
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betus,totals,Under,-110.0,57.0
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,bovada,h2h,Appalachian State Mountaineers,330.0,
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,bovada,h2h,James Madison Dukes,-440.0,
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,bovada,spreads,Appalachian State Mountaineers,-110.0,10.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,bovada,spreads,James Madison Dukes,-110.0,-10.5
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,bovada,totals,Over,-115.0,56.0
+d476cb73381765342220f698035bc889,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,bovada,totals,Under,-105.0,56.0
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,h2h,Kennesaw State Owls,330.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,h2h,Liberty Flames,-430.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,spreads,Kennesaw State Owls,-110.0,10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,spreads,Liberty Flames,-110.0,-10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,totals,Over,-105.0,49.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,totals,Under,-115.0,49.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,mybookieag,h2h,Kennesaw State Owls,350.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,mybookieag,h2h,Liberty Flames,-481.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,mybookieag,spreads,Kennesaw State Owls,-110.0,11.0
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,mybookieag,spreads,Liberty Flames,-110.0,-11.0
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,mybookieag,totals,Over,-110.0,49.0
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,mybookieag,totals,Under,-110.0,49.0
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,h2h,Kennesaw State Owls,330.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,h2h,Liberty Flames,-425.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,spreads,Kennesaw State Owls,-115.0,10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,spreads,Liberty Flames,-105.0,-10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,totals,Over,-105.0,49.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,totals,Under,-115.0,49.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betrivers,h2h,Kennesaw State Owls,340.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betrivers,h2h,Liberty Flames,-480.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betrivers,spreads,Kennesaw State Owls,-113.0,10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betrivers,spreads,Liberty Flames,-110.0,-10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betrivers,totals,Over,-109.0,48.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betrivers,totals,Under,-114.0,48.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betonlineag,h2h,Kennesaw State Owls,320.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betonlineag,h2h,Liberty Flames,-405.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betonlineag,spreads,Kennesaw State Owls,-116.0,10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betonlineag,spreads,Liberty Flames,-104.0,-10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betonlineag,totals,Over,-110.0,49.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betonlineag,totals,Under,-110.0,49.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,lowvig,h2h,Kennesaw State Owls,320.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,lowvig,h2h,Liberty Flames,-405.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,lowvig,spreads,Kennesaw State Owls,-112.0,10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,lowvig,spreads,Liberty Flames,100.0,-10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,lowvig,totals,Over,-108.0,49.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,lowvig,totals,Under,-108.0,49.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betmgm,h2h,Kennesaw State Owls,320.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betmgm,h2h,Liberty Flames,-425.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betmgm,spreads,Kennesaw State Owls,-112.0,10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betmgm,spreads,Liberty Flames,-108.0,-10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betmgm,totals,Over,-110.0,49.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betmgm,totals,Under,-120.0,49.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betus,h2h,Kennesaw State Owls,330.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betus,h2h,Liberty Flames,-415.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betus,spreads,Kennesaw State Owls,-110.0,10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betus,spreads,Liberty Flames,-110.0,-10.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betus,totals,Over,-110.0,49.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betus,totals,Under,-110.0,49.5
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,bovada,h2h,Kennesaw State Owls,315.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,bovada,h2h,Liberty Flames,-420.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,bovada,spreads,Kennesaw State Owls,-110.0,10.0
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,bovada,spreads,Liberty Flames,-110.0,-10.0
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,bovada,totals,Over,-110.0,49.0
+1635891ddb79191dba2be031ad6dc762,2026-10-19T19:16:22Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,bovada,totals,Under,-110.0,49.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,fanduel,h2h,East Carolina Pirates,310.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,fanduel,h2h,Memphis Tigers,-400.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,fanduel,spreads,East Carolina Pirates,-120.0,10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,fanduel,spreads,Memphis Tigers,-102.0,-10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,fanduel,totals,Over,-115.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,fanduel,totals,Under,-105.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,draftkings,h2h,East Carolina Pirates,320.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,draftkings,h2h,Memphis Tigers,-410.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,draftkings,spreads,East Carolina Pirates,-112.0,10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,draftkings,spreads,Memphis Tigers,-108.0,-10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,draftkings,totals,Over,-115.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,draftkings,totals,Under,-105.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betrivers,h2h,East Carolina Pirates,310.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betrivers,h2h,Memphis Tigers,-420.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betrivers,spreads,East Carolina Pirates,-113.0,11.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betrivers,spreads,Memphis Tigers,-110.0,-11.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betrivers,totals,Over,-110.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betrivers,totals,Under,-113.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betonlineag,h2h,East Carolina Pirates,334.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betonlineag,h2h,Memphis Tigers,-425.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betonlineag,spreads,East Carolina Pirates,-112.0,10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betonlineag,spreads,Memphis Tigers,-108.0,-10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betonlineag,totals,Over,-110.0,55.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betonlineag,totals,Under,-110.0,55.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,lowvig,h2h,East Carolina Pirates,334.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,lowvig,h2h,Memphis Tigers,-425.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,lowvig,spreads,East Carolina Pirates,-108.0,10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,lowvig,spreads,Memphis Tigers,-104.0,-10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,lowvig,totals,Over,-108.0,55.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,lowvig,totals,Under,-108.0,55.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betmgm,h2h,East Carolina Pirates,320.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betmgm,h2h,Memphis Tigers,-425.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betmgm,spreads,East Carolina Pirates,-105.0,10.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betmgm,spreads,Memphis Tigers,-112.0,-10.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betmgm,totals,Over,-115.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betmgm,totals,Under,-105.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,mybookieag,h2h,East Carolina Pirates,320.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,mybookieag,h2h,Memphis Tigers,-429.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,mybookieag,spreads,East Carolina Pirates,-110.0,10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,mybookieag,spreads,Memphis Tigers,-110.0,-10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,mybookieag,totals,Over,-110.0,55.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,mybookieag,totals,Under,-110.0,55.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betus,h2h,East Carolina Pirates,333.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betus,h2h,Memphis Tigers,-425.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betus,spreads,East Carolina Pirates,-110.0,10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betus,spreads,Memphis Tigers,-110.0,-10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betus,totals,Over,-110.0,55.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betus,totals,Under,-110.0,55.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,bovada,h2h,East Carolina Pirates,320.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,bovada,h2h,Memphis Tigers,-430.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,bovada,spreads,East Carolina Pirates,-115.0,10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,bovada,spreads,Memphis Tigers,-105.0,-10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,bovada,totals,Over,-110.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-19T19:16:22Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,bovada,totals,Under,-110.0,54.5
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,fanduel,h2h,Appalachian State Mountaineers,350.0,
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,fanduel,h2h,James Madison Dukes,-465.0,
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,fanduel,spreads,Appalachian State Mountaineers,-108.0,11.5
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,fanduel,spreads,James Madison Dukes,-112.0,-11.5
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,fanduel,totals,Over,-110.0,56.5
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,fanduel,totals,Under,-110.0,56.5
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,draftkings,h2h,Appalachian State Mountaineers,360.0,
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,draftkings,h2h,James Madison Dukes,-470.0,
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,draftkings,spreads,Appalachian State Mountaineers,-110.0,11.5
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,draftkings,spreads,James Madison Dukes,-110.0,-11.5
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,draftkings,totals,Over,-108.0,56.5
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,draftkings,totals,Under,-112.0,56.5
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betrivers,h2h,Appalachian State Mountaineers,340.0,
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betrivers,h2h,James Madison Dukes,-480.0,
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betrivers,spreads,Appalachian State Mountaineers,-113.0,11.5
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betrivers,spreads,James Madison Dukes,-110.0,-11.5
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betrivers,totals,Over,-109.0,55.5
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betrivers,totals,Under,-114.0,55.5
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,lowvig,h2h,Appalachian State Mountaineers,364.0,
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,lowvig,h2h,James Madison Dukes,-470.0,
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,lowvig,spreads,Appalachian State Mountaineers,-106.0,12.0
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,lowvig,spreads,James Madison Dukes,-106.0,-12.0
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,lowvig,totals,Over,-114.0,56.0
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,lowvig,totals,Under,-103.0,56.0
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betonlineag,h2h,Appalachian State Mountaineers,364.0,
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betonlineag,h2h,James Madison Dukes,-470.0,
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betonlineag,spreads,Appalachian State Mountaineers,-110.0,12.0
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betonlineag,spreads,James Madison Dukes,-110.0,-12.0
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betonlineag,totals,Over,-115.0,56.0
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betonlineag,totals,Under,-105.0,56.0
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betmgm,h2h,Appalachian State Mountaineers,360.0,
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betmgm,h2h,James Madison Dukes,-475.0,
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betmgm,spreads,Appalachian State Mountaineers,-110.0,12.0
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betmgm,spreads,James Madison Dukes,-108.0,-12.0
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betmgm,totals,Over,-108.0,56.5
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betmgm,totals,Under,-110.0,56.5
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,mybookieag,h2h,Appalachian State Mountaineers,360.0,
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,mybookieag,h2h,James Madison Dukes,-500.0,
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,mybookieag,spreads,Appalachian State Mountaineers,-110.0,12.0
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,mybookieag,spreads,James Madison Dukes,-110.0,-12.0
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,mybookieag,totals,Over,-110.0,56.5
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,mybookieag,totals,Under,-110.0,56.5
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betus,h2h,Appalachian State Mountaineers,370.0,
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betus,h2h,James Madison Dukes,-470.0,
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betus,spreads,Appalachian State Mountaineers,-110.0,12.0
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betus,spreads,James Madison Dukes,-110.0,-12.0
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betus,totals,Over,-115.0,56.0
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,betus,totals,Under,-105.0,56.0
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,bovada,h2h,Appalachian State Mountaineers,360.0,
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,bovada,h2h,James Madison Dukes,-500.0,
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,bovada,spreads,Appalachian State Mountaineers,-115.0,12.5
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,bovada,spreads,James Madison Dukes,-105.0,-12.5
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,bovada,totals,Over,-110.0,56.5
+d476cb73381765342220f698035bc889,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Appalachian State Mountaineers,James Madison Dukes,2026,256,bovada,totals,Under,-110.0,56.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,h2h,Kennesaw State Owls,285.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,h2h,Liberty Flames,-365.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,spreads,Kennesaw State Owls,-110.0,9.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,spreads,Liberty Flames,-110.0,-9.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,totals,Over,-105.0,50.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,fanduel,totals,Under,-115.0,50.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,mybookieag,h2h,Kennesaw State Owls,302.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,mybookieag,h2h,Liberty Flames,-403.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,mybookieag,spreads,Kennesaw State Owls,-110.0,9.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,mybookieag,spreads,Liberty Flames,-110.0,-9.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,mybookieag,totals,Over,-110.0,50.0
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,mybookieag,totals,Under,-110.0,50.0
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,h2h,Kennesaw State Owls,300.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,h2h,Liberty Flames,-380.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,spreads,Kennesaw State Owls,-110.0,9.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,spreads,Liberty Flames,-110.0,-9.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,totals,Over,-112.0,50.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,draftkings,totals,Under,-108.0,50.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betrivers,h2h,Kennesaw State Owls,280.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betrivers,h2h,Liberty Flames,-375.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betrivers,spreads,Kennesaw State Owls,-112.0,9.0
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betrivers,spreads,Liberty Flames,-112.0,-9.0
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betrivers,totals,Over,-110.0,50.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betrivers,totals,Under,-113.0,50.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betonlineag,h2h,Kennesaw State Owls,299.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betonlineag,h2h,Liberty Flames,-375.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betonlineag,spreads,Kennesaw State Owls,-110.0,9.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betonlineag,spreads,Liberty Flames,-110.0,-9.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betonlineag,totals,Over,-115.0,50.0
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betonlineag,totals,Under,-105.0,50.0
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,lowvig,h2h,Kennesaw State Owls,299.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,lowvig,h2h,Liberty Flames,-375.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,lowvig,spreads,Kennesaw State Owls,-106.0,9.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,lowvig,spreads,Liberty Flames,-106.0,-9.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,lowvig,totals,Over,-114.0,50.0
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,lowvig,totals,Under,-103.0,50.0
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betmgm,h2h,Kennesaw State Owls,300.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betmgm,h2h,Liberty Flames,-375.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betmgm,spreads,Kennesaw State Owls,-108.0,9.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betmgm,spreads,Liberty Flames,-110.0,-9.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betmgm,totals,Over,-108.0,50.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betmgm,totals,Under,-110.0,50.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betus,h2h,Kennesaw State Owls,305.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betus,h2h,Liberty Flames,-380.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betus,spreads,Kennesaw State Owls,-110.0,9.0
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betus,spreads,Liberty Flames,-110.0,-9.0
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betus,totals,Over,-110.0,50.0
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,betus,totals,Under,-110.0,50.0
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,bovada,h2h,Kennesaw State Owls,300.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,bovada,h2h,Liberty Flames,-400.0,
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,bovada,spreads,Kennesaw State Owls,-110.0,9.0
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,bovada,spreads,Liberty Flames,-110.0,-9.0
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,bovada,totals,Over,-110.0,50.5
+1635891ddb79191dba2be031ad6dc762,2026-10-22T17:56:30Z,2026-10-22T23:00:00Z,Kennesaw State Owls,Liberty Flames,338,2335,bovada,totals,Under,-110.0,50.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,fanduel,h2h,East Carolina Pirates,330.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,fanduel,h2h,Memphis Tigers,-430.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,fanduel,spreads,East Carolina Pirates,-112.0,10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,fanduel,spreads,Memphis Tigers,-108.0,-10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,fanduel,totals,Over,-110.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,fanduel,totals,Under,-110.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,draftkings,h2h,East Carolina Pirates,330.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,draftkings,h2h,Memphis Tigers,-425.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,draftkings,spreads,East Carolina Pirates,-112.0,10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,draftkings,spreads,Memphis Tigers,-108.0,-10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,draftkings,totals,Over,-110.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,draftkings,totals,Under,-110.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betrivers,h2h,East Carolina Pirates,295.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betrivers,h2h,Memphis Tigers,-400.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betrivers,spreads,East Carolina Pirates,-110.0,10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betrivers,spreads,Memphis Tigers,-113.0,-10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betrivers,totals,Over,-109.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betrivers,totals,Under,-114.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betonlineag,h2h,East Carolina Pirates,340.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betonlineag,h2h,Memphis Tigers,-435.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betonlineag,spreads,East Carolina Pirates,-116.0,11.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betonlineag,spreads,Memphis Tigers,-104.0,-11.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betonlineag,totals,Over,-115.0,54.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betonlineag,totals,Under,-105.0,54.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,lowvig,h2h,East Carolina Pirates,340.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,lowvig,h2h,Memphis Tigers,-435.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,lowvig,spreads,East Carolina Pirates,-112.0,11.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,lowvig,spreads,Memphis Tigers,100.0,-11.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,lowvig,totals,Over,-114.0,54.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,lowvig,totals,Under,-103.0,54.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betmgm,h2h,East Carolina Pirates,333.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betmgm,h2h,Memphis Tigers,-425.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betmgm,spreads,East Carolina Pirates,-112.0,10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betmgm,spreads,Memphis Tigers,-108.0,-10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betmgm,totals,Over,-110.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betmgm,totals,Under,-108.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,mybookieag,h2h,East Carolina Pirates,320.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,mybookieag,h2h,Memphis Tigers,-429.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,mybookieag,spreads,East Carolina Pirates,-110.0,10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,mybookieag,spreads,Memphis Tigers,-110.0,-10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,mybookieag,totals,Over,-110.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,mybookieag,totals,Under,-110.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betus,h2h,East Carolina Pirates,330.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betus,h2h,Memphis Tigers,-420.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betus,spreads,East Carolina Pirates,-110.0,10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betus,spreads,Memphis Tigers,-110.0,-10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betus,totals,Over,-110.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,betus,totals,Under,-110.0,54.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,bovada,h2h,East Carolina Pirates,325.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,bovada,h2h,Memphis Tigers,-435.0,
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,bovada,spreads,East Carolina Pirates,-110.0,10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,bovada,spreads,Memphis Tigers,-110.0,-10.5
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,bovada,totals,Over,-110.0,54.0
+5be63fd8c778b46afe084d3352e38a40,2026-10-22T17:56:30Z,2026-10-22T23:30:00Z,Memphis Tigers,East Carolina Pirates,235,151,bovada,totals,Under,-110.0,54.0
