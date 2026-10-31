@@ -122215,3 +122215,209 @@ ebe9883d9cb488e233e6c45cfa009008,2026-10-24T16:33:30Z,2026-10-25T02:00:00Z,New M
 47595bd2a188e4dab8a27dce97c5b45d,2026-10-24T16:33:30Z,2026-10-25T02:15:00Z,Utah Utes,Houston Cougars,254,248,bovada,spreads,Utah Utes,-115.0,-6.5
 47595bd2a188e4dab8a27dce97c5b45d,2026-10-24T16:33:30Z,2026-10-25T02:15:00Z,Utah Utes,Houston Cougars,254,248,bovada,totals,Over,-110.0,57.5
 47595bd2a188e4dab8a27dce97c5b45d,2026-10-24T16:33:30Z,2026-10-25T02:15:00Z,Utah Utes,Houston Cougars,254,248,bovada,totals,Under,-110.0,57.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-22T17:56:30Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,h2h,Delaware Blue Hens,-130.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-22T17:56:30Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,h2h,Western Kentucky Hilltoppers,108.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-22T17:56:30Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,spreads,Delaware Blue Hens,-110.0,-2.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-22T17:56:30Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,spreads,Western Kentucky Hilltoppers,-110.0,2.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-22T17:56:30Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,totals,Over,-110.0,57.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-22T17:56:30Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,totals,Under,-110.0,57.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-22T17:56:30Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,h2h,Missouri State Bears,-265.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-22T17:56:30Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,h2h,Sam Houston State Bearkats,215.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-22T17:56:30Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,spreads,Missouri State Bears,-122.0,-6.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-22T17:56:30Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,spreads,Sam Houston State Bearkats,100.0,6.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-22T17:56:30Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,totals,Over,-110.0,49.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-22T17:56:30Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,totals,Under,-110.0,49.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-23T17:50:37Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,h2h,Delaware Blue Hens,-134.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-23T17:50:37Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,h2h,Western Kentucky Hilltoppers,112.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-23T17:50:37Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,spreads,Delaware Blue Hens,-110.0,-2.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-23T17:50:37Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,spreads,Western Kentucky Hilltoppers,-110.0,2.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-23T17:50:37Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,totals,Over,-110.0,59.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-23T17:50:37Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,totals,Under,-110.0,59.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-23T17:50:37Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,h2h,Missouri State Bears,-220.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-23T17:50:37Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,h2h,Sam Houston State Bearkats,180.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-23T17:50:37Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,spreads,Missouri State Bears,-102.0,-6.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-23T17:50:37Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,spreads,Sam Houston State Bearkats,-120.0,6.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-23T17:50:37Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,totals,Over,-110.0,51.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-23T17:50:37Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,totals,Under,-110.0,51.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-24T16:33:30Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,h2h,Delaware Blue Hens,-134.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-24T16:33:30Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,h2h,Western Kentucky Hilltoppers,112.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-24T16:33:30Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,spreads,Delaware Blue Hens,-110.0,-2.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-24T16:33:30Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,spreads,Western Kentucky Hilltoppers,-110.0,2.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-24T16:33:30Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,totals,Over,-110.0,59.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-24T16:33:30Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,totals,Under,-110.0,59.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-24T16:33:30Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,h2h,Missouri State Bears,-220.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-24T16:33:30Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,h2h,Sam Houston State Bearkats,180.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-24T16:33:30Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,spreads,Missouri State Bears,-102.0,-6.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-24T16:33:30Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,spreads,Sam Houston State Bearkats,-120.0,6.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-24T16:33:30Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,totals,Over,-110.0,51.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-24T16:33:30Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,totals,Under,-110.0,51.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,h2h,Delaware Blue Hens,-118.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,h2h,Western Kentucky Hilltoppers,-102.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,spreads,Delaware Blue Hens,-108.0,-1.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,spreads,Western Kentucky Hilltoppers,-112.0,1.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,totals,Over,-115.0,57.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,totals,Under,-105.0,57.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,draftkings,h2h,Delaware Blue Hens,-125.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,draftkings,h2h,Western Kentucky Hilltoppers,105.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,draftkings,spreads,Delaware Blue Hens,102.0,-1.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,draftkings,spreads,Western Kentucky Hilltoppers,-122.0,1.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,draftkings,totals,Over,-110.0,57.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,draftkings,totals,Under,-110.0,57.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betrivers,h2h,Delaware Blue Hens,-132.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betrivers,h2h,Western Kentucky Hilltoppers,107.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betrivers,spreads,Delaware Blue Hens,-107.0,-2.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betrivers,spreads,Western Kentucky Hilltoppers,-117.0,2.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betrivers,totals,Over,-105.0,58.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betrivers,totals,Under,-120.0,58.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,lowvig,spreads,Delaware Blue Hens,-106.0,-1.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,lowvig,spreads,Western Kentucky Hilltoppers,-106.0,1.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,lowvig,totals,Over,-114.0,57.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,lowvig,totals,Under,-103.0,57.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betonlineag,spreads,Delaware Blue Hens,-110.0,-1.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betonlineag,spreads,Western Kentucky Hilltoppers,-110.0,1.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betonlineag,totals,Over,-115.0,57.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betonlineag,totals,Under,-105.0,57.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betmgm,h2h,Delaware Blue Hens,-112.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betmgm,h2h,Western Kentucky Hilltoppers,-105.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betmgm,spreads,Delaware Blue Hens,-108.0,-1.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betmgm,spreads,Western Kentucky Hilltoppers,-110.0,1.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betmgm,totals,Over,-110.0,57.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-25T17:02:03Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betmgm,totals,Under,-108.0,57.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,h2h,Missouri State Bears,-210.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,h2h,Sam Houston State Bearkats,172.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,spreads,Missouri State Bears,-102.0,-6.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,spreads,Sam Houston State Bearkats,-120.0,6.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,totals,Over,-110.0,50.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,totals,Under,-110.0,50.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,draftkings,h2h,Missouri State Bears,-225.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,draftkings,h2h,Sam Houston State Bearkats,185.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,draftkings,spreads,Missouri State Bears,-105.0,-5.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,draftkings,spreads,Sam Houston State Bearkats,-115.0,5.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,draftkings,totals,Over,100.0,51.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,draftkings,totals,Under,-120.0,51.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betrivers,h2h,Missouri State Bears,-235.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betrivers,h2h,Sam Houston State Bearkats,185.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betrivers,spreads,Missouri State Bears,-114.0,-6.0
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betrivers,spreads,Sam Houston State Bearkats,-109.0,6.0
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betrivers,totals,Over,-117.0,50.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betrivers,totals,Under,-107.0,50.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betmgm,h2h,Missouri State Bears,-210.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betmgm,h2h,Sam Houston State Bearkats,175.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betmgm,spreads,Missouri State Bears,-110.0,-5.0
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betmgm,spreads,Sam Houston State Bearkats,-108.0,5.0
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betmgm,totals,Over,-115.0,50.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betmgm,totals,Under,-102.0,50.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,lowvig,spreads,Missouri State Bears,-106.0,-5.0
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,lowvig,spreads,Sam Houston State Bearkats,-106.0,5.0
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,lowvig,totals,Over,-108.0,51.0
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,lowvig,totals,Under,-108.0,51.0
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betonlineag,spreads,Missouri State Bears,-110.0,-5.0
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betonlineag,spreads,Sam Houston State Bearkats,-110.0,5.0
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betonlineag,totals,Over,-110.0,51.0
+eed30e1ba5aa37d77ee6401d67832446,2026-10-25T17:02:03Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betonlineag,totals,Under,-110.0,51.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,h2h,Delaware Blue Hens,-111.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,h2h,Western Kentucky Hilltoppers,-108.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,spreads,Delaware Blue Hens,-120.0,1.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,spreads,Western Kentucky Hilltoppers,-102.0,-1.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,totals,Over,-115.0,56.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,fanduel,totals,Under,-105.0,56.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,mybookieag,h2h,Delaware Blue Hens,-106.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,mybookieag,h2h,Western Kentucky Hilltoppers,-115.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,mybookieag,spreads,Delaware Blue Hens,-110.0,1.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,mybookieag,spreads,Western Kentucky Hilltoppers,-110.0,-1.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,mybookieag,totals,Over,-110.0,56.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,mybookieag,totals,Under,-110.0,56.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,draftkings,h2h,Delaware Blue Hens,-105.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,draftkings,h2h,Western Kentucky Hilltoppers,-115.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,draftkings,spreads,Delaware Blue Hens,-115.0,1.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,draftkings,spreads,Western Kentucky Hilltoppers,-105.0,-1.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,draftkings,totals,Over,-112.0,56.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,draftkings,totals,Under,-108.0,56.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betrivers,h2h,Delaware Blue Hens,-106.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betrivers,h2h,Western Kentucky Hilltoppers,-117.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betrivers,spreads,Delaware Blue Hens,-110.0,1.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betrivers,spreads,Western Kentucky Hilltoppers,-113.0,-1.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betrivers,totals,Over,-107.0,56.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betrivers,totals,Under,-117.0,56.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,lowvig,h2h,Delaware Blue Hens,-105.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,lowvig,h2h,Western Kentucky Hilltoppers,-115.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,lowvig,spreads,Delaware Blue Hens,-111.0,1.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,lowvig,spreads,Western Kentucky Hilltoppers,-101.0,-1.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,lowvig,totals,Over,-108.0,57.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,lowvig,totals,Under,-108.0,57.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betonlineag,h2h,Delaware Blue Hens,-105.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betonlineag,h2h,Western Kentucky Hilltoppers,-115.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betonlineag,spreads,Delaware Blue Hens,-115.0,1.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betonlineag,spreads,Western Kentucky Hilltoppers,-105.0,-1.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betonlineag,totals,Over,-110.0,57.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betonlineag,totals,Under,-110.0,57.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betmgm,h2h,Delaware Blue Hens,-108.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betmgm,h2h,Western Kentucky Hilltoppers,-110.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betmgm,spreads,Delaware Blue Hens,-110.0,1.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betmgm,spreads,Western Kentucky Hilltoppers,-108.0,-1.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betmgm,totals,Over,-110.0,56.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betmgm,totals,Under,-108.0,56.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betus,spreads,Delaware Blue Hens,100.0,0.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betus,spreads,Western Kentucky Hilltoppers,-120.0,0.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betus,totals,Over,-110.0,57.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,betus,totals,Under,-110.0,57.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,bovada,h2h,Delaware Blue Hens,-110.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,bovada,h2h,Western Kentucky Hilltoppers,-110.0,
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,bovada,spreads,Delaware Blue Hens,-105.0,-1.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,bovada,spreads,Western Kentucky Hilltoppers,-115.0,1.0
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,bovada,totals,Over,-110.0,56.5
+0ae4d3447c72a5c39b523d9b3fbaf216,2026-10-26T19:10:46Z,2026-10-27T23:00:00Z,Western Kentucky Hilltoppers,Delaware Blue Hens,98,48,bovada,totals,Under,-110.0,56.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,h2h,Missouri State Bears,-210.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,h2h,Sam Houston State Bearkats,172.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,spreads,Missouri State Bears,-110.0,-5.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,spreads,Sam Houston State Bearkats,-110.0,5.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,totals,Over,-110.0,49.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,fanduel,totals,Under,-110.0,49.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,mybookieag,h2h,Missouri State Bears,-226.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,mybookieag,h2h,Sam Houston State Bearkats,180.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,mybookieag,spreads,Missouri State Bears,-110.0,-5.0
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,mybookieag,spreads,Sam Houston State Bearkats,-110.0,5.0
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,mybookieag,totals,Over,-110.0,49.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,mybookieag,totals,Under,-110.0,49.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,draftkings,h2h,Missouri State Bears,-218.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,draftkings,h2h,Sam Houston State Bearkats,180.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,draftkings,spreads,Missouri State Bears,-110.0,-5.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,draftkings,spreads,Sam Houston State Bearkats,-110.0,5.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,draftkings,totals,Over,-108.0,49.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,draftkings,totals,Under,-112.0,49.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betrivers,h2h,Missouri State Bears,-210.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betrivers,h2h,Sam Houston State Bearkats,165.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betrivers,spreads,Missouri State Bears,-110.0,-5.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betrivers,spreads,Sam Houston State Bearkats,-113.0,5.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betrivers,totals,Over,-108.0,49.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betrivers,totals,Under,-115.0,49.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betmgm,h2h,Missouri State Bears,-210.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betmgm,h2h,Sam Houston State Bearkats,175.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betmgm,spreads,Missouri State Bears,-108.0,-5.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betmgm,spreads,Sam Houston State Bearkats,-110.0,5.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betmgm,totals,Over,-108.0,49.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betmgm,totals,Under,-110.0,49.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,lowvig,h2h,Missouri State Bears,-210.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,lowvig,h2h,Sam Houston State Bearkats,180.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,lowvig,spreads,Missouri State Bears,-106.0,-5.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,lowvig,spreads,Sam Houston State Bearkats,-106.0,5.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,lowvig,totals,Over,-108.0,49.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,lowvig,totals,Under,-108.0,49.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betonlineag,h2h,Missouri State Bears,-210.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betonlineag,h2h,Sam Houston State Bearkats,180.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betonlineag,spreads,Missouri State Bears,-110.0,-5.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betonlineag,spreads,Sam Houston State Bearkats,-110.0,5.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betonlineag,totals,Over,-110.0,49.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betonlineag,totals,Under,-110.0,49.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betus,h2h,Missouri State Bears,-210.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betus,h2h,Sam Houston State Bearkats,180.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betus,spreads,Missouri State Bears,-115.0,-5.0
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betus,spreads,Sam Houston State Bearkats,-105.0,5.0
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betus,totals,Over,-110.0,49.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,betus,totals,Under,-110.0,49.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,bovada,h2h,Missouri State Bears,-210.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,bovada,h2h,Sam Houston State Bearkats,175.0,
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,bovada,spreads,Missouri State Bears,-105.0,-5.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,bovada,spreads,Sam Houston State Bearkats,-115.0,5.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,bovada,totals,Over,-110.0,49.5
+eed30e1ba5aa37d77ee6401d67832446,2026-10-26T19:10:46Z,2026-10-28T00:00:00Z,Missouri State Bears,Sam Houston State Bearkats,2623,2534,bovada,totals,Under,-110.0,49.5
