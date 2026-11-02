@@ -122617,3 +122617,259 @@ cf6c89492427cb54521b70e7c5dc5993,2026-10-26T19:10:46Z,2026-10-29T00:00:00Z,New M
 cf6c89492427cb54521b70e7c5dc5993,2026-10-26T19:10:46Z,2026-10-29T00:00:00Z,New Mexico State Aggies,Jacksonville State Gamecocks,166,55,bovada,spreads,New Mexico State Aggies,-105.0,3.0
 cf6c89492427cb54521b70e7c5dc5993,2026-10-26T19:10:46Z,2026-10-29T00:00:00Z,New Mexico State Aggies,Jacksonville State Gamecocks,166,55,bovada,totals,Over,-110.0,49.5
 cf6c89492427cb54521b70e7c5dc5993,2026-10-26T19:10:46Z,2026-10-29T00:00:00Z,New Mexico State Aggies,Jacksonville State Gamecocks,166,55,bovada,totals,Under,-110.0,49.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,fanduel,h2h,Florida Atlantic Owls,330.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,fanduel,h2h,North Texas Mean Green,-430.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,fanduel,spreads,Florida Atlantic Owls,-105.0,10.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,fanduel,spreads,North Texas Mean Green,-115.0,-10.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,fanduel,totals,Over,-108.0,71.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,fanduel,totals,Under,-112.0,71.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,draftkings,h2h,Florida Atlantic Owls,350.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,draftkings,h2h,North Texas Mean Green,-455.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,draftkings,spreads,Florida Atlantic Owls,-105.0,10.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,draftkings,spreads,North Texas Mean Green,-115.0,-10.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,draftkings,totals,Over,-110.0,72.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,draftkings,totals,Under,-110.0,72.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betrivers,h2h,Florida Atlantic Owls,360.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betrivers,h2h,North Texas Mean Green,-500.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betrivers,spreads,Florida Atlantic Owls,-113.0,12.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betrivers,spreads,North Texas Mean Green,-110.0,-12.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betrivers,totals,Over,-113.0,71.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betrivers,totals,Under,-109.0,71.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,lowvig,spreads,Florida Atlantic Owls,-101.0,10.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,lowvig,spreads,North Texas Mean Green,-111.0,-10.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,lowvig,totals,Over,-108.0,72.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,lowvig,totals,Under,-108.0,72.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betonlineag,spreads,Florida Atlantic Owls,-105.0,10.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betonlineag,spreads,North Texas Mean Green,-115.0,-10.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betonlineag,totals,Over,-110.0,72.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betonlineag,totals,Under,-110.0,72.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betmgm,h2h,Florida Atlantic Owls,340.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betmgm,h2h,North Texas Mean Green,-450.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betmgm,spreads,Florida Atlantic Owls,-110.0,11.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betmgm,spreads,North Texas Mean Green,-108.0,-11.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betmgm,totals,Over,-105.0,72.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betmgm,totals,Under,-112.0,72.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,fanduel,h2h,James Madison Dukes,-1250.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,fanduel,h2h,Troy Trojans,740.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,fanduel,spreads,James Madison Dukes,-110.0,-18.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,fanduel,spreads,Troy Trojans,-110.0,18.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,fanduel,totals,Over,-110.0,51.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,fanduel,totals,Under,-110.0,51.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,draftkings,h2h,James Madison Dukes,-1600.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,draftkings,h2h,Troy Trojans,900.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,draftkings,spreads,James Madison Dukes,-110.0,-19.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,draftkings,spreads,Troy Trojans,-110.0,19.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,draftkings,totals,Over,-102.0,52.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,draftkings,totals,Under,-118.0,52.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betrivers,h2h,James Madison Dukes,-1430.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betrivers,h2h,Troy Trojans,750.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betrivers,spreads,James Madison Dukes,-117.0,-18.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betrivers,spreads,Troy Trojans,-106.0,18.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betrivers,totals,Over,-109.0,51.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betrivers,totals,Under,-114.0,51.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betmgm,h2h,James Madison Dukes,-1200.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betmgm,h2h,Troy Trojans,850.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betmgm,spreads,James Madison Dukes,-110.0,-19.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betmgm,spreads,Troy Trojans,-108.0,19.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betmgm,totals,Over,-115.0,51.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betmgm,totals,Under,-105.0,51.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betonlineag,spreads,James Madison Dukes,-115.0,-19.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betonlineag,spreads,Troy Trojans,-105.0,19.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betonlineag,totals,Over,-110.0,52.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betonlineag,totals,Under,-110.0,52.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,lowvig,spreads,James Madison Dukes,-111.0,-19.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,lowvig,spreads,Troy Trojans,-101.0,19.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,lowvig,totals,Over,-108.0,52.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-25T17:02:03Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,lowvig,totals,Under,-108.0,52.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,fanduel,h2h,Florida Atlantic Owls,400.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,fanduel,h2h,North Texas Mean Green,-550.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,fanduel,spreads,Florida Atlantic Owls,-110.0,13.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,fanduel,spreads,North Texas Mean Green,-110.0,-13.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,fanduel,totals,Over,-106.0,76.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,fanduel,totals,Under,-114.0,76.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,draftkings,h2h,Florida Atlantic Owls,390.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,draftkings,h2h,North Texas Mean Green,-520.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,draftkings,spreads,Florida Atlantic Owls,-108.0,13.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,draftkings,spreads,North Texas Mean Green,-112.0,-13.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,draftkings,totals,Over,-112.0,76.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,draftkings,totals,Under,-108.0,76.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betrivers,h2h,Florida Atlantic Owls,460.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betrivers,h2h,North Texas Mean Green,-715.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betrivers,spreads,Florida Atlantic Owls,-113.0,14.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betrivers,spreads,North Texas Mean Green,-112.0,-14.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betrivers,totals,Over,-117.0,75.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betrivers,totals,Under,-107.0,75.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,lowvig,h2h,Florida Atlantic Owls,390.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,lowvig,h2h,North Texas Mean Green,-510.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,lowvig,spreads,Florida Atlantic Owls,-103.0,13.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,lowvig,spreads,North Texas Mean Green,-109.0,-13.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,lowvig,totals,Over,-114.0,77.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,lowvig,totals,Under,-103.0,77.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betonlineag,h2h,Florida Atlantic Owls,390.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betonlineag,h2h,North Texas Mean Green,-510.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betonlineag,spreads,Florida Atlantic Owls,-107.0,13.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betonlineag,spreads,North Texas Mean Green,-113.0,-13.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betonlineag,totals,Over,-115.0,77.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betonlineag,totals,Under,-105.0,77.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betmgm,h2h,Florida Atlantic Owls,400.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betmgm,h2h,North Texas Mean Green,-525.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betmgm,spreads,Florida Atlantic Owls,-108.0,13.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betmgm,spreads,North Texas Mean Green,-110.0,-13.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betmgm,totals,Over,-110.0,76.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betmgm,totals,Under,-108.0,76.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,mybookieag,h2h,Florida Atlantic Owls,350.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,mybookieag,h2h,North Texas Mean Green,-469.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,mybookieag,spreads,Florida Atlantic Owls,-110.0,13.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,mybookieag,spreads,North Texas Mean Green,-110.0,-13.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,mybookieag,totals,Over,-110.0,76.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,mybookieag,totals,Under,-110.0,76.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betus,h2h,Florida Atlantic Owls,395.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betus,h2h,North Texas Mean Green,-510.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betus,spreads,Florida Atlantic Owls,-105.0,13.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betus,spreads,North Texas Mean Green,-115.0,-13.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betus,totals,Over,-115.0,77.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betus,totals,Under,-105.0,77.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,bovada,h2h,Florida Atlantic Owls,390.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,bovada,h2h,North Texas Mean Green,-550.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,bovada,spreads,Florida Atlantic Owls,-115.0,14.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,bovada,spreads,North Texas Mean Green,-105.0,-14.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,bovada,totals,Over,-110.0,76.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,bovada,totals,Under,-110.0,76.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,fanduel,h2h,James Madison Dukes,-1800.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,fanduel,h2h,Troy Trojans,980.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,fanduel,spreads,James Madison Dukes,-115.0,-20.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,fanduel,spreads,Troy Trojans,-105.0,20.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,fanduel,totals,Over,-115.0,50.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,fanduel,totals,Under,-105.0,50.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,draftkings,h2h,James Madison Dukes,-1600.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,draftkings,h2h,Troy Trojans,900.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,draftkings,spreads,James Madison Dukes,-110.0,-21.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,draftkings,spreads,Troy Trojans,-110.0,21.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,draftkings,totals,Over,-118.0,50.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,draftkings,totals,Under,-102.0,50.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betrivers,h2h,James Madison Dukes,-2500.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betrivers,h2h,Troy Trojans,950.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betrivers,spreads,James Madison Dukes,-110.0,-21.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betrivers,spreads,Troy Trojans,-113.0,21.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betrivers,totals,Over,-107.0,51.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betrivers,totals,Under,-117.0,51.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betmgm,h2h,James Madison Dukes,-1400.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betmgm,h2h,Troy Trojans,950.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betmgm,spreads,James Madison Dukes,-108.0,-21.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betmgm,spreads,Troy Trojans,-110.0,21.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betmgm,totals,Over,-108.0,51.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betmgm,totals,Under,-125.0,51.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betonlineag,h2h,James Madison Dukes,-1600.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betonlineag,h2h,Troy Trojans,910.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betonlineag,spreads,James Madison Dukes,-107.0,-21.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betonlineag,spreads,Troy Trojans,-113.0,21.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betonlineag,totals,Over,-110.0,51.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betonlineag,totals,Under,-110.0,51.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,lowvig,h2h,James Madison Dukes,-1600.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,lowvig,h2h,Troy Trojans,910.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,lowvig,spreads,James Madison Dukes,-103.0,-21.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,lowvig,spreads,Troy Trojans,-109.0,21.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,lowvig,totals,Over,-108.0,51.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,lowvig,totals,Under,-108.0,51.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,mybookieag,h2h,James Madison Dukes,-1587.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,mybookieag,h2h,Troy Trojans,830.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,mybookieag,spreads,James Madison Dukes,-110.0,-21.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,mybookieag,spreads,Troy Trojans,-110.0,21.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,mybookieag,totals,Over,-110.0,51.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,mybookieag,totals,Under,-110.0,51.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betus,h2h,James Madison Dukes,-1600.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betus,h2h,Troy Trojans,900.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betus,spreads,James Madison Dukes,-110.0,-21.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betus,spreads,Troy Trojans,-110.0,21.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betus,totals,Over,-110.0,51.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betus,totals,Under,-110.0,51.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,bovada,h2h,James Madison Dukes,-1600.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,bovada,h2h,Troy Trojans,800.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,bovada,spreads,James Madison Dukes,-110.0,-21.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,bovada,spreads,Troy Trojans,-110.0,21.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,bovada,totals,Over,-110.0,51.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-26T19:10:46Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,bovada,totals,Under,-110.0,51.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,fanduel,h2h,Florida Atlantic Owls,420.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,fanduel,h2h,North Texas Mean Green,-550.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,fanduel,spreads,Florida Atlantic Owls,-118.0,14.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,fanduel,spreads,North Texas Mean Green,-104.0,-14.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,fanduel,totals,Over,-110.0,77.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,fanduel,totals,Under,-110.0,77.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,draftkings,h2h,Florida Atlantic Owls,410.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,draftkings,h2h,North Texas Mean Green,-550.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,draftkings,spreads,Florida Atlantic Owls,-108.0,14.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,draftkings,spreads,North Texas Mean Green,-112.0,-14.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,draftkings,totals,Over,-112.0,77.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,draftkings,totals,Under,-108.0,77.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betrivers,h2h,Florida Atlantic Owls,420.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betrivers,h2h,North Texas Mean Green,-625.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betrivers,spreads,Florida Atlantic Owls,-112.0,14.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betrivers,spreads,North Texas Mean Green,-112.0,-14.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betrivers,totals,Over,-113.0,78.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betrivers,totals,Under,-110.0,78.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betmgm,h2h,Florida Atlantic Owls,425.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betmgm,h2h,North Texas Mean Green,-550.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betmgm,spreads,Florida Atlantic Owls,-108.0,14.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betmgm,spreads,North Texas Mean Green,-110.0,-14.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betmgm,totals,Over,-110.0,77.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betmgm,totals,Under,-108.0,77.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,mybookieag,h2h,Florida Atlantic Owls,389.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,mybookieag,h2h,North Texas Mean Green,-561.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,mybookieag,spreads,Florida Atlantic Owls,-110.0,14.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,mybookieag,spreads,North Texas Mean Green,-110.0,-14.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,mybookieag,totals,Over,-110.0,77.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,mybookieag,totals,Under,-110.0,77.5
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betus,h2h,Florida Atlantic Owls,410.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betus,h2h,North Texas Mean Green,-530.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betus,spreads,Florida Atlantic Owls,-105.0,14.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betus,spreads,North Texas Mean Green,-115.0,-14.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betus,totals,Over,-110.0,78.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,betus,totals,Under,-110.0,78.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,bovada,h2h,Florida Atlantic Owls,410.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,bovada,h2h,North Texas Mean Green,-585.0,
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,bovada,spreads,Florida Atlantic Owls,-105.0,14.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,bovada,spreads,North Texas Mean Green,-115.0,-14.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,bovada,totals,Over,-110.0,78.0
+c35bb6023b4b5005a38e7cec3ebe4d0b,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,North Texas Mean Green,Florida Atlantic Owls,249,2226,bovada,totals,Under,-110.0,78.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,fanduel,h2h,James Madison Dukes,-1200.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,fanduel,h2h,Troy Trojans,760.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,fanduel,spreads,James Madison Dukes,-110.0,-18.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,fanduel,spreads,Troy Trojans,-110.0,18.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,fanduel,totals,Over,-115.0,50.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,fanduel,totals,Under,-105.0,50.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,draftkings,h2h,James Madison Dukes,-1350.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,draftkings,h2h,Troy Trojans,800.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,draftkings,spreads,James Madison Dukes,-110.0,-19.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,draftkings,spreads,Troy Trojans,-110.0,19.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,draftkings,totals,Over,-105.0,51.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,draftkings,totals,Under,-115.0,51.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betrivers,h2h,James Madison Dukes,-2000.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betrivers,h2h,Troy Trojans,850.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betrivers,spreads,James Madison Dukes,-112.0,-20.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betrivers,spreads,Troy Trojans,-112.0,20.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betrivers,totals,Over,-112.0,50.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betrivers,totals,Under,-112.0,50.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betmgm,h2h,James Madison Dukes,-1200.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betmgm,h2h,Troy Trojans,825.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betmgm,spreads,James Madison Dukes,-110.0,-19.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betmgm,spreads,Troy Trojans,-108.0,19.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betmgm,totals,Over,-108.0,51.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betmgm,totals,Under,-125.0,51.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,mybookieag,h2h,James Madison Dukes,-1442.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,mybookieag,h2h,Troy Trojans,752.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,mybookieag,spreads,James Madison Dukes,-110.0,-19.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,mybookieag,spreads,Troy Trojans,-110.0,19.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,mybookieag,totals,Over,-110.0,51.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,mybookieag,totals,Under,-110.0,51.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betus,h2h,James Madison Dukes,-1300.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betus,h2h,Troy Trojans,780.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betus,spreads,James Madison Dukes,-110.0,-19.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betus,spreads,Troy Trojans,-110.0,19.5
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betus,totals,Over,-115.0,51.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,betus,totals,Under,-105.0,51.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,bovada,h2h,James Madison Dukes,-1300.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,bovada,h2h,Troy Trojans,725.0,
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,bovada,spreads,James Madison Dukes,-105.0,-20.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,bovada,spreads,Troy Trojans,-115.0,20.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,bovada,totals,Over,-110.0,51.0
+0540f5758ac50f3bb60beb36755f7a1e,2026-10-29T18:55:37Z,2026-10-29T23:30:00Z,James Madison Dukes,Troy Trojans,256,2653,bovada,totals,Under,-110.0,51.0
