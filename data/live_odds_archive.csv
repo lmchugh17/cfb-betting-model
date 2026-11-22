@@ -163435,3 +163435,195 @@ ce88da9d6fd67bac81c1e4a70545de29,2026-11-14T18:43:09Z,2026-11-15T04:00:00Z,Hawai
 792875fa96ecdf75559454c19c011768,2026-11-16T22:51:02Z,2026-11-18T00:00:00Z,Kent State Golden Flashes,Miami (OH) RedHawks,2309,193,betus,spreads,Miami (OH) RedHawks,-110.0,-9.5
 792875fa96ecdf75559454c19c011768,2026-11-16T22:51:02Z,2026-11-18T00:00:00Z,Kent State Golden Flashes,Miami (OH) RedHawks,2309,193,betus,totals,Over,-110.0,45.5
 792875fa96ecdf75559454c19c011768,2026-11-16T22:51:02Z,2026-11-18T00:00:00Z,Kent State Golden Flashes,Miami (OH) RedHawks,2309,193,betus,totals,Under,-110.0,45.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-12T20:45:29Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,h2h,Akron Zips,112.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-12T20:45:29Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,h2h,UMass Minutemen,-132.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-12T20:45:29Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,spreads,Akron Zips,-110.0,2.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-12T20:45:29Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,spreads,UMass Minutemen,-110.0,-2.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-12T20:45:29Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,totals,Over,-105.0,45.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-12T20:45:29Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,totals,Under,-115.0,45.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-12T20:45:29Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,h2h,Buffalo Bulls,-134.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-12T20:45:29Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,h2h,Central Michigan Chippewas,114.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-12T20:45:29Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,spreads,Buffalo Bulls,-120.0,-2.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-12T20:45:29Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,spreads,Central Michigan Chippewas,100.0,2.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-12T20:45:29Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,totals,Over,-110.0,43.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-12T20:45:29Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,totals,Under,-110.0,43.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-13T20:26:57Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,h2h,Akron Zips,112.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-13T20:26:57Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,h2h,UMass Minutemen,-132.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-13T20:26:57Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,spreads,Akron Zips,-110.0,2.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-13T20:26:57Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,spreads,UMass Minutemen,-110.0,-2.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-13T20:26:57Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,totals,Over,-105.0,45.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-13T20:26:57Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,totals,Under,-115.0,45.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-13T20:26:57Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,h2h,Buffalo Bulls,-138.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-13T20:26:57Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,h2h,Central Michigan Chippewas,116.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-13T20:26:57Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,spreads,Buffalo Bulls,-120.0,-2.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-13T20:26:57Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,spreads,Central Michigan Chippewas,100.0,2.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-13T20:26:57Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,totals,Over,-110.0,43.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-13T20:26:57Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,totals,Under,-110.0,43.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-14T18:43:09Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,h2h,Akron Zips,112.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-14T18:43:09Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,h2h,UMass Minutemen,-132.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-14T18:43:09Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,spreads,Akron Zips,-110.0,2.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-14T18:43:09Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,spreads,UMass Minutemen,-110.0,-2.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-14T18:43:09Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,totals,Over,-105.0,45.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-14T18:43:09Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,totals,Under,-115.0,45.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-14T18:43:09Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,h2h,Buffalo Bulls,-138.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-14T18:43:09Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,h2h,Central Michigan Chippewas,116.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-14T18:43:09Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,spreads,Buffalo Bulls,-120.0,-2.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-14T18:43:09Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,spreads,Central Michigan Chippewas,100.0,2.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-14T18:43:09Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,totals,Over,-110.0,43.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-14T18:43:09Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,totals,Under,-110.0,43.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,h2h,Akron Zips,132.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,h2h,UMass Minutemen,-160.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,spreads,Akron Zips,-115.0,3.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,spreads,UMass Minutemen,-105.0,-3.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,totals,Over,-115.0,45.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,totals,Under,-105.0,45.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betrivers,h2h,Akron Zips,110.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betrivers,h2h,UMass Minutemen,-136.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betrivers,spreads,Akron Zips,-109.0,2.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betrivers,spreads,UMass Minutemen,-114.0,-2.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betrivers,totals,Over,-120.0,44.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betrivers,totals,Under,-105.0,44.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,draftkings,h2h,Akron Zips,124.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,draftkings,h2h,UMass Minutemen,-148.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,draftkings,spreads,Akron Zips,-108.0,3.0
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,draftkings,spreads,UMass Minutemen,-112.0,-3.0
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,draftkings,totals,Over,-110.0,45.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,draftkings,totals,Under,-110.0,45.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,lowvig,spreads,Akron Zips,-101.0,3.0
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,lowvig,spreads,UMass Minutemen,-111.0,-3.0
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,lowvig,totals,Over,-108.0,45.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,lowvig,totals,Under,-108.0,45.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betonlineag,spreads,Akron Zips,-105.0,3.0
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betonlineag,spreads,UMass Minutemen,-115.0,-3.0
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betonlineag,totals,Over,-110.0,45.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-15T19:20:32Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betonlineag,totals,Under,-110.0,45.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,h2h,Buffalo Bulls,-138.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,h2h,Central Michigan Chippewas,116.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,spreads,Buffalo Bulls,-120.0,-2.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,spreads,Central Michigan Chippewas,100.0,2.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,totals,Over,-110.0,42.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,totals,Under,-110.0,42.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betrivers,h2h,Buffalo Bulls,-143.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betrivers,h2h,Central Michigan Chippewas,115.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betrivers,spreads,Buffalo Bulls,-117.0,-2.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betrivers,spreads,Central Michigan Chippewas,-106.0,2.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betrivers,totals,Over,-110.0,42.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betrivers,totals,Under,-113.0,42.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,draftkings,h2h,Buffalo Bulls,-130.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,draftkings,h2h,Central Michigan Chippewas,110.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,draftkings,spreads,Buffalo Bulls,-110.0,-2.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,draftkings,spreads,Central Michigan Chippewas,-110.0,2.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,draftkings,totals,Over,-110.0,42.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,draftkings,totals,Under,-110.0,42.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betonlineag,spreads,Buffalo Bulls,-110.0,-2.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betonlineag,spreads,Central Michigan Chippewas,-110.0,2.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betonlineag,totals,Over,-110.0,42.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betonlineag,totals,Under,-110.0,42.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,lowvig,spreads,Buffalo Bulls,-106.0,-2.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,lowvig,spreads,Central Michigan Chippewas,-106.0,2.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,lowvig,totals,Over,-108.0,42.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-15T19:20:32Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,lowvig,totals,Under,-108.0,42.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,h2h,Akron Zips,132.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,h2h,UMass Minutemen,-160.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,spreads,Akron Zips,-120.0,3.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,spreads,UMass Minutemen,100.0,-3.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,totals,Over,-110.0,46.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,fanduel,totals,Under,-110.0,46.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betrivers,h2h,Akron Zips,130.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betrivers,h2h,UMass Minutemen,-162.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betrivers,spreads,Akron Zips,-117.0,3.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betrivers,spreads,UMass Minutemen,-107.0,-3.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betrivers,totals,Over,-113.0,46.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betrivers,totals,Under,-109.0,46.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,draftkings,h2h,Akron Zips,136.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,draftkings,h2h,UMass Minutemen,-162.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,draftkings,spreads,Akron Zips,-105.0,3.0
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,draftkings,spreads,UMass Minutemen,-115.0,-3.0
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,draftkings,totals,Over,-110.0,46.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,draftkings,totals,Under,-110.0,46.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,lowvig,h2h,Akron Zips,135.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,lowvig,h2h,UMass Minutemen,-155.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,lowvig,spreads,Akron Zips,-101.0,3.0
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,lowvig,spreads,UMass Minutemen,-111.0,-3.0
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,lowvig,totals,Over,-108.0,46.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,lowvig,totals,Under,-108.0,46.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betonlineag,h2h,Akron Zips,135.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betonlineag,h2h,UMass Minutemen,-155.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betonlineag,spreads,Akron Zips,-105.0,3.0
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betonlineag,spreads,UMass Minutemen,-115.0,-3.0
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betonlineag,totals,Over,-110.0,46.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betonlineag,totals,Under,-110.0,46.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betmgm,h2h,Akron Zips,135.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betmgm,h2h,UMass Minutemen,-160.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betmgm,spreads,Akron Zips,-102.0,3.0
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betmgm,spreads,UMass Minutemen,-115.0,-3.0
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betmgm,totals,Over,-110.0,46.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betmgm,totals,Under,-108.0,46.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,bovada,h2h,Akron Zips,135.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,bovada,h2h,UMass Minutemen,-160.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,bovada,spreads,Akron Zips,-105.0,3.0
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,bovada,spreads,UMass Minutemen,-115.0,-3.0
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,bovada,totals,Over,-108.0,46.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,bovada,totals,Under,-112.0,46.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betus,h2h,Akron Zips,134.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betus,h2h,UMass Minutemen,-155.0,
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betus,spreads,Akron Zips,-105.0,3.0
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betus,spreads,UMass Minutemen,-115.0,-3.0
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betus,totals,Over,-110.0,47.0
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,betus,totals,Under,-110.0,47.0
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,mybookieag,totals,Over,-110.0,46.5
+ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass Minutemen,Akron Zips,113,2006,mybookieag,totals,Under,-110.0,46.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,h2h,Buffalo Bulls,-125.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,h2h,Central Michigan Chippewas,104.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,spreads,Buffalo Bulls,-115.0,-1.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,spreads,Central Michigan Chippewas,-105.0,1.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,totals,Over,-120.0,44.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,fanduel,totals,Under,100.0,44.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betrivers,h2h,Buffalo Bulls,-127.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betrivers,h2h,Central Michigan Chippewas,102.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betrivers,spreads,Buffalo Bulls,-109.0,-2.0
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betrivers,spreads,Central Michigan Chippewas,-114.0,2.0
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betrivers,totals,Over,-110.0,45.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betrivers,totals,Under,-113.0,45.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,draftkings,h2h,Buffalo Bulls,-125.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,draftkings,h2h,Central Michigan Chippewas,105.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,draftkings,spreads,Buffalo Bulls,-110.0,-2.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,draftkings,spreads,Central Michigan Chippewas,-110.0,2.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,draftkings,totals,Over,-118.0,44.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,draftkings,totals,Under,-102.0,44.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betonlineag,h2h,Buffalo Bulls,-122.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betonlineag,h2h,Central Michigan Chippewas,102.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betonlineag,spreads,Buffalo Bulls,-115.0,-1.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betonlineag,spreads,Central Michigan Chippewas,-105.0,1.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betonlineag,totals,Over,-115.0,44.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betonlineag,totals,Under,-105.0,44.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,lowvig,h2h,Buffalo Bulls,-122.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,lowvig,h2h,Central Michigan Chippewas,102.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,lowvig,spreads,Buffalo Bulls,-111.0,-1.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,lowvig,spreads,Central Michigan Chippewas,-101.0,1.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,lowvig,totals,Over,-114.0,44.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,lowvig,totals,Under,-103.0,44.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betmgm,h2h,Buffalo Bulls,-125.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betmgm,h2h,Central Michigan Chippewas,105.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betmgm,spreads,Buffalo Bulls,-110.0,-2.0
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betmgm,spreads,Central Michigan Chippewas,-108.0,2.0
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betmgm,totals,Over,-105.0,45.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betmgm,totals,Under,-115.0,45.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,bovada,h2h,Buffalo Bulls,-130.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,bovada,h2h,Central Michigan Chippewas,110.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,bovada,spreads,Buffalo Bulls,-112.0,-2.0
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,bovada,spreads,Central Michigan Chippewas,-108.0,2.0
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,bovada,totals,Over,-108.0,45.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,bovada,totals,Under,-112.0,45.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betus,h2h,Buffalo Bulls,-120.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betus,h2h,Central Michigan Chippewas,100.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betus,spreads,Buffalo Bulls,-115.0,-1.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betus,spreads,Central Michigan Chippewas,-105.0,1.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betus,totals,Over,-115.0,44.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,betus,totals,Under,-105.0,44.5
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,mybookieag,h2h,Buffalo Bulls,-131.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,mybookieag,h2h,Central Michigan Chippewas,107.0,
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,mybookieag,spreads,Buffalo Bulls,-110.0,-2.0
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,mybookieag,spreads,Central Michigan Chippewas,-110.0,2.0
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,mybookieag,totals,Over,-110.0,45.0
+10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,mybookieag,totals,Under,-110.0,45.0
