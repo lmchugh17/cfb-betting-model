@@ -163627,3 +163627,701 @@ ef5f5ac74b2228e8521c289fdbc6af93,2026-11-16T22:51:02Z,2026-11-19T00:00:00Z,UMass
 10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,mybookieag,spreads,Central Michigan Chippewas,-110.0,2.0
 10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,mybookieag,totals,Over,-110.0,45.0
 10cec4ab386b12694dd3cee93d870b47,2026-11-16T22:51:02Z,2026-11-19T00:30:00Z,Buffalo Bulls,Central Michigan Chippewas,2084,2117,mybookieag,totals,Under,-110.0,45.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,fanduel,h2h,Rice Owls,140.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,fanduel,h2h,Temple Owls,-166.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,fanduel,spreads,Rice Owls,-110.0,3.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,fanduel,spreads,Temple Owls,-110.0,-3.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,fanduel,totals,Over,-110.0,48.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,fanduel,totals,Under,-110.0,48.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,draftkings,h2h,Rice Owls,142.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,draftkings,h2h,Temple Owls,-170.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,draftkings,spreads,Rice Owls,-110.0,4.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,draftkings,spreads,Temple Owls,-110.0,-4.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,draftkings,totals,Over,-110.0,47.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,draftkings,totals,Under,-110.0,47.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betonlineag,spreads,Rice Owls,-105.0,3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betonlineag,spreads,Temple Owls,-115.0,-3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betonlineag,totals,Over,-110.0,48.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betonlineag,totals,Under,-110.0,48.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,lowvig,spreads,Rice Owls,-101.0,3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,lowvig,spreads,Temple Owls,-111.0,-3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,lowvig,totals,Over,-108.0,48.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,lowvig,totals,Under,-108.0,48.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betrivers,h2h,Rice Owls,145.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betrivers,h2h,Temple Owls,-182.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betrivers,spreads,Rice Owls,-113.0,3.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betrivers,spreads,Temple Owls,-110.0,-3.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betrivers,totals,Over,-113.0,47.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-15T19:20:32Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betrivers,totals,Under,-110.0,47.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,h2h,Iowa State Cyclones,-102.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,h2h,UCF Knights,-118.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,spreads,Iowa State Cyclones,-110.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,spreads,UCF Knights,-110.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,totals,Over,-110.0,54.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,totals,Under,-110.0,54.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,h2h,Iowa State Cyclones,106.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,h2h,UCF Knights,-128.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,spreads,Iowa State Cyclones,-105.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,spreads,UCF Knights,-115.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,totals,Over,-110.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,totals,Under,-110.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,h2h,Iowa State Cyclones,100.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,h2h,UCF Knights,-122.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,spreads,Iowa State Cyclones,-110.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,spreads,UCF Knights,-113.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,totals,Over,-108.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,totals,Under,-115.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,spreads,Iowa State Cyclones,-101.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,spreads,UCF Knights,-111.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,totals,Over,-108.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,totals,Under,-108.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,spreads,Iowa State Cyclones,-105.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,spreads,UCF Knights,-115.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,totals,Over,-110.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-15T19:20:32Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,totals,Under,-110.0,53.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,h2h,Bowling Green Falcons,490.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,h2h,Toledo Rockets,-670.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,spreads,Bowling Green Falcons,-120.0,14.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,spreads,Toledo Rockets,100.0,-14.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,totals,Over,-110.0,49.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,totals,Under,-110.0,49.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,h2h,Bowling Green Falcons,500.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,h2h,Toledo Rockets,-700.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,spreads,Bowling Green Falcons,-110.0,15.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,spreads,Toledo Rockets,-110.0,-15.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,totals,Over,-110.0,47.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,totals,Under,-110.0,47.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,spreads,Bowling Green Falcons,-105.0,14.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,spreads,Toledo Rockets,-115.0,-14.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,totals,Over,-110.0,49.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,totals,Under,-110.0,49.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,spreads,Bowling Green Falcons,-101.0,14.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,spreads,Toledo Rockets,-111.0,-14.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,totals,Over,-108.0,49.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,totals,Under,-108.0,49.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,h2h,Bowling Green Falcons,525.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,h2h,Toledo Rockets,-835.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,spreads,Bowling Green Falcons,-110.0,15.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,spreads,Toledo Rockets,-112.0,-15.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,totals,Over,-115.0,47.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,totals,Under,-107.0,47.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,h2h,Clemson Tigers,310.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,h2h,Duke Blue Devils,-400.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,spreads,Clemson Tigers,-120.0,10.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,spreads,Duke Blue Devils,100.0,-10.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,totals,Over,-110.0,43.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,totals,Under,-110.0,43.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,h2h,Clemson Tigers,270.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,h2h,Duke Blue Devils,-360.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,spreads,Clemson Tigers,-112.0,9.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,spreads,Duke Blue Devils,-112.0,-9.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,totals,Over,-105.0,44.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,totals,Under,-120.0,44.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,h2h,Clemson Tigers,260.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,h2h,Duke Blue Devils,-325.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,spreads,Clemson Tigers,-110.0,8.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,spreads,Duke Blue Devils,-110.0,-8.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,totals,Over,-110.0,44.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,totals,Under,-110.0,44.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,spreads,Clemson Tigers,-108.0,10.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,spreads,Duke Blue Devils,-104.0,-10.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,totals,Over,-108.0,43.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,totals,Under,-108.0,43.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,spreads,Clemson Tigers,-112.0,10.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,spreads,Duke Blue Devils,-108.0,-10.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,totals,Over,-110.0,43.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-15T19:20:32Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,totals,Under,-110.0,43.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,fanduel,h2h,Rice Owls,126.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,fanduel,h2h,Temple Owls,-150.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,fanduel,spreads,Rice Owls,105.0,2.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,fanduel,spreads,Temple Owls,-125.0,-2.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,fanduel,totals,Over,-110.0,49.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,fanduel,totals,Under,-110.0,49.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,draftkings,h2h,Rice Owls,124.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,draftkings,h2h,Temple Owls,-148.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,draftkings,spreads,Rice Owls,-112.0,3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,draftkings,spreads,Temple Owls,-108.0,-3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,draftkings,totals,Over,-108.0,50.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,draftkings,totals,Under,-112.0,50.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betonlineag,h2h,Rice Owls,125.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betonlineag,h2h,Temple Owls,-145.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betonlineag,spreads,Rice Owls,-115.0,3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betonlineag,spreads,Temple Owls,-105.0,-3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betonlineag,totals,Over,-110.0,49.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betonlineag,totals,Under,-110.0,49.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,lowvig,h2h,Rice Owls,125.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,lowvig,h2h,Temple Owls,-145.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,lowvig,spreads,Rice Owls,-111.0,3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,lowvig,spreads,Temple Owls,-101.0,-3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,lowvig,totals,Over,-108.0,49.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,lowvig,totals,Under,-108.0,49.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betrivers,h2h,Rice Owls,130.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betrivers,h2h,Temple Owls,-162.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betrivers,spreads,Rice Owls,-108.0,3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betrivers,spreads,Temple Owls,-115.0,-3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betrivers,totals,Over,-108.0,50.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betrivers,totals,Under,-115.0,50.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betmgm,h2h,Rice Owls,125.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betmgm,h2h,Temple Owls,-145.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betmgm,spreads,Rice Owls,-110.0,3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betmgm,spreads,Temple Owls,-108.0,-3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betmgm,totals,Over,-105.0,50.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betmgm,totals,Under,-112.0,50.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betus,h2h,Rice Owls,125.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betus,h2h,Temple Owls,-145.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betus,spreads,Rice Owls,-115.0,3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betus,spreads,Temple Owls,-105.0,-3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betus,totals,Over,-110.0,49.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betus,totals,Under,-110.0,49.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,bovada,h2h,Rice Owls,130.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,bovada,h2h,Temple Owls,-150.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,bovada,spreads,Rice Owls,-112.0,3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,bovada,spreads,Temple Owls,-108.0,-3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,bovada,totals,Over,-108.0,50.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,bovada,totals,Under,-112.0,50.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,mybookieag,h2h,Rice Owls,124.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,mybookieag,h2h,Temple Owls,-152.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,mybookieag,spreads,Rice Owls,-110.0,3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,mybookieag,spreads,Temple Owls,-110.0,-3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,mybookieag,totals,Over,-110.0,50.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-16T22:51:02Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,mybookieag,totals,Under,-110.0,50.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,h2h,Iowa State Cyclones,105.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,h2h,UCF Knights,-125.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,spreads,Iowa State Cyclones,-115.0,2.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,spreads,UCF Knights,-105.0,-2.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,totals,Over,-115.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,totals,Under,-105.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,h2h,Iowa State Cyclones,110.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,h2h,UCF Knights,-132.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,spreads,Iowa State Cyclones,-110.0,2.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,spreads,UCF Knights,-110.0,-2.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,totals,Over,-110.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,totals,Under,-110.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,h2h,Iowa State Cyclones,112.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,h2h,UCF Knights,-139.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,spreads,Iowa State Cyclones,-108.0,2.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,spreads,UCF Knights,-115.0,-2.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,totals,Over,-115.0,52.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,totals,Under,-108.0,52.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,h2h,Iowa State Cyclones,105.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,h2h,UCF Knights,-125.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,spreads,Iowa State Cyclones,-103.0,2.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,spreads,UCF Knights,-109.0,-2.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,totals,Over,-103.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,totals,Under,-114.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,h2h,Iowa State Cyclones,105.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,h2h,UCF Knights,-125.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,spreads,Iowa State Cyclones,-107.0,2.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,spreads,UCF Knights,-113.0,-2.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,totals,Over,-105.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,totals,Under,-115.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betmgm,h2h,Iowa State Cyclones,105.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betmgm,h2h,UCF Knights,-125.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betmgm,spreads,Iowa State Cyclones,-108.0,2.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betmgm,spreads,UCF Knights,-110.0,-2.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betmgm,totals,Over,-108.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betmgm,totals,Under,-110.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betus,h2h,Iowa State Cyclones,105.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betus,h2h,UCF Knights,-125.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betus,spreads,Iowa State Cyclones,-110.0,2.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betus,spreads,UCF Knights,-110.0,-2.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betus,totals,Over,-105.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betus,totals,Under,-115.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,bovada,h2h,Iowa State Cyclones,105.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,bovada,h2h,UCF Knights,-125.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,bovada,spreads,Iowa State Cyclones,-112.0,2.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,bovada,spreads,UCF Knights,-108.0,-2.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,bovada,totals,Over,-110.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,bovada,totals,Under,-110.0,53.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,mybookieag,h2h,Iowa State Cyclones,106.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,mybookieag,h2h,UCF Knights,-129.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,mybookieag,spreads,Iowa State Cyclones,-110.0,2.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,mybookieag,spreads,UCF Knights,-110.0,-2.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,mybookieag,totals,Over,-110.0,54.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-16T22:51:02Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,mybookieag,totals,Under,-110.0,54.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,h2h,Bowling Green Falcons,530.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,h2h,Toledo Rockets,-750.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,spreads,Bowling Green Falcons,-115.0,15.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,spreads,Toledo Rockets,-105.0,-15.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,totals,Over,-110.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,totals,Under,-110.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,h2h,Bowling Green Falcons,525.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,h2h,Toledo Rockets,-750.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,spreads,Bowling Green Falcons,-110.0,15.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,spreads,Toledo Rockets,-110.0,-15.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,totals,Over,-110.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,totals,Under,-110.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,h2h,Bowling Green Falcons,520.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,h2h,Toledo Rockets,-725.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,spreads,Bowling Green Falcons,-105.0,15.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,spreads,Toledo Rockets,-115.0,-15.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,totals,Over,-105.0,49.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,totals,Under,-115.0,49.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,h2h,Bowling Green Falcons,520.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,h2h,Toledo Rockets,-725.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,spreads,Bowling Green Falcons,-101.0,15.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,spreads,Toledo Rockets,-111.0,-15.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,totals,Over,-103.0,49.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,totals,Under,-114.0,49.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,h2h,Bowling Green Falcons,510.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,h2h,Toledo Rockets,-835.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,spreads,Bowling Green Falcons,-110.0,15.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,spreads,Toledo Rockets,-113.0,-15.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,totals,Over,-113.0,47.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,totals,Under,-110.0,47.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betmgm,h2h,Bowling Green Falcons,525.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betmgm,h2h,Toledo Rockets,-700.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betmgm,spreads,Bowling Green Falcons,-110.0,16.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betmgm,spreads,Toledo Rockets,-108.0,-16.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betmgm,totals,Over,-110.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betmgm,totals,Under,-108.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betus,h2h,Bowling Green Falcons,515.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betus,h2h,Toledo Rockets,-725.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betus,spreads,Bowling Green Falcons,-105.0,15.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betus,spreads,Toledo Rockets,-115.0,-15.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betus,totals,Over,-105.0,49.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betus,totals,Under,-115.0,49.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,bovada,h2h,Bowling Green Falcons,525.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,bovada,h2h,Toledo Rockets,-750.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,bovada,spreads,Bowling Green Falcons,-112.0,16.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,bovada,spreads,Toledo Rockets,-108.0,-16.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,bovada,totals,Over,-110.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,bovada,totals,Under,-110.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,mybookieag,h2h,Bowling Green Falcons,534.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,mybookieag,h2h,Toledo Rockets,-850.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,mybookieag,spreads,Bowling Green Falcons,-110.0,16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,mybookieag,spreads,Toledo Rockets,-110.0,-16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,mybookieag,totals,Over,-110.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,mybookieag,totals,Under,-110.0,48.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,h2h,Clemson Tigers,390.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,h2h,Duke Blue Devils,-520.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,spreads,Clemson Tigers,-110.0,13.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,spreads,Duke Blue Devils,-110.0,-13.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,totals,Over,-110.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,totals,Under,-110.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,h2h,Clemson Tigers,340.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,h2h,Duke Blue Devils,-480.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,spreads,Clemson Tigers,-113.0,12.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,spreads,Duke Blue Devils,-110.0,-12.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,totals,Over,-110.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,totals,Under,-113.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,h2h,Clemson Tigers,370.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,h2h,Duke Blue Devils,-485.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,spreads,Clemson Tigers,-105.0,12.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,spreads,Duke Blue Devils,-115.0,-12.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,totals,Over,-108.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,totals,Under,-112.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,h2h,Clemson Tigers,383.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,h2h,Duke Blue Devils,-500.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,spreads,Clemson Tigers,-106.0,13.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,spreads,Duke Blue Devils,-106.0,-13.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,totals,Over,-103.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,totals,Under,-114.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,h2h,Clemson Tigers,383.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,h2h,Duke Blue Devils,-500.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,spreads,Clemson Tigers,-110.0,13.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,spreads,Duke Blue Devils,-110.0,-13.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,totals,Over,-105.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,totals,Under,-115.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betmgm,h2h,Clemson Tigers,400.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betmgm,h2h,Duke Blue Devils,-500.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betmgm,spreads,Clemson Tigers,-110.0,13.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betmgm,spreads,Duke Blue Devils,-108.0,-13.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betmgm,totals,Over,-108.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betmgm,totals,Under,-110.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betus,h2h,Clemson Tigers,390.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betus,h2h,Duke Blue Devils,-500.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betus,spreads,Clemson Tigers,-110.0,13.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betus,spreads,Duke Blue Devils,-110.0,-13.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betus,totals,Over,-110.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betus,totals,Under,-110.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,bovada,h2h,Clemson Tigers,385.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,bovada,h2h,Duke Blue Devils,-510.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,bovada,spreads,Clemson Tigers,-105.0,12.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,bovada,spreads,Duke Blue Devils,-115.0,-12.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,bovada,totals,Over,-110.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,bovada,totals,Under,-110.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,mybookieag,h2h,Clemson Tigers,390.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,mybookieag,h2h,Duke Blue Devils,-571.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,mybookieag,spreads,Clemson Tigers,-110.0,12.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,mybookieag,spreads,Duke Blue Devils,-110.0,-12.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,mybookieag,totals,Over,-110.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-16T22:51:02Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,mybookieag,totals,Under,-110.0,40.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,fanduel,h2h,Rice Owls,118.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,fanduel,h2h,Temple Owls,-140.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,fanduel,spreads,Rice Owls,-105.0,2.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,fanduel,spreads,Temple Owls,-115.0,-2.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,fanduel,totals,Over,-115.0,51.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,fanduel,totals,Under,-105.0,51.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,draftkings,h2h,Rice Owls,120.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,draftkings,h2h,Temple Owls,-142.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,draftkings,spreads,Rice Owls,-102.0,2.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,draftkings,spreads,Temple Owls,-118.0,-2.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,draftkings,totals,Over,-112.0,51.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,draftkings,totals,Under,-108.0,51.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betonlineag,h2h,Rice Owls,122.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betonlineag,h2h,Temple Owls,-142.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betonlineag,spreads,Rice Owls,-103.0,2.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betonlineag,spreads,Temple Owls,-117.0,-2.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betonlineag,totals,Over,-110.0,52.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betonlineag,totals,Under,-110.0,52.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,lowvig,h2h,Rice Owls,122.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,lowvig,h2h,Temple Owls,-142.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,lowvig,spreads,Rice Owls,101.0,2.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,lowvig,spreads,Temple Owls,-113.0,-2.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,lowvig,totals,Over,-108.0,52.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,lowvig,totals,Under,-108.0,52.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betrivers,h2h,Rice Owls,123.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betrivers,h2h,Temple Owls,-152.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betrivers,spreads,Rice Owls,-117.0,3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betrivers,spreads,Temple Owls,-107.0,-3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betrivers,totals,Over,-109.0,51.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betrivers,totals,Under,-114.0,51.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betmgm,h2h,Rice Owls,120.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betmgm,h2h,Temple Owls,-145.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betmgm,spreads,Rice Owls,-115.0,3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betmgm,spreads,Temple Owls,-102.0,-3.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betmgm,totals,Over,-112.0,51.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betmgm,totals,Under,-105.0,51.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betus,h2h,Rice Owls,120.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betus,h2h,Temple Owls,-140.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betus,spreads,Rice Owls,-105.0,2.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betus,spreads,Temple Owls,-115.0,-2.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betus,totals,Over,-110.0,52.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,betus,totals,Under,-110.0,52.0
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,bovada,h2h,Rice Owls,122.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,bovada,h2h,Temple Owls,-142.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,bovada,spreads,Rice Owls,100.0,2.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,bovada,spreads,Temple Owls,-120.0,-2.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,bovada,totals,Over,-110.0,51.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,bovada,totals,Under,-110.0,51.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,mybookieag,h2h,Rice Owls,117.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,mybookieag,h2h,Temple Owls,-144.0,
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,mybookieag,spreads,Rice Owls,-105.0,2.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,mybookieag,spreads,Temple Owls,-115.0,-2.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,mybookieag,totals,Over,-110.0,51.5
+608ce68eb20e7e5201fb1b804ad26141,2026-11-19T21:23:42Z,2026-11-20T00:30:00Z,Temple Owls,Rice Owls,218,242,mybookieag,totals,Under,-110.0,51.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,h2h,Iowa State Cyclones,102.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,h2h,UCF Knights,-122.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,spreads,Iowa State Cyclones,-112.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,spreads,UCF Knights,-108.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,totals,Over,-110.0,48.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,totals,Under,-110.0,48.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,h2h,Iowa State Cyclones,100.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,h2h,UCF Knights,-120.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,spreads,Iowa State Cyclones,-110.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,spreads,UCF Knights,-110.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,totals,Over,-104.0,48.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,totals,Under,-116.0,48.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,h2h,Iowa State Cyclones,-103.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,h2h,UCF Knights,-122.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,spreads,Iowa State Cyclones,-110.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,spreads,UCF Knights,-113.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,totals,Over,-109.0,48.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,totals,Under,-114.0,48.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,h2h,Iowa State Cyclones,100.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,h2h,UCF Knights,-120.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,spreads,Iowa State Cyclones,-103.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,spreads,UCF Knights,-109.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,totals,Over,-110.0,48.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,totals,Under,-106.0,48.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,h2h,Iowa State Cyclones,100.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,h2h,UCF Knights,-120.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,spreads,Iowa State Cyclones,-107.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,spreads,UCF Knights,-113.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,totals,Over,-112.0,48.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,totals,Under,-108.0,48.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betmgm,h2h,Iowa State Cyclones,100.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betmgm,h2h,UCF Knights,-120.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betmgm,spreads,Iowa State Cyclones,-110.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betmgm,spreads,UCF Knights,-108.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betmgm,totals,Over,-105.0,48.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betmgm,totals,Under,-115.0,48.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betus,h2h,Iowa State Cyclones,100.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betus,h2h,UCF Knights,-120.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betus,spreads,Iowa State Cyclones,-105.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betus,spreads,UCF Knights,-115.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betus,totals,Over,-110.0,48.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betus,totals,Under,-110.0,48.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,bovada,h2h,Iowa State Cyclones,100.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,bovada,h2h,UCF Knights,-120.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,bovada,spreads,Iowa State Cyclones,-110.0,1.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,bovada,spreads,UCF Knights,-110.0,-1.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,bovada,totals,Over,-110.0,48.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,bovada,totals,Under,-110.0,48.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,mybookieag,h2h,Iowa State Cyclones,100.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,mybookieag,h2h,UCF Knights,-122.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,mybookieag,spreads,Iowa State Cyclones,-110.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,mybookieag,spreads,UCF Knights,-110.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,mybookieag,totals,Over,-110.0,48.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-19T21:23:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,mybookieag,totals,Under,-110.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,h2h,Bowling Green Falcons,590.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,h2h,Toledo Rockets,-880.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,spreads,Bowling Green Falcons,-108.0,16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,spreads,Toledo Rockets,-112.0,-16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,totals,Over,-114.0,47.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,totals,Under,-106.0,47.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,h2h,Bowling Green Falcons,525.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,h2h,Toledo Rockets,-750.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,spreads,Bowling Green Falcons,-110.0,16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,spreads,Toledo Rockets,-110.0,-16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,totals,Over,-105.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,totals,Under,-115.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,h2h,Bowling Green Falcons,534.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,h2h,Toledo Rockets,-750.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,spreads,Bowling Green Falcons,-105.0,16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,spreads,Toledo Rockets,-115.0,-16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,totals,Over,-107.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,totals,Under,-113.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,h2h,Bowling Green Falcons,534.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,h2h,Toledo Rockets,-750.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,spreads,Bowling Green Falcons,-101.0,16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,spreads,Toledo Rockets,-111.0,-16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,totals,Over,-105.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,totals,Under,-112.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,h2h,Bowling Green Falcons,575.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,h2h,Toledo Rockets,-1000.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,spreads,Bowling Green Falcons,-114.0,16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,spreads,Toledo Rockets,-109.0,-16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,totals,Over,-118.0,47.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,totals,Under,-106.0,47.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betmgm,h2h,Bowling Green Falcons,575.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betmgm,h2h,Toledo Rockets,-750.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betmgm,spreads,Bowling Green Falcons,-105.0,16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betmgm,spreads,Toledo Rockets,-112.0,-16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betmgm,totals,Over,-102.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betmgm,totals,Under,-118.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betus,h2h,Bowling Green Falcons,530.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betus,h2h,Toledo Rockets,-750.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betus,spreads,Bowling Green Falcons,-110.0,16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betus,spreads,Toledo Rockets,-110.0,-16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betus,totals,Over,-105.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betus,totals,Under,-115.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,bovada,h2h,Bowling Green Falcons,525.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,bovada,h2h,Toledo Rockets,-750.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,bovada,spreads,Bowling Green Falcons,-105.0,16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,bovada,spreads,Toledo Rockets,-115.0,-16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,bovada,totals,Over,-108.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,bovada,totals,Under,-112.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,mybookieag,h2h,Bowling Green Falcons,553.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,mybookieag,h2h,Toledo Rockets,-852.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,mybookieag,spreads,Bowling Green Falcons,-110.0,16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,mybookieag,spreads,Toledo Rockets,-110.0,-16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,mybookieag,totals,Over,-110.0,48.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,mybookieag,totals,Under,-110.0,48.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,h2h,Clemson Tigers,470.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,h2h,Duke Blue Devils,-650.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,spreads,Clemson Tigers,100.0,12.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,spreads,Duke Blue Devils,-120.0,-12.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,totals,Over,-110.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,totals,Under,-110.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,h2h,Clemson Tigers,380.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,h2h,Duke Blue Devils,-560.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,spreads,Clemson Tigers,-110.0,13.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,spreads,Duke Blue Devils,-113.0,-13.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,totals,Over,-115.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,totals,Under,-108.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,h2h,Clemson Tigers,400.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,h2h,Duke Blue Devils,-535.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,spreads,Clemson Tigers,-110.0,13.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,spreads,Duke Blue Devils,-110.0,-13.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,totals,Over,-108.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,totals,Under,-112.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,h2h,Clemson Tigers,415.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,h2h,Duke Blue Devils,-550.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,spreads,Clemson Tigers,-101.0,13.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,spreads,Duke Blue Devils,-111.0,-13.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,totals,Over,-106.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,totals,Under,-110.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,h2h,Clemson Tigers,415.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,h2h,Duke Blue Devils,-550.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,spreads,Clemson Tigers,-105.0,13.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,spreads,Duke Blue Devils,-115.0,-13.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,totals,Over,-108.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,totals,Under,-112.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betmgm,h2h,Clemson Tigers,450.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betmgm,h2h,Duke Blue Devils,-600.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betmgm,spreads,Clemson Tigers,-105.0,13.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betmgm,spreads,Duke Blue Devils,-112.0,-13.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betmgm,totals,Over,-108.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betmgm,totals,Under,-110.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betus,h2h,Clemson Tigers,425.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betus,h2h,Duke Blue Devils,-550.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betus,spreads,Clemson Tigers,-105.0,13.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betus,spreads,Duke Blue Devils,-115.0,-13.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betus,totals,Over,-108.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betus,totals,Under,-112.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,bovada,h2h,Clemson Tigers,410.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,bovada,h2h,Duke Blue Devils,-550.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,bovada,spreads,Clemson Tigers,-110.0,13.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,bovada,spreads,Duke Blue Devils,-110.0,-13.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,bovada,totals,Over,-112.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,bovada,totals,Under,-108.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,mybookieag,h2h,Clemson Tigers,400.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,mybookieag,h2h,Duke Blue Devils,-572.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,mybookieag,spreads,Clemson Tigers,-110.0,13.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,mybookieag,spreads,Duke Blue Devils,-110.0,-13.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,mybookieag,totals,Over,-110.0,40.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-19T21:23:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,mybookieag,totals,Under,-110.0,40.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,h2h,Iowa State Cyclones,-120.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,h2h,UCF Knights,100.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,spreads,Iowa State Cyclones,-110.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,spreads,UCF Knights,-110.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,totals,Over,-112.0,49.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,draftkings,totals,Under,-108.0,49.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,h2h,Iowa State Cyclones,-118.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,h2h,UCF Knights,-102.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,spreads,Iowa State Cyclones,-112.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,spreads,UCF Knights,-108.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,totals,Over,-108.0,49.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,fanduel,totals,Under,-112.0,49.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,h2h,Iowa State Cyclones,-136.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,h2h,UCF Knights,110.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,spreads,Iowa State Cyclones,-114.0,-2.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,spreads,UCF Knights,-109.0,2.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,totals,Over,-112.0,49.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betrivers,totals,Under,-112.0,49.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,h2h,Iowa State Cyclones,-125.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,h2h,UCF Knights,105.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,spreads,Iowa State Cyclones,-106.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,spreads,UCF Knights,-106.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,totals,Over,-108.0,50.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,lowvig,totals,Under,-108.0,50.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,h2h,Iowa State Cyclones,-125.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,h2h,UCF Knights,105.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,spreads,Iowa State Cyclones,-110.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,spreads,UCF Knights,-110.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,totals,Over,-110.0,50.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betonlineag,totals,Under,-110.0,50.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betmgm,h2h,Iowa State Cyclones,-120.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betmgm,h2h,UCF Knights,100.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betmgm,spreads,Iowa State Cyclones,-108.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betmgm,spreads,UCF Knights,-110.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betmgm,totals,Over,-112.0,49.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betmgm,totals,Under,-105.0,49.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betus,h2h,Iowa State Cyclones,-125.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betus,h2h,UCF Knights,105.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betus,spreads,Iowa State Cyclones,-110.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betus,spreads,UCF Knights,-110.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betus,totals,Over,-110.0,50.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,betus,totals,Under,-110.0,50.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,bovada,h2h,Iowa State Cyclones,-120.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,bovada,h2h,UCF Knights,100.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,bovada,spreads,Iowa State Cyclones,-112.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,bovada,spreads,UCF Knights,-108.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,bovada,totals,Over,-110.0,50.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,bovada,totals,Under,-110.0,50.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,mybookieag,h2h,Iowa State Cyclones,-121.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,mybookieag,h2h,UCF Knights,-101.0,
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,mybookieag,spreads,Iowa State Cyclones,-110.0,-1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,mybookieag,spreads,UCF Knights,-110.0,1.5
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,mybookieag,totals,Over,-110.0,50.0
+c62889a44c822eaf71b9cd24f4eee875,2026-11-20T21:01:42Z,2026-11-20T23:00:00Z,UCF Knights,Iowa State Cyclones,2116,66,mybookieag,totals,Under,-110.0,50.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,h2h,Bowling Green Falcons,590.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,h2h,Toledo Rockets,-880.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,spreads,Bowling Green Falcons,-110.0,16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,spreads,Toledo Rockets,-110.0,-16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,totals,Over,-110.0,46.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,fanduel,totals,Under,-110.0,46.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,h2h,Bowling Green Falcons,525.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,h2h,Toledo Rockets,-750.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,spreads,Bowling Green Falcons,-105.0,16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,spreads,Toledo Rockets,-115.0,-16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,totals,Over,-108.0,46.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,draftkings,totals,Under,-112.0,46.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,h2h,Bowling Green Falcons,534.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,h2h,Toledo Rockets,-750.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,spreads,Bowling Green Falcons,-104.0,16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,spreads,Toledo Rockets,-116.0,-16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,totals,Over,-108.0,46.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betonlineag,totals,Under,-112.0,46.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,h2h,Bowling Green Falcons,534.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,h2h,Toledo Rockets,-750.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,spreads,Bowling Green Falcons,100.0,16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,spreads,Toledo Rockets,-112.0,-16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,totals,Over,-106.0,46.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,lowvig,totals,Under,-110.0,46.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,h2h,Bowling Green Falcons,550.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,h2h,Toledo Rockets,-910.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,spreads,Bowling Green Falcons,-110.0,16.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,spreads,Toledo Rockets,-113.0,-16.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,totals,Over,-107.0,46.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betrivers,totals,Under,-117.0,46.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betmgm,h2h,Bowling Green Falcons,575.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betmgm,h2h,Toledo Rockets,-750.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betmgm,spreads,Bowling Green Falcons,-105.0,16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betmgm,spreads,Toledo Rockets,-112.0,-16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betmgm,totals,Over,-110.0,45.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betmgm,totals,Under,-108.0,45.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betus,h2h,Bowling Green Falcons,530.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betus,h2h,Toledo Rockets,-750.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betus,spreads,Bowling Green Falcons,-105.0,16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betus,spreads,Toledo Rockets,-115.0,-16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betus,totals,Over,-110.0,46.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,betus,totals,Under,-110.0,46.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,bovada,h2h,Bowling Green Falcons,525.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,bovada,h2h,Toledo Rockets,-750.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,bovada,spreads,Bowling Green Falcons,-115.0,17.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,bovada,spreads,Toledo Rockets,-105.0,-17.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,bovada,totals,Over,-108.0,46.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,bovada,totals,Under,-112.0,46.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,mybookieag,h2h,Bowling Green Falcons,557.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,mybookieag,h2h,Toledo Rockets,-878.0,
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,mybookieag,spreads,Bowling Green Falcons,-110.0,16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,mybookieag,spreads,Toledo Rockets,-110.0,-16.5
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,mybookieag,totals,Over,-110.0,46.0
+a365d6d7dcd55eca42de4791543e3f80,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Toledo Rockets,Bowling Green Falcons,2649,189,mybookieag,totals,Under,-110.0,46.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,h2h,Clemson Tigers,420.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,h2h,Duke Blue Devils,-550.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,spreads,Clemson Tigers,-110.0,12.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,spreads,Duke Blue Devils,-110.0,-12.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,totals,Over,-104.0,41.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,fanduel,totals,Under,-116.0,41.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,h2h,Clemson Tigers,325.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,h2h,Duke Blue Devils,-455.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,spreads,Clemson Tigers,-110.0,11.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,spreads,Duke Blue Devils,-113.0,-11.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,totals,Over,-109.0,41.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betrivers,totals,Under,-114.0,41.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,h2h,Clemson Tigers,380.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,h2h,Duke Blue Devils,-500.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,spreads,Clemson Tigers,-108.0,11.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,spreads,Duke Blue Devils,-112.0,-11.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,totals,Over,-105.0,41.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,draftkings,totals,Under,-115.0,41.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,h2h,Clemson Tigers,383.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,h2h,Duke Blue Devils,-500.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,spreads,Clemson Tigers,-108.0,12.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,spreads,Duke Blue Devils,-104.0,-12.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,totals,Over,-108.0,41.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,lowvig,totals,Under,-108.0,41.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,h2h,Clemson Tigers,383.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,h2h,Duke Blue Devils,-500.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,spreads,Clemson Tigers,-112.0,12.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,spreads,Duke Blue Devils,-108.0,-12.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,totals,Over,-110.0,41.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betonlineag,totals,Under,-110.0,41.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betmgm,h2h,Clemson Tigers,400.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betmgm,h2h,Duke Blue Devils,-500.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betmgm,spreads,Clemson Tigers,-110.0,12.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betmgm,spreads,Duke Blue Devils,-108.0,-12.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betmgm,totals,Over,-105.0,41.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betmgm,totals,Under,-112.0,41.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betus,h2h,Clemson Tigers,390.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betus,h2h,Duke Blue Devils,-500.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betus,spreads,Clemson Tigers,-110.0,12.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betus,spreads,Duke Blue Devils,-110.0,-12.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betus,totals,Over,-110.0,41.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,betus,totals,Under,-110.0,41.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,bovada,h2h,Clemson Tigers,375.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,bovada,h2h,Duke Blue Devils,-500.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,bovada,spreads,Clemson Tigers,-110.0,11.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,bovada,spreads,Duke Blue Devils,-110.0,-11.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,bovada,totals,Over,-108.0,41.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,bovada,totals,Under,-112.0,41.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,mybookieag,h2h,Clemson Tigers,409.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,mybookieag,h2h,Duke Blue Devils,-589.0,
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,mybookieag,spreads,Clemson Tigers,-110.0,12.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,mybookieag,spreads,Duke Blue Devils,-110.0,-12.0
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,mybookieag,totals,Over,-110.0,41.5
+f247efd606eabe7d3d87504bc3af43b4,2026-11-20T21:01:42Z,2026-11-21T00:30:00Z,Duke Blue Devils,Clemson Tigers,150,228,mybookieag,totals,Under,-110.0,41.5
